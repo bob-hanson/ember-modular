@@ -1,0 +1,57 @@
+{{#content-panel}}
+  {{#tabs-container vertical=true }}
+    {{#tabs-list class="tabs-top-spacer" }}
+      {{#each currentProcedures.listedProcedures as |listedProcedure| }}
+        {{tab-button tabText=listedProcedure.procedureType }}
+      {{/each}}
+    {{/tabs-list}}
+
+    {{#each currentProcedures.listedProcedures as |listedProcedure| }}
+
+      {{#tab-panel class="no-padding" }}
+        {{#component-container class="form-row horizontal" }}
+
+          {{#table-layout class="column-100" }}
+
+            {{#each listedProcedure.procedureQuestions as |procedureQuestion| }}
+              {{#table-layout-row }}
+                {{#table-layout-cell class="valign-middle table-layout-row-header column-60" padding="0,0,0,2" }}
+                  {{procedureQuestion.label}}
+                {{/table-layout-cell}}
+                {{#table-layout-cell class="valign-middle" }}
+                  {{hyspa-button-group boundModel=procedureQuestion.answer radioOptions=procedureQuestion.answerOptions isFormInput=true class="pull-right" }}
+                {{/table-layout-cell}}
+              {{/table-layout-row}}
+            {{/each}}
+
+          {{/table-layout}}
+
+          <div class="separator bump-down-2 gutter-2"></div>
+
+          {{#component-container padding="1,2,2,2"}}
+            {{hyspa-textarea-component boundModel=listedProcedure.additionalInfo labelText="Additional Info" }}
+          {{/component-container}}
+
+          <div class="separator bump-down-2"></div>
+
+          {{#component-container padding="1,0,2,2"}}
+            {{reset-clear-buttons isSection=true clearAction=(action 'triggerClearSection' listedProcedure ) resetAction=(action 'triggerResetSection' listedProcedure ) }}
+          {{/component-container}}
+
+        {{/component-container}}
+      {{/tab-panel}}
+
+    {{/each}}
+
+  {{/tabs-container}}
+
+  {{#if hasCustomFields }}
+    {{#component-container}}
+      {{hyspa-form-elements-builder fieldDefinitions=customFieldDefinitions boundFieldValues=customFieldValues formName="proceduresCustomFields" }}
+    {{/component-container}}
+  {{/if}}
+
+
+  {{section-bottom-bar clearAllAction=(action 'triggerClearForm') resetAllAction=(action 'triggerResetForm') nextPath=documentationServicesRoute nextPathText='Next: Documentation Elements' }}
+
+{{/content-panel}}

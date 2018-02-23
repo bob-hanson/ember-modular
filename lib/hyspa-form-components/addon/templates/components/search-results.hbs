@@ -1,0 +1,7 @@
+{{#if searchResultsVisible }}
+  {{#if hasSearchResults }}
+    {{ yield }}
+  {{ else }}
+    {{empty-message}}
+  {{/if}}
+{{/if}}

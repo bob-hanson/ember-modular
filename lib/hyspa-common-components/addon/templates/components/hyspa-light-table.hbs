@@ -1,0 +1,24 @@
+{{#if table.isEmpty }}
+  {{empty-message message=emptyMessage }}
+{{ else }}
+  {{#light-table table height=tableHeight tableActions=(hash triggerMassColumnAction=(action 'triggerMassActionClick') ) as |t|}}
+
+    {{t.head
+      fixed=true
+      onColumnClick=(action 'triggerColumnClick')
+      iconSortable='sort-icon'
+      iconAscending='sort-icon sort-ascending'
+      iconDescending='sort-icon sort-descending' }}
+
+    {{#t.body canSelect=false as |body|}}
+
+      {{#if isLoading }}
+        {{#body.loader}}
+          {{loading-element }}
+        {{/body.loader}}
+      {{/if}}
+
+    {{/t.body}}
+
+  {{/light-table}}
+{{/if}}

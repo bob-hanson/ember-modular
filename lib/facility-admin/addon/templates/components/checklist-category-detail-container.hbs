@@ -1,0 +1,13 @@
+{{#component-container percentageWidth=100}}
+  {{#section-header headerType='page' headerText=currentCategory.categoryName isFixed=true titleFont=true }}
+    {{#icon-nav}}
+      {{icon-link fontType='add_box' linkObject=currentFacility linkPath=currentCategory.facilityAdminChecklistCategoryPath activePath=currentCategory.categoryDetailsActivePath }}
+      {{icon-link fontType='note_add' linkObject=currentFacility linkPath=currentCategory.facilityAdminChecklistCategoryTemplatesPath activePath=currentCategory.categoryTemplateActivePath  }}
+      {{#icon-menu fontType='more_vert' }}
+        {{icon-link fontType='mode_edit' linkText='Edit Category' linkObject=currentCategory linkPath=currentCategory.facilityAdminChecklistCategoryEditPath }}
+        {{icon-action fontType='clear' labelText='Delete Category' clickAction=(action 'triggerDelete') }}
+      {{/icon-menu}}
+    {{/icon-nav}}
+  {{/section-header}}
+  {{yield}}
+{{/component-container}}

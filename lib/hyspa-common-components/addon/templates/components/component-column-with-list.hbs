@@ -1,0 +1,9 @@
+{{#component-column}}
+  {{#if hasBlock }}
+    {{#basic-column-list currentCollection=currentCollection showFilter=showFilter emptyCollectionMessage=emptyCollectionMessage linkTextMap=linkTextMap linkPathMap=linkPathMap activePathMap=activePathMap as |basicColumnList| }}
+      {{yield (hash iconLink=basicColumnList.iconLink)}}
+    {{/basic-column-list}}
+  {{else}}
+    {{basic-column-list currentCollection=currentCollection showFilter=showFilter emptyCollectionMessage=emptyCollectionMessage linkTextMap=linkTextMap linkPathMap=linkPathMap activePathMap=activePathMap }}
+  {{/if}}
+{{/component-column}}

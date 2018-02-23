@@ -1,0 +1,16 @@
+{{#data-point class='listed-item-value' percentageWidth=displayNameWidth }}
+  {{#if currentItem }}
+    {{#link-to linkPath currentItem.id title=displayValue class='primary-anchor' activePath=activePath }}
+      {{ displayValue }}
+    {{/link-to}}
+  {{else}}
+    {{#if isExternal }}
+      {{external-link linkPath=linkPath linkText=displayValue }}
+    {{ else }}
+      {{#link-to linkPath title=displayValue preventDefault=false class='primary-anchor' activePath=activePath }}
+        {{ displayValue }}
+      {{/link-to}}
+    {{/if}}
+  {{/if}}
+{{/data-point}}
+{{yield}}

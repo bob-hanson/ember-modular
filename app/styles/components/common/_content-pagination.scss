@@ -1,0 +1,12 @@
+.content-pagination {
+  padding: 16px 8px;
+  a {
+    vertical-align: middle;
+    i {
+      vertical-align: middle;
+    }
+    &.next-link {
+      float: right;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.master-footer {
+  position: fixed;
+  z-index: 1;
+  bottom: 0px;
+  padding: 0px 16px;
+  border-top: 1px solid $grid-border-color;
+  .logo-icon {
+    padding: 0 8px 0 0;
+    .logo-path {
+      fill: $black;
+    }
+    svg {
+      width: 24px;
+    }
+  }
+  .footer-logo {
+    width: auto;
+    font-family: $type-font-secondary;
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 200;
+    color: $black;
+  }
+  .footer-nav {
+    float: right;
+    padding: 8px 0 0 0;
+    li {
+      color: $black;
+      padding: 0 16px;
+      border-right: 1px solid $grid-border-color;
+      &:first-of-type { font-weight: 600; }
+      &:last-of-type { border-right: none; padding: 0 0 0 16px;}
+      a {
+        display: inline-block;
+        color: $link-color;
+        width: 100%;
+      }
+    }
+  }
+}

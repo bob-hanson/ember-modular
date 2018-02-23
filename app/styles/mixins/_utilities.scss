@@ -1,0 +1,62 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+@mixin clearfix() {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin center-vertical(){
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+@mixin center-horizontal(){
+  position: absolute;
+  left: 50%;
+  @include transform(translateX(-50%));
+}
+
+@mixin center-all(){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translateY(-50%) translateX(-50%));
+}
+
+@mixin text-ellipsis() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+}
+
+@mixin transform($string){
+  -webkit-transform: $string;
+  transform:         $string;
+}
+
+@mixin transition($string){
+  -webkit-transition: $string;
+  transition:         $string;
+}
+
+@mixin backface($string){
+  backface-visibility: $string;
+  -webkit-backface-visibility: $string;
+}
+
+@mixin relative-z($index){
+  position: relative;
+  z-index: $index;
+}

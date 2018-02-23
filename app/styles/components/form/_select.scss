@@ -1,0 +1,116 @@
+.select-component {
+  .faux-input {
+    position: absolute;
+    width: calc(100% - 46px);
+    top: 4px;
+    left: 11px;
+  }
+  .selected-options {
+    white-space: nowrap;
+    height: 28px;
+    overflow: hidden;
+    .chip {
+      margin: 4px 5px 5px 0px;
+      font-size: 12px;
+      i {
+        top: 3px;
+        font-size: 15px;
+      }
+    }
+  }
+  i.select-toggle {
+    position: absolute;
+    right: 2px;
+    top: 9px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  &.is-aligned-right {
+    .select-options {
+      right: 0px;
+    }
+  }
+  &.is-aligned-left {
+    .select-options {
+      left: 2px;
+    }
+  }
+  .select-options {
+    width: 100%;
+    min-width: 200px;
+    position: absolute;
+    z-index: 20;
+    top: 35px;
+    border: 1px solid $light-border-color;
+    background: $white;
+    min-height: 50px;
+    max-height: 300px;
+    overflow: auto;
+    li.option {
+      width: 100%;
+      padding: 5px 10px;
+      color: $light-type-color;
+      cursor: pointer;
+      &:hover:not(.is-active),
+      &.is-hovering:not(.is-active) { background-color: $secondary-color; color: $black; font-weight: 600; }
+      &.is-active {
+        color: $white;
+        .checkbox-component {
+          .ripple { background: $ripple-light; }
+        }
+      }
+      .checkbox-component {
+        width: 100%;
+        padding: 16px 8px 18px;
+        label {
+          position: relative;
+          padding-left: 30px;
+          padding-right: 20px;
+          padding-bottom: 0px;
+          background: none;
+          top: 0px;
+          cursor: pointer;
+          font-weight: 500;
+          font-size: 13px;
+          text-transform: initial;
+        }
+        &.is-selected {
+          label, i {
+            color: $white;
+          }
+        }
+      }
+    }
+    li.option:first-of-type {
+      padding-top: 10px;
+    }
+    // li.option:last-of-type {
+    //   padding-bottom: 0px;
+    // }
+  }
+}
+.multi-select {
+  .multiple-text {
+    top: 5px;
+    z-index: 1;
+    color: $black;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  i.select-toggle {
+    top: 8px;
+  }
+  .select-options {
+    top: 36px;
+    li.option {
+      padding: 0px;
+      &:first-of-type {
+        padding-top: 0px;
+      }
+    }
+    li.is-active .checkbox-component span {
+      color: $white;
+    }
+  }
+
+}

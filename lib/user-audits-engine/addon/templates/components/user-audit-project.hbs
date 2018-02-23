@@ -1,0 +1,9 @@
+{{#if userAuditState.isNotViewingAudit }}
+  {{user-project-details currentProject=currentProject
+                         triggerEncounterStatusClicked=this.attrs.triggerEncounterStatusClicked
+                         triggerCloseQA=this.attrs.triggerCloseQA
+                         triggerCloseSendReport=this.attrs.triggerCloseSendReport
+                         triggerClosePendingReport=this.attrs.triggerClosePendingReport
+  }}
+{{/if}}
+{{ outlet }}

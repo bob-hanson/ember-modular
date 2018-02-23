@@ -1,0 +1,8 @@
+<div class="action-menu-header column-100">
+  <span {{action "triggerToggleActionsMenu"}} class="pull-right">Actions Menu {{icon-font fontType=menuIcon }}</span>
+</div>
+{{#if menuOpen }}
+  <ul class="column-100 action-menu-list padding-top-2">
+    {{yield (hash menuItem=(component "hyspa-action-panel-actions-menu-item" clickAction=(action "triggerMenuItemClicked")))}}
+  </ul>
+{{/if}}

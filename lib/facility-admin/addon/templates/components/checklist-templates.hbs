@@ -1,0 +1,22 @@
+{{#checklist-category-detail-container currentCategory=currentCategory percentageWidth=100 }}
+  {{section-header headerText="Templates" }}
+  {{#component-container padding="0,0,2,0" }}
+    {{hyspa-switch-component switchLabel="Sort Templates" boundModel=showSort percentageWidth=50 }}
+  {{/component-container}}
+  {{#if showSort }}
+    {{#form-component-repeater currentList=sortedTemplates enableSort=true useSwap=true sortEndAction=(action 'triggerSorted') as |sortableTemplates| }}
+      {{#each sortedTemplates as |currentTemplate| }}
+        {{#sortableTemplates.sortableComponent content=currentTemplate isSortable=true tagName="li"}}
+          {{#component-container percentageWidth=90 padding="1,0,0,0" }}
+            {{currentTemplate.shortDescription}}
+          {{/component-container}}
+        {{/sortableTemplates.sortableComponent}}
+      {{/each}}
+    {{/form-component-repeater}}
+  {{else}}
+    {{listed-checklist-templates-full currentCollection=sortedTemplates }}
+  {{/if}}
+
+  
+  
+{{/checklist-category-detail-container }}

@@ -1,0 +1,58 @@
+{{#component-container percentageWidth=100}}
+
+  {{hyspa-input-component labelText='Guideline Name' isRequired=true boundModel=guidelineName isTouched=guidelineNameIsTouched isValid=guidelineNameIsValid }}
+
+  {{#component-container class='form-row'}}
+    {{switch-component switchLabel='Use as Default Guideline' boundModel=isDefaultGuideline labelLeft=false percentageWidth=30 padding='0,0,0,1' }}
+  {{/component-container }}
+
+  {{#component-container class='form-row'}}
+    {{hyspa-button-group labelText='Facility' boundModel=facilityType isFormInput=true radioOptions=facilityOptions percentageWidth=30 isRequired=true isValid=hasFacilityType}}
+  {{/component-container }}
+
+  {{hyspa-textarea-component labelText='Audit Type Notes(1/1000)' boundModel=auditTypeNotes }}
+
+  {{#component-container class='form-row'}}
+    {{hyspa-single-select labelText='Frequency' isRequired=true isTouched=frequencyTypeIsTouched isValid=frequencyTypeIsValid selectOptions=frequencyOptions boundModel=frequencyType percentageWidth=50 }}
+    {{hyspa-single-select labelText='Turn Around Time' selectOptions=turnAroundTimeOptions boundModel=turnAroundType percentageWidth=50 }}
+  {{/component-container }}
+
+  {{#component-container class='form-row'}}
+    {{hyspa-button-group labelText='Prespective/Retrospective' boundModel=prespectiveOrRetrospectiveType radioOptions=prespectiveOrRetrospectiveOptions isFormInput=true percentageWidth=35  }}
+    {{hyspa-input-component labelText='Pass Rate Threshold' boundModel=thresholdPercentage percentageWidth=50 }}
+    {{#hyspa-input-builder labelText='PR Threshold %' percentageWidth=15 boundModel=passRateThresholdPercentage as |passRateRef| }}
+      {{passRateRef.numericInput}}
+      {{passRateRef.inputCounter}}
+    {{/hyspa-input-builder}}
+  {{/component-container }}
+
+  {{#component-container class='form-row'}}
+    {{#hyspa-input-builder labelText='# of Providers' percentageWidth=20 boundModel=numOfProviders as |numProvidersRef| }}
+      {{numProvidersRef.numericInput}}
+      {{numProvidersRef.inputCounter}}
+    {{/hyspa-input-builder}}
+    {{#hyspa-input-builder labelText='DOS / Provider' percentageWidth=20 boundModel=dosOrProviders as |dosOrProvidersRef| }}
+      {{dosOrProvidersRef.numericInput}}
+      {{dosOrProvidersRef.inputCounter}}
+    {{/hyspa-input-builder}}
+    {{hyspa-date-picker labelText='Received Records By' boundModel=receivedRecordsDate percentageWidth=30}}
+    {{hyspa-single-select labelText='Method of Record Transfer' isRequired=true isTouched=recordTransferTypeIsTouched isValid=recordTransferTypeIsValid selectOptions=recordTransferOptions boundModel=recordTransferType percentageWidth=30 }}
+  {{/component-container }}
+
+  {{#component-container class='form-row'}}
+    {{hyspa-single-select labelText='QA Review Instructions' selectOptions=qaReviewOptions boundModel=qaReviewType percentageWidth=50 }}
+    {{hyspa-single-select labelText='DOS Identification' selectOptions=dosIdentificationOptions boundModel=dosIdentificationType percentageWidth=50 }}
+  {{/component-container }}
+
+  {{hyspa-textarea-component labelText='DOS Identification Notes (1/1000)' boundModel=dosIdentificationNote }}
+
+  {{hyspa-textarea-component labelText='Process Instructions(1/1000)' boundModel=processInstructions }}
+
+  {{hyspa-textarea-component labelText='Additional Instructions(1/1000)' boundModel=additionalInstructions }}
+
+  {{form-actions primaryButtonText=primaryButtonText primaryAction=(action 'triggerFormSubmit') cancelAction=this.attrs.formCancel primaryIsEnabled=allRequiredFieldsAreMet }}
+
+  {{content-separator padding='0,0,0,0'}}
+  {{pagination-link direction="left" linkPath=newScoringMethodPath linkText="Previous: Scoring Method" class="pull-left" }}
+  {{pagination-link linkPath=newReportParametersPath linkText="Next: Assign Report Parameters" class="pull-right" }}
+{{/component-container}}

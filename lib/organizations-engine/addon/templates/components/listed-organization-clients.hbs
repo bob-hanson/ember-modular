@@ -1,0 +1,16 @@
+{{#column-filter}}
+  {{filter-bar triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter'}}
+{{/column-filter}}
+{{#if hasClients }}
+  <ul class='listed-items column-100'>
+    {{#each filteredClients as |currentClient|}}
+      {{listed-client-item currentClient=currentClient parentComponent=this }}
+    {{/each}}
+  </ul>
+{{ else }}
+  {{empty-message message=emptyCollectionMessage }}
+{{/if}}
+
+{{#if isViewingListFilters }}
+
+{{/if}}

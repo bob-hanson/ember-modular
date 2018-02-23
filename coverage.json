@@ -1,0 +1,584 @@
+{
+  "stats": {
+    "suites": 204,
+    "tests": 208,
+    "passes": 207,
+    "pending": 0,
+    "failures": 1,
+    "start": "2016-11-09T01:22:31.099Z",
+    "end": "2016-11-09T01:22:35.089Z"
+  },
+  "coverage": {
+    "total": {
+      "statementsTotal": 398,
+      "statementsCovered": 232,
+      "percentage": 58.29
+    },
+    "files": [
+      {
+        "name": "hyspa/resolver",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/config/environment",
+        "statementsTotal": 10,
+        "statementsCovered": 9,
+        "percentage": 90
+      },
+      {
+        "name": "hyspa/app",
+        "statementsTotal": 7,
+        "statementsCovered": 7,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/initializers/app-version",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/initializers/container-debug-adapter",
+        "statementsTotal": 5,
+        "statementsCovered": 2,
+        "percentage": 40
+      },
+      {
+        "name": "hyspa/initializers/data-adapter",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/initializers/ember-data",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/initializers/export-application-global",
+        "statementsTotal": 24,
+        "statementsCovered": 4,
+        "percentage": 16.67
+      },
+      {
+        "name": "hyspa/initializers/injectStore",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/initializers/local-storage-adapter",
+        "statementsTotal": 5,
+        "statementsCovered": 4,
+        "percentage": 80
+      },
+      {
+        "name": "hyspa/initializers/store",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/initializers/transforms",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/instance-initializers/ember-data",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/admin-component",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/base-component",
+        "statementsTotal": 3,
+        "statementsCovered": 3,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/app-version",
+        "statementsTotal": 4,
+        "statementsCovered": 4,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/application-component",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/apps-menu",
+        "statementsTotal": 4,
+        "statementsCovered": 2,
+        "percentage": 50
+      },
+      {
+        "name": "hyspa/components/bubble-menu",
+        "statementsTotal": 5,
+        "statementsCovered": 2,
+        "percentage": 40
+      },
+      {
+        "name": "hyspa/components/column-filter",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/column-header",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/component-column",
+        "statementsTotal": 4,
+        "statementsCovered": 3,
+        "percentage": 75
+      },
+      {
+        "name": "hyspa/components/component-row",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/data-point",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/filter-bar",
+        "statementsTotal": 5,
+        "statementsCovered": 2,
+        "percentage": 40
+      },
+      {
+        "name": "hyspa/components/icon-font",
+        "statementsTotal": 13,
+        "statementsCovered": 5,
+        "percentage": 38.46
+      },
+      {
+        "name": "hyspa/components/listed-client-item",
+        "statementsTotal": 3,
+        "statementsCovered": 2,
+        "percentage": 66.67
+      },
+      {
+        "name": "hyspa/components/listed-navigation-item",
+        "statementsTotal": 8,
+        "statementsCovered": 5,
+        "percentage": 62.5
+      },
+      {
+        "name": "hyspa/components/listed-client-users",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/listed-navigation-dynamic-icons",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/listed-organization-clients",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/listed-organization-item",
+        "statementsTotal": 3,
+        "statementsCovered": 2,
+        "percentage": 66.67
+      },
+      {
+        "name": "hyspa/components/listed-organizations",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/listed-user-item",
+        "statementsTotal": 3,
+        "statementsCovered": 2,
+        "percentage": 66.67
+      },
+      {
+        "name": "hyspa/components/master-content",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/master-header",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/master-nav",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/organization-client-user-detail",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/organization-client-users",
+        "statementsTotal": 9,
+        "statementsCovered": 2,
+        "percentage": 22.22
+      },
+      {
+        "name": "hyspa/components/organization-client",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/organization-clients",
+        "statementsTotal": 9,
+        "statementsCovered": 2,
+        "percentage": 22.22
+      },
+      {
+        "name": "hyspa/components/organizations-component",
+        "statementsTotal": 9,
+        "statementsCovered": 2,
+        "percentage": 22.22
+      },
+      {
+        "name": "hyspa/components/search-bar",
+        "statementsTotal": 4,
+        "statementsCovered": 2,
+        "percentage": 50
+      },
+      {
+        "name": "hyspa/components/secondary-nav",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/secondary-navigation",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/user-avatar",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/components/user-menu",
+        "statementsTotal": 5,
+        "statementsCovered": 2,
+        "percentage": 40
+      },
+      {
+        "name": "hyspa/helpers/moment-calendar",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/helpers/moment-duration",
+        "statementsTotal": 3,
+        "statementsCovered": 3,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/helpers/moment-format",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/helpers/moment-from-now",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/helpers/moment-to-now",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/helpers/now",
+        "statementsTotal": 3,
+        "statementsCovered": 3,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/helpers/pluralize",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/helpers/route-action",
+        "statementsTotal": 3,
+        "statementsCovered": 3,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/helpers/singularize",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/models/client",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/models/organization",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/models/session-user",
+        "statementsTotal": 4,
+        "statementsCovered": 2,
+        "percentage": 50
+      },
+      {
+        "name": "hyspa/models/user",
+        "statementsTotal": 4,
+        "statementsCovered": 2,
+        "percentage": 50
+      },
+      {
+        "name": "hyspa/router",
+        "statementsTotal": 29,
+        "statementsCovered": 4,
+        "percentage": 13.79
+      },
+      {
+        "name": "hyspa/routes/add-user",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/routes/admin",
+        "statementsTotal": 5,
+        "statementsCovered": 2,
+        "percentage": 40
+      },
+      {
+        "name": "hyspa/routes/base-route",
+        "statementsTotal": 9,
+        "statementsCovered": 9,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/routes/application",
+        "statementsTotal": 12,
+        "statementsCovered": 2,
+        "percentage": 16.67
+      },
+      {
+        "name": "hyspa/routes/audit-dashboard",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/routes/client",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/routes/clients",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/routes/compliance-dashboard",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/routes/compliance",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/routes/edit-organization-client-user",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/routes/edit-organization-client",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/routes/edit-organization",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/routes/import-users",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/routes/new-organization-client-user",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/routes/new-organization-client",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/routes/new-organization",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/routes/organization-client-detail",
+        "statementsTotal": 5,
+        "statementsCovered": 2,
+        "percentage": 40
+      },
+      {
+        "name": "hyspa/routes/organization-client-user-detail",
+        "statementsTotal": 4,
+        "statementsCovered": 2,
+        "percentage": 50
+      },
+      {
+        "name": "hyspa/routes/organization-client-user",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/routes/organization-client-users",
+        "statementsTotal": 9,
+        "statementsCovered": 2,
+        "percentage": 22.22
+      },
+      {
+        "name": "hyspa/routes/organization-client",
+        "statementsTotal": 8,
+        "statementsCovered": 2,
+        "percentage": 25
+      },
+      {
+        "name": "hyspa/routes/organization-clients",
+        "statementsTotal": 9,
+        "statementsCovered": 2,
+        "percentage": 22.22
+      },
+      {
+        "name": "hyspa/routes/organization-detail",
+        "statementsTotal": 5,
+        "statementsCovered": 2,
+        "percentage": 40
+      },
+      {
+        "name": "hyspa/routes/organization",
+        "statementsTotal": 8,
+        "statementsCovered": 2,
+        "percentage": 25
+      },
+      {
+        "name": "hyspa/routes/organizations",
+        "statementsTotal": 5,
+        "statementsCovered": 2,
+        "percentage": 40
+      },
+      {
+        "name": "hyspa/services/ajax",
+        "statementsTotal": 3,
+        "statementsCovered": 3,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/services/current-app",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/services/external-links",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/services/fixtures",
+        "statementsTotal": 11,
+        "statementsCovered": 2,
+        "percentage": 18.18
+      },
+      {
+        "name": "hyspa/services/layout",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/services/modal",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/services/moment",
+        "statementsTotal": 2,
+        "statementsCovered": 2,
+        "percentage": 100
+      },
+      {
+        "name": "hyspa/services/repository",
+        "statementsTotal": 6,
+        "statementsCovered": 2,
+        "percentage": 33.33
+      }
+    ]
+  }
+}

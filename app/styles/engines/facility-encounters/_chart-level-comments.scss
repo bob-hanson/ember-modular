@@ -1,0 +1,26 @@
+.chart-level-comments, .action-panel-component {
+  .listed-chart-level-comments, .listed-comments {
+    max-height: 234px;
+    overflow: auto;
+    .table-layout-cell {
+      animation: highlightBorderComment 2s ease;
+    }
+  }
+  .ember-light-table {
+    max-height: 200px;
+  }
+  .lt-scrollable {
+    max-height: 200px;
+    overflow: auto;
+  }
+
+}
+
+@keyframes highlightBorderComment {
+  0% {
+    background-color: $primary-status;
+  }
+  100% {
+    background-color: initial;
+  }
+}

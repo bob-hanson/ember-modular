@@ -1,0 +1,26 @@
+{{#section-header headerType='page' titleFont=true headerText=currentClient.name hasBorder=false }}
+  {{#icon-nav }}
+    {{#if currentClient.databaseCreated }}
+      {{#icon-menu fontType='more_vert' fontSize='medium'}}
+        {{icon-link fontType='mode_edit' linkPath='organization.clients.client.edit-client' linkObject=currentClient linkText='Edit'}}
+      {{/icon-menu}}
+    {{/if}}
+  {{/icon-nav }}
+{{/section-header}}
+{{#tabs-container padding="0,0,0,0" }}
+  {{#tabs-list}}
+    {{tab-button tabText='Details'}}
+    {{tab-button tabText='Healthicity Contacts'}}
+    {{tab-button tabText='Modules'}}
+  {{/tabs-list}}
+  {{#tab-panel}}
+    {{organization-client-detail-details-tab currentClient=currentClient }}
+  {{/tab-panel}}
+
+  {{#tab-panel}}
+    {{organization-detail-hycontacts-tab currentModel=currentClient }}
+  {{/tab-panel}}
+  {{#tab-panel}}
+    {{organization-detail-modules-tab currentModel=currentClient onCreateDatabaseRetry=this.attrs.onCreateDatabaseRetry }}
+  {{/tab-panel}}
+{{/tabs-container}}

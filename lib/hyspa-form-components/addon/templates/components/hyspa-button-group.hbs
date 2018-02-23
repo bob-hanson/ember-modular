@@ -1,0 +1,14 @@
+<div class="column-100">
+  {{#if hasLabel}}
+    {{label-component labelText=labelText isRequired=isRequired percentageWidth=100}}
+  {{/if}}
+  <div class="radio-buttons">
+    {{#if hasBlock }}
+      {{yield (hash radioButton=(component 'radio-button' isButtonGroupOption=true selectAction=(action 'triggerRadioSelect'))) }}
+    {{else}}
+      {{#each radioOptions as |radioOption| }}
+        {{radio-button selectAction=(action 'triggerRadioSelect') radioOption=radioOption isButtonGroupOption=true radioTitle=radioOption.radioTitle isEnabled=isEnabled }}
+      {{/each}}
+    {{/if}}
+  </div>
+</div>

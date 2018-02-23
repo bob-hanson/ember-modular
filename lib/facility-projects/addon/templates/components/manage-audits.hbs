@@ -1,0 +1,5 @@
+{{#if facilityAudit.isViewingFullManageAuditList }}
+  {{manage-audits-table currentCollection=currentAudits }}
+{{ else }}
+  {{component-column-with-list currentCollection=currentAudits  emptyCollectionMessage="There are no audits matching your search or filtering criteria" }}
+{{/if}}

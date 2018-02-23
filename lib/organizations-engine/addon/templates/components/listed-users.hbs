@@ -1,0 +1,13 @@
+{{#column-filter}}
+  {{filter-bar triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter'}}
+{{/column-filter}}
+
+{{#if hasUsers }}
+  <ul class='listed-items column-100'>
+    {{#each filteredUsers as |currentUser|}}
+      {{listed-user-item currentUser=currentUser parentComponent=this editRoute=this.attrs.editRoute viewRoute=this.attrs.viewRoute canEdit=canEdit }}
+    {{/each}}
+  </ul>
+{{ else }}
+  {{empty-message message=emptyCollectionMessage }}
+{{/if}}

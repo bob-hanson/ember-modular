@@ -1,0 +1,8 @@
+{{#component-container class='facility-coder-filter input-with-menu' padding='0,0,2,0'}}
+  {{filter-bar triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter'}}
+{{/component-container}}
+{{#component-container}}
+  {{hyspa-light-table tableDefinition=tableDefinition gridCollection=filteredCollection }}
+{{/component-container}}
+
+{{ outlet }}

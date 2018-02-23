@@ -1,0 +1,7 @@
+{{#component-container isLoaded=currentCoder.isFullyLoaded }}
+  {{data-point label='Email' emailAddress=currentCoder.coderEmail padding='2,0,0,0'}}
+  {{data-point label='Phone' value=currentCoder.coderPhone padding='2,0,0,0'}}
+  {{data-point label='Specialties' value=listedSpecialties padding='2,0,0,0'}}
+  {{data-point label='Organizations' value=currentCoder.listedOrganizations padding='2,0,0,0'}}
+  {{data-point label='Facilities' value=currentCoder.listedFacilities padding='2,0,0,0'}}
+{{/component-container}}

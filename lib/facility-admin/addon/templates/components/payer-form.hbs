@@ -1,0 +1,20 @@
+{{#hyspa-form formFor="facility_payers" isValid=isProjectFormValid formSubmitAction=(action 'triggerFormSubmit') formCancelAction=(action 'triggerFormCancel') as |f| }}
+  {{section-header headerType='page' headerText=formHeaderText isFixed=true titleFont=true }}
+  {{#component-container class="form-row" }}
+    {{f.input labelText='Payer Name' isRequired=true boundModel=payerName name='payer_name' percentageWidth=60 }}
+    {{f.input labelText='Payer ID' boundModel=payerIdentifier name='payer_identifier' percentageWidth=20 }}
+    {{f.input labelText='Region ID' boundModel=regionIdentifier name='region_identifier' percentageWidth=20 }}
+  {{/component-container}}
+
+  {{#component-container class='form-row'}}
+    {{f.input labelText='City' boundModel=city percentageWidth=60 name='city'}}
+    {{f.stateSelect labelText='State' boundModel=state isRequired=true percentageWidth=20 name='state'}}
+    {{f.zipCodeInput labelText='Zip' percentageWidth=20 boundModel=zip name='zip'}}
+  {{/component-container }}
+
+  {{#component-container class='form-row'}}
+    {{f.buttonGroup labelText="Fee Schedule" isRequired=true boundModel=feeSchedule radioOptions=feeScheduleOptions isFormInput=true percentageWidth=40 name="fee_schedule"}}
+  {{/component-container}}
+
+  {{f.formActions primaryButtonText=primaryButtonText }}
+{{/hyspa-form}}

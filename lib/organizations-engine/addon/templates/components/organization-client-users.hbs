@@ -1,0 +1,10 @@
+{{#component-column columnType='navigation'}}
+  {{#section-header headerType='column' headerText='Users' padding='2,2,0,2'}}
+    {{#icon-nav }}
+      {{#icon-menu fontType='add' fontSize='medium'}}
+        {{icon-link fontType='add' linkPath='organization.clients.client.users.add-user' linkText='New Client User'}}
+      {{/icon-menu}}
+    {{/icon-nav }}
+  {{/section-header}}
+  {{listed-users currentUsers=currentUsers editRoute='organization.clients.client.users.user.edit-user' viewRoute='organization.clients.client.users.user.user-details'}}
+{{/component-column}}

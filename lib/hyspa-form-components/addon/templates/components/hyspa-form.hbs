@@ -1,0 +1,67 @@
+{{#if isLoading }}
+  {{loading-element }}
+{{else}}
+  {{#if showTabs }}
+    {{#component-column columnType='navigation' class="hyspa-form-tabs" percentageWidth=tabsColumnWidth }}
+      {{#component-container padding="2,0,0,0" tagName="ul" }}
+        {{#each formParts as |formPart| }}
+          <li {{action 'triggerFormTabClick' formPart}} class="listed-navigation-item primary-border-color padding-top-1 padding-right-1 padding-bottom-1 padding-left-2 column-100 hyspa-form-tab {{if formPart.isActive "is-active"}} {{if formPart.isDirtyAndInvalid "is-invalid"}}">
+            {{formPart.tabText}}
+            {{#if formPart.hasNavigatedAwayAndIsInvalid }}
+              <span class="hyspa-form-tab-invalid pull-right">{{icon-font fontType="error_outline" fontSize="small"}}</span>
+            {{/if}}
+          </li>
+        {{/each}}
+        {{#component-container padding="1,1,1,1" tagName="li" }}
+          {{basic-button clickAction=(action 'triggerFormSubmitAction') buttonText='Save' class='primary-button primary-background-color wizard-button' isDisabled=isInvalid }}
+        {{/component-container}}
+        {{#component-container padding="0,1,0,1" tagName="li" }}
+          {{basic-button clickAction=(action 'triggerFormCancelAction') buttonText='Cancel' class="wizard-button" }}
+        {{/component-container}}
+      {{/component-container}}
+    {{/component-column }}
+
+    {{#content-view class="hyspa-form-tabs-panel" percentageWidth=tabsPanelWidth }}
+      {{#form-view padding="0,0,0,0" }}
+        {{yield (hash input=(component "hyspa-input-component" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                textarea=(component "hyspa-textarea-component" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                datePicker=(component "hyspa-date-picker" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                singleSelect=(component "hyspa-single-select" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                multiSelect=(component "hyspa-multi-select" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                numericInput=(component "numeric-input" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                inputBuilder=(component 'hyspa-input-builder' formControls=formControls initAction=(action 'triggerRegisterFormControl')
+                destroyAction=(action 'triggerUnregisterFormControl'))
+                stateSelect=(component "state-select" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                zipCodeInput=(component "zipcode-input" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                phoneInput=(component "phone-input" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                checkbox=(component "hyspa-checkbox-component" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                switch=(component "hyspa-switch-component" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                buttonGroup=(component "hyspa-button-group" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl') isFormInput=true)
+                formActions=(component "form-actions" primaryAction=(action 'triggerFormSubmitAction') secondaryAction=(action 'triggerFormSaveAction') cancelAction=(action 'triggerFormCancelAction') primaryIsEnabled=isValid)
+                submitButton=(component "basic-button" clickAction=(action 'triggerFormSubmitAction') class="primary-button primary-background-color")
+                formPart=(component "hyspa-form-part" initAction=(action 'triggerRegisterFormPart') navigate=(action 'triggerNavigateFormParts') isTab=showTabs wizard=wizard)
+        )}}
+      {{/form-view}}
+    {{/content-view}}
+  {{else}}
+    {{yield (hash input=(component "hyspa-input-component" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                  textarea=(component "hyspa-textarea-component" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                  datePicker=(component "hyspa-date-picker" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                  singleSelect=(component "hyspa-single-select" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                  multiSelect=(component "hyspa-multi-select" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                  numericInput=(component "numeric-input" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                  inputBuilder=(component 'hyspa-input-builder' formControls=formControls initAction=(action 'triggerRegisterFormControl')
+                  destroyAction=(action 'triggerUnregisterFormControl'))
+                  stateSelect=(component "state-select" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                  zipCodeInput=(component "zipcode-input" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                  phoneInput=(component "phone-input" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                  checkbox=(component "hyspa-checkbox-component" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                  switch=(component "hyspa-switch-component" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                  buttonGroup=(component "hyspa-button-group" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl') isFormInput=true)
+                  formActions=(component "form-actions" primaryAction=(action 'triggerFormSubmitAction') secondaryAction=(action 'triggerFormSaveAction') cancelAction=(action 'triggerFormCancelAction') primaryIsEnabled=isValid)
+                  submitButton=(component "basic-button" clickAction=(action 'triggerFormSubmitAction') class="primary-button primary-background-color")
+                  formPart=(component "hyspa-form-part" initAction=(action 'triggerRegisterFormPart') navigate=(action 'triggerNavigateFormParts') isTab=showTabs wizard=wizard)
+    )}}
+  {{/if}}
+
+{{/if}}

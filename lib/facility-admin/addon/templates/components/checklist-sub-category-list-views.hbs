@@ -1,0 +1,10 @@
+{{#if isViewingChecklistSubcategory }}
+  {{#component-column-with-list currentCollection=currentSubcategories currentWhen="audit-settings.checklists.sub-categories.sub-category" linkPathMap="facilityAdminChecklistSubcategoryPath" linkTextMap="categoryName" activePath="audit-settings/sub-categories/" }}
+    {{#icon-menu fontType='more_vert' fontSize='medium' padding='1,0,0,1'}}
+      {{icon-link fontType='add' linkPath="audit-settings.checklists.sub-categories.new-sub-category" linkText="Add Subcategory" }}
+      {{icon-link fontType='backup' linkPath="audit-settings.checklists.sub-categories.bulk-upload" linkText='Bulk Upload'}}
+    {{/icon-menu}}
+  {{/component-column-with-list}}
+{{ else }}
+  {{listed-checklist-subcategories-full currentCollection=currentSubcategories }}
+{{/if}}

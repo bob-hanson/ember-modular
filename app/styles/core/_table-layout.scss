@@ -1,0 +1,157 @@
+.table-layout {
+  display: table;
+  float: initial;
+
+  &.top-border {
+    .table-layout-row:first-child {
+      .table-layout-cell {
+        border-top: 1px solid $grid-border-color;
+      }
+    }
+  }
+
+  &.bottom-border {
+    .table-layout-row:last-child {
+      .table-layout-cell {
+        border-bottom: 1px solid $grid-border-color;
+      }
+    }
+  }
+
+  &.outer-border {
+    .table-layout-cell:first-child {
+      border-left: 1px solid $grid-border-color;
+    }
+    .table-layout-cell:last-child {
+      border-right: 1px solid $grid-border-color;
+    }
+    .table-layout-row:last-child {
+      .table-layout-cell {
+        border-bottom: 1px solid $grid-border-color;
+      }
+    }
+  }
+
+  .table-layout-row {
+    display: table-row;
+    float: initial;
+
+    &.table-layout-header, &.table-layout-footer {
+      background-color: $table-header-footer-background-color;
+    }
+
+    &.table-layout-secondary-header {
+      background-color: $table-secondary-header-background-color;
+    }
+
+    &.table-layout-header, &.table-layout-footer, &.table-layout-secondary-header {
+      .table-layout-header-label {
+        text-transform: none;
+        font-size: 14px;
+        color: $table-header-font-color;
+        &.text-bold {
+          font-weight: 700;
+        }
+      }
+    }
+
+    .table-layout-cell {
+      display: table-cell;
+      float: initial;
+
+      &.cell-header {
+        font-weight: 700;
+        font-size: 14px;
+        color: $black;
+      }
+
+      // alignment
+      &.valign-middle {
+        vertical-align: middle;
+      }
+      &.valign-bottom {
+        vertical-align: bottom;
+      }
+      &.valign-top {
+        padding-top: 8px;
+        vertical-align: top;
+      }
+      &.align-center {
+        text-align: center;
+      }
+      &.align-right {
+        text-align: right;
+        padding-right: 16px;
+      }
+      &.bump-right {
+        padding-left: 8px;
+      }
+
+      // grid borders
+      &.grid-border {
+        border-style: solid;
+        border-color: $table-grid-color;
+        border-width: 0;
+
+        &.grid-border-top {
+          border-top-width: 1px;
+        }
+        &.grid-border-right {
+          border-right-width: 1px;
+        }
+        &.grid-border-bottom {
+          border-bottom-width: 1px;
+        }
+        &.grid-border-left {
+          border-left-width: 1px;
+        }
+        &.grid-border-all {
+          border-width: 1px;
+        }
+        &.grid-border-transparent {
+          border-color: transparent;
+        }
+      }
+
+      // modifying children
+      > label {
+        float: initial;
+      }
+      > .form-control {
+        padding: 0;
+      }
+      .checkbox-component {
+        label {
+          padding-bottom: 0;
+          span {
+            color: $type-color-body-darker;
+          }
+        }
+      }
+
+      // Overrides to other components for proper layout in table view
+      .button-group {
+        width: inherit;
+      }
+    }
+  }
+
+  &.banded-odd {
+    .table-layout-row:nth-child(odd):not(.table-layout-header):not(.table-layout-footer):not(.table-layout-secondary-header) {
+      background-color: $table-banded-background;
+    }
+    .table-layout-row:nth-child(even):not(.table-layout-header):not(.table-layout-footer):not(.table-layout-secondary-header) {
+      background-color: $white;
+    }
+  }
+
+  &.banded-even {
+    .table-layout-row:nth-child(even):not(.table-layout-secondary-header) {
+      background-color: $table-banded-background;
+    }
+    .table-layout-row:nth-child(odd):not(.table-layout-secondary-header):not(.table-layout-header) {
+      background-color: $white;
+    }
+  }
+
+}

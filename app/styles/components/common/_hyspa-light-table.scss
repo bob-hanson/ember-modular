@@ -1,0 +1,132 @@
+.hyspa-light-table {
+  display: flex;
+  float: initial;
+  thead {
+    width: 100%;
+    th {
+      padding: 8px 8px 8px 0px;
+    }
+  }
+  tbody {
+    width: 100%;
+    td {
+      padding: 8px 8px 8px 0px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      a {
+        text-overflow: ellipsis;
+        width: 100%;
+        overflow: hidden;
+      }
+    }
+  }
+  tr { width: 100%; }
+  .tse-scrollbar.vertical {
+    display: none;
+  }
+}
+
+
+.sort-icon {
+  width: 0;
+  height: 15px; /* <- adjust your height as you need it */
+  position: relative;
+  right: 11px;
+}
+
+.sort-icon::before,
+.sort-icon::after {
+  content: '';
+  position: absolute;
+  left: -9px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.sort-icon::before {
+  top: 0;
+  border-bottom: 5px solid black;
+}
+
+.sort-icon::after {
+  bottom: 0;
+  border-top: 5px solid black;
+}
+
+.sort-icon.sort-ascending::before {
+  top: 0;
+  border-bottom: 5px solid transparent;
+}
+
+.sort-icon.sort-ascending::after {
+  top: 8px;
+}
+
+.sort-icon.sort-descending::after {
+  bottom: 0;
+  border-top: 5px solid transparent;
+}
+
+.sort-icon.sort-descending::before {
+  top: 6px;
+}
+
+.hyspa-light-table-action-menu {
+  // min-width: 30px;
+}
+
+.ember-light-table .lt-head-wrap, .ember-light-table .lt-foot-wrap {
+  overflow: initial;
+}
+
+.audits {
+  .lt-row.is-selected {
+    background-color: $audit-secondary;
+  }
+}
+
+.admin {
+  .lt-row.is-selected {
+    background-color: $admin;
+  }
+}
+.compliance {
+  .lt-row.is-selected {
+    background-color: $compliance-secondary;
+  }
+}
+.analytics {
+  .lt-row.is-selected {
+    background-color: $analytics-secondary;
+  }
+}
+.training {
+  .lt-row.is-selected {
+    background-color: $training-secondary;
+  }
+}
+
+.lt-row.is-selected {
+  td {
+    color: $white;
+  }
+  .hyspa-light-table-cell {
+    .checkbox-component {
+      color: $white;
+      .icon:hover {
+        color: $white;
+      }
+    }
+    a {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+}
+
+.hyspa-light-table-row-selector {
+  padding-top: 3px;
+}

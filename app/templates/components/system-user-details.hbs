@@ -1,0 +1,30 @@
+{{#component-column class='user-details' columnType='navigation' percentageWidth=25}}
+  {{user-details-card currentUser=currentUser}}
+  {{user-roles-permissions-card class='user-permissions' currentUser=currentUser}}
+  <div class="user-actions">
+    {{icon-button iconType='mode_edit' buttonText='Edit User' buttonType='warning' actionModel=currentUser clickAction=attrs.triggerUserEdit }}
+    {{icon-button iconType='vpn_key' buttonText='Reset Password' buttonType='error' clickAction=(action 'triggerResetPassword')}}
+  </div>
+{{/component-column }}
+{{#component-column percentageWidth=75}}
+  {{#tabs-container }}
+    {{#tabs-list}}
+      {{tab-button tabText='Details'}}
+      {{tab-button tabText='Roles & Permissions'}}
+      {{tab-button tabText='Activity'}}
+    {{/tabs-list}}
+
+    {{#tab-panel}}
+      {{user-details currentUser=currentUser }}
+    {{/tab-panel}}
+
+    {{#tab-panel}}
+      {{user-roles currentUser=currentUser}}
+    {{/tab-panel}}
+
+    {{#tab-panel elementId='user-activites' class='no-padding'}}
+      {{user-activity currentUser=currentUser }}
+    {{/tab-panel}}
+
+  {{/tabs-container }}
+{{/component-column}}

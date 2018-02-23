@@ -1,0 +1,31 @@
+{{#section-header headerType='page' headerText=detailsTitle borderBottom=true }}
+  {{#icon-nav }}
+    {{#icon-menu fontType='more_vert' fontSize='medium'}}
+      {{!-- {{icon-link fontType='mode_edit' linkPath='organization.edit-organization' linkObject=currentOrganization linkText='Edit'}} --}}
+    {{/icon-menu}}
+  {{/icon-nav }}
+{{/section-header}}
+{{#component-container }}
+  {{data-point label='Project Name' value=currentProject.projectName percentageWidth=25 }}
+  {{data-point label='Facility' value='Foo Hospital' percentageWidth=25 }}
+  {{data-point label='Specialty' value=currentProject.coderSpecialty percentageWidth=25 }}
+  {{data-point label='Due Date' value=currentProject.dueDate percentageWidth=25 }}
+{{/component-container}}
+
+{{!-- {{section-header headerText='Status'}}
+{{#component-container }}
+  {{counter-card dataPoint=1 dataLabel='Complete' cardStatus='status'}}
+  {{counter-card dataPoint=1 dataLabel='In Progress' cardStatus='alert'}}
+  {{counter-card dataPoint=1 dataLabel='Not Started' cardStatus='error'}}
+{{/component-container}} --}}
+
+{{!-- {{section-header headerType='sub-section' headerText='Date of Service Work Queue'}} --}}
+{{#component-container }}
+  {{listed-encounters-table gridCollection=currentEncounters statusAction=this.attrs.triggerEncounterStatusClicked }}
+{{/component-container}}
+
+{{#component-container }}
+  {{basic-button clickAction=this.attrs.triggerCloseQA buttonText='Close Send to QA' class='primary-button secondary-background-color' percentageWidth=32 }}
+  {{basic-button clickAction=this.attrs.triggerCloseSendReport buttonText='Close Send Report' class='primary-button secondary-background-color' percentageWidth=32 }}
+  {{basic-button clickAction=this.attrs.triggerClosePendingReport buttonText='Close Pending Report' class='primary-button secondary-background-color' percentageWidth=32 }}
+{{/component-container}}

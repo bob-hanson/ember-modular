@@ -1,0 +1,5 @@
+{{#component-container class='input-with-menu' padding='0,0,2,0'}}
+  {{filter-bar filterValue=filterValue triggerFilter=(action 'triggerFilterCollection') placeholderText='Filter by name, date, or status' }}
+  {{icon-link fontType='add' linkPath='projects.new-project' tagName="div" fontSize="medium" padding="1,0,0,1" }}
+{{/component-container}}
+{{hyspa-light-table tableDefinition=facilityProjectsTableDefinition gridCollection=filteredCollection }}

@@ -1,0 +1,18 @@
+.file-upload-field {opacity: 0; height: 32px;}
+.faux-upload {position: absolute;height: 32px; padding: 5px;overflow: hidden; background: #fff;}
+.multi-upload .faux-upload {top: 0px;}
+.faux-upload .upload-icon {width: 34px;height: 30px; position: absolute;top: 0px;left: 0px;padding: 3px 0px 0px 0px; background-color: #cecece; }
+.faux-upload .upload-icon i { color: $primary-color; }
+.faux-upload { color: $light-type-color; }
+.faux-upload span.placeholder-text { width: 100%; text-align: center; font-size: 14px;}
+.uploader span.valid-file-types { color: $light-type-color;font-size: 11px;font-style: italic;text-align: right;position: absolute;bottom: 10px;width: 100%;left: -15px;}
+.drop-zone {padding: 0px 10px 10px 0px;}
+.drop-zone-area {width: 100%;padding: 30px; border: 1px dashed $accent-color; height: 180px; text-align: center; margin-bottom: 15px; }
+.is-dragged-over .drop-zone-area { border: 1px solid $audit;}
+.uploader .drop-zone-area i.material-icons {position: absolute; left: 0px; width: 100%; font-size: 100px; color: #f1f1f1;}
+.uploader .drop-zone-area p { width: 100%; text-align: center; color: $primary-color; font-size: 16px; padding: 5px 0px;}
+.drop-zone-area .upload-input { position: absolute; width: calc(100% - 60px); bottom: 40px;}
+.uploader .add-file-button { width: 33%; float: right; }
+.file-for-upload { padding: 5px 5px 0px; margin-bottom: 5px; border: 1px solid $light-border-color;
+  dd { font-weight: 700; }
+}

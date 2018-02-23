@@ -1,0 +1,9 @@
+dl.definition-list {
+   display: inline-block;
+   &.definition-list-horizontal {
+      display: inline-block;
+      dt, dd {
+         display: inline-block;
+      }
+   }
+}

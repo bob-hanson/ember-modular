@@ -1,0 +1,7 @@
+{{#if isViewingNestedViews }}
+  {{#component-column columnType='navigation'}}
+    {{listed-reporting-coders currentCollection=currentCoders }}
+  {{/component-column }}
+{{ else }}
+  {{listed-reporting-coders-full currentCollection=currentCoders }}
+{{/if}}

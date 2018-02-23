@@ -1,0 +1,12 @@
+<div class="action-panel-wrapper">
+  {{icon-font fontType=handleIcon class="panel-trigger-icon secondary-background-color" clickAction=(action 'triggerTogglePanel') }}
+  {{#content-view class="action-panel-body secondary-background-color" padding="0,0,0,0" }}
+    {{icon-font fontType=expandIcon class="expand-icon" clickAction=(action 'triggerToggleExpand')}}
+    {{#component-container class="action-panel-content" }}
+      <div id="action-panel-wormhole-top" class="column-100"></div>
+      {{#if hasActionComponent }}
+        {{component actionComponent }}
+      {{/if}}
+    {{/component-container}}
+  {{/content-view}}
+</div>

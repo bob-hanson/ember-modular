@@ -1,0 +1,13 @@
+{{#hyspa-form formFor="facility_checklist_categories" isLoading=isLoading isValid=isProjectFormValid formSubmitAction=(action 'triggerFormSubmit') formCancelAction=(action 'triggerFormCancel') as |f| }}
+  {{section-header headerType='page' headerText=formHeaderText isFixed=true titleFont=true }}
+  {{#component-container class='form-row'}}
+    {{f.input labelText='Category Name' boundModel=categoryName isRequired=true name='category_name'}}
+  {{/component-container }}
+  {{#component-container class="form-row" }}
+    {{f.textarea boundModel=defaultTemplateText labelText="Default Template Long Description" name="default_template_text" launchHelp="fac-admin-02" }}
+  {{/component-container}}
+  {{#component-container class="form-row" }}
+    {{f.switch boundModel=isListed switchLabel="Is Listed" name="is_listed" launchHelp="fac-admin-02" percentageWidth=50 }}
+  {{/component-container}}
+  {{f.formActions primaryButtonText=primaryButtonText }}
+{{/hyspa-form}}

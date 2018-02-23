@@ -1,0 +1,15 @@
+.repeated-form-component.has-removal-button {
+  .repeated-form-content-wrapper {
+    width: calc(100% - 32px);
+  }
+  .repeated-item-removal-link {
+    padding-top: 14px;
+    padding-left: 8px;
+    color: $input-icon;
+  }
+  &:first-child {
+    .repeated-item-removal-link {
+      visibility: hidden;
+    }
+  }
+}

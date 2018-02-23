@@ -1,0 +1,22 @@
+.data-point {
+  .label-icon,
+  .value-icon {
+    padding-left: 20px;
+    i {
+      position: absolute;
+      top: 1px;
+      left: 0;
+    }
+  }
+  &.vertical {
+    span {
+      display: block;
+      width: 100%;
+    }
+  }
+  &.horizontal {
+    span:first-child {
+      padding-right: 8px;
+    }
+  }
+}

@@ -1,0 +1,110 @@
+$nav-background-colors: (
+  admin: $platform-nav-background,
+  compliance: $compliance-nav-background,
+  audits: $audit-nav-background,
+  analytics: $analytics-nav-background,
+  training: $training-nav-background
+);
+
+$primary-colors: (
+  admin: $platform-primary,
+  compliance: $compliance-primary,
+  audits: $audit-primary,
+  analytics: $analytics-primary,
+  training: $training-primary
+);
+
+$secondary-colors: (
+  admin: $platform-primary,
+  compliance: $compliance-secondary,
+  audits: $audit-secondary,
+  analytics: $analytics-secondary,
+  training: $training-secondary
+);
+
+$quinary-colors: (
+  admin: $platform-quinary,
+  compliance: $compliance-quinary,
+  audits: $audit-quinary,
+  analytics: $analytics-quinary,
+  training: $training-quinary
+);
+
+$color-rules: (
+  normal: 'color',
+  border: 'border-color',
+  background: 'background-color'
+);
+
+$element-states: (
+  normal: '',
+  hover: '-hover:hover',
+  focus: '-focus:focus',
+  hasFocusClass: '.is-focused'
+);
+
+@each $app, $appColor in $nav-background-colors {
+  .#{$app} {
+    @each $state, $stateValue in $element-states {
+      @each $rule, $ruleValue in $color-rules {
+        .nav-#{$ruleValue}#{$stateValue} {
+          #{$ruleValue}: $appColor;
+        }
+      }
+    }
+  }
+}
+
+@each $app, $appColor in $primary-colors {
+  .#{$app} {
+    @each $state, $stateValue in $element-states {
+      @each $rule, $ruleValue in $color-rules {
+        .primary-#{$ruleValue}#{$stateValue} {
+          #{$ruleValue}: $appColor;
+        }
+      }
+    }
+  }
+}
+
+@each $app, $appColor in $secondary-colors {
+  .#{$app} {
+    @each $state, $stateValue in $element-states {
+      @each $rule, $ruleValue in $color-rules {
+        .secondary-#{$ruleValue}#{$stateValue} {
+          #{$ruleValue}: $appColor;
+        }
+      }
+    }
+  }
+}
+
+@each $app, $appColor in $quinary-colors {
+  .#{$app} {
+    @each $state, $stateValue in $element-states {
+      @each $rule, $ruleValue in $color-rules {
+        .quinary-#{$ruleValue}#{$stateValue} {
+          #{$ruleValue}: $appColor;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+.secondary-background {background-color:$secondary-color;}
+.primary-text {color:$primary-font;}
+.secondary-text {color:$secondary-color;}
+a, .link-action {color:$link-color;}
+a:hover {color:$link-hover;}
+
+p {color: $type-font-primary;}
+i.warning { color: $toast-warning;}
+i.pending { color: $toast-warning;}
+i.success { color: $toast-success;}
+i.error { color: $toast-error;}
+.logo-path { fill: $white; }
+.icon-wrap { background-color: $input-icon-background; }

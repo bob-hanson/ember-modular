@@ -1,0 +1,193 @@
+$primary-background: #fff;
+$primary-hover-color: #fff;
+
+$secondary-split-screen-background: #E2E7EC;
+$secondary-nav-background: #fafafa;
+
+$base-gutter: 8px;
+
+/// APPLICATION COLORS
+$platform-primary: #ff3d43;
+$platform-nav-background: #252b33;
+$platform-quinary: #ffa3a4;
+
+$audit-primary: #1696f3;
+$audit-nav-background: $audit-primary;
+$audit-secondary: #64b5f6;
+$audit-terciary: #1a76d2;
+$audit-quaternary: #0d47a1;
+$audit-quinary: #bbdefb;
+$audit-action-panel-alt-table-row: #A6D7FA;
+
+$analytics-primary: #1696f3;
+$analytics-nav-background: $analytics-primary;
+$analytics-secondary: #64b5f6;
+$analytics-terciary: #1a76d2;
+$analytics-quaternary: #0d47a1;
+$analytics-quinary: #bbdefb;
+
+$compliance-primary: #01bcd4;
+$compliance-nav-background: $compliance-primary;
+$compliance-secondary: #4dd0e0;
+$compliance-terciary: #0097a7;
+$compliance-quaternary: #006064;
+$compliance-quinary: #b2ebf2;
+
+$training-primary: #9c26b0;
+$training-nav-background: $training-primary;
+$training-secondary: #ba68c8;
+$training-terciary: #7b1fa2;
+$training-quaternary: #4a148c;
+$training-quinary: #e1bee7;
+
+/// TABLEs
+$table-header-footer-background-color: #e2e7ec;
+$table-secondary-header-background-color: rgba(226,231,236,0.6);
+$table-grid-color: #f0f0f0;
+$table-chip-background: #f94457;
+$table-chip-color: #fff;
+$table-banded-background: #fafafa;
+
+/// TYPE COLORS
+$subtext-color: #969696;
+$radio-checkbox-label-color: #333333;
+$checkbox-radio-color: #979797;
+$peek-color: #c8c8c8;
+$switch-label: #000000;
+
+/// STATUS COLORS
+$primary-status: #68AF00;
+$primary-error: #df2900;
+$primary-update: #1461dd;
+$primary-alert: #FCDB4D;
+$primary-non-urgent: #39414f;
+$primary-inactive: #969696;
+$primary-disabled: #c8c8c8;
+
+$secondary-status: #27ab4e;
+$secondary-error: #F62c00;
+$secondary-update: #3e7dde;
+$secondary-alert: #e4990c;
+$secondary-non-urgent: #8c939d;
+
+// GRID COLORS
+$grid-head-border-color: #969696;
+$grid-border-color: #e6e6e6;
+$header-border: #969696;
+
+// FONT COLORS
+$table-header-font-color: #646464;
+
+
+$white: #fff;
+$black: #000;
+$light-grey: #fafafa;
+
+$dark-grey: #969696;
+$error-red: #FF3D4D;
+$user-card: #969696;
+
+$primary-font: #323232;
+
+$primary-border-color: #c8c8c8;
+$medium-border-color: #c1c1c1;
+$light-border-color: #e1e1e1;
+
+$active-item-background: #f6f6f6;
+
+$chip-font: #495361;
+$chip-background: #DFDFDF;
+$chip-action-icon: #9E9E9E;
+
+$warning: #fbb657;
+$warning-light: rgba(#fbb657, 0.3);
+$error: #fc4353;
+$error-light: rgba(#fc4353, 0.3);
+
+$primary-color: #323232;
+$primary-hover-color: #efefef;
+$secondary-color: #f3f3f3;
+$secondary-type: $user-card;
+$accent-color: #FC3D4D;
+$ripple-color: rgba($accent-color, 0.4);
+$ripple-light: rgba($white, 0.4);
+$selected-checkbox: #469df6;
+$type-color-body: $primary-color;
+$type-color-body-darker: #333333;
+$link-color: #1a76d2;
+$link-hover: #074f97;
+$light-type-color: #9c9c9c;
+$icon-grey: #969696;
+
+$light-element-color: #9B9B9B;
+$gradient-color: #F7F7F7;
+
+$input-icon: #646464;
+$input-icon-background: #e1e1e1;
+$menu-icon: #5f6874;
+
+$admin: #FC3D4D;
+$admin-header: #1e2129;
+$compliance:#00bcd4;
+
+$audit: #1e83f3;
+
+
+$analytics: #1e83f3;
+
+
+$toast-general: $user-card;
+$toast-success: #1F8841;
+$toast-error: #df2900;
+$toast-info: #1461dd;
+$toast-warning: #f1a91d;
+
+$toast-general-secondary: #b2b7bd;
+$toast-success-secondary: #00b66a;
+$toast-error-secondary: #ff4606;
+$toast-info-secondary: #438fdf;
+$toast-warning-secondary: #f9b842;
+
+$modal-text: #676767;
+
+
+$root-font-size: 13px;
+$type-font-primary: 'Open Sans', sans-serif;
+$type-font-secondary: 'nexa', sans-serif;
+$font-path: font-path();
+$icon-path: icon-path();
+
+$icon-font-family: 'Material Icons';
+$headline-font-family: $type-font-secondary;
+
+$label-size:              11px;
+$type-line-body: 					1.5em;
+$type-line-heading: 				1.2em;
+$type-line-table: 					1.3em;
+$type-line-list: 					1.3em;
+
+$type-weight-thin: 					100;
+$type-weight-light: 				200;
+$type-weight-regular: 				400;
+$type-weight-medium: 				500;
+$type-weight-semibold: 				600;
+$type-weight-bold: 					700;
+$type-weight-extra-bold: 			800;
+
+$type-weight-body: 					$type-weight-regular;
+
+
+
+/****************************** Shadows ******************************/
+$shadow-level-0:					0 0px 0px rgba(0,0,0,0.0), 0 0px 0px rgba(0,0,0,0.0);
+$shadow-level-1:					0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+$shadow-level-2:					0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$shadow-level-3:					0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+$shadow-level-4:					0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+$shadow-level-5:					0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+/****************************** animations ******************************/
+$animation-type: 					cubic-bezier(.52,0,.53,1);
+$animation-speed-default: 			0.3s;
+$animation-speed-fast: 				0.1s;
+$animation-speed-slow: 				0.6s;

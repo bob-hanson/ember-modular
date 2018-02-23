@@ -1,0 +1,29 @@
+{{drop-zone class='gutter-right-secondary'
+            buttonLabel=placeholderText
+            multiple=isMultiple
+            selectedFiles=selectedFiles
+            resetInputTrigger=resetInputTrigger
+            validFileExtensions=validFileExtensions
+            fileDroppedAction=(action 'triggerFileDrop')
+            triggerInputChange=(action 'triggerInputChange')
+            percentageWidth=40 }}
+
+{{!-- <div class="upload-input column-65">
+  <div class="basic-button faux-upload column-100">
+    <div class="upload-icon">
+      {{icon-font fontType='open_in_browser'}}
+    </div>
+    <span class="placeholder-text">{{ label }}</span>
+  </div>
+  {{file-field multiple=isMultiple selectedFiles=selectedFiles resetInputTrigger=resetInputTrigger triggerInputChange=(action 'triggerInputChange')}}
+</div> --}}
+
+{{#if isMultiple }}
+  {{#if hasFilesAvailableForUpload }}
+    {{#each selectedFilesForUpload as |uploadedFile| }}
+      {{#component-container class='file-for-upload' percentageWidth=60 }}
+        {{data-point value=uploadedFile.resourceName clickAction=(action 'triggerRemoveFileFromUploadArray') actionModel=uploadedFile percentageWidth='60'}}
+      {{/component-container}}
+    {{/each}}
+  {{/if}}
+{{/if}}

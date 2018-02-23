@@ -1,0 +1,10 @@
+{{#component-container}}
+  {{#hyspa-input-builder as |projectsFilter| }}
+    {{projectsFilter.buttonGroup isFormInput=false boundModel=filteredProjectType radioOptions=auditProjectTypeOptions selectAction=(action 'triggerAuditTypeSelect') }}
+    {{projectsFilter.filterBar filterValue=filterValue triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter' }}
+  {{/hyspa-input-builder}}
+{{/component-container}}
+
+{{#component-container}}
+  {{facility-projects-table gridCollection=filteredProjects filteredProjectType=filteredProjectType }}
+{{/component-container}}

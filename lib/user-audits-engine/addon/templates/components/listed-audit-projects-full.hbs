@@ -1,0 +1,10 @@
+{{#component-container class='audit-projects-filter'}}
+  {{hyspa-button-group boundModel=filteredProjectType radioOptions=auditProjectTypeOptions selectAction=(action 'triggerAuditTypeSelect') }}
+  {{filter-bar triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter'}}
+{{/component-container}}
+
+{{#component-container}}
+  {{audit-projects-table gridCollection=filteredProjects transitionToDetailsAction=this.attrs.transitionToDetailsAction }}
+{{/component-container}}
+
+{{ outlet }}

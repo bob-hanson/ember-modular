@@ -1,0 +1,144 @@
+ul.form-component-repeater {
+  &.boxed {
+    li {
+      border-style: solid;
+      border-width: 1px;
+      border-color: $grid-border-color;
+      border-width: 0 1px 1px 1px;
+      &:first-child {
+        border-top-width: 1px;
+      }
+    }
+  }
+
+  &:not(.no-banding) {
+    li {
+      &:nth-child(odd):not(.secondary-background-color) {
+        background-color: $secondary-nav-background;
+      }
+    }
+  }
+
+  li {
+    width: 100%;
+    padding: 8px;
+
+    .drag-handle {
+      visibility: hidden;
+    }
+
+    &.is-hovering {
+      color: $white;
+      a {
+        color: $white;
+      }
+      .drag-handle {
+        visibility: visible;
+      }
+    }
+    .valign-middle {
+      line-height: 52px;
+    }
+    a.is-active {
+      font-weight: bold;
+    }
+  }
+
+  .hyspa-draggable-object {
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    &.is-dragging-object {
+      cursor: grabbing;
+      color: $primary-hover-color;
+      margin: 16px 0;
+      -webkit-box-shadow: 5px 5px 5px #888888; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+      box-shadow: 5px 5px 5px #888888;
+    }
+  }
+
+  &.enable-sort {
+    li {
+      cursor: move; /* fallback if grab cursor is unsupported */
+      cursor: grab;
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+    }
+  }
+
+}
+
+
+table.form-component-repeater {
+  th {
+    padding: 8px;
+    font-weight: normal;
+  }
+  tr {
+    .drag-handle-cell {
+      width: 24px;
+      .drag-handle {
+        padding: 0;
+        width: 8px;
+      }
+    }
+    .drag-handle {
+      visibility: hidden;
+    }
+    .repeated-item-removal-link {
+      float: right;
+    }
+    &.is-hovering {
+      .drag-handle {
+        color: $primary-hover-color;
+        visibility: visible;
+      }
+      .repeated-item-removal-link {
+        color: $primary-hover-color;
+      }
+    }
+  }
+  tr, th, td {
+    float: initial;
+    text-align: left;
+  }
+  tr:nth-child(2) {
+    .repeated-item-removal-link {
+      visibility: hidden;
+    }
+  }
+  td {
+    padding: 8px;
+  }
+  th {
+    background-color: $secondary-split-screen-background;
+  }
+  tr:nth-child(odd):not(.secondary-background-color) {
+    background-color: $secondary-nav-background;
+  }
+  .hyspa-draggable-object {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+    cursor: grabbing;
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    &.is-dragging-object {
+      cursor: grabbing;
+      color: $primary-hover-color;
+      margin: 16px 0;
+      -webkit-box-shadow: 5px 5px 5px #888888; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+      box-shadow: 5px 5px 5px #888888;
+
+      td {
+        background-color: inherit;
+      }
+    }
+  }
+}

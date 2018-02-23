@@ -1,0 +1,25 @@
+{{#component-container }}
+
+  {{#if isMultiSystemOrMusculoskeletalOrEnt }}
+    {{hyspa-checkbox-group boundCollection=bodyArea.selectedExamElements checkboxOptions=bodyArea.examElements selectAction=(action 'triggerExamElementSelect') }}
+  {{/if}}
+
+  {{#if notMultiSystemNorNeurological }}
+    <p class="type-small"><b>Brief Assessment of mental status, including:</b></p>
+    {{#component-container padding="0,0,0,2" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedCommonExamElements checkboxOptions=bodyArea.commonExamElements selectAction=(action 'triggerExamElementSelect') }}
+    {{/component-container}}
+  {{/if}}
+
+  {{#if isNeurological }}
+    <p class="type-small"><b>Evaluation of higher integrative functions, including:</b></p>
+    {{#component-container padding="0,0,0,2" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedExamElements checkboxOptions=bodyArea.examElements selectAction=(action 'triggerExamElementSelect') }}
+    {{/component-container}}
+    <p class="type-small"><b>Test the following cranial nerves:</b></p>
+    {{#component-container padding="0,0,0,2" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedCranialSystemElements checkboxOptions=bodyArea.cranialSystemElements selectAction=(action 'triggerExamElementSelect') }}
+    {{/component-container}}
+  {{/if}}
+
+{{/component-container}}

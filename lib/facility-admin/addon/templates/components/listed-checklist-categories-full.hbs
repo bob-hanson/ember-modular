@@ -1,0 +1,24 @@
+{{#component-container padding="0,0,2,0" }}
+  {{hyspa-switch-component switchLabel="Sort Categories" boundModel=showSort percentageWidth=switchWidth }}
+{{/component-container}}
+
+{{#if showSort }}
+  {{#form-component-repeater currentList=currentCollection enableSort=true useSwap=true sortEndAction=(action 'triggerSorted') as |sortableCategories| }}
+    {{#each currentCollection as |currentCategory| }}
+      {{#sortableCategories.sortableComponent content=currentCategory isSortable=true tagName="li"}}
+        {{#link-to "audit-settings.checklists.categories.category.templates" currentCategory.id title=currentCategory.categoryName preventDefault=false class='primary-anchor valign-middle' }}
+          {{currentCategory.categoryName}}
+        {{/link-to}}
+      {{/sortableCategories.sortableComponent}}
+    {{/each}}
+  {{/form-component-repeater}}
+{{else}}
+  {{#component-container class='facilities-filter input-with-menu' padding='0,0,2,0'}}
+    {{filter-bar triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter'}}
+    {{#icon-menu fontType='more_vert' fontSize='medium' padding='1,0,0,1'}}
+      {{icon-link fontType='add' linkPath='audit-settings.checklists.categories.new-category' linkText='Add Category' }}
+      {{icon-link fontType='backup' linkPath='audit-settings.checklists.categories.bulk-upload' linkText='Bulk Upload'}}
+    {{/icon-menu}}
+  {{/component-container}}
+  {{hyspa-light-table tableDefinition=tableDefinition gridCollection=filteredCollection }}
+{{/if}}

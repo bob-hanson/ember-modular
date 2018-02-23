@@ -1,0 +1,21 @@
+.radio-button-group {
+
+  &.group-column-2, &.group-column-3, &.group-column-4 {
+    .radio-button {
+      padding-bottom: 8px;
+    }
+  }
+
+  &.group-column-2 .radio-button {
+    width: 50%;
+  }
+
+  &.group-column-3 .radio-button {
+    width: 33%;
+  }
+
+  &.group-column-4 .radio-button {
+    width: 25%;
+  }
+
+}

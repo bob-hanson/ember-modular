@@ -1,0 +1,31 @@
+  {{section-header headerType='section' headerText='Facilities' }}
+
+  {{#component-container padding='1,0,2,0'}}
+    {{filter-bar triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter'}}
+  {{/component-container }}
+
+  {{#component-container }}
+    {{#if hasFilteredCollection }}
+      {{#each filteredCollection as |currentFacility| }}
+        {{#table-layout class="column-100" }}
+          {{#table-layout-row }}
+            {{#table-layout-cell class="valign-middle" padding="0,0,1,0" }}
+              {{#link-to 'manage-lists.facilities.facility.facility-details' currentFacility }}
+                {{ currentFacility.facilityName }}
+              {{/link-to}}
+            {{/table-layout-cell}}
+          {{/table-layout-row}}
+          {{#table-layout-row }}
+            {{#table-layout-cell class="valign-middle" padding="0,0,1,0" }}
+              {{data-point value=currentFacility.facilityAddress1 }}
+              {{data-point value=currentFacility.cityStateZip }}
+              {{data-point value=currentFacility.facilityPhone }}
+            {{/table-layout-cell}}
+          {{/table-layout-row}}
+        {{/table-layout}}
+        {{content-separator class="column-100"}}
+      {{/each}}
+    {{ else }}
+      {{empty-message message="No Facilities in result set"}}
+    {{/if}}
+  {{/component-container }}

@@ -1,0 +1,13 @@
+{{#component-container class='facility-users-filter input-with-menu' padding='0,0,2,0'}}
+  {{filter-bar triggerFilter=this.attrs.filterAction placeholderText='Quick Filter'}}
+  {{#icon-menu fontType='more_vert' fontSize='medium' padding='1,0,0,1'}}
+    {{icon-link fontType='add' linkPath='facility-users.new-user' linkText='Add User' }}
+    {{icon-link fontType='backup' linkPath='facility-users.bulk-upload' linkText='Bulk Upload'}}
+  {{/icon-menu}}
+{{/component-container}}
+{{#if filteredCollection.isLoaded }}
+  {{hyspa-light-table tableDefinition=tableDefinition gridCollection=filteredCollection emptyMessage='No Users found' }}
+{{ else }}
+  {{loading-spinner }}
+{{/if}}
+{{ outlet }}

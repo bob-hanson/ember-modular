@@ -1,0 +1,7 @@
+{{#each currentLinks as | currentLink | }}
+  {{#if currentLink.linkObject }}
+    {{link-to currentLink.linkText currentLink.routeName currentLink.linkObject }} /
+  {{ else }}
+    {{link-to currentLink.linkText currentLink.routeName }} /
+  {{/if}}
+{{/each}}

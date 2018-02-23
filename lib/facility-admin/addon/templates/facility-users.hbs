@@ -1,0 +1,21 @@
+{{#component-column percentageWidth=20 }}
+  {{#component-container padding="1,2,0,2" }}
+    {{section-header headerText="User Summary" headerType="sub-section" padding="0,0,1,0" }}
+    {{#component-container padding="1,0,0,0"}}
+      {{#data-point label='Due Date' value=currentProject.coderSpecialty arrangement="horizontal" }}
+        <span class="text-bold">Licensed Users</span>
+        <span class="pull-right">30</span>
+      {{/data-point}}
+      {{#data-point label='Due Date' value=currentProject.coderSpecialty arrangement="horizontal" }}
+        <span class="text-bold">Active Users</span>
+        <span class="pull-right">20</span>
+      {{/data-point}}
+      {{#data-point label='Due Date' value=currentProject.coderSpecialty arrangement="horizontal" }}
+        <span class="text-bold">Remaining Remaining</span>
+        <span class="pull-right">10</span>
+      {{/data-point}}
+    {{/component-container}}
+  {{/component-container}}
+{{/component-column}}
+{{facility-users currentCollection=currentUsers }}
+{{outlet}}

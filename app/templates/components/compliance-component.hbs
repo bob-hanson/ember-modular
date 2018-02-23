@@ -1,0 +1,23 @@
+<div id='app' class='app compliance'>
+  {{#if currentApp.shouldDisplayNav }}
+    {{#master-header}}
+      {{#master-nav as |masterNav| }}
+        {{masterNav.navigationItem linkPath=dashboardUrl linkText='Dashboard' isExternal=true }}
+        {{masterNav.navigationItem linkPath=attestationsUrl linkText='Attestations' isExternal=true }}
+        {{masterNav.navigationItem linkPath='cm.risk-assessments' linkText='Risk Assessments' }}
+        {{masterNav.navigationItem linkPath=auditsUrl linkText='Audits' isExternal=true }}
+        {{masterNav.navigationItem linkPath=incidentsUrl linkText='Incidents' isExternal=true }}
+        {{masterNav.navigationItem linkPath=toolboxUrl linkText='Toolbox' isExternal=true }}
+        {{masterNav.navigationItem linkPath=trainingUrl linkText='Training' isExternal=true }}
+        {{masterNav.navigationItem linkPath=documentsUrl linkText='Documents' isExternal=true }}
+        {{masterNav.navigationItem linkPath=reportsUrl linkText='Reports' isExternal=true }}
+      {{/master-nav}}
+    {{/master-header}}
+  {{/if}}
+  <div id='app-content' class='app-content column-100 {{if currentApp.isToggleNavView "is-toggle-view" }} '>
+    {{ outlet }}
+  </div>
+  {{#if currentApp.shouldDisplayNav }}
+    {{master-footer }}
+  {{/if}}
+</div>

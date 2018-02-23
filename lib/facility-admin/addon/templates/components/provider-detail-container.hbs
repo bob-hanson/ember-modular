@@ -1,0 +1,13 @@
+{{#component-container percentageWidth=100}}
+  {{#section-header headerType='page' headerText=currentProvider.providerName isFixed=true titleFont=true }}
+    {{#icon-nav}}
+      {{icon-link fontType='person' linkObject=currentProvider linkPath=currentProvider.facilityAdminProviderDetailsPath activePath=currentProvider.providerDetailsActivePath }}
+      {{icon-link fontType='add_box' linkObject=currentProvider linkPath=currentProvider.facilityAdminProviderFacilitiesPath activePath=currentProvider.providerFacilitiesActivePath }}
+      {{#icon-menu fontType='more_vert' }}
+        {{icon-link fontType='mode_edit' linkText='Edit Provider' linkObject=currentProvider linkPath=currentProvider.facilityAdminProviderEditLinkPath }}
+        {{icon-action fontType='clear' labelText='Delete Provider' clickAction=(action 'triggerDelete') actionObject=currentProvider }}
+      {{/icon-menu}}
+    {{/icon-nav}}
+  {{/section-header}}
+  {{yield}}
+{{/component-container}}

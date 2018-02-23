@@ -1,0 +1,20 @@
+.status-icon {
+  &.success {
+    color: $primary-status;
+  }
+  &.error {
+    color: $primary-error;
+  }
+  &.warning {
+    color: $primary-alert;
+  }
+  &.informational {
+    color: $primary-update;
+  }
+  &.inactive {
+    color: $primary-inactive;
+  }
+  &.disabled {
+    color: $primary-disabled;
+  }
+}

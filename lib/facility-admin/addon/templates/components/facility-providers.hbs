@@ -1,0 +1,37 @@
+  {{section-header headerType='section' headerText='Providers' }}
+
+  {{#component-container padding='1,0,2,0'}}
+    {{filter-bar triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter'}}
+  {{/component-container }}
+
+  {{#component-container }}
+    {{#if hasFilteredCollection }}
+      {{#each filteredCollection as |currentProvider| }}
+        {{#table-layout class="column-100" }}
+          {{#table-layout-row }}
+            {{#table-layout-cell class="valign-middle table-layout-row-header column-3" padding="1,0,0,0" }}
+              {{status-icon statusIcon=currentProvider.providerStatus status=currentProvider.statusColor fontSize='x-small' }}
+            {{/table-layout-cell}}
+            {{#table-layout-cell class="valign-middle column-97" padding="0,0,0,0" }}
+              {{#link-to 'manage-lists.providers.provider.provider-details' currentProvider }}
+                {{ currentProvider.providerName }}
+              {{/link-to}}
+            {{/table-layout-cell}}
+          {{/table-layout-row}}
+          {{#if currentProvider.hasListedFacilities }}
+            {{#each currentProvider.individualFacilities as |facility|}}
+              {{#table-layout-row }}
+                {{table-layout-cell class="valign-middle table-layout-row-header column-5"}}
+                {{#table-layout-cell class="valign-middle column-95" padding="0,0,1,0" }}
+                  {{data-point value=facility }}
+                {{/table-layout-cell}}
+              {{/table-layout-row}}
+            {{/each}}
+          {{/if}}
+        {{/table-layout}}
+        {{content-separator class="column-100"}}
+      {{/each}}
+    {{ else }}
+      {{empty-message message="No Providers in result set"}}
+    {{/if}}
+  {{/component-container }}

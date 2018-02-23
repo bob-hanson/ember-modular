@@ -1,0 +1,191 @@
+{{#if isPatientData}}
+
+  {{!-- DRG --}}
+  {{#if isInpatient }}
+    {{section-header headerType='sub-section' headerText="DRG" }}
+    {{#table-layout class="banded-even column-100 outer-border" }}
+      {{#table-layout-row class="table-layout-header" }}
+        {{#table-layout-cell padding="1,0,1,3" percentageWidth=100 }}
+          {{label-component labelText="Reported" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+      {{#table-layout-row}}
+        {{#table-layout-cell padding="1,0,1,3" class="grid-border grid-border-bottom grid-border-left grid-border-right" }}
+          {{#component-container class="form-row" }}
+            {{hyspa-input-component labelText="MS" boundModel=ms percentageWidth=10 }}
+            {{hyspa-input-component labelText="Disposition" boundModel=disp1 percentageWidth=40 }}
+          {{/component-container}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+      {{#table-layout-row}}
+        {{#table-layout-cell padding="1,0,1,3" class="grid-border grid-border-bottom grid-border-left grid-border-right"  }}
+          {{#component-container class="form-row" }}
+            {{hyspa-input-component labelText="APR" boundModel=apr percentageWidth=10 }}
+            {{hyspa-input-component labelText="Disposition" boundModel=disp2 percentageWidth=40 }}
+            {{hyspa-input-component labelText="SOI" boundModel=soi percentageWidth=16 }}
+          {{/component-container}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+      {{#table-layout-row}}
+        {{#table-layout-cell padding="1,0,1,3" class="grid-border grid-border-bottom grid-border-left grid-border-right"  }}
+          {{#component-container class="form-row" }}
+            {{hyspa-input-component labelText="AP" boundModel=ap percentageWidth=10 }}
+            {{hyspa-input-component labelText="Disposition" boundModel=disp3 percentageWidth=40 }}
+          {{/component-container}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+    {{/table-layout}}
+  {{/if}}
+
+  {{!-- Diagnosis Codes --}}
+  {{#component-container padding="2,0,0,0" }}
+    {{section-header headerType='sub-section' headerText="Diagnosis Codes" }}
+    {{#form-component-repeater currentList=secDxCodes addAction=(action 'triggerAddSecDXCode') enableSort=false tagName="div" as |secDxRepeater| }}
+      {{#table-layout class="banded-even column-100 outer-border" }}
+        {{#table-layout-row class="table-layout-header" }}
+          {{#table-layout-cell padding="1,0,1,3" percentageWidth=100 }}
+            {{label-component labelText="Reported" class="table-layout-header-label" }}
+          {{/table-layout-cell}}
+          {{table-layout-cell }}
+          {{table-layout-cell }}
+        {{/table-layout-row}}
+        {{#table-layout-row class="table-layout-secondary-header" }}
+          {{#table-layout-cell padding="1,0,1,3" }}
+            {{label-component labelText="ICD-10" class="table-layout-header-label" }}
+          {{/table-layout-cell}}
+          {{#table-layout-cell padding="1,0,1,3" }}
+            {{label-component labelText="POA" class="table-layout-header-label" }}
+          {{/table-layout-cell}}
+          {{table-layout-cell padding="1,0,1,3" }}
+        {{/table-layout-row}}
+        {{#table-layout-row}}
+          {{#table-layout-cell padding="2,0,2,3" class="grid-border grid-border-bottom grid-border-left grid-border-top" }}
+            {{!-- {{hyspa-input-component boundModel=paDiagnoses labelText="P/A Diagnoses" }} --}}
+            {{hyspa-typeahead boundModel=paDiagnoses filterCollection=icd10Codes filterAfter=5 mustExist=true isRequired=true labelText="TYPEAHEAD TEST" }}
+          {{/table-layout-cell}}
+          {{table-layout-cell padding="2,0,2,0" class="grid-border grid-border-bottom grid-border-top" }}
+          {{table-layout-cell padding="2,0,2,0" class="grid-border grid-border-bottom grid-border-top grid-border-right" }}
+        {{/table-layout-row}}
+        {{#each secDxRepeater.currentList as |secDxCode index| }}
+          {{#secDxRepeater.repeatedComponent currentRepeatedItem=secDxCode itemIndex=index removeItemAction=(action 'triggerRemoveSecDXCode' secDxCode ) tableLayoutRow=true hasRemovalButton=false as |repeatedFormComponent| }}
+            {{#table-layout-cell padding="2,0,2,3" class="grid-border grid-border-bottom grid-border-left" }}
+              {{hyspa-input-component boundModel=secDxCode.code labelText="Sec Diagnoses" }}
+            {{/table-layout-cell}}
+            {{#table-layout-cell padding="2,0,2,0" class="grid-border grid-border-bottom" }}
+            {{/table-layout-cell}}
+            {{#table-layout-cell padding="0,1,0,0" percentageWidth=24 noColSpan=false class="grid-border grid-border-bottom grid-border-right"  }}
+              {{#if index }}
+                {{repeatedFormComponent.removalLink class="pull-right"}}
+              {{/if}}
+            {{/table-layout-cell}}
+          {{/secDxRepeater.repeatedComponent}}
+        {{/each}}
+      {{/table-layout}}
+    {{/form-component-repeater}}
+
+  {{/component-container}}
+
+  {{!-- ICD-10 PCS Procedures --}}
+  {{#if showIcd10 }}
+    {{#component-container padding="2,0,0,0" }}
+      {{section-header headerType='sub-section' headerText="ICD-10 PCS Procedures" }}
+      {{#form-component-repeater currentList=otherIcd10Codes addAction=(action 'triggerAddIcd10Code') enableSort=false tagName="div" as |icd10Repeater| }}
+        {{#table-layout class="banded-even column-100 outer-border" }}
+          {{#table-layout-row class="table-layout-header" }}
+            {{#table-layout-cell padding="1,0,1,3" percentageWidth=100 }}
+              {{label-component labelText="Reported" class="table-layout-header-label" }}
+            {{/table-layout-cell}}
+            {{table-layout-cell }}
+            {{table-layout-cell }}
+          {{/table-layout-row}}
+          {{#table-layout-row class="table-layout-secondary-header" }}
+            {{#table-layout-cell padding="1,0,1,3" }}
+              {{label-component labelText="PCS" class="table-layout-header-label" }}
+            {{/table-layout-cell}}
+            {{#table-layout-cell padding="1,0,1,2" }}
+              {{label-component labelText="DOS" class="table-layout-header-label" }}
+            {{/table-layout-cell}}
+            {{table-layout-cell padding="1,0,1,3" }}
+          {{/table-layout-row}}
+          {{#table-layout-row}}
+            {{#table-layout-cell padding="2,0,2,3" class="grid-border grid-border-bottom grid-border-left grid-border-top" }}
+              {{hyspa-input-component boundModel=principlePCS labelText="Principal Procedure" }}
+            {{/table-layout-cell}}
+            {{#table-layout-cell padding="2,0,2,2" class="grid-border grid-border-bottom grid-border-top" }}
+              {{hyspa-date-picker labelText='' boundModel=principleDOS alignRight=true }}
+            {{/table-layout-cell}}
+            {{table-layout-cell padding="2,0,2,0" class="grid-border grid-border-bottom grid-border-top grid-border-right" }}
+          {{/table-layout-row}}
+          {{#each icd10Repeater.currentList as |otherIcd10Code index| }}
+            {{#repeated-form-component currentRepeatedItem=otherIcd10Codes itemIndex=index removeItemAction=(action 'triggerRemoveIcd10Code' otherIcd10Code ) tableLayoutRow=true hasRemovalButton=false as |repeatedFormComponent| }}
+              {{#table-layout-cell padding="2,0,2,3" class="grid-border grid-border-bottom grid-border-left" }}
+                {{hyspa-input-component boundModel=otherIcd10Code.pcs labelText="Other Procedure Code" }}
+              {{/table-layout-cell}}
+              {{#table-layout-cell padding="2,0,2,2" class="grid-border grid-border-bottom grid-border-top" }}
+                {{hyspa-date-picker labelText='' boundModel=otherIcd10Code.dos alignRight=true }}
+              {{/table-layout-cell}}
+              {{#table-layout-cell padding="0,1,0,0" percentageWidth=24 noColSpan=false class="grid-border grid-border-bottom grid-border-right"  }}
+                {{#if index }}
+                  {{repeatedFormComponent.removalLink class="pull-right"}}
+                {{/if}}
+              {{/table-layout-cell}}
+            {{/repeated-form-component}}
+          {{/each}}
+        {{/table-layout}}
+      {{/form-component-repeater}}
+    {{/component-container}}
+  {{/if}}
+
+  {{!-- CPT Procedures --}}
+  {{#if isOutpatient }}
+    {{#component-container padding="2,0,0,0" }}
+      {{section-header headerType='sub-section' headerText="CPT Procedures" }}
+      {{#form-component-repeater currentList=otherCptCodes addAction=(action 'triggerAddCptCode') enableSort=false tagName="div" as |cptRepeater| }}
+        {{#table-layout class="banded-even column-100 outer-border" }}
+          {{#table-layout-row class="table-layout-header" }}
+            {{#table-layout-cell padding="1,0,1,3" percentageWidth=100 }}
+              {{label-component labelText="Reported" class="table-layout-header-label" }}
+            {{/table-layout-cell}}
+            {{table-layout-cell }}
+            {{table-layout-cell }}
+          {{/table-layout-row}}
+          {{#table-layout-row class="table-layout-secondary-header" }}
+            {{#table-layout-cell padding="1,0,1,3" }}
+              {{label-component labelText="PCS" class="table-layout-header-label" }}
+            {{/table-layout-cell}}
+            {{#table-layout-cell padding="1,0,1,2" }}
+              {{label-component labelText="DOS" class="table-layout-header-label" }}
+            {{/table-layout-cell}}
+            {{table-layout-cell padding="1,0,1,3" }}
+          {{/table-layout-row}}
+          {{#table-layout-row}}
+            {{#table-layout-cell padding="2,0,2,3" class="grid-border grid-border-bottom grid-border-left grid-border-top" }}
+              {{hyspa-input-component boundModel=principleCpt labelText="Principal Procedure" }}
+            {{/table-layout-cell}}
+            {{#table-layout-cell padding="2,0,2,2" class="grid-border grid-border-bottom grid-border-top" }}
+              {{hyspa-date-picker labelText='' boundModel=principleCptDos alignRight=true }}
+            {{/table-layout-cell}}
+            {{table-layout-cell padding="2,0,2,0" class="grid-border grid-border-bottom grid-border-top grid-border-right" }}
+          {{/table-layout-row}}
+          {{#each cptRepeater.currentList as |otherCptCode index| }}
+            {{#repeated-form-component currentRepeatedItem=otherIcd10Codes itemIndex=index removeItemAction=(action 'triggerRemoveCptCode' otherCptCode ) tableLayoutRow=true hasRemovalButton=false as |repeatedFormComponent| }}
+              {{#table-layout-cell padding="2,0,2,3" class="grid-border grid-border-bottom grid-border-left" }}
+                {{hyspa-input-component boundModel=otherCptCode.cpt labelText="Other Procedure Code" }}
+              {{/table-layout-cell}}
+              {{#table-layout-cell padding="2,0,2,2" class="grid-border grid-border-bottom grid-border-top" }}
+                {{hyspa-date-picker labelText='' boundModel=otherCptCode.dos alignRight=true }}
+              {{/table-layout-cell}}
+              {{#table-layout-cell padding="0,1,0,0" percentageWidth=24 noColSpan=false class="grid-border grid-border-bottom grid-border-right"  }}
+                {{#if index }}
+                  {{repeatedFormComponent.removalLink class="pull-right"}}
+                {{/if}}
+              {{/table-layout-cell}}
+            {{/repeated-form-component}}
+          {{/each}}
+        {{/table-layout}}
+      {{/form-component-repeater}}
+    {{/component-container}}
+  {{/if}}
+{{else}}
+
+{{/if}}

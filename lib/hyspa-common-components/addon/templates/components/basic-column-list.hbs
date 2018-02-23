@@ -1,0 +1,23 @@
+{{#if showFilter }}
+  {{#if hasBlock }}
+    {{#column-filter class="input-with-menu" }}
+      {{filter-bar triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter'}}
+      {{yield (hash iconLink=(component 'icon-link' tagName='div' fontType='add' padding='1,0,0,1' class='filter-link'))}}
+    {{/column-filter}}
+  {{else}}
+    {{#column-filter class="input-with-menu" }}
+      {{filter-bar triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter'}}
+      {{yield (hash iconLink=(component 'icon-link' tagName='div' fontType='add' padding='1,0,0,1' class='filter-link'))}}
+    {{/column-filter}}
+  {{/if}}
+{{/if}}
+
+{{#if hasResults }}
+  <ul class='listed-items column-100'>
+    {{#each filteredCollection as |currentItem|}}
+      {{listed-navigation-item linkTextMap=linkTextMap linkPathMap=linkPathMap currentItem=currentItem isInternalNavOnly=true activePathMap=activePathMap }}
+    {{/each}}
+  </ul>
+{{ else }}
+  {{empty-message message=emptyCollectionMessage }}
+{{/if}}

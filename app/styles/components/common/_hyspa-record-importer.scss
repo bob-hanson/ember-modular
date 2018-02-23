@@ -1,0 +1,79 @@
+.hyspa-record-importer {
+  .hyspa-record-importer-header-mapper {
+    display: none;
+  }
+  &.show-mapper {
+    .hyspa-record-importer-file-uploader {
+      display: none;
+    }
+    .hyspa-record-importer-header-mapper {
+      display: block;
+    }
+  }
+  .hyspa-record-importer-column {
+    li {
+      > span {
+        padding-top: calc(2 * #{$base-gutter});
+      }
+      &:hover {
+        .compare-arrows {
+          display: block;
+        }
+      }
+      .compare-arrows {
+        position: absolute;
+        left: -20px;
+        top: 16px;
+        display: none;
+      }
+    }
+  }
+  .hyspa-record-importer-sortable-column {
+    .table-layout-row {
+      &:first-child {
+        > div {
+          &:nth-child(2) {
+            border-top-width: 1px;
+          }
+          &:last-child {
+            border-top-width: 1px;
+          }
+        }
+      }
+      > div {
+        border: solid $grid-border-color 0;
+        &:nth-child(2) {
+          border-left-width: 1px;
+          border-bottom-width: 1px;
+          cursor: grab;
+          cursor: -webkit-grab;
+        }
+        &:last-child {
+          border-right-width: 1px;
+          border-bottom-width: 1px;
+          cursor: grab;
+          cursor: -webkit-grab;
+        }
+      }
+      &.secondary-background-color {
+        .compare-arrows-cell {
+          background-color: $white;
+        }
+      }
+      &:hover {
+        .drag-handle, .header-cell {
+          color: $white;
+        }
+        .compare-arrows, .drag-handle {
+          visibility: visible;
+        }
+      }
+      .compare-arrows, .drag-handle {
+        visibility: hidden;
+      }
+      .drag-handle-cell, .compare-arrows-cell {
+        width: 24px;
+      }
+    }
+  }
+}

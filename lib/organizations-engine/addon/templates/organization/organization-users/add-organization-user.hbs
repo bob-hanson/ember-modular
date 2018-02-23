@@ -1,0 +1,10 @@
+{{#content-view percentageWidth=60 }}
+  {{section-header headerType='page' headerText="New Organization User" isFixed=true}}
+  {{persist-user currentScope='organization'
+                 formTitle="New Organization User"
+                 currentOrganizations=currentOrganizations
+                 currentOrganization=currentOrganization
+                 organizationSelectOptions=organizationSelectOptions
+                 formSubmit=(route-action 'triggerFormSubmit')
+                 formCancel=(route-action 'triggerFormCancel') }}
+{{/content-view }}

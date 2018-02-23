@@ -1,0 +1,31 @@
+.audit-codes-tables {
+
+  .dxcodes-list {
+    .repeated-form-component {
+      &:first-child {
+        .input-component {
+          padding-top: 0;
+        }
+      }
+      &:nth-child(2) {
+        .input-component {
+          padding-top: 4px;
+        }
+      }
+    }
+    .input-component {
+      padding-bottom: 0;
+    }
+  }
+
+  .hcpcs-reported-table {
+    .table-layout-row:nth-child(2) {
+      .table-layout-cell:last-child {
+        .repeated-item-removal-link {
+          display: none;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,44 @@
+  {{#if showHeader }}
+    {{#if wizard}}
+      {{#section-header headerType='page' headerText=tabText titleFont=true }}
+        {{#if isNotLastFormPart }}
+          <span class="form-part-pagination-link in-header pull-right" {{action "triggerNavigateTop"}}>
+            Next: {{paginationTextNext}} {{icon-font fontType="keyboard_arrow_right" class="arrow-right"}}
+          </span>
+        {{/if}}   
+      {{/section-header}}
+    {{else}}
+      {{section-header headerType='page' headerText=tabText isFixed=true titleFont=true }}
+    {{/if}}
+  {{/if}}
+  {{yield (hash input=(component "hyspa-input-component" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                textarea=(component "hyspa-textarea-component" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                datePicker=(component "hyspa-date-picker" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                singleSelect=(component "hyspa-single-select" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                multiSelect=(component "hyspa-multi-select" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                numericInput=(component "numeric-input" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                inputBuilder=(component 'hyspa-input-builder' formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                stateSelect=(component "state-select" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                zipCodeInput=(component "zipcode-input" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                phoneInput=(component "phone-input" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                checkbox=(component "hyspa-checkbox-component" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                switch=(component "hyspa-switch-component" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl'))
+                buttonGroup=(component "hyspa-button-group" formControls=formControls initAction=(action 'triggerRegisterFormControl') destroyAction=(action 'triggerUnregisterFormControl') isFormInput=true)
+  )}}
+
+  {{#if wizard }}
+    {{#component-container class="section-bottom-bar" }}
+      {{#component-container }}
+        {{#if isNotFirstFormPart }}
+          <span class="form-part-pagination-link" {{action "triggerNavigateBottom" true }}>
+            {{icon-font fontType="keyboard_arrow_left" class="arrow-left"}} Previous: {{paginationTextPrevious}}
+          </span>
+        {{/if}}
+        {{#if isNotLastFormPart }}
+          <span class="form-part-pagination-link pull-right" {{action "triggerNavigateBottom"}}>
+            Next: {{paginationTextNext}} {{icon-font fontType="keyboard_arrow_right" class="arrow-right"}}
+          </span>
+        {{/if}}
+      {{/component-container}}
+    {{/component-container}}
+  {{/if}}

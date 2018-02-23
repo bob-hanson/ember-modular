@@ -1,0 +1,25 @@
+{{#if linkObject }}
+  {{#link-to linkPath linkObject class='primary-anchor' activePath=activePath}}
+    {{#if iconLeft }}
+      {{icon-font fontType=fontType fontSize=fontSize activePath=activePath }}
+    {{/if}}
+    {{#if hasLinkText }}
+      <span>{{linkText}}</span>
+    {{/if}}
+    {{#if iconRight }}
+      {{icon-font fontType=fontType fontSize=fontSize activePath=activePath }}
+    {{/if}}
+  {{/link-to}}
+{{else}}
+  {{#link-to linkPath class='primary-anchor' activePath=activePath }}
+    {{#if iconLeft }}
+      {{icon-font fontType=fontType fontSize=fontSize activePath=activePath }}
+    {{/if}}
+    {{#if hasLinkText }}
+      <span>{{linkText}}</span>
+    {{/if}}
+    {{#if iconRight }}
+      {{icon-font fontType=fontType fontSize=fontSize activePath=activePath }}
+    {{/if}}
+  {{/link-to}}
+{{/if}}

@@ -1,0 +1,27 @@
+{{#hyspa-form isValid=isProjectFormValid formFor="facility_project" formSubmitAction=(action 'triggerFormSubmit') formSaveAction=(action 'triggerFormSave') formCancelAction=(action 'triggerFormCancel') isLoading=isLoading as |projectForm| }}
+  {{#component-container class="form-row" }}
+    {{projectForm.input labelText='Audit Name' boundModel=projectName percentageWidth=50 name="audit_name" }}
+    {{projectForm.datePicker labelText='Expected Start Date' isRequired=true boundModel=startDate percentageWidth=25 alignRight=true name="start_date" }}
+    {{projectForm.datePicker labelText='Audit Due Date' isRequired=true boundModel=endDate percentageWidth=25 alignRight=true name="end_date" }}
+  {{/component-container}}
+  {{#component-container class="form-row" }}
+    {{projectForm.singleSelect labelText="Facility" percentageWidth=50 selectOptions=facilityOptions boundModel=facilityId name="facility" }}
+    {{projectForm.singleSelect labelText="Ed Audit Guideline" percentageWidth=50 selectOptions=facilityOptions boundModel=edAuditGuideline name="guideline" }}
+  {{/component-container}}
+  {{#component-container padding="2,0,0,0" }}
+    {{section-header headerType='sub-section' headerText="Assign Audit" }}
+    {{#component-container class="form-row" padding="1,0,0,0" }}
+      {{projectForm.multiSelect labelText="Coder" percentageWidth=50 selectOptions=coderOptions boundCollection=coders name="facility_coders" }}
+      {{projectForm.singleSelect labelText="Auditor" percentageWidth=50 selectOptions=facilityOptions boundModel=auditor name="auditor" }}
+    {{/component-container}}
+    {{#component-container class="form-row" }}
+      {{projectForm.singleSelect labelText="QA Reviewer" percentageWidth=50 selectOptions=facilityOptions boundModel=qaReviewer name="qa_reviewer" }}
+      {{projectForm.numericInput labelText="# Charts per Coder" percentageWidth=50 boundModel=chartsCoders name="encounters_per_coder" }}
+    {{/component-container}}
+    {{#component-container class="form-row" }}
+      {{section-header headerType='sub-section' headerText="Import Claims" }}
+      {{file-uploader percentageWidth=100 }}
+    {{/component-container}}
+  {{/component-container}}
+  {{projectForm.formActions primaryButtonText="Submit" }}
+{{/hyspa-form}}

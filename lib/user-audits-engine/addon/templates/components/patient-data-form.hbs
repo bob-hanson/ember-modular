@@ -1,0 +1,59 @@
+{{#component-container}}
+  {{#component-container class="form-row"}}
+    {{hyspa-input-component labelText='Name' isRequired=true boundModel=currentPatient.name isTouched=nameIsTouched isValid=nameIsValid validationMessage=nameValidation percentageWidth=60 }}
+    {{!-- {{#hyspa-input-builder labelText="Id" isRequired=true boundModel=currentPatient.id isTouched=cityIsTouched isValid=cityIsValid validationMessage=cityValidation percentageWidth=40 as |numericInput| }}
+      {{#numericInput.addon}}${{/numericInput.addon}}
+      {{numericInput.numericInput }}
+      {{#numericInput.addon}}.00{{/numericInput.addon}}
+      {{numericInput.inputCounter }}
+    {{/hyspa-input-builder}} --}}
+    {{hyspa-input-component labelText='Id' isRequired=true boundModel=currentPatient.id isTouched=cityIsTouched isValid=cityIsValid validationMessage=cityValidation percentageWidth=40 }}
+  {{/component-container}}
+
+  {{#component-container class="form-row"}}
+    {{hyspa-date-picker labelText='DOB' boundModel=currentPatient.dob alwaysShowBanner=true isRequired=true isTouched=dobIsTouched isValid=dobIsValid validationMessage=dobValidation percentageWidth=30 }}
+    {{hyspa-button-group labelText="Gender" boundModel=currentPatient.gender radioOptions=currentPatient.genderOptions isFormInput=true percentageWidth=30 }}
+  {{/component-container}}
+
+  {{#component-container class="form-row" }}
+    {{hyspa-single-select selectOptions=currentPatient.posOptions labelText='POS' isRequired=true boundModel=currentPatient.pos isTouched=organizationIsTouched isValid=organizationIsValid percentageWidth=50 }}
+    {{hyspa-button-group labelText="RVU POS" boundModel=currentPatient.rvuPos radioOptions=currentPatient.rvuPosOptions isFormInput=true class="rvu-pos-buttongroup" percentageWidth=33 }}
+    {{hyspa-button-group labelText="POS Correct?" boundModel=currentPatient.posCorrect radioOptions=currentPatient.posCorrectOptions isFormInput=true class="pos-correct-buttongroup" percentageWidth=16 }}
+  {{/component-container}}
+
+  {{#component-container class="form-row" }}
+    {{hyspa-single-select selectOptions=currentPatient.payerOptions labelText='PAYER' isRequired=true boundModel=currentPatient.payer isTouched=payerIsTouched isValid=payerIsValid percentageWidth=50 }}
+    {{hyspa-date-picker labelText='DOS' boundModel=currentPatient.dos defaultDate=dos isRequired=true isTouched=dosIsTouched isValid=dosIsValid validationMessage=dosValidation percentageWidth=30 }}
+  {{/component-container}}
+
+  {{#component-container class="form-row" }}
+
+    {{audit-codes-tables
+      currentDxCodes=currentAuditCodes.dxCodes
+      currentCptHcpcsCodes=currentAuditCodes.hcpcsCodes
+      cptHcpcsAddAction=(action 'triggerAddCptHcpcsCode')
+      cptHcpcsRemoveAction=(action 'triggerRemoveCptHcpcsCode') }}
+
+  {{/component-container}}
+
+  {{#component-container class="form-row"}}
+    {{hyspa-single-select selectOptions=currentPatient.serviceTypeOptions selectedOption=currentPatient.selectedServiceTypeOption labelText='Type of Service' boundModel=currentPatient.serviceType onSelection=(action 'triggerServiceOrVisitTypeChange') }}
+  {{/component-container}}
+
+  {{#component-container class="form-row"}}
+    {{hyspa-single-select selectOptions=currentPatient.visitTypeOptionsFiltered labelText='Type of Visit' boundModel=currentPatient.visitType onSelection=(action 'triggerServiceOrVisitTypeChange') }}
+  {{/component-container}}
+
+  {{#component-container class="form-row"}}
+    {{hyspa-textarea-component labelText='Additional Data' isRequired=false boundModel=currentPatient.additionalData isTouched=additionalDataIsTouched isValid=additionalDataCodeIsValid validationMessage=additionalDataValidation }}
+  {{/component-container}}
+
+  {{#if hasCustomFields}}
+    {{#component-container}}
+      {{hyspa-form-elements-builder fieldDefinitions=customFieldDefinitions boundFieldValues=customFieldValues formName="patientDataCustomFields" }}
+    {{/component-container}}
+  {{/if}}
+
+  {{section-bottom-bar clearAllAction=(action 'triggerClearForm') resetAllAction=(action 'triggerResetForm') nextPath=patientDataNextLink nextPathText=patientDataNextText class="bump-down-2" }}
+
+{{/component-container}}

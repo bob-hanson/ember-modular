@@ -1,0 +1,47 @@
+.list-component {
+  ul {
+    width: 100%;
+    li {
+      width: 100%;
+      padding: 8px;
+
+      .drag-handle {
+        visibility: hidden;
+      }
+
+      &:nth-child(odd):not(.secondary-background-color) {
+        background-color: $light-grey;
+      }
+    }
+    &:active {
+      cursor: grabbing;
+    }
+  }
+  .sortable-objects {
+    width: 100%;
+    li {
+      cursor: move; /* fallback if grab cursor is unsupported */
+      cursor: grab;
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+      &.is-hovering {
+        color: $white;
+        .drag-handle {
+          visibility: visible;
+        }
+      }
+      &:active {
+        cursor: grabbing;
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
+      }
+      &.is-dragging-object {
+        cursor: grabbing;
+        color: $white;
+        margin: 16px 0;
+        -webkit-box-shadow: 5px 5px 5px #888888; /* Android 2.3+, iOS 4.0.2-4.2, Safari 3-4 */
+        box-shadow: 5px 5px 5px #888888;
+      }
+    }
+  }
+}

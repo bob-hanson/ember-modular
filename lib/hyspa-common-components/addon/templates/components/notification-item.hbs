@@ -1,0 +1,20 @@
+{{#if hasBlock }}
+  {{yield}}
+{{ else }}
+  {{#component-container}}
+    {{#component-container percentageWidth=20 }}
+      {{icon-font fontType=notificationIcon fontSize='large' noHover=true usePrimaryColor=true }}
+    {{/component-container }}
+    {{#component-container percentageWidth=75 }}
+      {{section-header headerText=notificationItem.title }}
+      {{data-point value=notificationItem.message padding="0,0,1,0"}}
+    {{/component-container }}
+    {{#component-container percentageWidth=5 }}
+      {{icon-font fontType='clear' clickAction=(action 'triggerRemoveItem') }}
+    {{/component-container }}
+
+    {{#if hasProgress }}
+      {{progress-bar percentComplete=notificationItem.percentComplete }}
+    {{/if}}
+  {{/component-container }}
+{{/if}}

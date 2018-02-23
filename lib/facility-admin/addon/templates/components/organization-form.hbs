@@ -1,0 +1,13 @@
+{{#hyspa-form formFor="facility_organizations" isLoading=isLoading isValid=isProjectFormValid formSubmitAction=(action 'triggerFormSubmit') formCancelAction=(action 'triggerFormCancel') as |f| }}
+  {{section-header headerType='page' headerText=formHeaderText isFixed=true titleFont=true }}
+  {{#component-container class="form-row" }}
+    {{f.input labelText='Organization Name' boundModel=organizationName percentageWidth=70 name='organization_name'}}
+    {{f.input labelText='Organization ID' boundModel=organizationIdentifier percentageWidth=30 name='organization_identifier'}}
+  {{/component-container}}
+
+  {{#component-container class='form-row'}}
+    {{f.textarea labelText='Notes' boundModel=organizationNotes name='organization_notes'}}
+  {{/component-container}}
+
+  {{f.formActions primaryButtonText=primaryButtonText }}
+{{/hyspa-form}}

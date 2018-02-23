@@ -1,0 +1,12 @@
+<div class='drop-zone-area'>
+  {{icon-font fontType='backup'}}
+  <p>Drag file here</p>
+  <p>or</p>
+  <div class="upload-input">
+    <div class="basic-button faux-upload column-100">
+      <span class="placeholder-text">{{ buttonLabel }}</span>
+    </div>
+    {{file-field multiple=isMultiple selectedFiles=selectedFiles resetInputTrigger=resetInputTrigger triggerInputChange=this.attrs.triggerInputChange }}
+  </div>
+  <span class='valid-file-types'>Valid File Types: {{ validFileExtensions }}</span>
+</div>

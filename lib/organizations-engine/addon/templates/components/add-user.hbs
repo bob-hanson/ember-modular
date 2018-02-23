@@ -1,0 +1,19 @@
+{{#if isOrganizationScope }}
+  {{section-header headerType='page' headerText=formTitle isFixed=true}}
+  {{organization-user-form formSubmit=this.attrs.formSubmit
+            formCancel=this.attrs.formCancel
+            primaryButtonText=primaryButtonText
+            currentOrganizations=currentOrganizations
+            currentOrganization=currentOrganization
+            organizationSelectOptions=organizationSelectOptions }}
+{{ else }}
+  {{section-header headerType='page' headerText='New Client User' isFixed=true}}
+  {{user-form formSubmit=this.attrs.formSubmit
+            formCancel=this.attrs.formCancel
+            primaryButtonText=primaryButtonText
+            currentOrganizations=currentOrganizations
+            currentClients=currentClients
+            currentScope=currentScope
+            organizationSelectOptions=organizationSelectOptions
+            clientSelectOptions=clientSelectOptions }}
+{{/if}}

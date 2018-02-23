@@ -1,0 +1,10 @@
+{{#if currentApp.isNotInFullScreenView }}
+  {{organization-users currentOrganization=currentOrganization currentUsers=currentUsers }}
+  {{#if isViewingListFilters }}
+
+  {{ else }}
+    {{outlet}}
+  {{/if}}
+{{ else }}
+  {{outlet}}
+{{/if}}

@@ -1,0 +1,21 @@
+{{#if isOrganizationScope }}
+  {{organization-user-form formTitle=formTitle
+                           formSubmit=this.attrs.formSubmit
+                           formCancel=this.attrs.formCancel
+                           primaryButtonText=primaryButtonText
+                           currentOrganizations=currentOrganizations
+                           currentOrganization=currentOrganization
+                           organizationUser=organizationUser
+                           selectedOrganizationIds=selectedOrganizationIds
+                           organizationSelectOptions=organizationSelectOptions }}
+{{ else }}
+  {{user-form formTitle="New Client User"
+              formSubmit=this.attrs.formSubmit
+              formCancel=this.attrs.formCancel
+              primaryButtonText=primaryButtonText
+              currentOrganizations=currentOrganizations
+              currentClients=currentClients
+              currentScope=currentScope
+              organizationSelectOptions=organizationSelectOptions
+              clientSelectOptions=clientSelectOptions }}
+{{/if}}

@@ -1,0 +1,7 @@
+{{#hyspa-form formFor="facility_checklist_sub_categories" isLoading=isLoading isValid=isProjectFormValid formSubmitAction=(action 'triggerFormSubmit') formCancelAction=(action 'triggerFormCancel') as |f| }}
+  {{section-header headerType='page' headerText=formHeaderText isFixed=true titleFont=true }}
+  {{#component-container class='form-row'}}
+    {{f.input labelText='Category Name' boundModel=categoryName isRequired=true name='category_name'}}
+  {{/component-container }}
+  {{f.formActions primaryButtonText=primaryButtonText }}
+{{/hyspa-form}}

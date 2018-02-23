@@ -1,0 +1,9 @@
+{{#component-container}}
+  {{hyspa-checkbox-group boundCollection=bodyArea.selectedExamElements checkboxOptions=bodyArea.examElements selectAction=(action 'triggerExamElementSelect')  }}
+  {{#if isEye }}
+    <p class="type-small"><b>Ophthalmoscopic examination through dilated pupils (unless contraindicated) of:</b></p>
+    {{#component-container padding="0,0,0,1" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedOphthalmoscopicExamElements checkboxOptions=bodyArea.ophthalmoscopicExamElements selectAction=(action 'triggerExamElementSelect') }}
+    {{/component-container}}
+  {{/if}}
+{{/component-container}}

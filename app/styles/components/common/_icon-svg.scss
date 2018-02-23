@@ -1,0 +1,10 @@
+.icon-svg {
+  display: inline-block;
+  margin-bottom: -6px;
+  path, text {
+    fill: currentColor;
+  }
+  polygon, circle {
+    stroke: currentColor;
+  }
+}

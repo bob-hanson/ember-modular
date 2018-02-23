@@ -1,0 +1,25 @@
+.form-actions {
+  border-top: 1px solid;
+  padding: 8px 0px;
+  margin-top: 16px;
+  .basic-button,
+  .primary-action-wrap {
+    float: right; padding-right: 16px;
+  }
+  .primary-action-wrap {
+    padding-right: 0;
+  }
+  .bubble-tip {
+    position: absolute;
+    &.bottom {
+      top: -144px;
+      left: -25%;
+    }
+    i {
+      .background-arrow,
+      .primary-arrow {
+        left: 171px;
+      }
+    }
+  }
+}

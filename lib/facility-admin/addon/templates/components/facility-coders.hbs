@@ -1,0 +1,37 @@
+  {{section-header headerType='section' headerText='Coders' }}
+
+  {{#component-container padding='1,0,2,0'}}
+    {{filter-bar triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter'}}
+  {{/component-container }}
+
+  {{#component-container }}
+    {{#if hasFilteredCollection }}
+      {{#each filteredCollection as |currentCoder| }}
+        {{#table-layout class="column-100" }}
+          {{#table-layout-row }}
+            {{#table-layout-cell class="valign-middle table-layout-row-header column-3" padding="1,0,0,0" }}
+              {{status-icon statusIcon=currentCoder.coderStatus status=currentCoder.statusColor fontSize='x-small' }}
+            {{/table-layout-cell}}
+            {{#table-layout-cell class="valign-middle column-97" padding="0,0,0,0" }}
+              {{#link-to 'manage-lists.coders.coder.coder-details' currentCoder.id }}
+                {{ currentCoder.coderName }}
+              {{/link-to}}
+            {{/table-layout-cell}}
+          {{/table-layout-row}}
+          {{#if currentCoder.hasListedOrganizations }}
+            {{#each currentCoder.individualOrganizations as |organization|}}
+              {{#table-layout-row }}
+                {{table-layout-cell class="valign-middle table-layout-row-header column-3"}}
+                {{#table-layout-cell class="valign-middle column-97" padding="0,0,1,0" }}
+                  {{data-point value=organization }}
+                {{/table-layout-cell}}
+              {{/table-layout-row}}
+            {{/each}}
+          {{/if}}
+        {{/table-layout}}
+        {{content-separator class="column-100"}}
+      {{/each}}
+    {{ else }}
+      {{empty-message message="No Coders in result set"}}
+    {{/if}}
+  {{/component-container }}

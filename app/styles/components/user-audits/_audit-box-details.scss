@@ -1,0 +1,39 @@
+.audit-details {
+  padding: 8px 16px;
+  .section-header {
+    &.section {
+      padding: 0px 0px 8px 0px;
+      margin-bottom: 0px;
+    }
+  }
+  .audit-details-body {
+    border-top: solid $grid-border-color;
+    border-width: 1px 0;
+    padding: 8px 0 8px 0;
+  }
+  .next-audit-link {
+    padding: 16px 0px;
+  }
+  .table-layout {
+    padding: 8px 0px;
+    .table-layout-cell {
+      padding: 0px;
+      &.align-right {
+        padding: 0px;
+      }
+      &:first-child {
+        padding: 0px;
+      }
+      &:last-child {
+        padding: 0px;
+      }
+      .form-label {
+        font-size: 14px;
+        color: $black;
+        padding: 0px;
+        text-transform: none;
+        font-weight: 600;
+      }
+    }
+  }
+}

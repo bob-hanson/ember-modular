@@ -1,0 +1,139 @@
+.hyspa-modal-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 19;
+  background-color: rgba(200,200,200,.6);
+  display: none;
+}
+
+.confirm-modal-wrapper {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  background-color: $white;
+  border-radius: 0 0 6px 6px;
+  display: none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+  .modal-body {
+    color: $modal-text;
+    .confirm-header {
+      font-weight: bold;
+      font-size: 18px;
+      border-bottom: none;
+    }
+
+    .confirm-message {
+      font-size: 14px;
+    }
+  }
+  .modal-bottom-bar {
+    height: 48px;
+    border-radius: 0 0 6px 6px;
+    button.basic-button {
+      margin-left: 0;
+      width: initial;
+      border: none;
+      float: right;
+      height: 100%;
+      border-radius: 0;
+      &:not(first-child) {
+        margin-left: 2px;
+      }
+      &:first-child {
+        border-bottom-right-radius: 6px;
+      }
+    }
+  }
+}
+
+.hyspa-modal {
+  &.small {
+    width: 280px;
+  }
+  &.medium {
+    width: 540px;
+  }
+  &.large {
+    width: 820px;
+  }
+  &.general {
+    .icon-row {
+      color: $toast-general;
+    }
+    .modal-bottom-bar {
+      background-color: $toast-general;
+      .basic-button {
+        background-color: $toast-general-secondary;
+      }
+    }
+  }
+  &.warning {
+    .icon-row {
+      color: $toast-warning;
+    }
+    .modal-bottom-bar {
+      background-color: $toast-warning;
+      .basic-button {
+        background-color: $toast-warning-secondary;
+      }
+    }
+  }
+  &.info {
+    .icon-row {
+      color: $toast-info;
+    }
+    .modal-bottom-bar {
+      background-color: $toast-info;
+      .basic-button {
+        background-color: $toast-info-secondary;
+      }
+    }
+  }
+  &.error {
+    .icon-row {
+      color: $toast-error;
+    }
+    .modal-bottom-bar {
+      background-color: $toast-error;
+      .basic-button {
+        background-color: $toast-error-secondary;
+      }
+    }
+  }
+  &.success {
+    .icon-row {
+      color: $toast-success;
+    }
+    .modal-bottom-bar {
+      background-color: $toast-success;
+      .basic-button {
+        background-color: $toast-success-secondary;
+      }
+    }
+  }
+
+}
+
+.confirm-modal-open {
+  .hyspa-modal-overlay {
+    display: block;
+  }
+  .confirm-modal-wrapper {
+    display: block;
+  }
+}
+
+.modal-open {
+  .hyspa-modal-overlay {
+    display: block;
+  }
+  .hyspa-modal-wrapper {
+    display: block;
+  }
+}
+

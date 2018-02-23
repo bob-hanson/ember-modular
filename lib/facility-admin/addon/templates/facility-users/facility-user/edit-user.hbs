@@ -1,0 +1,6 @@
+{{#content-view percentageWidth=60 }}
+  {{facility-user-form formModel=currentUser
+                        formSubmit=(route-action 'triggerFormSubmit')
+                        formCancel=(route-action 'triggerFormCancel')
+  }}
+{{/content-view }}

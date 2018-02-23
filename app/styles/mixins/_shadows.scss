@@ -1,0 +1,37 @@
+//
+// Shadow styles
+// --------------------------------------------------
+
+$shadows: (
+	0: 	$shadow-level-0,
+	1: 	$shadow-level-1,
+	2: 	$shadow-level-2,
+	3: 	$shadow-level-3,
+	4: 	$shadow-level-4,
+	5: 	$shadow-level-5,
+);
+
+@function shadow($key) {
+	@if not map-has-key($shadows, $key) {
+		@warn "Key `#{$key}` not found in $shadows map.";
+	}
+	@return map-get($shadows, $key);
+};
+
+
+
+@mixin shadow-transition() {
+	transition: box-shadow $animation-speed-default $animation-type;
+}
+
+@mixin shadow($arg) {
+	box-shadow: shadow($arg);
+}
+
+@mixin shadow-hover($flat, $raised) {
+	@include shadow-transition;
+	@include shadow($flat);
+	&:hover {
+		box-shadow: shadow($raised);
+	}
+}

@@ -1,0 +1,36 @@
+{{#component-container}}
+  {{#component-container class="form-row"}}
+    {{hyspa-input-component labelText='Name' isRequired=true boundModel=name isTouched=nameIsTouched isValid=nameIsValid validationMessage=nameValidation percentageWidth=60 }}
+    {{hyspa-input-component labelText='Id' isRequired=true boundModel=city isTouched=cityIsTouched isValid=cityIsValid validationMessage=cityValidation percentageWidth=40 }}
+  {{/component-container}}
+
+  {{#component-container class="form-row"}}
+    {{hyspa-date-picker labelText='DOB' boundModel=dob defaultDate=dob isRequired=true isTouched=dobIsTouched isValid=dobIsValid validationMessage=dobValidation percentageWidth=30 }}
+    {{hyspa-button-group labelText="Gender" boundModel=gender radioOptions=genderOptions isFormInput=true percentageWidth=30 }}
+  {{/component-container}}
+
+  {{#component-container class="form-row" }}
+    {{hyspa-single-select selectOptions=posSelectOptions labelText='POS' isRequired=true boundModel=pos isTouched=organizationIsTouched isValid=organizationIsValid percentageWidth=50 }}
+    {{hyspa-button-group labelText="RVU POS" boundModel=rvuPos radioOptions=rvuPosOptions isFormInput=true class="rvu-pos-buttongroup" percentageWidth=33}}
+    {{hyspa-button-group labelText="POS Correct?" boundModel=posCorrect radioOptions=posCorrectOptions isFormInput=true class="pos-correct-buttongroup" percentageWidth=16}}
+  {{/component-container}}
+
+  {{#component-container class="form-row" }}
+    {{hyspa-single-select selectOptions=payerSelectOptions labelText='PAYER' isRequired=true boundModel=payer isTouched=payerIsTouched isValid=payerIsValid percentageWidth=50 }}
+    {{hyspa-date-picker labelText='ADMIT DATE' boundModel=admitDate defaultDate=admitDate isRequired=true isTouched=admitDateIsTouched isValid=admitDateIsValid validationMessage=admitDateValidation percentageWidth=33 }}
+    {{hyspa-date-picker labelText='DISCHARGE DATE' boundModel=dischargeDate defaultDate=dischargeDate isRequired=true isTouched=dischargeDateIsTouched isValid=dischargeDateIsValid validationMessage=dischargeDateValidation percentageWidth=16 }}
+  {{/component-container}}
+
+  {{#component-container class="form-row"}}
+    {{hyspa-single-select selectOptions=typeOfServiceOptions labelText='Type of Service' isRequired=true boundModel=typeOfService isTouched=typeOfServiceIsTouched isValid=typeOfServiceIsValid }}
+  {{/component-container}}
+
+  {{#component-container class="form-row"}}
+    {{hyspa-single-select selectOptions=typeOfVisitOptions labelText='Type of Visit' isRequired=true boundModel=typeOfVisit isTouched=typeOfVisitIsTouched isValid=typeOfVisitIsValid }}
+  {{/component-container}}
+
+  {{#component-container class="form-row"}}
+    {{hyspa-textarea-component labelText='Additional Data' isRequired=false boundModel=additionalData isTouched=additionalDataIsTouched isValid=additionalDataCodeIsValid validationMessage=additionalDataValidation }}
+  {{/component-container}}
+
+{{/component-container}}

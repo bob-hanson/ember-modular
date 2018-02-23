@@ -1,0 +1,19 @@
+{{icon-font fontType='apps' clickAction=(action 'triggerToggleMenu')}}
+{{#if isViewingBubbleMenu }}
+  {{#bubble-menu mouseLeaveAction=(action 'triggerToggleMenu')}}
+    <li class='column-100'>
+      {{#link-to 'organizations' }}
+        {{icon-font fontType='pie_chart_outline'}}
+        Admin
+      {{/link-to}}
+    </li>
+    {{#each userProducts as |currentProduct| }}
+      <li class='column-100'>
+        {{#link-to currentProduct.url sessionUser }}
+          {{icon-font fontType='pie_chart_outline'}}
+          {{currentProduct.name}}
+        {{/link-to}}
+      </li>
+    {{/each}}
+  {{/bubble-menu}}
+{{/if}}

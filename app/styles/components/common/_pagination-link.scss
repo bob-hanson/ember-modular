@@ -1,0 +1,30 @@
+.pagination-link {
+  a {
+    padding-top: 1px;
+
+    i {
+      position: absolute;
+      top: 0;
+
+      &.arrow-left {
+        left: 0;
+      }
+
+      &.arrow-right {
+        right: 0;
+      }
+    }
+  }
+
+  &.left {
+    a {
+      padding-left: 22px;
+    }
+  }
+
+  &.right {
+    a {
+      padding-right: 22px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{{#if userAuditState.isNotViewingAudit }}
+  {{#if userAuditState.isViewingFullProjectList }}
+    {{listed-audit-projects-full currentProjects=filteredProjectsByType
+                                 filteredProjectType=filteredProjectType
+                                 transitionToDetailsAction=this.attrs.transitionToDetailsAction
+                                 projectFilterAction=(action 'triggerFilteredProjectsSelect')
+    }}
+  {{ else }}
+    {{#component-column columnType='navigation' percentageWidth=20 }}
+      {{listed-projects currentProjects=filteredProjectsByType }}
+    {{/component-column}}
+    {{#component-container percentageWidth=80}}
+      {{ outlet }}
+    {{/component-container}}
+  {{/if}}
+{{ else }}
+  {{ outlet }}
+{{/if}}

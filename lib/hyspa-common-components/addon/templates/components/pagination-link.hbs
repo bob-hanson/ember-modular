@@ -1,0 +1,9 @@
+{{#link-to linkPath class="next-link" }}
+  {{#if isDirectionLeft }}
+    {{icon-font fontType="keyboard_arrow_left" class="arrow-left"}}
+  {{/if}}
+  {{ linkText }}
+  {{#if isDirectionRight }}
+    {{icon-font fontType="keyboard_arrow_right" class="arrow-right"}}
+  {{/if}}
+{{/link-to}}

@@ -1,0 +1,46 @@
+.basic-button {
+  border: 1px solid $light-type-color;
+  border-radius: 3px;
+  background-color: $white;
+  color: $light-type-color;
+  padding: 5px 16px 6px;
+  text-align: center;
+  overflow: hidden;
+  margin-left: 8px;
+  &.is-disabled {
+    cursor: default;
+  }
+  &.primary-button {
+    border: 1px solid;
+    color: $white;
+  }
+  &.warning {
+    border: 1px solid $warning;
+    color: $warning;
+    .ripple {
+      background: $warning-light;
+    }
+  }
+  &.error {
+    border: 1px solid $error;
+    color: $error;
+    .ripple {
+      background: $error-light;
+    }
+  }
+  &.block-button {
+    width: 100%;
+  }
+  &.link-button {
+    background-color: transparent;
+    border: none;
+    margin-top: 0;
+    .button-label {
+      padding-left: 16px;
+      font-weight: normal;
+    }
+  }
+  &.no-margin {
+    margin-left: 0;
+  }
+}

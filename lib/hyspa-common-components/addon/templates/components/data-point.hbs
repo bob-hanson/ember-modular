@@ -1,0 +1,20 @@
+{{#if hasBlock }}
+  {{yield}}
+{{ else }}
+  {{#if hasLabelIcon }}
+    <span class='label-icon text-bold'>{{icon-font fontType=labelIcon fontSize='small' }}{{ label }}</span>
+  {{ else }}
+    <span class="text-bold">{{ label }}</span>
+  {{/if}}
+
+  {{#if hasValueIcon }}
+    <span class='value-icon {{if valueFloatedRight 'pull-right'}}'>{{icon-font fontType=valueIcon fontSize='small' }}{{ value }}</span>
+  {{ else }}
+    {{#if hasEmailAddress }}
+      {{email-link emailAddress=emailAddress }}
+    {{ else }}
+      <span class="{{if valueFloatedRight 'pull-right'}}">{{ value }}</span>
+    {{/if}}
+  {{/if}}
+
+{{/if}}

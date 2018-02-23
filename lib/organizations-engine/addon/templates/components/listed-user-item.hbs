@@ -1,0 +1,21 @@
+{{#data-point class='listed-item-value' percentageWidth=displayNameWidth}}
+  {{#link-to viewRoute currentUser title=currentUser.fullName }}
+    {{currentUser.fullName }}
+  {{/link-to}}
+{{/data-point}}
+<div class='item-toolbar'>
+  {{#listed-navigation-dynamic-icons}}
+    {{#link-to viewRoute currentUser }}
+      {{icon-font fontType='info_outline' fontSize='small' isActive=detailIconIsActive}}
+    {{/link-to}}
+  {{/listed-navigation-dynamic-icons}}
+  {{#if canEdit }}
+    {{#icon-menu fontType='more_vert' fontSize='small'}}
+      {{icon-link fontType='mode_edit' linkPath=editRoute linkObject=currentUser linkText='Edit'}}
+    {{/icon-menu}}
+  {{/if}}
+</div>
+
+{{#if isActive }}
+  <div class="selected-element"></div>
+{{/if}}

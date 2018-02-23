@@ -1,0 +1,74 @@
+{{#if reportedOnly }}
+
+  {{section-header headerType='sub-section' headerText="Diagnosis Code(s)" }}
+
+  {{#component-container class="dxcodes-list" padding="2,0,0,0" }}
+    {{label-component labelText="Diagnosis Codes" }}
+    {{#form-component-repeater currentList=currentDxCodes addAction=(action 'triggerAddDxCode') enableSort=false tagName="div" as |formComponentRepeater| }}
+      {{#each formComponentRepeater.currentList as |diagnosisCode| }}
+        {{#repeated-form-component currentRepeatedItem=diagnosisCode removeItemAction=(action 'triggerRemoveDxCode' diagnosisCode ) }}
+          {{hyspa-input-component boundModel=diagnosisCode.reported onBoundModelChange=(action 'triggerDxCodeChange' diagnosisCode ) }}
+        {{/repeated-form-component}}
+      {{/each}}
+    {{/form-component-repeater}}
+  {{/component-container}}
+
+  {{section-header headerType='sub-section' headerText="CPT / HCPCS (EM Code)" }}
+
+  {{#form-component-repeater currentList=currentCptHcpcsCodes addAction=(action 'triggerAddHcpcsCode') enableSort=false tagName="div" as |formComponentRepeater| }}
+    {{#table-layout class="banded-even column-100 hcpcs-reported-table outer-border" }}
+      {{#table-layout-row class="table-layout-header" }}
+        {{#table-layout-cell padding="1,0,1,1" percentageWidth=12 noColSpan=false }}
+          {{label-component labelText="Code" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell percentageWidth=9 noColSpan=false }}
+          {{label-component labelText="Mod" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell percentageWidth=9 noColSpan=false }}
+          {{label-component labelText="Mod" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell percentageWidth=9 noColSpan=false }}
+          {{label-component labelText="Mod" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell percentageWidth=9 noColSpan=false }}
+          {{label-component labelText="Unit" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell percentageWidth=40 noColSpan=false }}
+          {{label-component labelText="Map" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell percentageWidth=24 noColSpan=false }}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+      {{#each formComponentRepeater.currentList as |hcpcsCode| }}
+        {{#repeated-form-component currentRepeatedItem=hcpcsCode removeItemAction=(action 'triggerRemoveHcpcsCode' hcpcsCode ) tableLayoutRow=true hasRemovalButton=false as |repeatedFormComponent| }}
+          {{#table-layout-cell padding="1,1,1,1" percentageWidth=12 noColSpan=false }}
+            {{hyspa-input-component boundModel=hcpcsCode.reported.code }}
+          {{/table-layout-cell}}
+          {{#table-layout-cell padding="0,1,0,0" percentageWidth=9 noColSpan=false }}
+            {{hyspa-input-component boundModel=hcpcsCode.reported.mod1 }}
+          {{/table-layout-cell}}
+          {{#table-layout-cell padding="0,1,0,0" percentageWidth=9 noColSpan=false }}
+            {{hyspa-input-component boundModel=hcpcsCode.reported.mod2 }}
+          {{/table-layout-cell}}
+          {{#table-layout-cell padding="0,1,0,0" percentageWidth=9 noColSpan=false }}
+            {{hyspa-input-component boundModel=hcpcsCode.reported.mod3 }}
+          {{/table-layout-cell}}
+          {{#table-layout-cell padding="0,1,0,0" percentageWidth=9 noColSpan=false }}
+            {{hyspa-input-component boundModel=hcpcsCode.reported.unit }}
+          {{/table-layout-cell}}
+          {{#table-layout-cell padding="0,1,0,0" percentageWidth=40 noColSpan=false }}
+            {{hyspa-multi-select boundCollection=hcpcsCode.reported.map selectOptions=hcpcsCode.reported.reportedMapOptions }}
+          {{/table-layout-cell}}
+          {{#table-layout-cell padding="0,1,0,0" percentageWidth=24 noColSpan=false }}
+            {{repeatedFormComponent.removalLink class="pull-right"}}
+          {{/table-layout-cell}}
+        {{/repeated-form-component}}
+      {{/each}}
+    {{/table-layout}}
+  {{/form-component-repeater}}
+
+
+{{else}}
+
+
+{{/if}}

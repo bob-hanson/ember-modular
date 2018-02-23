@@ -1,0 +1,11 @@
+{{#component-container class='table-filter facilities-filter input-with-menu' padding='0,0,2,0'}}
+  {{filter-bar triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter'}}
+  {{#icon-menu fontType='more_vert' fontSize='medium' padding='1,0,0,1'}}
+    {{icon-link fontType='add' linkPath='manage-lists.facilities.new-facility' linkText='Add Facility' }}
+    {{icon-link fontType='backup' linkPath='manage-lists.facilities.bulk-upload' linkText='Bulk Upload'}}
+  {{/icon-menu}}
+{{/component-container}}
+
+{{hyspa-light-table tableDefinition=tableDefinition gridCollection=filteredCollection }}
+
+{{ outlet }}

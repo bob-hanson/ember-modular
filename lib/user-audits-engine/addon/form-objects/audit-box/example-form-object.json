@@ -1,0 +1,923 @@
+{
+        "audit_encounter_json": {
+            "meta": {
+                "is_completed": true,
+                "audit_type": "pro",
+                "audit_project_id": 56,
+                "audit_user_id": 23
+            },
+            "patient_data": {
+                "name": "Felix",
+                "patient_id": 65,
+                "date_of_birth": "5/12/1972",
+                "gender": "male",
+                "place_of_service": "garfield",
+                "rvu_pos": "facility",
+                "pos_correct": true,
+                "payer": "bar",
+                "date_of_service": "4/18/1985",
+                "audit_user_type": "coder",
+                "service_type": "Observation Care",
+                "visit_type": "bar",
+                "additional_data": "foo",
+                "admit_date": "5/21/2016",
+                "discharge_date": "5/25/2016",
+                "custom_form_values": {
+                  "fields": [
+                    {
+                      "field_id": 1,
+                      "value": "bar"
+                    }
+                  ]
+                }
+            },
+            "audit_history": {
+                "history_unobtainable": true,
+                "chief_complaint_documented": null,
+                "chief_complaint_additional_info": "foo",
+                "present_illness": {
+                    "quick_click_value": "details",
+                    "details_selections": ["modifyingFactors", "context"],
+                    "present_illness_status": "3 or more",
+                    "calculation": "brief"
+                },
+                "review_of_system": {
+                    "quick_click_value": "details",
+                    "details_selections": ["neuro", "endo", "resp"],
+                    "calculation": "brief"
+                },
+                "medical_history": {
+                    "quick_click_value": "details",
+                    "details_selections": {
+                        "past": ["allergies", "dietary status"],
+                        "family": ["related to cc, hpi, or ros"],
+                        "social": ["sexual history" ]
+                    },
+                    "calculation": "brief"
+                },
+                "custom_form_values": {
+                  "fields": [
+                    {
+                      "field_id": 2,
+                      "value": "bar"
+                    }
+                  ]
+                }
+            },
+            "examination": {
+                "selected_exam_key": "pe97",
+                "calculation": "Det",
+                "pe95": {
+                    "selected_exam_audit_type": "foo",
+                    "exam_audit_types": {
+                        "cms": {
+                            "quick_click_value": "foo",
+                            "documented_in_details": true,
+                            "complete_examination": false,
+                            "details": {
+                                "organ_systems_selected": ["foo"],
+                                "body_areas_selected": ["foo"]
+                            }
+                        },
+                        "noridian": {
+                            "quick_click_value": "foo",
+                            "complete_examination": false,
+                            "details": {
+                                "organ_systems_selected": ["foo"],
+                                "body_areas_selected": ["foo"]
+                            }
+                        },
+                        "novitas": {
+                            "quick_click_value": "foo",
+                            "complete_examination": false,
+                            "selected_multiple_areas": "foo",
+                            "details": {
+                                "organ_systems_selected": ["foo"],
+                                "body_areas_selected": ["foo"]
+                            }
+                        },
+                        "marshfield": {
+                            "quick_click_value": "foo",
+                            "details": {
+                                "organ_systems_selected": ["foo"],
+                                "body_areas_selected": ["foo"]
+                            }
+                        },
+                        "ngs": {
+                            "quick_click_value": "foo",
+                            "expanded_documentation": true,
+                            "details": {
+                                "organ_systems_selected": ["foo"],
+                                "body_areas_selected": ["foo"]
+                            }
+                        }
+                    },
+                    "custom_form_values": {
+                      "fields": [
+                        {
+                          "field_id": 3,
+                          "value": "bar"
+                        }
+                      ]
+                    }
+                },
+                "pe97": {
+                    "selected_audit_type": "specialtySpecific",
+                    "multi_system_audit_type": {
+                        "quick_click_value": "foo",
+                        "body_areas": {
+                            "constitutional": {
+                                "selected_exam_elements": ["foo"],
+                                "vitals_selected": true,
+                                "selected_vitals": ["bar"]
+                            },
+                            "eyes": {
+                                "selected_exam_elements": ["foo"]
+                            },
+                            "ent": {
+                                "selected_exam_elements": ["foo"]
+                            },
+                            "neck": {
+                                "selected_exam_elements": ["foo"]
+                            },
+                            "respiratory": {
+                                "selected_exam_elements": ["foo"]
+                            },
+                            "cardiovascular": {
+                                "selected_exam_elements": ["foo"],
+                                "selected_examination_of_elements": ["foo"]
+                            },
+                            "chest": {
+                                "selected_exam_elements": ["foo"]
+                            },
+                            "gastrointestinal": {
+                                "selected_exam_elements": ["foo"]
+                            },
+                            "genitourinary": {
+                                "selected_exam_elements": ["foo"],
+                                "selected_male_exam_elements": ["foo"]
+                            },
+                            "musculoskeletal": {
+                                "selected_exam_elements": ["foo"],
+                                "selected_head_elements": ["foo"],
+                                "selected_spine_elements": ["foo"],
+                                "selected_right_upper_elements": ["foo"],
+                                "selected_left_upper_elements": ["foo"],
+                                "selected_right_lower_elements": ["foo"],
+                                "selected_left_lower_elements": ["foo"],
+                            },
+                            "lymphatic": {
+                                "selected_exam_elements": ["foo"]
+                            },
+                            "skin": {
+                                "selected_exam_elements": ["foo"]
+                            },
+                            "neurologic": {
+                                "selected_exam_elements": ["foo"]
+                            },
+                            "psychiatric": {
+                                "selected_exam_elements": ["foo"],
+                                "selected_mental_status_elements": ["foo"]
+                            }
+                        }
+                    },
+                    "specialty_specific_audit_type": {
+                        "selected_specialty": "foo",
+                        "specialties": {
+                            "cardiovascular": {
+                                "quick_click_value": "foo",
+                                "constitutional": {
+                                    "selected_exam_elements": ["foo"],
+                                    "vitals_selected": true,
+                                    "selected_vitals": ["bar"]
+                                },
+                                "eyes": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "ent": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "neck": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "respiratory": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "cardiovascular": {
+                                    "selected_exam_elements": ["foo"],
+                                    "selected_examination_of_elements": ["foo"]
+                                },
+                                "gastrointestinal": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "musculoskeletal": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "extremites": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "skin": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "neurologic": {
+                                    "selected_exam_elements": ["foo"]
+                                }
+                            },
+                            "ent": {
+                                "quick_click_value": "foo",
+                                "constitutional": {
+                                    "selected_exam_elements": ["foo"],
+                                    "vitals_selected": true,
+                                    "selected_vitals": ["bar"]
+                                },
+                                "head_face": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "eyes": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "ent": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "neck": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "respiratory": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "cardiovascular": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "lymphatic": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "neurologic": {
+                                    "selected_exam_elements": ["foo"],
+                                    "selected_mental_status_elements": ["foo"]
+                                }
+                            },
+                            "eye": {
+                                "quick_click_value": "foo",
+                                "eyes": {
+                                    "selected_exam_elements": ["foo"],
+                                    "selected_ophthalmoscopic_exam_elements": ["foo"]
+                                },
+                                "neurologic": {
+                                    "selected_exam_elements": ["foo"]
+                                }
+                            },
+                            "genitourinary_m": {
+                                "quick_click_value": "foo",
+                                "constitutional": {
+                                    "selected_exam_elements": ["foo"],
+                                    "vitals_selected": true,
+                                    "selected_vitals": ["bar"]
+                                },
+                                "neck": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "respiratory": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "cardiovascular": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "chest": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "gastrointestinal": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "genitourinary": {
+                                    "selected_exam_elements": ["foo"],
+                                    "selected_genitalia_exam_elements": ["foo"],
+                                    "selected_rectal_exam_elements": ["foo"]
+                                },
+                                "lymphatic": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "skin": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "neurologic": {
+                                    "selected_exam_elements": ["foo"]
+                                }
+                            },
+                            "genitourinary_f": {
+                                "quick_click_value": "foo",
+                                "constitutional": {
+                                    "selected_exam_elements": ["foo"],
+                                    "vitals_selected": true,
+                                    "selected_vitals": ["bar"]
+                                },
+                                "neck": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "respiratory": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "cardiovascular": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "chest": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "gastrointestinal": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "genitourinary": {
+                                    "selected_exam_elements": ["foo"],
+                                    "selected_pelvic_exam_elements": ["foo"]
+                                },
+                                "lymphatic": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "skin": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "neurologic": {
+                                    "selected_exam_elements": ["foo"]
+                                }
+                            },
+                            "hematologic": {
+                                "quick_click_value": "foo",
+                                "constitutional": {
+                                    "selected_exam_elements": ["foo"],
+                                    "vitals_selected": true,
+                                    "selected_vitals": ["bar"]
+                                },
+                                "head_face": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "eyes": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "ent": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "neck": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "respiratory": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "cardiovascular": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "gastrointestinal": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "lymphatic": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "skin": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "neurologic": {
+                                    "selected_exam_elements": ["foo"]
+                                }
+                            },
+                            "musculoskeletal": {
+                                "quick_click_value": "foo",
+                                "constitutional": {
+                                    "selected_exam_elements": ["foo"],
+                                    "vitals_selected": true,
+                                    "selected_vitals": ["bar"]
+                                },
+                                "cardiovascular": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "lymphatic": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "musculoskeletal": {
+                                    "selected_exam_elements": ["foo"],
+                                    "selected_head_elements": ["foo"],
+                                    "selected_spine_elements": ["foo"],
+                                    "selected_right_upper_elements": ["foo"],
+                                    "selected_left_upper_elements": ["foo"],
+                                    "selected_right_lower_elements": ["foo"],
+                                    "selected_left_lower_elements": ["foo"],
+                                },
+                                "extremites": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "skin": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "neurologic": {
+                                    "selected_exam_elements": ["foo"],
+                                    "selected_mental_status_elements": ["foo"]
+                                }
+                            },
+                            "neurological": {
+                                "quick_click_value": "foo",
+                                "constitutional": {
+                                    "selected_exam_elements": ["foo"],
+                                    "vitals_selected": true,
+                                    "selected_vitals": ["bar"]
+                                },
+                                "eyes": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "cardiovascular": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "musculoskeletal": {
+                                    "selected_exam_elements": ["foo"],
+                                    "selected_motor_functions": ["foo"]
+                                },
+                                "extremites": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "neurologic": {
+                                    "selected_exam_elements": ["foo"],
+                                    "selected_cranial_nerve_elements": ["foo"]
+                                }
+                            },
+                            "psychiatric": {
+                                "quick_click_value": "foo",
+                                "constitutional": {
+                                    "selected_exam_elements": ["foo"],
+                                    "vitals_selected": true,
+                                    "selected_vitals": ["bar"]
+                                },
+                                "musculoskeletal": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "psychiatric": {
+                                    "selected_exam_elements": ["foo"],
+                                    "selected_mental_status_elements": ["foo"]
+                                }
+                            },
+                            "respiratory": {
+                                "quick_click_value": "foo",
+                                "constitutional": {
+                                    "selected_exam_elements": ["foo"],
+                                    "vitals_selected": true,
+                                    "selected_vitals": ["bar"]
+                                },
+                                "ent": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "neck": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "respiratory": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "cardiovascular": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "lymphatic": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "musculoskeletal": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "extremites": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "skin": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "neurologic": {
+                                    "selected_exam_elements": ["foo"]
+                                }
+                            },
+                            "skin": {
+                                "quick_click_value": "foo",
+                                "constitutional": {
+                                    "selected_exam_elements": ["foo"],
+                                    "vitals_selected": true,
+                                    "selected_vitals": ["bar"]
+                                },
+                                "eyes": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "ent": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "neck": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "cardiovascular": {
+                                    "selected_exam_elements": ["foo"],
+                                    "selected_examination_of_elements": ["foo"]
+                                },
+                                "gastrointestinal": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "lymphatic": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "extremites": {
+                                    "selected_exam_elements": ["foo"]
+                                },
+                                "skin": {
+                                    "selected_exam_elements": ["foo"],
+                                    "selected_inspection_elements": ["foo"],
+                                    "selected_eccrine_elements": ["foo"]
+                                },
+                                "neurologic": {
+                                    "selected_exam_elements": ["foo"]
+                                }
+                            }
+                        }
+                    }
+                },
+                "custom_form_values": {
+                  "fields": [
+                    {
+                      "field_id": 4,
+                      "value": "bar"
+                    }
+                  ]
+                }
+            },
+            "medical_decision_making": {
+              "isMdmRequired": true,
+              "diagnoses_options": {
+                "selfLimitedMinorRating": 2,
+                "estProblemImprovedRating": 3,
+                "trackedEstProblemWorseningRating": 1,
+                "newProblemNoWorkupPlannedRating": 3,
+                "trackedNewProblemWorkupPlannedRating": 2
+              },
+              "data_reviewed": {
+                "reviewClinicalTests": true,
+                "reviewRadiologyTests": true,
+                "reviewMedicineTests": true,
+                "physicianDiscussion": false,
+                "obtainOldRecords": true,
+                "reviewOldRecords": true,
+                "independentVisualization": true
+              },
+              "risk": {
+                "selectedRiskQuickClick": "details",
+                "diagnostic_procedures_ordered": {
+                  "selectedMinimalElements": ["ekgEEG"],
+                  "selectedLowElements": [],
+                  "selectedModerateElements": ["deepNeedle", "obtainFluid"],
+                  "selectedHighElements": []
+                },
+                "management_options_selected": {
+                  "selectedMinimalElements": [],
+                  "selectedLowElements": [],
+                  "selectedModerateElements": [],
+                  "selectedHighElements": []
+                },
+                "presenting_problems": {
+                  "selectedMinimalElements": [],
+                  "selectedLowElements": [],
+                  "selectedModerateElements": [],
+                  "selectedHighElements": []
+                }
+              },
+              "custom_form_values": {
+                "fields": [
+                  {
+                    "field_id": 5,
+                    "value": "bar"
+                  }
+                ]
+              }
+            },
+            "time_based_coding": {
+                "visit_type": "foo",
+                "patient_type": "bar",
+                "reveal_total_face_time": true,
+                "more_than_half_counseling": false,
+                "documentation_describes_content": true,
+                "total_face_time": null,
+                "calculated_code": "foo",
+                "custom_form_values": {
+                  "fields": [
+                    {
+                      "field_id": 6,
+                      "value": "bar"
+                    }
+                  ]
+                }
+            },
+            "critical_care_services": {
+                "total_time": 65,
+                "custom_form_values": {
+                  "fields": [
+                    {
+                      "field_id": 7,
+                      "value": "bar"
+                    }
+                  ]
+                }
+            },
+            "procedures": {
+                "listed_procedures": [
+                    {
+                      "procedure_type": "EKG",
+                      "dynamic_object_id": 1,
+                      "procedure_questions": [
+                        {
+                            "dynamic_object_id": 1,
+                            "procedure_answer": true
+                        },
+                        {
+                            "dynamic_object_id": 3,
+                            "procedure_answer": true
+                        },
+                        {
+                          "dynamic_object_id": 5,
+                          "procedure_answer": false
+                        }
+                      ],
+                      "additional_info": "bar"
+                    },
+                    {
+                      "procedure_type": "Lab",
+                      "dynamic_object_id": 3,
+                      "procedure_questions": [
+                        {
+                          "dynamic_object_id": 1,
+                          "procedure_answer": true
+                        },
+                        {
+                          "dynamic_object_id": 2,
+                          "procedure_answer": false
+                        },
+                        {
+                          "dynamic_object_id": 3,
+                          "procedure_answer": true
+                        },
+                        {
+                          "dynamic_object_id": 4,
+                          "procedure_answer": true
+                        }
+                      ]
+                    }
+                ],
+                "custom_form_values": {
+                  "fields": [
+                    {
+                      "field_id": 8,
+                      "value": "bar"
+                    }
+                  ]
+                }
+            },
+            "documentation_elements": {
+                "no_issues": false,
+                "elements": ["Incident To does not appear to meet guidelines", "Medical record appears to have cloned elements"],
+                "other": "foo",
+                "custom_form_values": {
+                  "fields": [
+                    {
+                      "field_id": 9,
+                      "value": "bar"
+                    }
+                  ]
+                }
+            },
+            "audit_codes": {
+                "diagnosis_codes": [
+                    {
+                        "reported": "foo",
+                        "audited": "bar",
+                        "dynamic_object_id": 3,
+                        "override": {
+                            "scoring": "foo",
+                            "reason": "bar"
+                        }
+                    }
+                ],
+                "hcpcs_codes": [
+                    {
+                        "reported": {
+                          "code": "bar",
+                          "mod1": "foo",
+                          "mod2": "foo",
+                          "mod3": "foo",
+                          "unit": "bar",
+                          "rvu": "foo",
+                          "map": ["Practice B"]
+                        },
+                        "audited": {
+                          "code": "bar",
+                          "mod1": "foo",
+                          "mod2": "foo",
+                          "mod3": "foo",
+                          "unit": "bar",
+                          "rvu": "foo",
+                          "map": []
+                        },
+                        "override": {
+                            "scoring": "foo",
+                            "reason": "bar"
+                        }
+                    }
+                ]
+            }
+        },
+
+        "audit_box_dynamic_form_data": {
+          "patient_data": {
+            "custom_form_elements": {
+              "fields": [
+                {
+                  "field_id": 1,
+                  "field_type": 1,
+                  "label": "foo"
+                }
+              ]
+            }
+          },
+          "audit_history": {
+            "custom_form_elements": {
+              "fields": [
+                {
+                  "field_id": 2,
+                  "field_type": 1,
+                  "label": "foo"
+                }
+              ]
+            }
+          },
+          "examination": {
+            "pe95": {
+              "custom_form_elements": {
+                "fields": [
+                  {
+                    "field_id": 3,
+                    "field_type": 1,
+                    "label": "foo"
+                  }
+                ]
+              }
+            },
+            "pe97": {
+              "custom_form_elements": {
+                "fields": [
+                  {
+                    "field_id": 4,
+                    "field_type": 1,
+                    "label": "foo"
+                  }
+                ]
+              }
+            }
+          },
+          "medical_decision_making": {
+            "custom_form_elements": {
+              "fields": [
+                {
+                  "field_id": 5,
+                  "field_type": 1,
+                  "label": "foo"
+                }
+              ]
+            }
+          },
+          "time_based_coding": {
+            "custom_form_elements": {
+              "fields": [
+                {
+                  "field_id": 6,
+                  "field_type": 1,
+                  "label": "foo"
+                }
+              ]
+            }
+          },
+          "critical_care_services": {
+            "custom_form_elements": {
+              "fields": [
+                {
+                  "field_id": 7,
+                  "field_type": 1,
+                  "label": "foo"
+                }
+              ]
+            }
+          },
+          "procedures": {
+            "custom_form_elements": {
+              "fields": [
+                {
+                  "field_id": 8,
+                  "field_type": 1,
+                  "label": "foo"
+                }
+              ]
+            } ,
+            "listed_procedures": [
+              {
+                "procedure_type": "EKG",
+                "dynamic_object_id": 1,
+                "procedure_questions": [
+                  {
+                    "question": "Order / Indication",
+                    "dynamic_object_id": 1
+                  },
+                  {
+                    "question": "Interpretation",
+                    "dynamic_object_id": 2
+                  },
+                  {
+                    "question": "Signed tracing",
+                    "dynamic_object_id": 3
+                  },
+                  {
+                    "question": "Verbal order signed",
+                    "dynamic_object_id": 4
+                  },
+                  {
+                    "question": "Comparison documented when available for Medicare",
+                    "dynamic_object_id": 5
+                  }
+                ]
+              },
+              {
+                "procedure_type": "Injection / Immunization",
+                "dynamic_object_id": 2,
+                "procedure_questions": [
+                  {
+                    "question": "foo",
+                    "dynamic_object_id": 1
+                  },
+                  {
+                    "question": "bar",
+                    "dynamic_object_id": 2
+                  }
+                ]
+              },
+              {
+                "procedure_type": "Lab",
+                "dynamic_object_id": 3,
+                "procedure_questions": [
+                  {
+                    "question": "Order Indication",
+                    "dynamic_object_id": 1
+                  },
+                  {
+                    "question": "Results",
+                    "dynamic_object_id": 2
+                  },
+                  {
+                    "question": "Clia Waived",
+                    "dynamic_object_id": 3
+                  },
+                  {
+                    "question": "Phlebotomy",
+                    "dynamic_object_id": 4
+                  }
+                ]
+              },
+              {
+                "procedure_type": "Radiology",
+                "dynamic_object_id": 4,
+                "procedure_questions": [
+                  {
+                    "question": "foo",
+                    "dynamic_object_id": 1
+                  },
+                  {
+                    "question": "bar",
+                    "dynamic_object_id": 2
+                  }
+                ]
+              },
+              {
+                "procedure_type": "Other",
+                "dynamic_object_id": 5,
+                "procedure_questions": [
+                  {
+                    "question": "foo",
+                    "dynamic_object_id": 1
+                  },
+                  {
+                    "question": "bar",
+                    "dynamic_object_id": 2
+                  }
+                ]
+              }
+            ]
+          },
+          "documentation_elements": {
+              "custom_form_elements": {
+                "fields": [
+                  {
+                    "field_id": 9,
+                    "field_type": 1,
+                    "label": "foo"
+                  }
+                ]
+              },
+              "elements": [
+                "Handwritten notes are not legible",
+                "Incident To does not appear to meet guidelines",
+                "Medical record includes inconsistent documentation",
+                "Medical record appears to have cloned elements",
+                "Ink spilled all over sections"
+              ]
+            }
+        }
+    }

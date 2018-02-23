@@ -1,0 +1,12 @@
+{{#column-filter}}
+  {{filter-bar triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter'}}
+{{/column-filter}}
+{{#if hasOrganizations }}
+  <ul class='listed-items column-100'>
+    {{#each filteredOrganizations as |currentOrganization|}}
+      {{listed-organization-item currentOrganization=currentOrganization parentComponent=this}}
+    {{/each}}
+  </ul>
+{{ else }}
+  {{empty-message message=emptyCollectionMessage }}
+{{/if}}

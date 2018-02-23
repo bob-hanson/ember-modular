@@ -1,0 +1,37 @@
+{{#hyspa-form formFor="facility_coders" isValid=isProjectFormValid formSubmitAction=(action 'triggerFormSubmit') formCancelAction=(action 'triggerFormCancel') as |f| }}
+  {{section-header headerType='page' headerText='Srihari' isFixed=true titleFont=true padding='1,0,2,0'}}
+
+  {{#component-container class='form-row'}}
+    {{f.input labelText='First Name' isRequired=true boundModel=coderFirstName percentageWidth=33 name='coder_first_name'}}
+    {{f.input labelText='Middle Name' boundModel=coderMiddleName percentageWidth=33 name='coder_middle_name'}}
+    {{f.input labelText='Last Name' isRequired=true boundModel=coderLastName percentageWidth=33 name='coder_last_name'}}
+  {{/component-container}}
+
+  {{#component-container class='form-row'}}
+    {{f.input labelText='Coder ID' boundModel=coderIndentifier percentageWidth=30 name='coder_identifier'}}
+    {{f.input labelText='Email' isRequired=true boundModel=coderEmail percentageWidth=40 name='coder_email'}}
+    {{f.input labelText='Phone' boundModel=coderPhone percentageWidth=30 name='coder_phone'}}
+  {{/component-container}}
+
+  {{#component-container class='form-row'}}
+    {{f.input labelText='Credential' isRequired=true boundModel=coderCredential percentageWidth=50 name='coder_credential'}}
+    {{f.multiSelect selectOptions=specialtyOptions labelText='Specialties' isRequired=true boundCollection=auditSpecialtyIds percentageWidth=50 name='audit_specialty_ids'}}
+  {{/component-container}}
+
+  {{#component-container class='form-row'}}
+    {{f.multiSelect selectOptions=organizationOptions labelText='Organizations' isRequired=true boundCollection=facilityOrganizationIds percentageWidth=50 name='facility_organization_ids'}}
+    {{f.multiSelect selectOptions=facilityOptions labelText='Facilities' isRequired=true boundCollection=facilityIds percentageWidth=50 name='facility_ids' }}
+  {{/component-container}}
+
+  {{#component-container class='form-row'}}
+    {{f.datePicker labelText='Employment Contract Date' boundModel=contractDate defaultDate=contractDate percentageWidth=30 name='contract_date' }}
+    {{f.datePicker labelText='Employment Termed Date' boundModel=termedDate defaultDate=termedDate percentageWidth=30 name='termed_date' }}
+    {{f.buttonGroup labelText="Employment Status" boundModel=coderStatus radioOptions=employmentTypeOptions isFormInput=true percentageWidth=40 name='coder_status'}}
+  {{/component-container}}
+
+  {{#component-container class='form-row'}}
+    {{f.input labelText='Notes' boundModel=coderNotes isTextArea=true name='coder_notes'}}
+  {{/component-container }}
+
+  {{f.formActions primaryButtonText=primaryButtonText }}
+{{/hyspa-form}}

@@ -1,0 +1,12 @@
+.section-bottom-bar {
+  .reset-clear-buttons {
+    width: initial;
+  }
+   > div {
+    border-top: 1px solid $grid-border-color;
+    padding-top: 8px;
+  }
+  .pagination-link {
+    padding-top: 4px;
+  }
+}

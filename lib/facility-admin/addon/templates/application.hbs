@@ -1,0 +1,9 @@
+<div id="secondary-nav-wrap">
+  {{#secondary-nav}}
+    {{link-to 'Manage Users' 'facility-users' }}
+    {{link-to 'Manage Lists' 'manage-lists' }}
+    {{link-to 'Audit Settings' 'audit-settings.audit-guidelines' current-when='audit-settings' }}
+  {{/secondary-nav}}
+</div>
+{{outlet}}
+{{hyspa-action-panel }}

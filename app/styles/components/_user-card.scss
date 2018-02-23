@@ -1,0 +1,132 @@
+.app .user-details-card i {
+  color: $white;
+  position: absolute;
+  right: 3px;
+  top: 7px;
+}
+.user-details-card {
+  margin-bottom: 8px;
+
+  .card-color {
+    background: $user-card;
+    height: 96px;
+    margin-bottom: 60px;
+    width: 100%;
+  }
+  .user-avatar {
+    background: #fff;
+    border: 1px solid $user-card;
+    border-radius: 50%;
+    bottom: -40px;
+    height: 100px;
+    left: 50%;
+    margin-left: -50px;
+    position: absolute;
+    text-align: center;
+    top: 42px;
+    width: 100px;
+    .user-initials {
+      background: none;
+      padding-top: 19px;
+      margin: 0 auto;
+      float: initial;
+      vertical-align: middle;
+      color: $user-card;
+      font-size: 41px;
+    }
+  }
+  .user-card-details {
+    margin-bottom: 10px;
+
+    li {
+      font-size: 1.1em;
+
+      &.user-name {
+        color: $light-type-color;
+        font-family: $headline-font-family;
+        font-size: 1.4em;
+        font-weight: 100;
+      }
+
+      &.user-email {
+        text-align: center;
+
+        a {
+          float: initial;
+        }
+      }
+    }
+  }
+  hr {
+    margin: 0 5%;
+    padding: 5px 0;
+    width: 90%;
+  }
+}
+.user-details-card .user-card-details,
+.user-permissions ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+.user-details-card .user-card-details li,
+.user-permissions li {
+  list-style-type: none;
+  padding: 3px 0;
+  width: 100%;
+}
+.user-permissions {
+  padding: 0px 30px;
+  width: 100%;
+  ul.listed-permissions {
+    margin: 0;
+    padding: 10px 0 0 7px;
+  }
+  h2 {
+    border: none;
+    color: $type-color-body;
+  }
+  li.compliance i {
+    color: $compliance;
+  }
+  li.audit i {
+    color: $audit;
+  }
+  li .role i {
+    color: $accent-color;
+  }
+  .listed-products,
+  .listed-products li {
+    padding: 5px 0 5px 20px;
+    text-align: left;
+    width: 100%;
+  }
+  .listed-products {
+    font-family: $headline-font-family;
+    font-size: 1.2em;
+    margin-bottom: 8px;
+
+    i {
+      position: absolute;
+      left: -10px;
+      top: 0;
+    }
+  }
+  .listed-roles {
+    padding: 10px 0 0 5px;
+    width: 100%;
+
+    .role {
+      font-family: $type-font-primary;
+      font-size: 0.85em;
+      font-weight: bold;
+    }
+  }
+}
+.user-actions {
+  padding: 10px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}

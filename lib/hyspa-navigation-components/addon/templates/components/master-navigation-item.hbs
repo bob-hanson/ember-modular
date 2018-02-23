@@ -1,0 +1,11 @@
+{{#if isAuthorized }}
+  {{#if isExternal }}
+    {{external-link linkPath=linkPath linkText=linkText }}
+  {{ else }}
+    {{#link-to linkPath current-when=activeChildRoutes }}
+      {{ linkText }}
+      {{icon-font fontType='arrow_drop_up' class='active-master-nav-icon-shadow'}}
+      {{icon-font fontType='arrow_drop_up' class='active-master-nav-icon-main'}}
+    {{/link-to}}
+  {{/if}}
+{{/if}}

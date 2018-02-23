@@ -1,0 +1,32 @@
+{{#component-container }}
+  {{hyspa-checkbox-group boundCollection=bodyArea.selectedExamElements checkboxOptions=bodyArea.examElements selectAction=(action 'triggerExamElementSelect') }}
+
+  {{#if isMultiSystemOrMusculoskeletal }}
+    <p class="type-small"><b>Examination of joints, bones, and muscles of one or more of the following six areas:</b></p>
+    {{#component-container padding="0,0,0,1"}}
+      {{section-header headerType='sub-section' headerText="Head and neck" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedNeckExamElements checkboxOptions=bodyArea.neckExamElements selectAction=(action 'triggerExamElementSelect') }}
+      {{section-header headerType='sub-section' headerText="Spine, ribs, and pelvis" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedSpineExamElements checkboxOptions=bodyArea.spineExamElements selectAction=(action 'triggerExamElementSelect') }}
+      {{section-header headerType='sub-section' headerText="Right upper extremity" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedRightUpperExamElements checkboxOptions=bodyArea.rightUpperExamElements selectAction=(action 'triggerExamElementSelect') }}
+      {{section-header headerType='sub-section' headerText="Left upper extremity" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedLeftUpperExamElements checkboxOptions=bodyArea.leftUpperExamElements selectAction=(action 'triggerExamElementSelect') }}
+      {{section-header headerType='sub-section' headerText="Right lower extremity" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedRightLowerExamElements checkboxOptions=bodyArea.rightLowerExamElements selectAction=(action 'triggerExamElementSelect') }}
+      {{section-header headerType='sub-section' headerText="Left lower extremity" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedLeftLowerExamElements checkboxOptions=bodyArea.leftLowerExamElements selectAction=(action 'triggerExamElementSelect') }}
+    {{/component-container}}
+    {{#if isMusculoskeletal }}
+      <p class="type-small"><b>NOTE: For the comprehensive level, the examination of all four anatomic areas must be performed and documented. For the three lower levels of examination, each body area is counted separately (e.g inspection andor palpation of the skin and subcutaneous tissue of two extremities constitute two elements).</b></p>
+    {{/if}}
+  {{/if}}
+
+  {{#if isNeurological }}
+    <p class="type-small"><b>Assessment of motor function, including:</b></p>
+    {{#component-container padding="0,0,0,1" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedMotorElements checkboxOptions=bodyArea.motorElements selectAction=(action 'triggerExamElementSelect') }}
+    {{/component-container}}
+  {{/if }}
+
+{{/component-container}}

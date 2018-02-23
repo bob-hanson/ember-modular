@@ -1,0 +1,7 @@
+{{#if hasSessionUserAvatar }}
+  <img src="#{userAvatar}" alt="#{sessionUserName}" />
+{{ else }}
+  <div class="user-initials">
+    {{ userInitials }}
+  </div>
+{{/if}}

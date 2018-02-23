@@ -1,0 +1,17 @@
+<div class="column-100">
+  {{#if hasLabel}}
+    {{label-component labelText=labelText percentageWidth=100 launchHelp=launchHelp }}
+    <div class="radio-buttons">
+      {{#each radioOptions as |radioOption| }}
+        {{radio-button selectAction=(action 'triggerRadioSelect') radioOption=radioOption isEnabled=isEnabled }}
+      {{/each}}
+    </div>
+    {{else}}
+    {{#each radioOptions as |radioOption| }}
+      {{radio-button selectAction=(action 'triggerRadioSelect') radioOption=radioOption percentageWidth=radioButtonWidth isEnabled=isEnabled }}
+    {{/each}}
+  {{/if}}
+  {{#if hasValueAndEnabledClearSelection }}
+    {{icon-button iconType='clear' buttonText='Clear Selection' buttonType='error' clickAction=(action 'triggerClearSelection')}}
+  {{/if}}
+</div>

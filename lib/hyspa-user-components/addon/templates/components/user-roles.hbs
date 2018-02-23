@@ -1,0 +1,20 @@
+{{#component-container percentageWidth=100}}
+  {{#if hasRoles }}
+    {{#component-container class='component-section' percentageWidth=50 }}
+      {{component-header headerText='Compliance Manager'}}
+      {{data-point value='Client Administrator' }}
+      {{data-point value='Compliance Manager' }}
+      {{data-point value='Device Manager' }}
+      {{data-point value='Risk Assesment Manager' }}
+    {{/component-container}}
+
+    {{#component-container class='component-section' percentageWidth=50}}
+      {{component-header headerText='Audit Manager'}}
+      {{data-point value='Admin User' }}
+      {{data-point value='Education' }}
+    {{/component-container}}
+  {{ else }}
+    {{empty-message messageHeader='' message=emptyMessage }}
+  {{/if}}
+
+{{/component-container}}

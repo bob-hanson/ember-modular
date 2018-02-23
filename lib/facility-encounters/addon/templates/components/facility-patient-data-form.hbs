@@ -1,0 +1,54 @@
+{{#if currentPatientData.isFullyLoaded }}
+  {{#component-container}}
+    {{#component-container class="form-row" }}
+      {{hyspa-input-component labelText='Name' isRequired=true boundModel=currentPatientDataFormModel.patientName isTouched=patientNameIsTouched isValid=patientNameIsValid percentageWidth=50 }}
+      {{hyspa-input-component labelText='Id' isRequired=true boundModel=currentPatientDataFormModel.patientId isTouched=patientIdIsTouched isValid=patientIdIsValid percentageWidth=50 }}
+    {{/component-container}}
+
+    {{#component-container class="form-row" }}
+      {{hyspa-date-picker labelText='DOB' boundModel=currentPatientDataFormModel.patientDob isTouched=patientDobIsTouched isValid=patientDobIsValid isRequired=true percentageWidth=25 }}
+      {{hyspa-button-group labelText="Gender" boundModel=currentPatientDataFormModel.patientGender radioOptions=genderOptions isFormInput=true percentageWidth=25 }}
+      {{!-- {{hyspa-button-group labelText="Facility" boundModel=currentPatientDataFormModel.facilityType radioOptions=facilityTypeOptions isFormInput=true isRequired=true isTouched=facilityTypeIsTouched isValid=facilityTypeIsValid percentageWidth=32 }} --}}
+      {{hyspa-button-group labelText="Rc Correct" boundModel=currentPatientDataFormModel.rcCorrect radioOptions=rcCorrectOptions isFormInput=true percentageWidth=18 }}
+    {{/component-container}}
+
+    {{#component-container class="form-row" }}
+      {{hyspa-single-select labelText="POS" isRequired=true boundModel=currentPatientDataFormModel.facilityPosId selectOptions=posOptions percentageWidth=50 }}
+      {{hyspa-button-group labelText="Pos Correct" boundModel=currentPatientDataFormModel.posCorrect radioOptions=posCorrectOptions isFormInput=true percentageWidth=50 }}
+    {{/component-container}}
+
+    {{#component-container class="form-row" }}
+      {{hyspa-input-component labelText="Provider" boundModel=currentPatientDataFormModel.facilityProviderId percentageWidth=50 }}
+      {{hyspa-input-component labelText="Payer" boundModel=currentPatientDataFormModel.facilityPayerId percentageWidth=50 }}
+    {{/component-container}}
+
+    {{#component-container class="form-row" }}
+      {{hyspa-date-picker labelText='Admit Date' boundModel=currentPatientDataFormModel.admitDate percentageWidth=33 }}
+      {{hyspa-date-picker labelText='Discharge Date' boundModel=currentPatientDataFormModel.dischargeDate percentageWidth=33 }}
+      {{hyspa-date-picker labelText='RA Paydate' boundModel=currentPatientDataFormModel.raPaydate percentageWidth=33 alignRight=true }}
+    {{/component-container}}
+
+    {{facility-codes-section isPatientData=true padding="0,0,2,0" }}
+
+    {{#component-container class="form-row" }}
+      {{hyspa-single-select labelText="Type of Service" isRequired=true boundModel=currentPatientDataFormModel.typeOfServiceId selectOptions=serviceTypeOptions selectedOption=selectedServiceType onSelection=(action 'triggerServiceTypeChange') }}
+    {{/component-container}}
+
+    {{#if hasVisitTypeOptions }}
+      {{#component-container class="form-row" }}
+        {{hyspa-single-select labelText="Type of Visit" isRequired=true boundModel=currentPatientDataFormModel.typeOfVisitId selectOptions=filteredVisitTypeOptions }}
+      {{/component-container}}
+    {{/if}}
+
+
+    {{#component-container class="form-row" }}
+      {{hyspa-textarea-component labelText='Aditional Data' boundModel=currentPatientDataFormModel.additionalData percentageWidth=100 }}
+    {{/component-container}}
+
+    {{audit-box-section-bottom-bar clearAllAction=(action 'triggerClearForm') resetAllAction=(action 'triggerResetForm') nextPath=checklistPath nextPathText="Next: Checklist" }}
+
+  {{/component-container}}
+
+{{else}}
+  {{loading-element }}
+{{/if}}

@@ -1,0 +1,22 @@
+$spacing-directions: (
+  top: top,
+  right: right,
+  bottom: bottom,
+  left: left
+);
+
+$spacing-factors: (
+  0: 0,
+  1: 1,
+  2: 2,
+  3: 3,
+  4: 4
+);
+
+@each $directionKey, $direction in $spacing-directions {
+  @each $factorKey, $factor in $spacing-factors {
+    .padding-#{$direction}-#{$factor} {
+      padding-#{$direction}: calc(#{$factor} * #{$base-gutter});
+    }
+  }
+}

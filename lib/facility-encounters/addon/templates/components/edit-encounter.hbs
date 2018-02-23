@@ -1,0 +1,59 @@
+{{#component-container }}
+  {{#if isPeekingProjects }}
+    {{#component-column percentageWidth=20 }}
+      {{#component-container padding="3,1,2,1" }}
+        {{icon-link linkPath="projects.project.project-details.project-encounters" fontType="arrow_back" }}
+        {{section-header headerText="Work Queue Details" headerType="sub-section" }}
+      {{/component-container}}
+      {{basic-column-list currentCollection=currentProjects linkTextMap="patientName" current-when=editEncounterPath showFilter=false }}
+    {{/component-column}}
+    {{!-- {{component-column-with-list currentCollection=currentProjects current-when=editEncounterPath percentageWidth=20 linkTextMap="patientName" emptyCollectionMessage="There are no projects matching your search or filtering criteria" }} --}}
+  {{/if}}
+
+  {{#component-column columnType='navigation' percentageWidth=20 tagName='aside'}}
+    {{#component-container padding="3,1,2,2" }}
+      {{icon-font fontType=peekArrow clickAction=(action 'triggerProjectsPeekToggle') }}
+      {{section-header headerText="Audit Box Details" headerType="sub-section" }}
+      {{#component-container padding="1,0,0,0"}}
+        {{data-point label='Reported DRG' value="700" arrangement="horizontal" valueFloatedRight=true }}
+        {{data-point label='Audited DRG' value="700" arrangement="horizontal" valueFloatedRight=true }}
+        {{content-separator padding="1,0,1,0" }}
+        {{data-point label='Client' value="Demo Enterprise" arrangement="horizontal" }}
+        {{data-point label='Patient' value=currentEncounter.patientName arrangement="horizontal" }}
+        {{data-point label='Admit' value="Demo Enterprise" arrangement="horizontal" }}
+        {{data-point label='Discharge' value=currentEncounter.patientName arrangement="horizontal" }}
+        {{data-point label='POS' value=currentEncounter.patientName arrangement="horizontal" }}
+      {{/component-container}}
+
+    {{/component-container}}
+
+    {{#component-container padding='2,0,0,0' tagName="ul" }}
+      {{listed-navigation-item displayValue='Patient Data' linkPath=patientDataPath }}
+      {{listed-navigation-item displayValue='Checklist' linkPath=checklistPath }}
+      {{listed-navigation-item displayValue='Daignosis and Procedure Codes' linkPath=codesPath }}
+    {{/component-container}}
+
+    {{#component-container class="stacked-buttons" padding="3,1,0,1" }}
+      {{basic-button clickAction=(action 'triggerSaveDraft') buttonText='Save Draft' class='primary-button primary-background-color' }}
+      {{basic-button clickAction=(action 'triggerSaveAndComplete') buttonText='Save and Complete' }}
+    {{/component-container}}
+
+  {{/component-column }}
+
+  {{#component-container percentageWidth=auditBoxContentWidth class="audit-box-content-wrapper" }}
+    {{outlet}}
+  {{/component-container}}
+
+  {{#ember-wormhole to="action-panel-wormhole-top"}}
+    {{#hyspa-action-panel-actions-menu as |actionMenu| }}
+      {{actionMenu.menuItem menuItemText="How To" componentToRender="hi mom" }}
+      {{actionMenu.menuItem menuItemText="Code Research" componentToRender="hi mom" }}
+      {{actionMenu.menuItem menuItemText="Audit Guidelines" componentToRender="hi mom" }}
+      {{actionMenu.menuItem menuItemText="Internal Note" componentToRender="hi mom" }}
+      {{actionMenu.menuItem menuItemText="Missing Information Request" componentToRender="hi mom" }}
+      {{actionMenu.menuItem menuItemText="Chart Level Comments" componentToRender="chart-level-comments" }}
+      {{actionMenu.menuItem menuItemText="Key Findings and Recommendations" componentToRender="key-findings" }}
+    {{/hyspa-action-panel-actions-menu}}
+  {{/ember-wormhole}}
+
+{{/component-container}}

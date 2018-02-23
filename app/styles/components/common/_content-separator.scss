@@ -1,0 +1,12 @@
+.content-separator {
+  hr {
+    height: 1px;
+    background-color: $grid-head-border-color;
+  }
+  // border-top: 1px solid $grid-head-border-color;
+}
+
+.component-column .content-separator hr {
+  display: inherit;
+  margin: 0;
+}

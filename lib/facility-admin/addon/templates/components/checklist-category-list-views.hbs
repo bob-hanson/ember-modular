@@ -1,0 +1,10 @@
+{{#if isViewingChecklistCategoryNotSort }}
+  {{#component-column-with-list currentCollection=currentCategories activePath="audit-settings/checklists/categories/" linkPathMap="facilityAdminChecklistCategoryPath" linkTextMap='categoryName' }}
+    {{#icon-menu fontType='more_vert' fontSize='medium' padding='1,0,0,1'}}
+      {{icon-link fontType='add' linkPath="audit-settings.checklists.categories.new-category" linkText="Add Category" }}
+      {{icon-link fontType='backup' linkPath="audit-settings.checklists.categories.bulk-upload" linkText='Bulk Upload'}}
+    {{/icon-menu}}
+  {{/component-column-with-list}}
+{{ else }}
+  {{listed-checklist-categories-full currentCategories=currentCategories }}
+{{/if}}

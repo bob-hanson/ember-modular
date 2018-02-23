@@ -1,0 +1,10 @@
+{{#if isViewingFindingsRecommendationTemplate }}
+  {{#component-column-with-list currentCollection=currentTemplates activePath="audit-settings/findings-recommendations/templates/" linkPathMap="facilityAdminKeyFindingTemplatePath" linkTextMap='shortDescription' }}
+    {{#icon-menu fontType='more_vert' fontSize='medium' padding='1,0,0,1'}}
+      {{icon-link fontType='add' linkPath="audit-settings.findings-recommendations.templates.new-template" linkText="Add Template" }}
+      {{!-- {{icon-link fontType='backup' linkPath="audit-settings.checklists.categories.bulk-upload" linkText='Bulk Upload'}} --}}
+    {{/icon-menu}}
+  {{/component-column-with-list}}
+{{ else }}
+  {{listed-findings-recommendations-templates-full currentCollection=currentTemplates }}
+{{/if}}

@@ -1,0 +1,10 @@
+{{#if facilityAudit.isViewingProject }}
+  {{#component-column-with-list currentCollection=currentProjects current-when="projects.project" percentageWidth=20 emptyCollectionMessage="There are no projects matching your search or filtering criteria" as |projectList| }}
+    {{projectList.iconLink linkPath='projects.new-project' }}
+  {{/component-column-with-list}}
+  {{ outlet }}
+{{else}}
+  {{facility-projects-table-full currentCollection=currentProjects }}
+{{/if}}
+
+{{yield}}

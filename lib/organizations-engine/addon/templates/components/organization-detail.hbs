@@ -1,0 +1,25 @@
+{{#section-header headerType='page' headerText=currentOrganization.name titleFont=true }}
+  {{#icon-nav }}
+    {{#if isSuperOrganizationUser }}
+      {{#icon-menu fontType='more_vert' fontSize='medium'}}
+        {{icon-link fontType='mode_edit' linkPath='organization.edit-organization' linkObject=currentOrganization linkText='Edit'}}
+      {{/icon-menu}}
+    {{/if}}
+  {{/icon-nav }}
+{{/section-header}}
+{{#tabs-container padding="0,0,0,0" }}
+  {{#tabs-list}}
+    {{tab-button tabText='Details'}}
+    {{tab-button tabText='Healthicity Contacts'}}
+    {{tab-button tabText='Modules'}}
+  {{/tabs-list}}
+  {{#tab-panel}}
+    {{organization-detail-details-tab currentOrganization=currentOrganization }}
+  {{/tab-panel}}
+  {{#tab-panel}}
+    {{organization-detail-hycontacts-tab currentModel=currentOrganization }}
+  {{/tab-panel}}
+  {{#tab-panel}}
+    {{organization-detail-modules-tab currentModel=currentOrganization }}
+  {{/tab-panel}}
+{{/tabs-container}}

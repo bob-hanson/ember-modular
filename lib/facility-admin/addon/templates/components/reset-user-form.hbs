@@ -1,0 +1,9 @@
+{{#hyspa-form formFor="users" isLoading=isLoading isValid=isProjectFormValid formSubmitAction=(action 'triggerFormSubmit') formCancelAction=(action 'triggerFormCancel') as |f| }}
+  {{section-header headerType='page' headerText=headerText titleFont=true }}
+  {{#component-container class='form-row'}}
+    {{f.input type='password' labelText='Current Password' boundModel=currentPassword isRequired=true name='current_password' }}
+    {{f.input type='password' labelText='Password' boundModel=newPassword isRequired=true name='password' focusOutAction=(action 'triggerValidatePasswordConfirm')}}
+    {{f.input type='password' labelText='Password Confirmation' boundModel=confirmPassword isRequired=true name='password_confirmation' focusOutAction=(action 'triggerValidatePasswordConfirm') }}
+  {{/component-container }}
+  {{f.formActions primaryButtonText=primaryButtonText }}
+{{/hyspa-form}}

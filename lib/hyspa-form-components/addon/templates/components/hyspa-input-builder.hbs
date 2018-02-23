@@ -1,0 +1,18 @@
+<div class="column-100">
+  {{#if hasLabel }}
+    {{label-component labelText=labelText isRequired=isRequired isFocused=isFocused }}
+  {{/if}}
+  <div class="hyspa-input-builder">
+    {{yield (hash input=(component "hyspa-input-component" boundModel=boundModel padding="0,0,0,0")
+                  numericInput=(component "numeric-input" boundModel=boundModel padding="0,0,0,0")
+                  inputCounter=(component "hyspa-input-counters" boundModel=boundModel)
+                  addon=(component "hyspa-input-addon" boundModel=boundModel)
+                  datePicker=(component "pikaday-input" value=boundModel)
+                  buttonGroup=(component 'hyspa-button-group' padding="0,0,0,0" isFormInput=isFormInput)
+                  filterBar=(component 'filter-bar')) }}
+  </div>
+
+  {{!-- {{#if isInvalid }}
+    {{input-validation validationMessage=validationMessage }}
+  {{/if}} --}}
+</div>

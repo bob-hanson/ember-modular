@@ -1,0 +1,25 @@
+{{#hyspa-form formFor="facility_facilities" isLoading=isLoading isValid=isProjectFormValid formSubmitAction=(action 'triggerFormSubmit') formCancelAction=(action 'triggerFormCancel') as |f| }}
+  {{section-header headerType='page' headerText=formHeaderText titleFont=true }}
+  {{#component-container class='form-row'}}
+    {{f.input labelText='Facility Name' boundModel=facilityName isRequired=true name='facility_name'}}
+  {{/component-container }}
+  {{#component-container class='form-row'}}
+    {{f.input labelText='Address' boundModel=facilityAddress1 name='facility_address_1'}}
+  {{/component-container }}
+  {{#component-container class='form-row'}}
+    {{f.input labelText='Address 2' boundModel=facilityAddress2 name='facility_address_2'}}
+  {{/component-container }}
+  {{#component-container class='form-row'}}
+    {{f.input labelText='City' boundModel=facilityCity percentageWidth=25 name='facility_city'}}
+    {{f.stateSelect labelText='State' boundModel=facilityState isRequired=true percentageWidth=25 name='facility_state'}}
+    {{f.zipCodeInput labelText='Zip' percentageWidth=20 boundModel=facilityZip name='facility_zip'}}
+    {{f.phoneInput labelText='Phone' boundModel=facilityPhone percentageWidth=30 name='facility_phone'}}
+  {{/component-container }}
+  {{#component-container class='form-row'}}
+    {{f.multiSelect labelText='Providers' boundCollection=facilityProviderIds selectOptions=providerOptions name='facility_provider_ids'}}
+  {{/component-container }}
+  {{#component-container class='form-row'}}
+    {{f.multiSelect labelText='Coders' boundCollection=facilityCoderIds selectOptions=coderOptions name='facility_coder_ids'}}
+  {{/component-container }}
+  {{f.formActions primaryButtonText=primaryButtonText }}
+{{/hyspa-form}}

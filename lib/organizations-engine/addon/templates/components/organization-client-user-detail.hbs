@@ -1,0 +1,8 @@
+{{#component-column class='user-details' columnType='navigation'}}
+  {{user-details-card currentUser=currentUser}}
+  {{user-roles-permissions-card class='user-permissions' currentUser=currentUser}}
+  <div class="user-actions">
+    {{icon-button iconType='mode_edit' buttonText='Edit User' buttonType='warning' actionModel=currentUser clickAction=attrs.triggerUserEdit }}
+    {{icon-button iconType='vpn_key' buttonText='Reset Password' buttonType='error' clickAction=(action 'triggerResetPassword')}}
+  </div>
+{{/component-column}}

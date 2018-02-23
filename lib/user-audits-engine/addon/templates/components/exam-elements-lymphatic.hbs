@@ -1,0 +1,11 @@
+{{#component-container }}
+  {{#if isMultiSystem }}
+    <p class="type-small">Palpation of lymph nodes in <b>two or more</b> areas:</p>
+    {{#component-container class="indent-left-2" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedExamElements checkboxOptions=bodyArea.examElements selectAction=(action 'triggerExamElementSelect') }}
+    {{/component-container}}
+  {{else}}
+    {{hyspa-checkbox-group boundCollection=bodyArea.selectedExamElements checkboxOptions=bodyArea.examElements selectAction=(action 'triggerExamElementSelect') }}
+  {{/if}}
+
+{{/component-container}}

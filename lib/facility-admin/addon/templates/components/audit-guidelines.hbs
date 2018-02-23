@@ -1,0 +1,9 @@
+{{#if isNotCreatingGuideLine }}
+  {{#if isViewingNestedViews }}
+    {{#component-column columnType='navigation' padding="2,0,0,0" }}
+      {{listed-guidelines currentCollection=currentGuidelines }}
+    {{/component-column }}
+  {{ else }}
+    {{listed-guidelines-full currentCollection=currentGuidelines }}
+  {{/if}}
+{{/if}}

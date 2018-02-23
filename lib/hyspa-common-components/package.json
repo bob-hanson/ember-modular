@@ -1,0 +1,16 @@
+{
+  "name": "hyspa-common-components",
+  "keywords": [
+    "ember-addon"
+  ],
+  "dependencies": {
+    "ember-cli-htmlbars": "*",
+    "ember-cli-babel": "*",
+    "ember-drag-drop": "*"
+  },
+  "ember-addon": {
+    "paths": [
+      "../hyspa-file-uploader"
+    ]
+  }
+}

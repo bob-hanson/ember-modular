@@ -1,0 +1,43 @@
+{{#component-container padding="0,2,1,2" }}
+  {{section-header headerType='section' headerText="Chart Level Comments" }}
+  {{#table-layout class="banded-odd column-100 outer-border" }}
+    {{#table-layout-row}}
+      {{#table-layout-cell padding="2,2,2,2" }}
+        {{#hyspa-form formFor="encounter_checklist_response" formSubmitAction=(action 'triggerAddComment') as |commentForm| }}
+          {{commentForm.textarea name="modified_description" boundModel=commentToAdd rows=2 }}
+          {{#component-container padding="1,0,0,0" }}
+            {{commentForm.submitButton buttonText="Add Comment" percentageWidth=40 noMargin=true }}
+          {{/component-container}}
+        {{/hyspa-form}}
+      {{/table-layout-cell}}
+    {{/table-layout-row}}
+  {{/table-layout}}
+{{/component-container}}
+
+{{#component-container class="listed-chart-level-comments" padding="0,2,0,2" }}
+  {{#if commentsLoading }}
+    {{loading-element }}
+  {{/if}}
+  {{#table-layout class="banded-even column-100 outer-border"}}
+    {{#each currentChartLevelComments as |chartLevelComment index| }}
+      {{#repeated-form-component currentRepeatedItem=chartLevelComment itemIndex=index removeItemAction=(action 'triggerRemoveComment' chartLevelComment ) hasRemovalButton=false tableLayoutRow=true as |repeatedFormComponent|}}
+        {{#table-layout-cell padding="1,1,1,1" percentageWidth=90 noColSpan=false class="grid-border grid-border-bottom" }}
+          {{hyspa-textarea-component boundModel=chartLevelComment.modifiedDescription rows=2 onBoundModelChange=(action 'triggerCommentChange' chartLevelComment) }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell padding="1,1,1,0" percentageWidth=10 noColSpan=false class="grid-border grid-border-bottom valign-middle"  }}
+          {{repeatedFormComponent.removalLink class="pull-right"}}
+        {{/table-layout-cell}}
+      {{/repeated-form-component}}
+    {{/each}}
+  {{/table-layout}}
+{{/component-container}}
+
+{{#component-container padding="2,0,0,0" }}
+  {{#component-container padding="0,2,0,2" }}
+    {{section-header headerText="Add template-based comments from below" headerType="section" }}
+    {{filter-bar filterValue=filterValue triggerFilter=(action 'triggerFilterCollection') placeholderText='Filter by category, sub category, or status' }}
+  {{/component-container}}
+  {{hyspa-light-table tableDefinition=chartLevelCommentsTemplatesTableDefinition gridCollection=filteredComments padding="2,0,0,0" }}
+{{/component-container}}
+
+

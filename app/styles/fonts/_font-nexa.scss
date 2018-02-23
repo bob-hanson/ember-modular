@@ -1,0 +1,195 @@
+@font-face {
+    font-family: 'nexa';
+    src: url('#{$font-path}/nexa/nexa_thin_italic-webfont.eot');
+    src: url('#{$font-path}/nexa/nexa_thin_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/nexa/nexa_thin_italic-webfont.woff2') format('woff2'),
+         url('#{$font-path}/nexa/nexa_thin_italic-webfont.woff') format('woff'),
+         url('#{$font-path}/nexa/nexa_thin_italic-webfont.ttf') format('truetype'),
+         url('#{$font-path}/nexa/nexa_thin_italic-webfont.svg#nexathin_italic') format('svg');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'nexa';
+    src: url('#{$font-path}/nexa/nexa_thin-webfont.eot');
+    src: url('#{$font-path}/nexa/nexa_thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/nexa/nexa_thin-webfont.woff2') format('woff2'),
+         url('#{$font-path}/nexa/nexa_thin-webfont.woff') format('woff'),
+         url('#{$font-path}/nexa/nexa_thin-webfont.ttf') format('truetype'),
+         url('#{$font-path}/nexa/nexa_thin-webfont.svg#nexathin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nexa';
+    src: url('#{$font-path}/nexa/nexa_light-webfont.eot');
+    src: url('#{$font-path}/nexa/nexa_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/nexa/nexa_light-webfont.woff2') format('woff2'),
+         url('#{$font-path}/nexa/nexa_light-webfont.woff') format('woff'),
+         url('#{$font-path}/nexa/nexa_light-webfont.ttf') format('truetype'),
+         url('#{$font-path}/nexa/nexa_light-webfont.svg#nexalight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nexa';
+    src: url('#{$font-path}/nexa/nexa_light_italic-webfont.eot');
+    src: url('#{$font-path}/nexa/nexa_light_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/nexa/nexa_light_italic-webfont.woff2') format('woff2'),
+         url('#{$font-path}/nexa/nexa_light_italic-webfont.woff') format('woff'),
+         url('#{$font-path}/nexa/nexa_light_italic-webfont.ttf') format('truetype'),
+         url('#{$font-path}/nexa/nexa_light_italic-webfont.svg#nexalight_italic') format('svg');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'nexa';
+    src: url('#{$font-path}/nexa/nexa_book-webfont.eot');
+    src: url('#{$font-path}/nexa/nexa_book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/nexa/nexa_book-webfont.woff2') format('woff2'),
+         url('#{$font-path}/nexa/nexa_book-webfont.woff') format('woff'),
+         url('#{$font-path}/nexa/nexa_book-webfont.ttf') format('truetype'),
+         url('#{$font-path}/nexa/nexa_book-webfont.svg#nexabook') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nexa';
+    src: url('#{$font-path}/nexa/nexa_book_italic-webfont.eot');
+    src: url('#{$font-path}/nexa/nexa_book_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/nexa/nexa_book_italic-webfont.woff2') format('woff2'),
+         url('#{$font-path}/nexa/nexa_book_italic-webfont.woff') format('woff'),
+         url('#{$font-path}/nexa/nexa_book_italic-webfont.ttf') format('truetype'),
+         url('#{$font-path}/nexa/nexa_book_italic-webfont.svg#nexabook_italic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'nexa';
+    src: url('#{$font-path}/nexa/nexa_regular-webfont.eot');
+    src: url('#{$font-path}/nexa/nexa_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/nexa/nexa_regular-webfont.woff2') format('woff2'),
+         url('#{$font-path}/nexa/nexa_regular-webfont.woff') format('woff'),
+         url('#{$font-path}/nexa/nexa_regular-webfont.ttf') format('truetype'),
+         url('#{$font-path}/nexa/nexa_regular-webfont.svg#nexaregular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nexa';
+    src: url('#{$font-path}/nexa/nexa_regular_italic-webfont.eot');
+    src: url('#{$font-path}/nexa/nexa_regular_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/nexa/nexa_regular_italic-webfont.woff2') format('woff2'),
+         url('#{$font-path}/nexa/nexa_regular_italic-webfont.woff') format('woff'),
+         url('#{$font-path}/nexa/nexa_regular_italic-webfont.ttf') format('truetype'),
+         url('#{$font-path}/nexa/nexa_regular_italic-webfont.svg#nexaregular_italic') format('svg');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'nexa';
+    src: url('#{$font-path}/nexa/nexa_bold-webfont.eot');
+    src: url('#{$font-path}/nexa/nexa_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/nexa/nexa_bold-webfont.woff2') format('woff2'),
+         url('#{$font-path}/nexa/nexa_bold-webfont.woff') format('woff'),
+         url('#{$font-path}/nexa/nexa_bold-webfont.ttf') format('truetype'),
+         url('#{$font-path}/nexa/nexa_bold-webfont.svg#nexabold') format('svg');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'nexa';
+    src: url('#{$font-path}/nexa/nexa_bold_italic-webfont.eot');
+    src: url('#{$font-path}/nexa/nexa_bold_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/nexa/nexa_bold_italic-webfont.woff2') format('woff2'),
+         url('#{$font-path}/nexa/nexa_bold_italic-webfont.woff') format('woff'),
+         url('#{$font-path}/nexa/nexa_bold_italic-webfont.ttf') format('truetype'),
+         url('#{$font-path}/nexa/nexa_bold_italic-webfont.svg#nexabold_italic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'nexa';
+    src: url('#{$font-path}/nexa/nexa_xbold-webfont.eot');
+    src: url('#{$font-path}/nexa/nexa_xbold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/nexa/nexa_xbold-webfont.woff2') format('woff2'),
+         url('#{$font-path}/nexa/nexa_xbold-webfont.woff') format('woff'),
+         url('#{$font-path}/nexa/nexa_xbold-webfont.ttf') format('truetype'),
+         url('#{$font-path}/nexa/nexa_xbold-webfont.svg#nexaxbold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'nexa';
+    src: url('#{$font-path}/nexa/nexa_xbold_italic-webfont.eot');
+    src: url('#{$font-path}/nexa/nexa_xbold_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/nexa/nexa_xbold_italic-webfont.woff2') format('woff2'),
+         url('#{$font-path}/nexa/nexa_xbold_italic-webfont.woff') format('woff'),
+         url('#{$font-path}/nexa/nexa_xbold_italic-webfont.ttf') format('truetype'),
+         url('#{$font-path}/nexa/nexa_xbold_italic-webfont.svg#nexaxbold_italic') format('svg');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'nexa';
+    src: url('#{$font-path}/nexa/nexa_heavy-webfont.eot');
+    src: url('#{$font-path}/nexa/nexa_heavy-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/nexa/nexa_heavy-webfont.woff2') format('woff2'),
+         url('#{$font-path}/nexa/nexa_heavy-webfont.woff') format('woff'),
+         url('#{$font-path}/nexa/nexa_heavy-webfont.ttf') format('truetype'),
+         url('#{$font-path}/nexa/nexa_heavy-webfont.svg#nexaheavy') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'nexa';
+    src: url('#{$font-path}/nexa/nexa_heavy_italic-webfont.eot');
+    src: url('#{$font-path}/nexa/nexa_heavy_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/nexa/nexa_heavy_italic-webfont.woff2') format('woff2'),
+         url('#{$font-path}/nexa/nexa_heavy_italic-webfont.woff') format('woff'),
+         url('#{$font-path}/nexa/nexa_heavy_italic-webfont.ttf') format('truetype'),
+         url('#{$font-path}/nexa/nexa_heavy_italic-webfont.svg#nexaheavy_italic') format('svg');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'nexa';
+    src: url('#{$font-path}/nexa/nexa_black-webfont.eot');
+    src: url('#{$font-path}/nexa/nexa_black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/nexa/nexa_black-webfont.woff2') format('woff2'),
+         url('#{$font-path}/nexa/nexa_black-webfont.woff') format('woff'),
+         url('#{$font-path}/nexa/nexa_black-webfont.ttf') format('truetype'),
+         url('#{$font-path}/nexa/nexa_black-webfont.svg#nexablack') format('svg');
+    font-weight: 800;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'nexa';
+    src: url('#{$font-path}/nexa/nexa_black_italic-webfont.eot');
+    src: url('#{$font-path}/nexa/nexa_black_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$font-path}/nexa/nexa_black_italic-webfont.woff2') format('woff2'),
+         url('#{$font-path}/nexa/nexa_black_italic-webfont.woff') format('woff'),
+         url('#{$font-path}/nexa/nexa_black_italic-webfont.ttf') format('truetype'),
+         url('#{$font-path}/nexa/nexa_black_italic-webfont.svg#nexablack_italic') format('svg');
+    font-weight: 800;
+    font-style: italic;
+
+}

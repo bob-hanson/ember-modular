@@ -1,0 +1,91 @@
+.section-header {
+  width: 100%;
+
+  &.title-font {
+    h1 {
+      font-weight: 100;
+      font-family: $headline-font-family;
+    }
+    &.page {
+      h1 {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &.page {
+    border-bottom-width: 0;
+    h1 {
+      font-size: 20px;
+    }
+    &.primary-border-color {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+    }
+  }
+
+  &.column {
+    h2 {
+      padding-bottom: 0;
+    }
+  }
+
+  &.sub-section {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    &:not(.has-app-border-color) {
+      border-color: $header-border;
+    }
+  }
+
+  &.form-column {
+    border:none;
+  }
+
+  h1, h2, h3 {
+    color: $black;
+    margin: 0;
+    border: none;
+    font-family: $type-font-primary;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  &.has-border {
+    border-width: 0 0 1px 0;
+    border-style: solid;
+  }
+
+  .pagination-link {
+    margin-top: 4px;
+  }
+
+  .icon-nav {
+    width: auto;
+    float: right;
+    padding: 4px 0 0;
+    .icon-link {
+      margin-left: 8px;
+      a {
+        color: $menu-icon;
+        padding: 0;
+        width: 24px;
+        height: 24px;
+        i {
+          font-size: 20px;
+        }
+      }
+    }
+    .icon-menu {
+      margin-left: 8px;
+      i {
+        &.menu-toggle {
+          position: relative;
+          top: 0;
+          left: 0;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

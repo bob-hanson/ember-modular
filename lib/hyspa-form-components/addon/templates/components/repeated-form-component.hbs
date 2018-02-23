@@ -1,0 +1,8 @@
+{{#if hasRemovalButton }}
+  <div class="repeated-form-content-wrapper">
+    {{yield}}
+  </div>
+  {{repeated-item-removal-link removeItemAction=removeItemAction removedObject=currentRepeatedItem }}
+{{else}}
+  {{yield (hash removalLink=(component 'repeated-item-removal-link' removeItemAction=removeItemAction removedObject=currentRepeatedItem)) }}
+{{/if}}

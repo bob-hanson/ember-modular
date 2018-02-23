@@ -1,0 +1,27 @@
+{{#hyspa-form formFor="facility_providers" isLoading=isLoading isValid=isProjectFormValid formSubmitAction=(action 'triggerFormSubmit') formCancelAction=(action 'triggerFormCancel') as |f| }}
+  {{section-header headerType='page' headerText=formHeaderText isFixed=true titleFont=true }}
+  {{#component-container class="form-row" }}
+    {{f.input labelText='Prefix' boundModel=providerPrefix percentageWidth=15 name='provider_prefix'}}
+    {{f.input labelText='First Name' boundModel=providerFirstName isRequired=true percentageWidth=35 name='provider_first_name'}}
+    {{f.input labelText='M.I.' boundModel=providerMiddleName percentageWidth=15 name='provider_middle_name'}}
+    {{f.input labelText='Last Name' boundModel=providerLastName isRequired=true percentageWidth=35 name='provider_last_name'}}
+  {{/component-container}}
+  {{#component-container class="form-row" }}
+    {{f.input labelText='Provider ID' boundModel=providerIdentifier percentageWidth=20 name='provider_identifier'}}
+    {{f.input labelText='Provider Email' boundModel=providerEmail percentageWidth=50 name='provider_email'}}
+    {{f.phoneInput labelText='Provider Phone' boundModel=providerPhone percentageWidth=30 name='provider_phone'}}
+  {{/component-container}}
+  {{#component-container class='form-row'}}
+    {{f.singleSelect labelText="Specialty" isRequired=true selectOptions=specialtyOptions boundModel=providerSpecialty name='provider_specialty'}}
+  {{/component-container}}
+  {{#component-container class="form-row" }}
+    {{f.datePicker labelText='Emp Contract Date' boundModel=employmentContractDate percentageWidth=30 name='employment_contract_date'}}
+    {{f.datePicker labelText='Emp Termed Date' boundModel=employmentTermDate percentageWidth=30 alignRight=true name='employment_term_date'}}
+    {{f.buttonGroup labelText='Employment Status' boundModel=providerStatus radioOptions=providerStatusOptions percentageWidth=40 alignRight=true name='provider_status'}}
+  {{/component-container}}
+  {{#component-container class='form-row'}}
+    {{f.multiSelect labelText='Facilities' boundCollection=facilityIds selectOptions=facilityOptions name='facility_ids'}}
+  {{/component-container }}
+  {{f.formActions primaryButtonText=primaryButtonText }}
+{{/hyspa-form}}
+

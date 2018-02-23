@@ -1,0 +1,67 @@
+{{#component-container }}
+  {{component-header tagName='h1' class='headline-font' headerText='Provider Search'}}
+  {{#tabs-container class='provider-search'}}
+    {{#tabs-list}}
+      {{tab-button tabText='Search by Category' clickAction=(action 'triggerTabSwitched') }}
+      {{tab-button tabText='Search all Providers' clickAction=(action 'triggerTabSwitched')}}
+      {{hyspa-single-select class='timeframe'
+                      labelText='Timeframe'
+                      selectOptions=availableTimeframes
+                      inputValue=selectedTimeframe
+                      onSelection=(action 'triggerTimeframeSelected')
+                      percentageWidth=25
+      }}
+    {{/tabs-list}}
+    {{#tab-panel}}
+      {{#component-container }}
+        {{hyspa-multi-select labelText='Speciality'
+                       selectOptions=availableSpecialties
+                       selectedOptions=selectedSpecialties
+                       onSelection=(action 'triggerAddSpecialty')
+                       onRemoval=(action 'triggerRemoveSpecialty')
+                       percentageWidth=33}}
+        {{hyspa-multi-select labelText='Group'
+                       selectOptions=availableGroups
+                       selectedOptions=selectedGroups
+                       onSelection=(action 'triggerAddGroup')
+                       onRemoval=(action 'triggerRemoveGroup')
+                       percentageWidth=33}}
+        {{hyspa-multi-select labelText='Practice'
+                       selectOptions=availablePractices
+                       selectedOptions=selectedPractices
+                       onSelection=(action 'triggerAddPractice')
+                       onRemoval=(action 'triggerRemovePractice')
+                       percentageWidth=33}}
+      {{/component-container }}
+      {{#component-container class='provider-actions'}}
+        {{basic-button class='primary-button'
+                       buttonText='Run Analytics'
+                       clickAction=(action 'triggerRunAnalytics')}}
+      {{/component-container }}
+      {{#component-container }}
+        {{#if hasProvidersByCategory }}
+
+        {{ else }}
+          {{empty-message message=emptyProvidersByCategoryMessage }}
+        {{/if}}
+      {{/component-container }}
+    {{/tab-panel}}
+    {{#tab-panel}}
+      {{#component-container class='provider-search'}}
+        {{search-bar searchValue=providerSearchInputValue triggerSearch=(action 'triggerProviderSearch') placeholderText='Search Providers' percentageWidth=50 }}
+        {{!-- {{basic-button class='primary-button'
+                       buttonText='Run Analytics'
+                       clickAction=(action 'triggerProviderSearch')}} --}}
+      {{/component-container }}
+      {{#if hasProviderSearchResults }}
+        {{grid-component sortValue='provider'
+                         gridHeaderDefinitions=providersBySearchGridHeaders
+                         gridCollection=providersBySearch
+                         emptyDataMessage=emptyProvidersBySearchMessage }}
+      {{ else }}
+        {{empty-message message=emptyProvidersBySearchMessage }}
+      {{/if}}
+    {{/tab-panel}}
+  {{/tabs-container}}
+
+{{/component-container}}

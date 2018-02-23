@@ -1,0 +1,41 @@
+{{!-- <div class='input-backing'></div> --}}
+{{#if hasLabel }}
+  {{label-component labelText=labelText isRequired=isRequired isFocused=isFocused launchHelp=launchHelp }}
+{{/if}}
+<div class="multiselect-wrapper column-100">
+  {{input value=inputValue class='column-100'}}
+  <div class="column-100 faux-input">
+    {{#if setupMultiSelect.isRunning }}
+      <span class='multiple-text'>Loading...</span>
+    {{ else }}
+      {{#if hasSelectedOptions }}
+        {{#if hasMultipleSelectedOptions }}
+          <span class='multiple-text'>Multiple Selected</span>
+        {{ else }}
+          <ul class="selected-options">
+            {{#each boundCollection as |selectedOption| }}
+              {{chip-component tagName='li' chipValue=singleSelectedOption.optionName
+                                            chipAction=(action 'triggerChipClick')
+                                            chipActionValue=singleSelectedOption }}
+            {{/each}}
+          </ul>
+        {{/if}}
+        {{ else }}
+          <span class='multiple-text'>- select -</span>
+      {{/if}}
+    {{/if}}
+  </div>
+  {{icon-font class='select-toggle' fontType='arrow_drop_down' clickAction=(action "triggerToggleClick")}}
+
+  {{#if isFocused }}
+    <ul class='select-options type-ahead'>
+      {{#each selectOptionsCopy as |option| }}
+        <li id='{{if option.optionName option.optionName }}' class='option {{if option.isSelected "is-active primary-background-color"}} {{if option.isHovering "is-hovering"}}'>
+          {{hyspa-checkbox-component optionName=option.optionName boundModel=option.isSelected clickAction=(action "triggerOptionClick") }}
+        </li>
+      {{else}}
+        <li class='option'>No results found</li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</div>

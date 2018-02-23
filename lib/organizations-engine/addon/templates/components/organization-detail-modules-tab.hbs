@@ -1,0 +1,30 @@
+{{#component-container percentageWidth=50 class='form-detail-section'}}
+  {{component-header headerText='Modules' tagName='h3' }}
+  <dl>
+    {{#if productsHaveLoaded }}
+      {{#each currentProducts as |product| }}
+        <dt>{{product.name}}</dt>
+      {{/each}}
+    {{/if}}
+  </dl>
+{{/component-container}}
+{{#component-container percentageWidth=50 class='form-detail-section'}}
+  {{component-header headerText='Account Status' tagName='h3' }}
+  <dl>
+    <dt>{{accountEnabledText}}</dt>
+  </dl>
+{{/component-container}}
+{{#if isDatabaseDependant }}
+  {{#component-container percentageWidth=50 class='form-detail-section'}}
+    {{component-header headerText='Database Status' tagName='h3' }}
+    {{#if currentModel.databaseNotFailed }}
+      <dl>
+        <dt>{{ databaseStatus }}</dt>
+      </dl>
+    {{ else }}
+      {{basic-button class='retry-button primary-button primary-background-color primary-border-color'
+                     buttonText="Creation Failed - Retry"
+                     clickAction=this.attrs.onCreateDatabaseRetry}}
+    {{/if}}
+  {{/component-container}}
+{{/if}}

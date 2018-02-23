@@ -1,0 +1,16 @@
+.user-avatar {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+
+  .user-initials {
+    margin-top: 1px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: $white;
+    color: $primary-color;
+    padding: 10px 6px;
+    text-align: center;
+    font-size: 1.3em;
+  }
+}

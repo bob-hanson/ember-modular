@@ -1,0 +1,20 @@
+{{#component-container}}
+  {{#if isViewingAuditList }}
+
+    {{#component-column columnType='navigation' percentageWidth=20 tagName='aside'}}
+      {{#each currentEncounters as |currentEncounter| }}
+        {{listed-navigation-item displayValue=currentEncounter.patientName currentItem=currentEncounter linkPath='user-project.user-audits.user-audit.edit-audit.edit-patient-data' }}
+      {{/each}}
+    {{/component-column }}
+
+  {{/if}}
+  {{#component-column columnType='navigation' percentageWidth=20 tagName='aside'}}
+    {{component formObject.auditNavigation }}
+    {{audit-details currentAudit=currentAudit listIconAction=(action 'triggerViewAuditList')}}
+    {{audit-box-actions }}
+  {{/component-column }}
+  <div class='{{if isViewingAuditList "column-60" "column-80"}} audit-box-content-wrapper toolbar-gutter'>
+    {{ yield }}
+    {{audit-secondary-information currentAudit=currentAudit isCollapsed=isViewingAuditList }}
+  </div>
+{{/component-container}}

@@ -1,0 +1,23 @@
+{{#component-column columnType='navigation column-form' padding='1,1,1,1' percentageWidth=20}}
+  {{section-header headerText='Data Filters' headerType='column' padding='0,0,0,0'}}
+  {{hyspa-multi-select labelText='Provider Information' boundCollection=linesOfBusiness selectOptions=linesOfBusinesOptions }}
+  {{hyspa-multi-select labelText='Group' boundCollection=providerGroup selectOptions=providerGroupOptions }}
+  {{hyspa-multi-select labelText='Provider' boundCollection=providers selectOptions=providerOptions }}
+  {{hyspa-multi-select labelText='Date Range' boundCollection=dateRange selectOptions=dateRangeOptions }}
+  {{hyspa-multi-select labelText='Category' boundCollection=category selectOptions=categoryOptions }}
+  {{hyspa-multi-select labelText='Major Category' boundCollection=majorCategory selectOptions=majorCategoryOptions }}
+  {{hyspa-multi-select labelText='Sub Category' boundCollection=subCategory selectOptions=subCategoryOptions }}
+  {{state-select labelText='Area' boundCollection=providerState }}
+  {{hyspa-multi-select labelText='Procedure Code' boundCollection=procedureCodes selectOptions=procedureCodeOptions }}
+  {{hyspa-multi-select labelText='Modifier Coder' boundCollection=modifierCodes selectOptions=modifierCodeOptions }}
+  {{basic-button class='primary-button primary-background-color primary-border-color' buttonText="Run Data" clickAction=(action 'triggerDataSetFetch') }}
+{{/component-column }}
+{{#content-view percentageWidth=60 }}
+  {{section-header headerText='Procedure Dashboard' headerType='page' }}
+
+{{/content-view}}
+{{#component-column columnType='navigation column-form' padding='1,1,1,1' percentageWidth=20}}
+  {{section-header headerText='Peer Group Comparison' headerType='sub-section' }}
+  {{hyspa-chart chartHeight=100 chartSeries=chartSeries chartOptions=chartOptions }}
+  {{hyspa-chart chartHeight=100 chartSeries=chartSeries chartOptions=chartOptions }}
+{{/component-column }}

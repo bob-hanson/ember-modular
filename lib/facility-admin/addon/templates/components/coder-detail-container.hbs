@@ -1,0 +1,13 @@
+{{#component-container percentageWidth=100}}
+  {{#section-header headerType='page' headerText=currentCoder.coderName isFixed=true titleFont=true }}
+    {{#icon-nav}}
+      {{icon-link fontType='add_box' linkObject=currentCoder linkPath=currentCoder.facilityAdminCoderFacilitiesPath activePath=currentCoder.coderFacilitiesActivePath }}
+      {{icon-link fontType='check_box' linkObject=currentCoder linkPath=currentCoder.facilityAdminCoderDetailsPath activePath=currentCoder.coderDetailsActivePath }}
+      {{#icon-menu fontType='more_vert' }}
+        {{icon-link fontType='mode_edit' linkText='Edit Coder' linkObject=currentCoder linkPath=currentCoder.facilityAdminCoderEditLinkPath }}
+        {{icon-action fontType='clear' labelText='Delete Coder' clickAction=(action 'triggerDelete') actionObject=currentCoder }}
+      {{/icon-menu}}
+    {{/icon-nav}}
+  {{/section-header}}
+  {{yield}}
+{{/component-container}}

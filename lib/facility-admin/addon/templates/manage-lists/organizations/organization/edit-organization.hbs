@@ -1,0 +1,6 @@
+{{#content-view percentageWidth=60 }}
+  {{organization-form formModel=currentOrganization
+                      formSubmit=(route-action 'triggerFormSubmit')
+                      formCancel=(route-action 'triggerFormCancel')
+  }}
+{{/content-view }}

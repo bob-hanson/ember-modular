@@ -1,0 +1,13 @@
+.audit-box-actions {
+  padding: 16px;
+  div {
+    border-top: 1px solid $grid-border-color;
+    padding-top: 8px;
+    .basic-button {
+      margin-left: 0;
+      &:first-child {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

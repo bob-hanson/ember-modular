@@ -1,0 +1,10 @@
+.required-tip {
+  font-size: 0.8em;
+  padding: 5px 0px;
+  span {
+    color: $light-type-color;
+    &.required-asterisk {
+      color: $error-red;
+    }
+  }
+}

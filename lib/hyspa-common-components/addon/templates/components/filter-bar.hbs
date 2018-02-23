@@ -1,0 +1,5 @@
+{{icon-font fontType='search' fontSize='small'}}
+{{input value=filterValue placeholder=placeholderText }}
+{{#if hasFilterValue }}
+  {{icon-font class='is-active clear-input' clickAction=(action 'triggerClearFilter') fontType='highlight_off' fontSize='small'}}
+{{/if}}

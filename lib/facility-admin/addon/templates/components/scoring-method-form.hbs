@@ -1,0 +1,182 @@
+{{#component-container percentageWidth=100}}
+  {{#component-container class='form-row'}}
+    {{hyspa-button-group labelText='Scoring Method' boundModel=scoringMethod isFormInput=true radioOptions=scoringMethodOptions percentageWidth=60 }}
+  {{/component-container }}
+
+  {{#component-container class='form-row'}}
+    {{switch-component switchLabel='Calculate present on admission accuracy' boundModel=isAdmissionAccuracy labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+  {{/component-container }}
+
+  {{#component-container class='form-row'}}
+    {{switch-component switchLabel='Calculate total accuracy' boundModel=isTotalAccuracy labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+  {{/component-container }}
+
+  {{section-header headerType='sub-section' headerText="DRG Calculations" titleFont=true }}
+  {{#table-layout class="banded-odd column-100 outer-border" }}
+    {{#table-layout-row}}
+      {{#table-layout-cell padding="1,3,1,3" class="grid-border grid-border-bottom grid-border-left valign-middle cell-header" percentageWidth=50 }}
+        MS-DRG
+      {{/table-layout-cell}}
+      {{#table-layout-cell padding="1,0,1,3"}}
+        {{#component-container class="form-row" }}
+          {{#hyspa-input-builder labelText="Correct" percentageWidth=24 as |msDrgCorrectInput| }}
+            {{msDrgCorrectInput.numericInput boundModel=msDRGCorrect }}
+            {{msDrgCorrectInput.inputCounter}}
+          {{/hyspa-input-builder}}
+          {{#hyspa-input-builder labelText="Incorrect" percentageWidth=20 as |msDrgIncorrectInput| }}
+            {{msDrgIncorrectInput.numericInput boundModel=msDRGIncorrect }}
+            {{msDrgIncorrectInput.inputCounter}}
+          {{/hyspa-input-builder}}
+        {{/component-container}}
+      {{/table-layout-cell}}
+    {{/table-layout-row}}
+
+    {{#table-layout-row}}
+      {{#table-layout-cell padding="1,3,1,3" class="grid-border grid-border-bottom grid-border-left valign-middle cell-header" percentageWidth=50 }}
+        APR-DRG
+      {{/table-layout-cell}}
+      {{#table-layout-cell padding="1,0,1,3"}}
+        {{#component-container class="form-row" }}
+          {{#hyspa-input-builder labelText="Correct" percentageWidth=24 as |aprDrgCorrectInput| }}
+            {{aprDrgCorrectInput.numericInput boundModel=aprDRGCorrect }}
+            {{aprDrgCorrectInput.inputCounter}}
+          {{/hyspa-input-builder}}
+          {{#hyspa-input-builder labelText="Incorrect" percentageWidth=20 as |aprDrgIncorrectInput| }}
+            {{aprDrgIncorrectInput.numericInput boundModel=aprDRGIncorrect }}
+            {{aprDrgIncorrectInput.inputCounter}}
+          {{/hyspa-input-builder}}
+        {{/component-container}}
+      {{/table-layout-cell}}
+    {{/table-layout-row}}
+
+    {{#table-layout-row}}
+      {{#table-layout-cell padding="1,3,1,3" class="grid-border grid-border-bottom grid-border-left valign-middle cell-header" percentageWidth=50 }}
+        AP-DRG
+      {{/table-layout-cell}}
+      {{#table-layout-cell padding="1,0,1,3"}}
+        {{#component-container class="form-row" }}
+          {{#hyspa-input-builder labelText="Correct" percentageWidth=24 as |apDrgCorrectInput| }}
+            {{apDrgCorrectInput.numericInput boundModel=apDRGCorrect }}
+            {{apDrgCorrectInput.inputCounter}}
+          {{/hyspa-input-builder}}
+          {{#hyspa-input-builder labelText="Incorrect" percentageWidth=20 as |apDrgIncorrectInput| }}
+            {{apDrgIncorrectInput.numericInput boundModel=apDRGIncorrect }}
+            {{apDrgIncorrectInput.inputCounter}}
+          {{/hyspa-input-builder}}
+        {{/component-container}}
+      {{/table-layout-cell}}
+    {{/table-layout-row}}
+  {{/table-layout}}
+
+  {{#component-container class='form-row' padding="2,0,0,0"}}
+    {{switch-component switchLabel='Include MS-DRG in Audit Box' boundModel=includeMSDRG labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+  {{/component-container }}
+
+  {{#component-container class='form-row'}}
+    {{switch-component switchLabel='Include APR-DRG in Audit Box' boundModel=includeAPRDRG labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+  {{/component-container }}
+
+  {{#component-container class='form-row'}}
+    {{switch-component switchLabel='Include AP-DRG in Audit Box' boundModel=includeAPDRG labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+  {{/component-container }}
+
+  {{section-header headerType='sub-section' headerText="Diagnosis Calculations" titleFont=true }}
+  {{#table-layout class="banded-odd column-100 outer-border" }}
+    {{#table-layout-row}}
+      {{#table-layout-cell padding="1,3,1,3" class="grid-border grid-border-bottom grid-border-left valign-middle cell-header" percentageWidth=50 }}
+        Primary Diagnosis
+      {{/table-layout-cell}}
+      {{#table-layout-cell padding="1,0,1,3"}}
+        {{#component-container class="form-row" }}
+          {{#hyspa-input-builder labelText="Correct" percentageWidth=24 as |primaryDiagnosisCorrectInput| }}
+            {{primaryDiagnosisCorrectInput.numericInput boundModel=primaryDiagnosisCorrect }}
+            {{primaryDiagnosisCorrectInput.inputCounter}}
+          {{/hyspa-input-builder}}
+          {{#hyspa-input-builder labelText="Incorrect" percentageWidth=20 as |primaryDiagnosisIncorrectInput| }}
+            {{primaryDiagnosisIncorrectInput.numericInput boundModel=primaryDiagnosisIncorrect }}
+            {{primaryDiagnosisIncorrectInput.inputCounter}}
+          {{/hyspa-input-builder}}
+          {{#hyspa-input-builder labelText="Additional" percentageWidth=20 as |primaryDiagnosisAdditionalInput| }}
+            {{primaryDiagnosisAdditionalInput.numericInput boundModel=primaryDiagnosisAdditional }}
+            {{primaryDiagnosisAdditionalInput.inputCounter}}
+          {{/hyspa-input-builder}}
+        {{/component-container}}
+      {{/table-layout-cell}}
+    {{/table-layout-row}}
+
+    {{#table-layout-row}}
+      {{#table-layout-cell padding="1,3,1,3" class="grid-border grid-border-bottom grid-border-left valign-middle cell-header" percentageWidth=50 }}
+        Secondary Diagnosis
+      {{/table-layout-cell}}
+      {{#table-layout-cell padding="1,0,1,3"}}
+        {{#component-container class="form-row" }}
+          {{#hyspa-input-builder labelText="Correct" percentageWidth=24 as |secondaryDiagnosisCorrectInput| }}
+            {{secondaryDiagnosisCorrectInput.numericInput boundModel=secondaryDiagnosisCorrect }}
+            {{secondaryDiagnosisCorrectInput.inputCounter}}
+          {{/hyspa-input-builder}}
+          {{#hyspa-input-builder labelText="Incorrect" percentageWidth=20 as |secondaryDiagnosisIncorrectInput| }}
+            {{secondaryDiagnosisIncorrectInput.numericInput boundModel=secondaryDiagnosisIncorrect }}
+            {{secondaryDiagnosisIncorrectInput.inputCounter}}
+          {{/hyspa-input-builder}}
+          {{#hyspa-input-builder labelText="Additional" percentageWidth=20 as |secondaryDiagnosisAdditionalInput| }}
+            {{secondaryDiagnosisAdditionalInput.numericInput boundModel=secondaryDiagnosisAdditional }}
+            {{secondaryDiagnosisAdditionalInput.inputCounter}}
+          {{/hyspa-input-builder}}
+        {{/component-container}}
+      {{/table-layout-cell}}
+    {{/table-layout-row}}
+  {{/table-layout}}
+
+  {{section-header headerType='sub-section' headerText="Procedures Calculations" titleFont=true }}
+  {{#table-layout class="banded-odd column-100 outer-border" }}
+    {{#table-layout-row}}
+      {{#table-layout-cell padding="1,3,1,3" class="grid-border grid-border-bottom grid-border-left valign-middle cell-header" percentageWidth=50 }}
+        ICD-10 PCS
+      {{/table-layout-cell}}
+      {{#table-layout-cell padding="1,0,1,3"}}
+        {{#component-container class="form-row" }}
+          {{#hyspa-input-builder labelText="Correct" percentageWidth=24 as |icd10PCSCorrectInput| }}
+            {{icd10PCSCorrectInput.numericInput boundModel=icd10PCSCorrect }}
+            {{icd10PCSCorrectInput.inputCounter}}
+          {{/hyspa-input-builder}}
+          {{#hyspa-input-builder labelText="Incorrect" percentageWidth=20 as |icd10PCSIncorrectInput| }}
+            {{icd10PCSIncorrectInput.numericInput boundModel=icd10PCSIncorrect }}
+            {{icd10PCSIncorrectInput.inputCounter}}
+          {{/hyspa-input-builder}}
+          {{#hyspa-input-builder labelText="Additional" percentageWidth=20 as |icd10PCSAdditionalInput| }}
+            {{icd10PCSAdditionalInput.numericInput boundModel=icd10PCSAdditional }}
+            {{icd10PCSAdditionalInput.inputCounter}}
+          {{/hyspa-input-builder}}
+        {{/component-container}}
+      {{/table-layout-cell}}
+    {{/table-layout-row}}
+
+    {{#table-layout-row}}
+      {{#table-layout-cell padding="1,3,1,3" class="grid-border grid-border-bottom grid-border-left valign-middle cell-header" percentageWidth=50 }}
+        CPT/HCPCS
+      {{/table-layout-cell}}
+      {{#table-layout-cell padding="1,0,1,3"}}
+        {{#component-container class="form-row" }}
+          {{#hyspa-input-builder labelText="Correct" percentageWidth=24 as |cptHCPCSCorrectInput| }}
+            {{cptHCPCSCorrectInput.numericInput boundModel=cptHCPCSCorrect }}
+            {{cptHCPCSCorrectInput.inputCounter}}
+          {{/hyspa-input-builder}}
+          {{#hyspa-input-builder labelText="Incorrect" percentageWidth=20 as |cptHCPCSIncorrectInput| }}
+            {{cptHCPCSIncorrectInput.numericInput boundModel=cptHCPCSIncorrect }}
+            {{cptHCPCSIncorrectInput.inputCounter}}
+          {{/hyspa-input-builder}}
+          {{#hyspa-input-builder labelText="Additional" percentageWidth=20 as |cptHCPCSAdditionalInput| }}
+            {{cptHCPCSAdditionalInput.numericInput boundModel=cptHCPCSAdditional }}
+            {{cptHCPCSAdditionalInput.inputCounter}}
+          {{/hyspa-input-builder}}
+        {{/component-container}}
+      {{/table-layout-cell}}
+    {{/table-layout-row}}
+  {{/table-layout}}
+
+
+  {{form-actions primaryButtonText=primaryButtonText primaryAction=(action 'triggerFormSubmit') cancelAction=this.attrs.formCancel primaryIsEnabled=true }}
+  {{content-separator padding='0,0,0,0'}}
+  {{pagination-link direction='left' linkPath=newReportParametersPath linkText="Previous: Assign Report Parameters" class="pull-left" }}
+  {{pagination-link linkPath=newAuditScopePath linkText="Next: Scope of Audit" class="pull-right" }}
+{{/component-container}}

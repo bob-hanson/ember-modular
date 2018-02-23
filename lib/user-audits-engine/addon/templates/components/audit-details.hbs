@@ -1,0 +1,89 @@
+{{#component-container class="audit-details-body"}}
+  {{icon-font fontType='list' clickAction=this.attrs.listIconAction }}
+{{/component-container}}
+{{section-header headerText="Audit Box Details" }}
+
+{{#table-layout class="column-100 section-spacer-bottom" }}
+
+  {{#table-layout-row }}
+    {{#table-layout-cell}}
+      {{label-component labelText="Reported Code" class="table-layout-header-label" }}
+    {{/table-layout-cell}}
+    {{#table-layout-cell class="valign-middle align-right" }}
+      99213
+    {{/table-layout-cell}}
+  {{/table-layout-row}}
+
+  {{#table-layout-row }}
+    {{#table-layout-cell }}
+      {{label-component labelText="Suggested Code" class="table-layout-header-label" }}
+    {{/table-layout-cell}}
+    {{#table-layout-cell class="valign-middle align-right" }}
+      99213
+    {{/table-layout-cell}}
+  {{/table-layout-row}}
+
+  {{#table-layout-row }}
+    {{#table-layout-cell }}
+      {{label-component labelText="Audited Code" class="table-layout-header-label" }}
+    {{/table-layout-cell}}
+    {{#table-layout-cell class="valign-middle align-right" }}
+      99213
+    {{/table-layout-cell}}
+  {{/table-layout-row}}
+
+{{/table-layout}}
+
+{{#table-layout class="column-100" }}
+
+  {{#table-layout-row }}
+    {{#table-layout-cell class="valign-middle" }}
+      {{label-component labelText="Client" class="table-layout-header-label" }}
+    {{/table-layout-cell}}
+    {{#table-layout-cell class="valign-middle" }}
+      Demo Enterprise
+    {{/table-layout-cell}}
+  {{/table-layout-row}}
+
+  {{#table-layout-row }}
+    {{#table-layout-cell class="valign-middle" }}
+      {{label-component labelText="Patient" class="table-layout-header-label" }}
+    {{/table-layout-cell}}
+    {{#table-layout-cell class="valign-middle" }}
+      Philips, Sara H.
+    {{/table-layout-cell}}
+  {{/table-layout-row}}
+
+  {{#table-layout-row }}
+    {{#table-layout-cell class="valign-middle" }}
+      {{label-component labelText="ID" class="table-layout-header-label" }}
+    {{/table-layout-cell}}
+    {{#table-layout-cell class="valign-middle" }}
+      2354634
+    {{/table-layout-cell}}
+  {{/table-layout-row}}
+
+  {{#table-layout-row }}
+    {{#table-layout-cell class="valign-middle" }}
+      {{label-component labelText="DOS" class="table-layout-header-label" }}
+    {{/table-layout-cell}}
+    {{#table-layout-cell class="valign-middle" }}
+      09-01-2016
+    {{/table-layout-cell}}
+  {{/table-layout-row}}
+
+  {{#table-layout-row }}
+    {{#table-layout-cell class="valign-middle" }}
+      {{label-component labelText="POS" class="table-layout-header-label" }}
+    {{/table-layout-cell}}
+    {{#table-layout-cell class="valign-middle" }}
+      21 (Inpatient Hospital)
+    {{/table-layout-cell}}
+  {{/table-layout-row}}
+
+{{/table-layout}}
+
+{{#component-container class='next-audit-link'}}
+  {{pagination-link linkPath=nextPath linkText="Next Audit" class="pull-right" }}
+{{/component-container}}
+{{yield}}

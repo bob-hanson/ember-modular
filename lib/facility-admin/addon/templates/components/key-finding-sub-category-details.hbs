@@ -1,0 +1,11 @@
+  {{#section-header headerType='page' headerText=currentSubcategory.categoryName isFixed=true titleFont=true }}
+    {{#icon-nav}}
+      {{#icon-menu fontType='more_vert' }}
+        {{icon-link fontType='mode_edit' linkText='Edit Subcategory' linkObject=currentSubcategory linkPath=currentSubcategory.facilityAdminFindingsRecommendationSubcategoryEditPath }}
+        {{icon-action fontType='clear' labelText='Delete Subcategory' clickAction=(action 'triggerDelete') }}
+      {{/icon-menu}}
+    {{/icon-nav}}
+  {{/section-header}}
+{{#component-container isLoaded=currentSubcategory.isFullyLoaded }}
+  {{data-point label='Name' value=currentSubcategory.categoryName padding='2,0,0,0'}}
+{{/component-container}}

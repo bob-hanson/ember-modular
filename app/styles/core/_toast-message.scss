@@ -1,0 +1,32 @@
+.app .toast-message {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  z-index: 12;
+  margin-left: -185px;
+  width: 370px;
+  min-height: 70px;
+  border-radius: 4px;
+  color: $white;
+  padding-left: 56px;
+  padding-bottom: 15px;
+  box-shadow: $shadow-level-2;
+  transition: opacity $animation-type $animation-speed-slow;
+  opacity: 0;
+  h2 { color: $white; padding: 8px 15px 0px; width: 100%; border: none; }
+  p { color: $white; padding: 0px 15px 0px; width: 100%; font-weight: 100;}
+  i { position: absolute; top: 12px;left: 10px; }
+  &.view { transition: opacity $animation-type $animation-speed-fast; opacity: 1; }
+  &.success {background-color: $toast-success;}
+  &.warning { background-color: $toast-warning; }
+  &.error { background-color: $toast-error; }
+  &.info { background-color: $toast-info; }
+  &.general { background-color: $toast-general; }
+  &.regular i { visibility: hidden }
+  &.small-icon, &.small { min-height: 50px;}
+  &.regular, &.small { padding-left: 15px;}
+  &.small-icon p, &.small p { padding: 15px 0px 0px;}
+  &.small-icon i { font-size: 28px; }
+  &.small i { visibility: hidden }
+  &.small-icon h2, &.small h2 { display: none; }
+}

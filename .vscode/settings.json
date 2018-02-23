@@ -1,0 +1,35 @@
+{
+    "editor.tabSize": 2,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        // "**/node_modules": true
+    },
+    "explorer.autoReveal": false,
+    "search.exclude": {
+      // "**/node_modules": true,
+      "**/bower_components": true,
+      "**/lib/**/app": true
+    },
+    "workbench.colorCustomizations": {
+      "terminal.ansiBlack": "#282c34",
+      "terminal.ansiRed": "#e88388",
+      "terminal.ansiGreen": "#a7cc8c",
+      "terminal.ansiYellow": "#dbaa79",
+      "terminal.ansiBlue": "#72bef2",
+      "terminal.ansiMagenta": "#d291e4",
+      "terminal.ansiCyan": "#65c2cd",
+      "terminal.ansiWhite": "#e0dbdb",
+      "terminal.ansiBrightBlack": "#6f7783",
+      "terminal.ansiBrightRed": "#e88388",
+      "terminal.ansiBrightGreen": "#a7cc8c",
+      "terminal.ansiBrightYellow": "#dbaa79",
+      "terminal.ansiBrightBlue": "#72bef2",
+      "terminal.ansiBrightMagenta": "#d291e4",
+      "terminal.ansiBrightCyan": "#65c2cd",
+      "terminal.ansiBrightWhite": "#ffffff"
+    }
+  }

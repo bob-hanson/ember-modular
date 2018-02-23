@@ -1,0 +1,6 @@
+{{#component-container isLoaded=currentProvider.isFullyLoaded }}
+  {{data-point label='Status' value=currentProvider.providerStatus padding='2,0,0,0'}}
+  {{data-point label='Specialty' value=currentProvider.providerSpecialty padding='2,0,0,0'}}
+  {{data-point label='Email' emailAddress=currentProvider.providerEmail padding='2,0,0,0'}}
+  {{data-point label='Phone' value=currentProvider.providerPhone padding='2,0,0,0'}}
+{{/component-container}}

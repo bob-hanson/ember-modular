@@ -1,0 +1,23 @@
+.progress-bar {
+  height: 4px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 10px;
+  .complete-bar {
+    height: 4px;
+    border-radius: 10px;
+    background: -webkit-linear-gradient( 135deg, $audit-primary 25%, $audit-secondary 25%, $audit-primary 50%, $audit-secondary 50%, $audit-primary 75%, $audit-secondary 75%);
+    background: -moz-linear-gradient( 135deg, $audit-primary 25%, $audit-secondary 25%, $audit-primary 50%, $audit-secondary 50%, $audit-primary 75%, $audit-secondary 75%);
+    background: -o-linear-gradient( 135deg, $audit-primary 25%, $audit-secondary 25%, $audit-primary 50%, $audit-secondary 50%, $audit-primary 75%, $audit-secondary 75%);
+    background-size: 25px 25px;
+    -webkit-animation: bar-animation 3s linear infinite;
+  }
+}
+
+@-webkit-keyframes bar-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 25px 25px;
+  }
+}

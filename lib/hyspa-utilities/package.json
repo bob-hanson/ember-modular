@@ -1,0 +1,10 @@
+{
+  "name": "hyspa-utilities",
+  "keywords": [
+    "ember-addon"
+  ],
+  "dependencies": {
+    "ember-cli-htmlbars": "*",
+    "ember-cli-babel": "*"
+  }
+}

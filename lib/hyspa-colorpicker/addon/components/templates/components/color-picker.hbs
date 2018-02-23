@@ -1,0 +1,5 @@
+{{#if isViewingPicker }}
+  {{picker-panel currentHex=pickerHex currentSat=s currentVal=v pickerValueChanged=(action 'triggerPickerValueChange') isSVGPicker=isSVGPicker hueOffset=hueOffset }}
+  {{picker-slider currentHue=h sliderValueChanged=(action 'triggerSliderValueChange') isSVGPicker=isSVGPicker hueOffset=hueOffset }}
+  {{picker-result currentHex=calculatedHex pickerValue=pickerValue }}
+{{/if}}

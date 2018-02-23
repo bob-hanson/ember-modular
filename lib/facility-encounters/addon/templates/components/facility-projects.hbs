@@ -1,0 +1,8 @@
+{{#if facilityAudit.isViewingFullProjectList }}
+  {{listed-facility-projects-full currentProjects=filteredProjectsByType
+                                  filteredProjectType=filteredProjectType
+                                  projectFilterAction=(action 'triggerFilteredProjectsSelect')
+  }}
+{{ else }}
+  {{component-column-with-list currentCollection=filteredProjectsByType  emptyCollectionMessage="There are no projects matching your search or filtering criteria" }}
+{{/if}}

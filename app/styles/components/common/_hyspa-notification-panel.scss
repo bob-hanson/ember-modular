@@ -1,0 +1,91 @@
+.hyspa-notification-panel {
+    width: auto;
+    right: 0px;
+    position: absolute;
+    z-index: 100;
+  * {
+    position: relative;
+    float:left;
+    box-sizing: border-box;
+  }
+
+  &.is-viewing-active {
+    .notifications-list {
+      right: 0px;
+    }
+  }
+
+  &.is-viewing-recent {
+    .recent-notifications-queue {
+      right: 8px;
+    }
+  }
+
+
+  .notifications-list {
+    position: absolute;
+    z-index: 100;
+    width: 400px;
+    right: -401px;
+    padding: 8px;
+
+    .notification-panel-close {
+      .link-span {
+        color: $white;
+        i {
+          cursor: pointer;
+        }
+      }
+      float: right;
+    }
+
+    .notification-item {
+      background: $light-grey;
+      padding: 8px;
+      width: 100%;
+      min-height: 60px;
+      margin-bottom: 8px;
+      .section-header {
+        padding: 0 0 8px 0;
+        font-size: 12px;
+        h2 {
+          font-size: 14px;
+        }
+      }
+      .data-point {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .recent-notifications-queue {
+    position: absolute;
+    z-index: 100;
+    width: auto;
+    padding: 8px;
+
+    .notification-item {
+      background:$light-grey;
+      padding: 8px;
+      width: 400px;
+      min-height: 60px;
+      box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+      margin-bottom: 8px;
+      .section-header {
+        padding: 0 0 8px 0;
+        font-size: 12px;
+        h2 {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+}
+
+
+
+
+
+

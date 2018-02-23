@@ -1,0 +1,9 @@
+{{#icon-menu fontType="more_horiz" positionRight=true }}
+  {{#each column.actionsMenu as |menuItem| }}
+    {{#if menuItem.linkPath }}
+      {{icon-link fontType=menuItem.fontType linkPath=menuItem.linkPath linkText=menuItem.labelText }}
+    {{else}}
+      {{link-action linkText=menuItem.labelText fontType=menuItem.fontType displayAsIconLink=hasIcon tagName="li" clickAction=(action 'triggerClickAction' menuItem)}}
+    {{/if}}
+  {{/each}}
+{{/icon-menu}}

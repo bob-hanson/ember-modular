@@ -1,0 +1,9 @@
+{{#component-container}}
+  {{hyspa-checkbox-group boundCollection=bodyArea.selectedExamElements checkboxOptions=bodyArea.examElements selectAction=(action 'triggerExamElementSelect') }}
+  {{#if multiSystemOrCardiovascular }}
+    <p class="type-small"><b>Examination of:</b></p>
+    {{#component-container padding="0,0,0,2" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedExaminationOfElements checkboxOptions=bodyArea.examinationOfElements selectAction=(action 'triggerExamElementSelect') }}
+    {{/component-container}}
+  {{/if}}
+{{/component-container}}

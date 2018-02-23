@@ -1,0 +1,17 @@
+{{#component-container }}
+
+  {{hyspa-checkbox-group boundCollection=bodyArea.selectedExamElements checkboxOptions=bodyArea.examElements selectAction=(action 'triggerExamElementSelect') }}
+
+  {{#if isMultiSystem }}
+    <p class="type-small"><b>Brief assessment of mental status, including:</b></p>
+  {{/if}}
+
+  {{#if isPsychiatric }}
+    <p class="type-small"><b>Complete mental status examination, including:</b></p>
+  {{/if}}
+
+  {{#component-container padding="0,0,0,1" }}
+    {{hyspa-checkbox-group boundCollection=bodyArea.selectedMentalStatusElements checkboxOptions=bodyArea.mentalStatusElements selectAction=(action 'triggerExamElementSelect') }}
+  {{/component-container}}
+
+{{/component-container}}

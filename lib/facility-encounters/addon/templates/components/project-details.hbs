@@ -1,0 +1,36 @@
+{{#component-column }}
+  {{#component-container padding="1,2,0,2" }}
+    {{#section-header headerText="DOS Work Queue Details" headerType="sub-section" }}
+      {{#icon-menu fontType="more_vert" class="pull-right"}}
+      {{/icon-menu}}
+    {{/section-header}}
+    {{#component-container padding="1,0,0,0"}}
+      {{data-point label='Project Name' value=currentProject.projectName }}
+      {{content-separator padding="1,0,1,0" }}
+      {{data-point label='Facility' value=currentProject.facilityName }}
+      {{content-separator padding="1,0,1,0" }}
+      {{data-point label='Specialty' value=currentProject.coderSpecialty }}
+      {{content-separator padding="1,0,1,0" }}
+      {{#data-point label='Due Date' value=currentProject.coderSpecialty arrangement="horizontal" }}
+        <span class="text-bold">Due Date</span>
+        <span class="pull-right">{{format-date facilityProject.endDate }}</span>
+      {{/data-point}}
+    {{/component-container}}
+    {{#component-container class="stacked-buttons" padding="2,0,0,0" }}
+      {{basic-button clickAction=(action 'triggerCloseQA') buttonText='Close Send to QA' percentageWidth=100 class='primary-button primary-background-color' }}
+      {{basic-button clickAction=(action 'triggerCloseSendReport') buttonText='Close Send Report' }}
+      {{basic-button clickAction=(action 'triggerClosePendingReport') buttonText='Close Pending Report' }}
+    {{/component-container}}
+  {{/component-container}}
+{{/component-column}}
+
+{{#ember-wormhole to="action-panel-wormhole-top"}}
+  {{#hyspa-action-panel-actions-menu as |actionMenu| }}
+    {{actionMenu.menuItem menuItemText="How To" componentToRender="hi mom" }}
+    {{actionMenu.menuItem menuItemText="Code Research" componentToRender="hi mom" }}
+    {{actionMenu.menuItem menuItemText="Audit Guidelines" componentToRender="hi mom" }}
+    {{actionMenu.menuItem menuItemText="Internal Note" componentToRender="hi mom" }}
+    {{actionMenu.menuItem menuItemText="Missing Information Request" componentToRender="hi mom" }}
+    {{actionMenu.menuItem menuItemText="Key Findings and Recommendations" componentToRender="key-findings" }}
+  {{/hyspa-action-panel-actions-menu}}
+{{/ember-wormhole}}

@@ -1,0 +1,25 @@
+.icon-button {
+  font-weight: 700;
+  margin-top: 10px;
+  width: 100%;
+  padding: 4px 8px;
+  margin-left: 0px;
+  .button-label {
+    text-align: center;
+    width: 100%;
+  }
+  .button-icon {
+    height: 29px;
+    left: 0px;
+    position: absolute;
+    padding-top: 5px;
+    top: 0px;
+    width: 29px;
+  }
+  &.warning .button-icon {
+    background-color: $warning-light;
+  }
+  &.error .button-icon {
+    background-color: $error-light;
+  }
+}

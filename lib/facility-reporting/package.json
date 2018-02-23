@@ -1,0 +1,24 @@
+{
+  "name": "facility-reporting",
+  "keywords": [
+    "ember-addon",
+    "ember-engine"
+  ],
+  "dependencies": {
+    "ember-cli-htmlbars": "*",
+    "ember-cli-babel": "*",
+    "ember-route-action-helper": "*",
+    "ember-macaroni": "*",
+    "ember-light-table": "*",
+    "ember-responsive": "*"
+  },
+  "ember-addon": {
+    "paths": [
+      "../hyspa-base-components",
+      "../hyspa-common-components",
+      "../hyspa-form-components",
+      "../hyspa-navigation-components",
+      "../facility-audit-common"
+    ]
+  }
+}

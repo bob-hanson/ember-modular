@@ -1,0 +1,17 @@
+{{component-header headerText="Roles and Permissions" }}
+<ul class='listed-permissions'>
+  {{#each currentUser.products as |product| }}
+    <li class="listed-products {{product.productKey}}">
+      {{icon-font fontType="donut_large"}}
+      {{product.name}}
+      <ul class='listed-roles'>
+        {{#each product.roles as |role|  }}
+          <li class='role'>
+            {{icon-font fontType="group_work"}}
+            {{role}}
+          </li>
+        {{/each}}
+      </ul>
+    </li>
+  {{/each}}
+</ul>

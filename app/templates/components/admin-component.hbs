@@ -1,0 +1,46 @@
+<div id='app' class='app admin'>
+  {{#if currentApp.shouldDisplayNav }}
+    {{#master-header}}
+      {{#master-nav as |masterNav| }}
+        {{masterNav.navigationItem linkPath='organizations' linkText="Administration" }}
+      {{/master-nav}}
+    {{/master-header}}
+  {{/if}}
+  <div id='app-content' class='app-content column-100'>
+    {{#if currentApp.shouldDisplayNav }}
+      <div id="secondary-nav-wrap">
+      {{#secondary-nav}}
+        {{!-- {{#if isSuperOrganizationUser }}
+          {{#staples-button }}
+            {{icon-link fontType='language' linkPath='new-organization' linkText='New Organization' }}
+          {{/staples-button }}
+        {{/if}} --}}
+      {{/secondary-nav}}
+    </div>
+    {{/if}}
+    {{#master-content}}
+      {{#if currentApp.isNotInFullScreenView }}
+        {{#component-row class='top-search'}}
+          {{!-- {{#search-bar class='user-search' searchValue=userSearchInputValue searchResults=userSearchResults triggerSearch=(action 'triggerUserSearch') placeholderText='Search Users' percentageWidth=50 }}
+              {{#each userSearchResults as |userSearchResult| }}
+                {{search-result mainIcon='account_circle'
+                                mainHeader=userSearchResult.fullName
+                                secondaryIcon='language'
+                                secondaryHeader=userSearchResult.clientName
+                                clearSearchAction=(action 'triggerClearUserSearchResults')
+                                searchResultSelect=attrs.triggerUserSearchResultSelect
+                                searchResultValue=userSearchResult
+                }}
+              {{/each}}
+          {{/search-bar}} --}}
+        {{/component-row}}
+      {{/if}}
+      <div class="content-wrapper column-100">
+        {{outlet}}
+      </div>
+    {{/master-content}}
+  </div>
+  {{#if currentApp.shouldDisplayNav }}
+    {{master-footer }}
+  {{/if}}
+</div>

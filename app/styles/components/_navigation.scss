@@ -1,0 +1,37 @@
+.logo-icon {
+  padding: 10px 8px 10px 0px;
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+.column-nav-arrow {
+  min-height: 32px;
+}
+
+
+// .apps-menu .bubble-menu {position: absolute;left: -115px;top: 48px; z-index: 20;}
+//
+// .user-menu {cursor: pointer;padding-right: 21px;}
+// .user-menu .bubble-menu {position: absolute;right: 15px;top: 48px;}
+// .user-menu .user-name {color: $white; font-size: 1.1em; padding: 10px 8px;}
+// .user-menu .bubble-content li a {background: $white; color: $primary-color;}
+// .user-menu .bubble-content li a i {color:$primary-color;}
+// .user-menu .bubble-menu i.background-arrow.md-48,
+// .user-menu .bubble-menu i.primary-arrow.md-48 { left: 198px; }
+//
+//
+// .user-menu .user-avatar .user-initials {width: 40px;height: 40px; border: 1px solid $white; padding: 7px 0;}
+
+
+
+.master-footer { border-top: 1px solid $grid-border-color; }
+.master-footer .logo-icon { padding: 0 12px 0 0; }
+.master-footer .logo-icon .logo-path { fill: $black; }
+.master-footer .logo-icon svg { width: 36px; }
+.master-footer .footer-logo { width: auto; font-family: $type-font-secondary; font-size: 22px; line-height: 40px; font-weight: 200; color: $black;}
+.master-footer .footer-nav { float: right; padding: 8px 0 0 0;}
+.master-footer .footer-nav li { color: $black; padding: 0 16px; border-right: 1px solid $grid-border-color;}
+.master-footer .footer-nav li:first-of-type { font-weight: 600; }
+.master-footer .footer-nav li:last-of-type { border-right: none; padding: 0 0 0 16px;}
+.master-footer .footer-nav li a { display: inline-block; color: $link-color; width: 100%;}

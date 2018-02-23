@@ -1,0 +1,9 @@
+<dl>
+  {{#if listObject.definitionTitle }}
+    {{component-header headerText=listObject.definitionTitle tagName=headerTag }}
+  {{/if}}
+  {{#each listObject.definitionValues as |listItem| }}
+    <dt>{{listItem.definitionKey}}</dt>
+    <dd>{{listItem.definitionValue}}</dd>
+  {{/each}}
+</dl>

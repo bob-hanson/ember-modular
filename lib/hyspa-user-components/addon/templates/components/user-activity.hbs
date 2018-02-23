@@ -1,0 +1,44 @@
+{{#component-container class='activity-list' percentageWidth=100}}
+
+  {{#component-container class='activity-list-items' percentageWidth=75 }}
+    <div id='activity-meta' class='column-100'>
+      <div class="list-description column-100">{{ listDescription }}</div>
+
+      <div class="activity-list-header column-100">
+        <div class="activity-date-time activity-date-title">{{ activityDateTitle }}</div>
+      </div>
+    </div>
+    {{#component-container elementId='activity-items' class='activity-items' percentageWidth=75 }}
+      {{activity-item dateTime='2016-10-31 17:03:42.015614' bulletClass='audit' activityDescription='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' activitySubDescription='Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' }}
+      {{activity-item dateTime='2016-11-31 17:03:42.015614' bulletClass='compliance' activityDescription='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' activitySubDescription='Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' }}
+      {{activity-item dateTime='2016-12-31 17:03:42.015614' bulletClass='compliance' activityDescription='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' activitySubDescription='Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' }}
+      {{activity-item dateTime='2016-8-31 17:03:42.015614' bulletClass='analytics' activityDescription='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' activitySubDescription='Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' }}
+      {{activity-item dateTime='2016-7-31 17:03:42.015614' bulletClass='general' activityDescription='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' activitySubDescription='Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' }}
+      {{activity-item dateTime='2016-8-31 17:03:42.015614' bulletClass='general' activityDescription='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' activitySubDescription='Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' }}
+      {{activity-item dateTime='2016-5-31 17:03:42.015614' bulletClass='audit' activityDescription='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' activitySubDescription='Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' }}
+      {{activity-item dateTime='2016-10-31 17:03:42.015614' bulletClass='audit' activityDescription='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' activitySubDescription='Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' }}
+      {{activity-item dateTime='2016-12-31 17:03:42.015614' bulletClass='compliance' activityDescription='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' activitySubDescription='Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' }}
+      {{activity-item dateTime='2016-11-31 17:03:42.015614' bulletClass='analytics' activityDescription='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' activitySubDescription='Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' }}
+      {{activity-item dateTime='2016-10-31 17:03:42.015614' bulletClass='analytics' activityDescription='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' activitySubDescription='Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi' }}
+    {{/component-container}}
+  {{/component-container}}
+
+  {{#component-container class='filters activity-list-filters' percentageWidth=25}}
+    {{component-header headerText='Filters'}}
+    {{#component-container class='filter-content'}}
+
+      {{#component-container}}
+        {{component-header class='bold-heading' tagName='h3' headerText='By Date'}}
+      {{/component-container}}
+
+      {{#component-container}}
+        {{component-header class='bold-heading' tagName='h3' headerText='By Module'}}
+        {{hyspa-checkbox-component percentageWidth=50 optionName='Compliance' }}
+        {{hyspa-checkbox-component percentageWidth=50 optionName='Audit' }}
+        {{hyspa-checkbox-component percentageWidth=50 optionName='Analytics' }}
+      {{/component-container}}
+
+    {{/component-container}}
+  {{/component-container}}
+
+{{/component-container}}

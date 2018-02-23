@@ -1,0 +1,13 @@
+{{#component-container percentageWidth=100}}
+  {{#section-header headerType='page' headerText=currentPayer.payerName isFixed=true titleFont=true }}
+    {{#icon-nav}}
+      {{icon-link fontType='attach_money' linkObject=currentPayer linkPath=currentPayer.facilityAdminPayerDetailsPath activePath=currentPayer.payerDetailsActivePath }}
+      {{icon-link fontType='query_builder' linkObject=currentPayer linkPath=currentPayer.facilityAdminPayerSchedulesPath activePath=currentPayer.payerSchedulesActivePath }}
+      {{#icon-menu fontType='more_vert' }}
+        {{icon-link fontType='mode_edit' linkText='Edit Payer' linkObject=currentPayer linkPath=currentPayer.facilityAdminPayerEditLinkPath }}
+        {{icon-action fontType='clear' labelText='Delete Payer' clickAction=(action 'triggerDelete') actionObject=currentPayer }}
+      {{/icon-menu}}
+    {{/icon-nav}}
+  {{/section-header}}
+  {{yield}}
+{{/component-container}}

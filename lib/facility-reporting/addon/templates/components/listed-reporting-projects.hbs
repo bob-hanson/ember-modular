@@ -1,0 +1,15 @@
+{{#column-filter class='input-with-menu' padding='2,1,2,2'}}
+  {{filter-bar triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter'}}
+{{/column-filter}}
+{{#if hasCollection }}
+  {{#component-container class='listed-items'}}
+    {{#each filteredCollection as |currentModel|}}
+      {{listed-navigation-item currentItem=currentModel
+                              displayValue=currentModel.projectName
+                              linkPathMap='facilityReportingCoderProjectLinkPath'
+                              isInternalNavOnly=true }}
+    {{/each}}
+  {{/component-container}}
+{{ else }}
+  {{empty-message message=emptyCollectionMessage }}
+{{/if}}

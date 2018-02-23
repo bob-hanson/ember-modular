@@ -1,0 +1,8 @@
+<div class="column-100">
+  {{#if hasLabel}}
+    {{label-component labelText=labelText percentageWidth=100 launchHelp=launchHelp }}
+  {{/if}}
+  {{#each checkboxOptions as |checkbox| }}
+    {{hyspa-checkbox-component isDisabled=isDisabled optionName=checkbox.optionName subLabel=checkbox.subLabel boundModel=checkbox.isSelected percentageWidth=checkboxWidth clickAction=(action 'triggerCheckboxClick' checkbox) }}
+  {{/each}}
+</div>

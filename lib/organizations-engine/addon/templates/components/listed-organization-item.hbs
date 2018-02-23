@@ -1,0 +1,27 @@
+{{#data-point class='listed-item-value' percentageWidth=displayNameWidth }}
+  {{#link-to 'organization.organization-details' currentOrganization.linkObject title=currentOrganization.name}}
+    {{currentOrganization.name }}
+  {{/link-to}}
+{{/data-point}}
+<div class='item-toolbar'>
+  {{#listed-navigation-dynamic-icons}}
+    {{#link-to 'organization.organization-users' currentOrganization.linkObject }}
+      {{icon-font fontType='people' fontSize='small' isActive=usersIconIsActive}}
+    {{/link-to}}
+    {{#link-to 'organization.clients' currentOrganization.linkObject }}
+      {{icon-font fontType='business' fontSize='small' isActive=clientIconIsActive}}
+    {{/link-to}}
+    {{#link-to 'organization.organization-details' currentOrganization.linkObject }}
+      {{icon-font fontType='info_outline' fontSize='small' isActive=detailsIconIsActive}}
+    {{/link-to}}
+  {{/listed-navigation-dynamic-icons}}
+  {{#if isSuperOrganizationUser }}
+    {{#icon-menu fontType='more_vert' fontSize='small'}}
+      {{icon-link fontType='mode_edit' linkPath='organization.edit-organization' linkObject=currentOrganization.linkObject linkText='Edit'}}
+    {{/icon-menu}}
+  {{/if}}
+</div>
+
+{{!-- {{#if isActive }}
+  <div class="selected-element"></div>
+{{/if}} --}}

@@ -1,0 +1,26 @@
+{{#component-container}}
+  {{#section-header headerType='sub-section' headerText="Number of Diagnoses or Management Options" }}
+    <p class="section-instruction">(Do not include the time spent in services/procedures performed other than critical care mgmt)</p>
+  {{/section-header}}
+
+  {{#table-layout class="column-100" }}
+
+    {{#table-layout-row }}
+      {{#table-layout-cell }}
+        {{label-component labelText="Time in Minutes" class="table-layout-header-label" isRequired=true }}
+      {{/table-layout-cell}}
+      {{#table-layout-cell class="valign-middle align-right" }}
+        {{basic-button buttonText="Submit" clickAction=(action 'triggerCriticalTimeSubmit') class='float-right primary-border-color primary-background-color primary-button' percentageWidth=30 }}
+        {{numeric-input class='float-right critical-time-input' boundModel=currentCriticalCareServices.criticalTime percentageWidth=30 isValid=criticalTimeIsValid }}
+      {{/table-layout-cell}}
+    {{/table-layout-row}}
+
+  {{/table-layout}}
+
+  {{#if hasCustomFields }}
+    {{#component-container}}
+      {{hyspa-form-elements-builder fieldDefinitions=customFieldDefinitions boundFieldValues=customFieldValues formName="criticalCareServicesCustomFields" }}
+    {{/component-container}}
+  {{/if}}
+
+{{/component-container}}

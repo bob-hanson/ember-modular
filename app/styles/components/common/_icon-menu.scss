@@ -1,0 +1,54 @@
+.icon-menu {
+  cursor: pointer;
+  .icon-menu-list {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    min-width: 240px;
+    padding: 0;
+    margin: 0;
+    background: $white;
+    border: 1px solid $light-border-color;
+    z-index: 10;
+    a, .link-span, span.link-action-inner-wrapper {
+      padding: 6px 8px;
+      text-align: center;
+      color: $light-type-color;
+      background-color: $white;
+      min-width: 260px;
+      height: 31px;
+      &:hover {
+        background-color: $gradient-color;
+      }
+    }
+    .icon-link {
+      margin-left: 0;
+        a, .link-span, span.link-action-inner-wrapper {
+        padding: 6px 40px;
+        text-align: center;
+        color: $light-type-color;
+        background-color: $white;
+        min-width: 260px;
+        height: 31px;
+        i {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+        }
+        &:hover {
+          background-color: $gradient-color;
+        }
+      }
+    }
+  }
+  &.position-right {
+    .icon-menu-list {
+      right: inherit;
+    }
+  }
+}
+.icon-link {
+  a, .link-span {
+    color: $menu-icon;
+  }
+}

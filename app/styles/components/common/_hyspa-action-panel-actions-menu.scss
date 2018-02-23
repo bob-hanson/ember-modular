@@ -1,0 +1,20 @@
+.hypsa-action-panel-actions-menu {
+  color: $white;
+  text-align: right;
+  transition: .5s background-color;
+  .action-menu-header {
+    span {
+      display: flex;
+      cursor: pointer;
+      .material-icons.md-24:hover {
+        color: $white;
+      }
+    }
+  }
+  .hyspa-action-panel-actions-menu-item {
+    span {
+      cursor: pointer;
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{{#component-container percentageWidth=100}}
+  {{#section-header headerType='page' headerText=currentTemplate.shortDescription isFixed=true titleFont=true }}
+    {{#icon-nav}}
+      {{#icon-menu fontType='more_vert' }}
+        {{icon-link fontType='mode_edit' linkText='Edit Template' linkObject=currentTemplate linkPath=currentTemplate.facilityAdminKeyFindingTemplateEditPath }}
+        {{icon-action fontType='clear' labelText='Delete Template' clickAction=(route-action 'triggerDelete') }}
+      {{/icon-menu}}
+    {{/icon-nav}}
+  {{/section-header}}
+  {{#component-container isLoaded=currentTemplate.isFullyLoaded }}
+    {{data-point label='Short Description' value=currentTemplate.shortDescription padding='2,0,0,0' }}
+    {{data-point label='Long Description' value=currentTemplate.longDescription padding='2,0,0,0' }}
+    {{data-point label='Category' value=currentTemplate.categoryName padding='2,0,0,0' }}
+    {{data-point label='Subcategory' value=currentTemplate.subCategoryName padding='2,0,0,0' }}
+    {{data-point label='Comment Trigger' value=currentTemplate.commentTrigger padding='2,0,0,0' }}
+  {{/component-container}}
+{{/component-container}}

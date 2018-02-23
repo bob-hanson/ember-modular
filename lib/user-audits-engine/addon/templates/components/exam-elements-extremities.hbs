@@ -1,0 +1,17 @@
+{{#component-container}}
+
+  {{#if isMusculoskeletal }}
+
+    <p>[See musculoskeletal and skin]</p>
+
+  {{else if isNeurological }}
+
+    <p>[See musculoskeletal]</p>
+
+  {{else}}
+
+    {{hyspa-checkbox-group boundCollection=bodyArea.selectedExamElements checkboxOptions=bodyArea.examElements selectAction=(action 'triggerExamElementSelect')  }}
+
+  {{/if}}
+
+{{/component-container}}

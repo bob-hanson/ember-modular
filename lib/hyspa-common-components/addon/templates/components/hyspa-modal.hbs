@@ -1,0 +1,14 @@
+ {{#if showIcon }}
+  {{#component-container padding="2,3,0,3" class="icon-row" }}
+    {{icon-svg svgType=icon }}
+  {{/component-container}}
+{{/if}}
+  {{#component-container padding="3,3,3,3" class="modal-body" }}
+    <h2 class="confirm-header">{{confirmHeader}}</h2>
+    <p class="confirm-message">{{{confirmMessage}}}</p>
+  {{/component-container}}
+  {{#component-container class="modal-bottom-bar" }}
+    {{#each buttons as |button| }}
+      {{basic-button clickAction=(action 'triggerConfirmResponse' button.value) buttonText=button.text percentageWidth=100 class='primary-button' }}
+    {{/each}}
+  {{/component-container}}

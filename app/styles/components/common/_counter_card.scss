@@ -1,0 +1,45 @@
+.counter-card {
+  width: 200px;
+  border: 1px solid $primary-border-color;
+  margin-right: 16px;
+  .data-point {
+    width: 100%;
+    text-align: center;
+    background-color: $light-grey;
+    color: $chip-font;
+    border-bottom: 1px solid $primary-border-color;
+    padding: 2px 0px;
+    font-size: 56px;
+    font-weight: 300;
+  }
+  .data-label {
+    width: 100%;
+    text-align: center;
+    color: $white;
+    padding: 10px 0px;
+  }
+  &.status {
+    background-color: $primary-status;
+  }
+  &.secondary-status {
+    background-color: $secondary-status;
+  }
+  &.alert {
+    background-color: $primary-alert;
+  }
+  &.secondary-alert {
+    background-color: $secondary-alert;
+  }
+  &.error {
+    background-color: $primary-error;
+  }
+  &.secondary-error {
+    background-color: $secondary-error;
+  }
+  &.non-urgent {
+    background-color: $primary-non-urgent;
+  }
+  &.secondary-non-urgent {
+    background-color: $secondary-non-urgent;
+  }
+}

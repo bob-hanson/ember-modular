@@ -1,0 +1,12 @@
+{{icon-button class='secondary-navigation-action' iconType=menuFont buttonText='Actions Menu' clickAction=(action 'triggerToggleNavMenu')}}
+{{#if isViewingNavigation }}
+  {{#component-container tagName='ul' class='seconday-nav-items primary-background-color' padding='2,0,2,0' }}
+    {{link-action tagName='li' padding='1,0,1,0' clickAction=(action 'triggerSetViewState') linkText="How To" actionModel='audit-how-to'}}
+    {{link-action tagName='li' padding='1,0,1,0' clickAction=(action 'triggerSetViewState') linkText="Code Research" actionModel='audit-code-research' }}
+    {{link-action tagName='li' padding='1,0,1,0' clickAction=(action 'triggerSetViewState') linkText="Audit Guidelines" actionModel='audit-guidelines-summary' }}
+    {{link-action tagName='li' padding='1,0,1,0' clickAction=(action 'triggerSetViewState') linkText="Internal Note" actionModel='audit-internal-note' }}
+    {{link-action tagName='li' padding='1,0,1,0' clickAction=(action 'triggerSetViewState') linkText="Missing Information Request" actionModel='audit-missing-information' }}
+    {{link-action tagName='li' padding='1,0,1,0' clickAction=(action 'triggerSetViewState') linkText="Chart Level Comments" actionModel='audit-chart-comments' }}
+    {{link-action tagName='li' padding='1,0,1,0' clickAction=(action 'triggerSetViewState') linkText="Key Findings and Recommendations" actionModel='audit-key-findings' }}
+  {{/component-container}}
+{{/if}}

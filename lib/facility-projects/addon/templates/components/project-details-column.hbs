@@ -1,0 +1,77 @@
+<div class="column-100 inner-column">
+  {{#component-container padding="2,1,0,1" class="audit-details" }}
+    {{#section-header headerType='sub-section' hasAppBorderColor=true headerText=facilityProject.projectName }}
+      {{#icon-nav}}
+        {{#icon-menu fontType='more_vert' }}
+          {{icon-link fontType='mode_edit' linkPath="projects.project.edit-project" linkObject=facilityProject linkText='Edit Project'}}
+          {{icon-link fontType='file_upload' linkPath="projects.project.project-details.claims.bulk-upload" linkObject=facilityProject linkText='Import Claims'}}
+        {{/icon-menu}}
+      {{/icon-nav}}
+    {{/section-header}}
+
+    {{#table-layout class="column-100" }}
+
+      {{#table-layout-row }}
+        {{#table-layout-cell}}
+          {{label-component labelText="Unassigned" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="valign-middle align-right" }}
+          {{facilityProject.totalUnassignedEncounters}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+      {{#table-layout-row }}
+        {{#table-layout-cell }}
+          {{label-component labelText="Assigned" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="valign-middle align-right" }}
+          {{facilityProject.totalAssignedEncounters}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+      {{#table-layout-row }}
+        {{#table-layout-cell }}
+          {{label-component labelText="Completed" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="valign-middle align-right" }}
+          {{facilityProject.totalCompleteEncounters}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+    {{/table-layout}}
+
+    {{content-separator padding="0,0,0,0" }}
+
+    {{#table-layout class="column-100" }}
+
+      {{#table-layout-row }}
+        {{#table-layout-cell class="valign-middle" }}
+          {{label-component labelText="Created" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="valign-middle align-right" }}
+          {{format-date facilityProject.createdAt }}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+      {{#table-layout-row }}
+        {{#table-layout-cell class="valign-middle" }}
+          {{label-component labelText="Exp. Start Date" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="valign-middle align-right" }}
+          {{format-date facilityProject.startDate }}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+      {{#table-layout-row }}
+        {{#table-layout-cell class="valign-middle" }}
+          {{label-component labelText="Exp. Due Date" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="valign-middle align-right" }}
+          {{format-date facilityProject.endDate }}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+    {{/table-layout}}
+  {{/component-container}}
+
+</div>

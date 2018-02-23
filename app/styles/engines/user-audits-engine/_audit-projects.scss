@@ -1,0 +1,25 @@
+.audit-projects-filter {
+  padding-left: 121px;
+  .radio-button-group {
+    position: absolute;
+    left: 0;
+    .radio-buttons {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 3px;
+    }
+  }
+  .search-bar {
+    padding: 10px 8px 8px 32px;
+    margin-top: 8px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 74px;
+    border-bottom-right-radius: 74px;
+    border-bottom-left-radius: 0;
+    left: -1px;
+    i {
+      top: 12px;
+    }
+  }
+}

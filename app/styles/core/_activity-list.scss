@@ -1,0 +1,53 @@
+$border-color: $light-border-color;
+$description-color: $light-element-color;
+$type-color: $primary-color;
+
+.list-description {
+  padding: 10px;
+  color: $description-color;
+  font-style: italic;
+}
+.activity-list-header {
+  border-bottom: 1px solid $border-color;
+}
+.activity-date-title {
+  width: calc(15% + 1px);
+  border-right: 1px solid $border-color;
+}
+.activity-date-time,
+.activity-details {
+  padding: 10px;
+}
+.activity-details {
+  padding: 10px 20px;
+}
+.activity-details {
+  border-left: 1px solid $border-color;
+}
+.activity-description {
+  color: $type-color;
+  font-style: normal;
+}
+.activity-sub-description {
+  color: $description-color;
+  font-size: 13px;
+  font-style: italic;
+}
+.activity-time,
+.activity-date {
+  width: 100%;
+  color: $description-color;
+  font-size: 13px;
+  font-weight: 300;
+  font-style: italic;
+}
+.activity-time.is-active,
+.activity-date.is-active {
+  font-size: 16px;
+  color: $type-color;
+  font-weight: 500;
+  font-style: normal;
+}
+.activity-bullet { border: 1px solid $border-color; width: 20px; height: 20px; border-radius: 50%; position: absolute; top: 10px; left: calc(15% - 10px); padding: 4px;}
+.activity-bullet .bullet-point {border-radius: 50%; width: 10px; height: 10px; }
+.activity-bullet .bullet-point.general { background-color: #3f86bd; }

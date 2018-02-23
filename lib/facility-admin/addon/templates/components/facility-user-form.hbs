@@ -1,0 +1,41 @@
+{{#hyspa-form formFor="users" isLoading=isLoading isValid=isProjectFormValid formSubmitAction=(action 'triggerFormSubmit') formCancelAction=(action 'triggerFormCancel') as |f| }}
+  {{section-header headerType='page' headerText=formHeaderText titleFont=true }}
+  {{#component-container class='form-row'}}
+    {{f.input labelText='First Name' boundModel=firstName isRequired=true name='first_name' percentageWidth=50}}
+    {{f.input labelText='Last Name' boundModel=lastName isRequired=true name='last_name' percentageWidth=50}}
+  {{/component-container }}
+  {{#component-container class='form-row'}}
+    {{f.input labelText='Title' boundModel=positionTitle name='position_title'}}
+  {{/component-container }}
+  {{#component-container class='form-row'}}
+    {{f.input labelText='Email' boundModel=email isRequired=true name='email' percentageWidth=50}}
+    {{f.phoneInput labelText='Phone' boundModel=phoneNumber name='phone_number' percentageWidth=50 }}
+  {{/component-container }}
+  {{#component-container class='form-row'}}
+    {{f.textarea labelText='Notes' boundModel=notes name='notes'}}
+  {{/component-container }}
+  {{section-header headerText='User Settings' headerType='sub-section' }}
+  {{#component-container class="form-row" }}
+    {{f.buttonGroup labelText='User Access Level' boundModel=accessLevel isRequired=true radioOptions=userRoleOptions percentageWidth=100 alignRight=true name='role' padding='2,0,0,0'}}
+  {{/component-container}}
+  {{#component-container class='form-row'}}
+    {{f.switch switchLabel='Active User' boundModel=isActive labelLeft=false padding='2,0,0,1' name='is_active'}}
+  {{/component-container }}
+  {{#component-container class='form-row' padding='2,0,2,0'}}
+    {{f.switch switchLabel='Include user as Auditor in list for auditing work assignments' boundModel=isAuditor labelLeft=false padding='0,0,0,1' name='is_auditor'}}
+    {{#component-container tagName="p" padding='1,0,0,4'}}
+      Selecting this user as active will give them access to the system and count toward the number of users allowed on your licensing agreement.
+    {{/component-container }}
+  {{/component-container }}
+  {{#component-container class='form-row'}}
+    {{f.switch switchLabel='Include user as Quality Reviewer in list for auditing work assignments' boundModel=isQA labelLeft=false padding='0,0,0,1' name='is_qa'}}
+  {{/component-container }}
+  {{section-header headerText='Alert Settings' headerType='sub-section' }}
+  {{#component-container tagName="p" padding='2,0,0,0'}}
+    User will receive alerts for the following selected settings
+  {{/component-container }}
+  {{#component-container class='form-row'}}
+    {{f.switch switchLabel='QA Acceptance Alerts' boundModel=qAAcceptanceAlerts labelLeft=false padding='0,0,2,1' name='qa_acceptance_alerts' }}
+  {{/component-container }}
+  {{f.formActions primaryButtonText=primaryButtonText }}
+{{/hyspa-form}}

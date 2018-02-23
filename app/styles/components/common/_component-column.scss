@@ -1,0 +1,41 @@
+.component-column {
+  max-width: 288px;
+  padding: 0px;
+  &.column-form {
+    .inner-column {
+      padding: 16px;
+      .basic-button {
+        margin: 0px;
+      }
+    }
+  }
+  // padding-right: 16px;
+  .inner-column {
+    overflow-y: auto;
+  }
+  &.navigation {
+    .column-header {
+      background-color: $white;
+      hr {
+        background-color: $light-border-color;
+        display: block;
+        height: 1px;
+        margin: 0;
+        position : absolute;
+        bottom: 0;
+        width: calc(100% - 30px);
+      }
+    }
+  }
+  .header-icons {
+    position: absolute;
+    top: 16px;
+    right: 11px;
+  }
+  hr {
+    display: none;
+  }
+}
+.list-column {
+  max-width: 288px;
+}

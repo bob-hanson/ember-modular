@@ -1,0 +1,94 @@
+{{#component-container percentageWidth=75 }}
+  {{!-- {{form-actions primaryButtonText=primaryButtonText primaryAction=(action 'triggerFormSubmit') cancelAction=this.attrs.formCancel primaryIsEnabled=allRequiredFieldsAreMet }} --}}
+  {{#component-container}}
+    {{!-- {{section-header headerType='section' headerText='User Information'}}
+    {{#component-container class='gutter-right-secondary' percentageWidth=100 }}
+      {{#component-container class='gutter-right-secondary' percentageWidth=40}}
+        {{hyspa-single-select selectOptions=organizationSelectOptions onSelection=(action 'triggerOrganizationSelected') labelText='Organization' isRequired=true inputValue=selectedOrganization isTouched=organizationIsTouched isValid=organizationIsValid }}
+      {{/component-container}}
+      {{#component-container class='gutter-right-secondary' percentageWidth=40}}
+        {{#if hasClients }}
+          {{hyspa-single-select selectOptions=clientSelectOptions onSelection=(action 'triggerClientSelected') labelText='Client' isRequired=true inputValue=selectedClient isTouched=clientIsTouched isValid=clientIsValid }}
+        {{/if}}
+      {{/component-container}}
+    {{/component-container}} --}}
+
+    {{#if isAddingSingleUser }}
+      {{#section-header headerType='section' headerText='Personal Information'}}
+        {{#if isCreateForm }}
+          {{link-action linkText='(Bulk Upload)' clickAction=(action 'triggerSingleBulkSwap')}}
+        {{/if}}
+      {{/section-header}}
+
+      {{#component-container class='form-row' }}
+        {{hyspa-input-component labelText='First Name' isRequired=true inputValue=firstName isTouched=firstNameIsTouched isValid=firstNameIsValid percentageWidth=33}}
+        {{hyspa-input-component labelText='Last Name' isRequired=true inputValue=lastName isTouched=lastNameIsTouched isValid=lastNameIsValid percentageWidth=33}}
+        {{hyspa-input-component labelText='Email Address' isRequired=true inputValue=userEmail isTouched=userEmailIsTouched isValid=userEmailIsValid percentageWidth=33}}
+      {{/component-container}}
+
+      {{#component-container class='form-row'}}
+        {{phone-input labelText='Phone' inputValue=userPhone percentageWidth=33}}
+        {{numeric-input customRegex='^(\d{3}-?\d{2}-?\d{4}|XXX-XX-XXXX)$' allowedChars=['-'] labelText='SSN' isRequired=true inputValue=userSsn percentageWidth=33}}
+      {{/component-container}}
+
+      {{#component-container class='form-row'}}
+        {{hyspa-input-component labelText='Emergency Contact' inputValue=emergencyContact percentageWidth=66}}
+        {{phone-input labelText='Phone' inputValue=emergencyContactPhone percentageWidth=33}}
+      {{/component-container}}
+
+      {{section-header headerType='section' headerText='Employment Information'}}
+      {{#component-container class='form-row'}}
+        {{hyspa-input-component labelText='Employee Number' inputValue=employeeName percentageWidth=33}}
+        {{hyspa-single-select class='employment-type-select' selectOptions=employmentTypes onSelection=(action 'triggerEmploymentTypeChanged') labelText='Employee Type' inputValue=employmentStatus percentageWidth=33}}
+      {{/component-container}}
+      {{#component-container class='form-row'}}
+        {{hyspa-single-select class='background-check-select' selectOptions=backgroundCheckTypes onSelection=(action 'triggerBackgroundStatusChanged') labelText='Background Status' inputValue=backgroundStatus isAlignedRight=false percentageWidth=66}}
+      {{/component-container}}
+      {{#component-container class='form-row'}}
+        {{hyspa-input-component labelText='Position Title' inputValue=positionTitle percentageWidth=50}}
+        {{hyspa-input-component labelText='Immediate Supervisor' inputValue=immediateSupervisor percentageWidth=50}}
+      {{/component-container}}
+
+      {{product-form-selector currentProducts=formProperties.currentProducts isValid=productIsValid validationMessage=productValidation clickAction=(action 'triggerSelectProduct') }}
+
+      {{#component-container}}
+        {{section-header headerType='section' headerText='User Roles'}}
+        {{#form-group percentageWidth=70}}
+          {{component-header class='bold-heading' tagName='h3' headerText='Compliance Manager'}}
+          {{hyspa-checkbox-component percentageWidth=50 optionName='Client Administrator' isSelected=isClientAdministrator }}
+          {{hyspa-checkbox-component percentageWidth=50 optionName='Document Control Manager' isSelected=isDocumentControlManager }}
+          {{hyspa-checkbox-component percentageWidth=50 optionName='Compliance Officer' isSelected=isComplianceOfficer }}
+          {{hyspa-checkbox-component percentageWidth=50 optionName='Compliance Manager' isSelected=isComplianceManager }}
+          {{hyspa-checkbox-component percentageWidth=50 optionName='Legal Manager' isSelected=isLegalManager }}
+          {{hyspa-checkbox-component percentageWidth=50 optionName='Audit and Monitoring Manager' isSelected=isAuditMonitoringManager }}
+          {{hyspa-checkbox-component percentageWidth=50 optionName='Employee Manager' isSelected=isEmployeeManager }}
+          {{hyspa-checkbox-component percentageWidth=50 optionName='Training and Education Manager' isSelected=isTrainingEducationManager }}
+          {{hyspa-checkbox-component percentageWidth=50 optionName='Limited User' isSelected=isLimitedUser }}
+          {{hyspa-checkbox-component percentageWidth=50 optionName='Incident Report Manager' isSelected=isIncidentReportManager }}
+          {{hyspa-checkbox-component percentageWidth=50 optionName='Device Manager' isSelected=isDeviceManager }}
+          {{hyspa-checkbox-component percentageWidth=50 optionName='Attestation Manager' isSelected=isAttestationManager }}
+          {{hyspa-checkbox-component percentageWidth=50 optionName='Business Associate Manager' isSelected=isBusinessAssociateManager }}
+          {{hyspa-checkbox-component percentageWidth=50 optionName='Risk Assesment Manager' isSelected=isRiskAssesmentManager }}
+        {{/form-group}}
+        {{#form-group percentageWidth=30}}
+          {{component-header class='bold-heading' tagName='h3' headerText='Audit Manager'}}
+          {{hyspa-checkbox-component optionName='Admin User' isSelected=isAdminUser }}
+          {{hyspa-checkbox-component optionName='Auditor' isSelected=isAuditor }}
+          {{hyspa-checkbox-component optionName='Education' isSelected=isEducation }}
+          {{hyspa-checkbox-component optionName='No Access' isSelected=isNoAccess }}
+          {{hyspa-checkbox-component optionName='QA' isSelected=isQA }}
+          {{hyspa-checkbox-component optionName='Super User' isSelected=isSuperUser }}
+        {{/form-group}}
+      {{/component-container}}
+    {{ else }}
+      {{#section-header headerType='section' headerText='Bulk User Upload'}}
+        {{link-action linkText='(Single User)' clickAction=(action 'triggerSingleBulkSwap')}}
+      {{/section-header}}
+      {{#component-container}}
+        {{file-uploader label="Browse for a File" selectedFiles=bulkUploadFiles validFileExtensions=validFileExtensions validFileTypeDisplay=validFileTypeDisplay }}
+      {{/component-container }}
+    {{/if}}
+  {{/component-container}}
+
+  {{form-actions primaryButtonText=primaryButtonText primaryAction=(action 'triggerFormSubmit') cancelAction=this.attrs.formCancel bubbleTipAction=(action 'triggerShowInvalidFields') bubbleTipMessage=bubbleTipMessage bubbleTipActionText='Show Me' showBubbleTip=true primaryIsEnabled=allRequiredFieldsAreMet }}
+{{/component-container}}

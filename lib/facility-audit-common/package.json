@@ -1,0 +1,14 @@
+{
+  "name": "facility-audit-common",
+  "keywords": [
+    "ember-addon"
+  ],
+  "dependencies": {
+    "ember-cli-htmlbars": "*",
+    "ember-cli-babel": "*",
+    "ember-route-action-helper": "*",
+    "ember-macaroni": "*",
+    "ember-light-table": "*",
+    "ember-responsive": "*"
+  }
+}

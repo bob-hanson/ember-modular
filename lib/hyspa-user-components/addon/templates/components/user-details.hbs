@@ -1,0 +1,32 @@
+{{#component-container percentageWidth=100}}
+
+    {{#component-container class='component-section' percentageWidth=100 }}
+      {{component-header headerText='Platform Information'}}
+      {{data-point label='Organization' value='My Organization' labelIcon='language' percentageWidth=25 }}
+      {{data-point label='Client' value='My Client' labelIcon='business' percentageWidth=25 }}
+    {{/component-container}}
+
+    {{#component-container class='component-section' percentageWidth=100}}
+      {{component-header headerText='Personal Information'}}
+      {{data-point label='First Name' value=currentUser.firstName percentageWidth=25 }}
+      {{data-point label='Last Name' value=currentUser.lastName percentageWidth=25 }}
+      {{data-point label='Email Address' value=currentUser.email percentageWidth=25 }}
+      {{data-point label='Phone' value='801-123-3344' percentageWidth=25 }}
+      {{data-point label='Date of Birth' value='5/12/1972' percentageWidth=25}}
+      {{data-point label='SSN' value='123-23-2233' percentageWidth=25 }}
+      {{data-point label='Emergency Contact' value='Jerry Seinfeld' percentageWidth=25 }}
+      {{data-point label='Phone' value='801-233-1234' percentageWidth=25 }}
+    {{/component-container}}
+
+    {{#component-container class='component-section' percentageWidth=100}}
+      {{component-header headerText='Employment Information'}}
+      {{data-point label='Employee Number' value='HK - 2344433 - 123' percentageWidth=25 }}
+      {{data-point label='Date of Hire' value='5/12/1972' percentageWidth=25 }}
+      {{data-point label='Position Title' value="Really Hard Worker" percentageWidth=25 }}
+      {{data-point label='Employee Type' value="Full Time" percentageWidth=25 }}
+      {{data-point label='Background Status' value='Complete' percentageWidth=25}}
+      {{data-point label='Date of BG Check' value='5/12/1972' percentageWidth=25 }}
+      {{data-point label='Immediate Supervisor' value='Cosmo Kramer' percentageWidth=25 }}
+    {{/component-container}}
+
+{{/component-container}}

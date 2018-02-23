@@ -1,0 +1,9 @@
+{{#content-view percentageWidth=40 }}
+  {{key-finding-template-form
+                  formModel=currentTemplate
+                  formSubmit=(route-action 'triggerFormSubmit')
+                  formCancel=(route-action 'triggerFormCancel')
+  }}
+{{/content-view }}
+
+{{log currentTemplate}}

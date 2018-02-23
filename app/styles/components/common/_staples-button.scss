@@ -1,0 +1,55 @@
+.staples-button {
+  position: absolute;
+  right: 16px;
+  bottom: -22px;
+  z-index: 10;
+  & > span {
+    border-radius: 50%;
+    background-color: $accent-color;
+    cursor: pointer;
+    height: 48px;
+    text-align: center;
+    width: 48px;
+    color: $white;
+    font-family: $headline-font-family;
+    font-size:32px;
+    display: inline-block;
+    float: initial;
+    line-height: 48px;
+    font-weight: 100;
+    transition: all $animation-type $animation-speed-slow;
+    -webkit-box-shadow: 7px 6px 22px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 6px 22px -6px rgba(0,0,0,0.75);
+    @include shadow(2);
+  }
+  &.is-active > span {
+    transform: rotate(45deg);
+    background: #b42331;
+  }
+  ul {
+    width: 240px;
+    height: 0;
+    overflow-y: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: all $animation-type $animation-speed-slow;
+    position: absolute;
+    right: 0;
+    top: 48px;
+    a {
+      color: $white;
+      background-color: $accent-color;
+      margin: 2px 0px;
+      @include shadow(1);
+      @include shadow-hover(0, 2);
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+  &.is-active > ul {
+    visibility: visible;
+    opacity: 1;
+    height:37px;
+  }
+}

@@ -1,0 +1,5 @@
+{{yield (hash
+  sortableComponent=(component 'hyspa-draggable-object')
+  repeatedComponent=(component 'repeated-form-component' autoFocusEnabled=shouldAutoFocus onInit=(action 'triggerRegisterRepeatedComponent'))
+  sortableRepeatedComponent=(component 'sortable-repeated-form-component')
+  currentList=currentList) }}

@@ -1,0 +1,98 @@
+.hyspa-input-builder {
+  display: flex;
+  width: 100%;
+  > div {
+    display: flex;
+  }
+  .hyspa-input-addon {
+    background-color: $light-border-color;
+    border: 1px solid $medium-border-color;
+    border-radius: 4px;
+    &.addon-clickable {
+      cursor: pointer;
+    }
+  }
+  .input-component:not(:first-child) input,
+  .hyspa-input-addon:not(:first-child),
+  .search-bar:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .input-component:not(:last-child) input,
+  .hyspa-input-addon:not(:last-child),
+  .search-bar:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .hyspa-input-addon:not(:last-child),
+  .input-component:not(:last-child) {
+    border-right: 0;
+    input {
+      border-right: 0;
+    }
+  }
+  .radio-button-group:not(:last-child) {
+    .radio-buttons {
+      border-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  .radio-button-group:not(:first-child) {
+    .radio-buttons {
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  .hyspa-input-counters {
+    display: flex;
+    flex-direction: column;
+    .hyspa-input-counter {
+      cursor: pointer;
+      &:hover {
+        background-color: #eae5e5;
+      }
+      .caret {
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+      }
+      &.is-up {
+        .caret {
+          border-bottom: 5px solid black;
+        }
+        padding-bottom: 4px;
+      }
+      &.is-down {
+        margin-top: auto;
+        padding-top: 4px;
+        .caret {
+          border-top: 5px solid black;
+        }
+      }
+    }
+  }
+
+  .radio-button-group {
+    width: initial;
+    .radio-buttons {
+      display: flex;
+    }
+  }
+
+  .search-bar {
+    border-color: $medium-border-color;
+  }
+
+}
+
+// validity classes for addons
+
+.input-component.is-invalid {
+  .hyspa-input-addon {
+    border-color: $error-red;
+  }
+}

@@ -1,0 +1,11 @@
+{{#if isViewingNestedViews }}
+  {{#component-column-with-list currentCollection=filteredCollection linkPathMap=facilityAdminUserDetailsPath }}
+    {{#icon-menu fontType='more_vert' fontSize='medium' padding='1,0,0,1'}}
+      {{icon-link fontType='add' linkPath='facility-users.new-user' linkText='Add User' }}
+      {{icon-link fontType='backup' linkPath='facility-users.bulk-upload' linkText='Bulk Upload'}}
+    {{/icon-menu}}
+  {{/component-column-with-list}}
+{{ else }}
+  {{component 'listed-users-full' filteredCollection=filteredCollection filterAction=(action 'triggerFilterCollection') }}
+{{/if}}
+{{yield}}

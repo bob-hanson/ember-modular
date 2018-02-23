@@ -1,0 +1,92 @@
+{{#component-container }}
+
+  {{#table-layout }}
+    {{#table-layout-row }}
+      {{#table-layout-cell class="valign-middle align-right text-bold examination-label-column" }}
+        Exam Audit Type
+      {{/table-layout-cell}}
+      {{#table-layout-cell }}
+        {{hyspa-button-group boundModel=pe95.selectedExamAuditType radioOptions=pe95.examAuditTypeOptions selectAction=(action 'triggerAuditTypeSelect') }}
+      {{/table-layout-cell}}
+    {{/table-layout-row}}
+
+    {{#if hasSelectedAuditType }}
+      {{#table-layout-row }}
+        {{#table-layout-cell class="valign-middle align-right text-bold examination-label-column" }}
+          Exam Elements
+        {{/table-layout-cell}}
+        {{#table-layout-cell }}
+          {{hyspa-button-group boundModel=selectedAuditType.selectedExamElement untrackedBoundModel=selectedAuditType.untrackedSelectedExamElement radioOptions=examElementOptions selectAction=(action 'triggerExamElementSelect') }}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+    {{/if}}
+
+    {{#if showToggles }}
+      {{#table-layout-row }}
+        {{#table-layout-cell class="valign-middle align-right text-bold examination-label-column" }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell}}
+          {{#if hasOneOrMoreOrganSystemsToggle }}
+            {{switch-component switchLabel='One or more areas and/or organ systems is documented in detail' isActive=selectedAuditType.isOneOrMoreOrganSystems labelLeft=false clickAction=(action 'triggerSwitchToggle') }}
+          {{/if}}
+          {{#if hasCompleteExaminationToggle }}
+            {{switch-component switchLabel='Complete examination of a single organ system' isActive=selectedAuditType.isCompleteExamination labelLeft=false clickAction=(action 'triggerSwitchToggle') }}
+          {{/if}}
+          {{#if hasExpandedDocumentationToggle }}
+            {{switch-component switchLabel='Expanded documentation of each of the areas and/or system was examined; normal/abnormal findings were expanded upon' isActive=selectedAuditType.isExpandedDocumentation labelLeft=false clickAction=(action 'triggerSwitchToggle') }}
+          {{/if}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+    {{/if}}
+
+    {{#if selectedAuditType.detailsSelectedAndHasMultipeAreasRadioButton }}
+      {{#table-layout-row }}
+        {{#table-layout-cell class="valign-top align-right text-bold examination-label-column" }}
+          Select One
+        {{/table-layout-cell}}
+        {{#table-layout-cell }}
+          {{hyspa-radio-button-group boundModel=selectedAuditType.selectedMultipleAreas radioOptions=selectedAuditType.multipleAreasOptions stacked=true selectAction=(action 'triggerMultipleAreasSelect') enableClearSelection=true }}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+    {{/if}}
+
+  {{/table-layout}}
+
+
+ {{#if selectedAuditType.detailsSelected }}
+
+     {{section-header headerType='sub-section' headerText="General Specialty Specific Examination" }}
+
+     {{#tabs-container vertical=true tabHeader="System / Body Area" contentHeader="Elements of Exam" }}
+       {{#tabs-list}}
+        {{#tab-button}}
+          Organ Systems <span class="peek">{{selectedAuditType.selectedOrganOptions.length}}</span>
+        {{/tab-button}}
+        {{#tab-button}}
+          Body Areas <span class="peek">{{selectedAuditType.selectedBodyOptions.length}}</span>
+        {{/tab-button}}
+       {{/tabs-list}}
+
+       {{#tab-panel}}
+         {{#component-container}}
+          {{hyspa-checkbox-group boundCollection=selectedAuditType.selectedOrganOptions checkboxOptions=selectedAuditType.organOptions selectAction=(action 'triggerOrganOptionsSelect') }}
+          {{hyspa-checkbox-group boundCollection=selectedAuditType.selectedAdditionalOrganOptions checkboxOptions=selectedAuditType.additionalOrganOptions selectAction=(action 'triggerOrganOptionsSelect') }}
+         {{/component-container}}
+       {{/tab-panel}}
+
+       {{#tab-panel}}
+         {{#component-container}}
+            {{hyspa-checkbox-group boundCollection=selectedAuditType.selectedBodyOptions checkboxOptions=selectedAuditType.bodyOptions selectAction=(action 'triggerBodyAreasSelect') }}
+         {{/component-container}}
+       {{/tab-panel}}
+
+     {{/tabs-container }}
+
+ {{/if}}
+
+ {{#component-container padding="2,0,0,0" }}
+   {{hyspa-form-elements-builder fieldDefinitions=customFieldDefinitions boundFieldValues=customFieldValues }}
+ {{/component-container}}
+
+
+{{/component-container}}

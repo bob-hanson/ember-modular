@@ -1,0 +1,12 @@
+{
+  "name": "hyspa-form-components",
+  "keywords": [
+    "ember-addon"
+  ],
+  "dependencies": {
+    "ember-cli-htmlbars": "*",
+    "ember-cli-babel": "*",
+    "ember-power-calendar": "*",
+    "ember-basic-dropdown": "*"
+  }
+}

@@ -1,0 +1,44 @@
+{{#component-container class='form-detail-section' percentageWidth=100 }}
+  {{component-header headerText='Information' tagName='h3' }}
+  {{#component-container percentageWidth=50}}
+    <dl>
+      <dt>Name</dt>
+      <dd>{{name}}</dd>
+      <dt>City</dt>
+      <dd>{{city}}</dd>
+    </dl>
+  {{/component-container}}
+  {{#component-container percentageWidth=50}}
+    <dl>
+      <dt>Address</dt>
+      <dd>
+        {{address}}
+        {{#if hasAddress2}}
+          <br>
+          {{address2}}
+        {{/if}}
+      </dd>
+    </dl>
+    {{#component-container percentageWidth=100 }}
+      {{#component-container percentageWidth=40}}
+        <dl>
+          <dt>State</dt>
+          <dd>{{state}}</dd>
+        </dl>
+      {{/component-container}}
+      {{#component-container percentageWidth=50}}
+        <dl>
+          <dt>Zip</dt>
+          <dd>{{zipCode}}</dd>
+        </dl>
+      {{/component-container}}
+    {{/component-container}}
+  {{/component-container}}
+{{/component-container}}
+{{#if hasContacts }}
+  {{#each contactsCollection as |contact| }}
+    {{#component-container percentageWidth=50 class='form-detail-section' }}
+      {{definition-list listObject=contact }}
+    {{/component-container}}
+  {{/each}}
+{{/if}}

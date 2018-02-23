@@ -1,0 +1,97 @@
+
+{{#component-container}}
+  {{!-- {{form-actions primaryButtonText=primaryButtonText primaryAction=(action 'triggerFormSubmit') cancelAction=this.attrs.formCancel primaryIsEnabled=allRequiredFieldsAreMet }} --}}
+  {{#component-container percentageWidth=100}}
+
+    {{section-header headerText='Client Information'}}
+
+    {{#component-container class='form-row'}}
+      {{hyspa-input-component labelText='Name' isRequired=true boundModel=name isTouched=nameIsTouched isValid=nameIsValid validationMessage=nameValidation percentageWidth=33 }}
+      {{hyspa-input-component labelText='Address 1' isRequired=true boundModel=address isTouched=addressMainIsTouched isValid=addressMainIsValid validationMessage=addressValidation percentageWidth=33}}
+      {{hyspa-input-component labelText='Address 2' boundModel=address2 percentageWidth=33}}
+    {{/component-container}}
+
+    {{#component-container class='form-row' }}
+      {{hyspa-input-component labelText='City' isRequired=true boundModel=city isTouched=cityIsTouched isValid=cityIsValid validationMessage=cityValidation percentageWidth=33}}
+      {{state-select onSelection=(action 'triggerStateOptionSelected') labelText='State' isRequired=true percentageWidth=33 boundModel=state isTouched=stateIsTouched isValid=stateIsValid validationMessage=stateValidation }}
+      {{zipcode-input labelText='Zip' isRequired=true percentageWidth=33 boundModel=zip isTouched=zipIsTouched isValid=zipIsValid validationMessage=zipValidation }}
+    {{/component-container}}
+
+    {{#component-container class='form-column' percentageWidth=33}}
+      {{section-header headerType='form-column' headerText='Main Contact'}}
+      {{hyspa-input-component labelText='Name' isRequired=true boundModel=mainContactName isTouched=mainContactNameIsTouched isValid=mainContactNameIsValid validationMessage=nameValidation }}
+      {{hyspa-input-component labelText='Email Address' isRequired=true boundModel=mainContactEmail isTouched=mainContactEmailIsTouched isValid=mainContactEmailIsValid validationMessage=emailValidation }}
+      {{phone-input labelText='Phone' boundModel=mainContactPhone }}
+    {{/component-container}}
+
+    {{#component-container class='form-column' percentageWidth=33}}
+      {{section-header headerType='form-column' headerText='Billing Contact'}}
+      {{hyspa-input-component labelText='Name' boundModel=billingContactName }}
+      {{hyspa-input-component labelText='Email Address' boundModel=billingContactEmail }}
+      {{phone-input labelText='Phone' boundModel=billingContactPhone }}
+    {{/component-container}}
+    {{#component-container percentageWidth=33}}
+      {{section-header headerType='form-column' headerText='Technical Contact'}}
+      {{hyspa-input-component labelText='Name' boundModel=techincalContactName }}
+      {{hyspa-input-component labelText='Email Address' boundModel=techincalContactEmail }}
+      {{phone-input labelText='Phone' boundModel=techincalContactPhone }}
+    {{/component-container}}
+    {{#component-container class='form-column' percentageWidth=33}}
+      {{section-header headerType='form-column' headerText='Sales Rep'}}
+      {{hyspa-input-component labelText='Name' isRequired=true boundModel=healthicitySalesName isTouched=healthicitySalesNameIsTouched isValid=healthicitySalesNameIsValid validationMessage=nameValidation }}
+      {{hyspa-input-component labelText='Email Address' boundModel=healthicitySalesEmail }}
+      {{phone-input labelText='Phone' boundModel=healthicitySalesPhone }}
+    {{/component-container}}
+    {{#component-container class='form-column' percentageWidth=33}}
+      {{section-header headerType='form-column' headerText='Account Manager'}}
+      {{hyspa-input-component labelText='Name' isRequired=true boundModel=healthicityAccountManagerName isTouched=healthicityAccountManagerNameIsTouched isValid=healthicityAccountManagerNameIsValid validationMessage=nameValidation }}
+      {{hyspa-input-component labelText='Email Address' boundModel=healthicityAccountManagerEmail }}
+      {{phone-input labelText='Phone' boundModel=healthicityAccountManagerPhone }}
+    {{/component-container}}
+
+    {{product-form-selector currentProducts=formProperties.currentProducts isValid=productIsValid validationMessage=productValidation clickAction=(action 'triggerSelectProduct') }}
+
+    {{#if hasAuditManager }}
+      {{#component-container class='form-row'}}
+        {{section-header headerType='sub-section' headerText='Audit Manager Options'}}
+        {{hyspa-button-group labelText="Access Type" boundModel=amAccessType radioOptions=amAccountTypeOptions isFormInput=true percentageWidth=50}}
+        {{hyspa-date-picker labelText='Trial End Date' boundModel=amTrialEndDate defaultDate=amTrialEndDate isRequired=true isEnabled=isAMTrialAccount isTouched=amTrialEndDateIsTouched isValid=amTrialEndDateIsValid percentageWidth=50}}
+        {{!-- {{hyspa-button-group labelText="Customer Type" isRequired=true boundModel=auditManagerCustomerType radioOptions=auditManagerCustomerTypeOptions radioSelectAction=(action 'triggerAuditAccountTypeSelect') isFormInput=true percentageWidth=30}}
+        {{hyspa-input-component labelText='Number of Licenses' boundModel=auditManagerUserLicenses percentageWidth=20 }}
+        {{hyspa-multi-select labelText='Auditee Type(s)' isRequired=true boundCollection=auditManagerAuditeeTypes selectOptions=auditeeTypeSelectOptions isValid=auditManagerAuditeeTypesIsValid isTouched=auditManagerAuditeeTypeIsTouched percentageWidth=25 }}
+        {{hyspa-multi-select labelText='EMR(s)' boundCollection=auditManagerEmrs selectOptions=clientEmrSelectOptions percentageWidth=25 }} --}}
+      {{/component-container}}
+    {{/if}}
+
+    {{#if hasComplianceManager }}
+      {{#component-container class='form-row'}}
+        {{section-header headerType='sub-section' headerText='Compliance Manager Options'}}
+        {{hyspa-button-group labelText="Access Type" boundModel=cmAccessType radioOptions=cmAccountTypeOptions isFormInput=true percentageWidth=50}}
+        {{hyspa-date-picker labelText='Trial End Date' boundModel=cmTrialEndDate defaultDate=cmTrialEndDate isRequired=true isEnabled=isCMTrialAccount isTouched=cmTrialEndDateIsTouched isValid=cmTrialEndDateIsValid percentageWidth=50}}
+        {{!-- {{switch-component switchLabel='Deliver Emails' isActive=wantsDeliverEmails percentageWidth=33 }} --}}
+      {{/component-container}}
+    {{/if}}
+
+    {{#if hasFacilityManager }}
+      {{#component-container class='form-row'}}
+        {{section-header headerType='sub-section' headerText='Facility Manager Options'}}
+        {{hyspa-button-group labelText="Access Type" boundModel=fmAccessType radioOptions=fmAccountTypeOptions isFormInput=true percentageWidth=50}}
+        {{hyspa-date-picker labelText='Trial End Date' boundModel=fmTrialEndDate defaultDate=fmTrialEndDate isRequired=true isEnabled=isFMTrialAccount isTouched=fmTrialEndDateIsTouched isValid=fmTrialEndDateIsValid percentageWidth=50}}
+      {{/component-container}}
+    {{/if}}
+
+    {{#component-container class='form-row'}}
+      {{section-header headerType='sub-section' headerText='Activation'}}
+      {{switch-component switchLabel='Enable Account' isActive=isEnabled percentageWidth=33 }}
+    {{/component-container}}
+    {{#component-container class='form-row'}}
+      {{hyspa-input-component labelText='Subdomain' boundModel=subdomain percentageWidth=50 isRequired=isCreateView isEnabled=isCreateView isTouched=subDomainIsTouched isValid=subDomainIsValid validationMessage=subdomainValidation }}<span class='subdomain'>.app.healthicity.com</span>
+    {{/component-container}}
+  {{/component-container}}
+  {{!-- {{#component-container percentageWidth=25}} --}}
+    {{!-- {{component-header headerText='Customization'}}
+    {{switch-component switchLabel='Custom Colors' isSelected=viewCustomColors isEnabled=false}}
+    {{switch-component switchLabel='Custom Logos' isSelected=viewCustomLogo isEnabled=false}} --}}
+  {{!-- {{/component-container}} --}}
+  {{form-actions primaryButtonText=primaryButtonText primaryAction=(action 'triggerFormSubmit') cancelAction=this.attrs.formCancel bubbleTipAction=(action 'triggerShowInvalidFields') bubbleTipMessage=bubbleTipMessage bubbleTipActionText='Show Me' showBubbleTip=true primaryIsEnabled=allRequiredFieldsAreMet }}
+{{/component-container}}

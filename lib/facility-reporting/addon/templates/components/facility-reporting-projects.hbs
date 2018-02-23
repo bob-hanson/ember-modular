@@ -1,0 +1,7 @@
+{{#if isViewingNestedViews }}
+  {{#component-column columnType='navigation'}}
+    {{listed-reporting-projects currentCollection=currentProjects }}
+  {{/component-column }}
+{{ else }}
+  {{listed-reporting-projects-full currentCollection=currentProjects }}
+{{/if}}

@@ -1,0 +1,37 @@
+{{!-- {{#if isViewingNotifications }}
+  {{#component-container class='notifications-list quinary-background-color' }}
+    {{#component-container padding="1,0,2,0"}}
+      {{icon-action labelText="Close Notifications" class='notification-panel-close' fontType="clear" clickAction=(action 'triggerTogglePanel') iconLeft=false }}
+    {{/component-container}}
+    {{#if hasActiveNotifications }}
+      {{#each activeNotifications as |notificationItem| }}
+        {{notification-item notificationItem=notificationItem removeAction=(action 'triggerRemoveNotification') }}
+      {{/each}}
+    {{ else }}
+      {{empty-message message='No notifications at this time'}}
+    {{/if}}
+  {{/component-container }}
+{{/if}} --}}
+
+{{#component-container class='notifications-list quinary-background-color' }}
+  {{#component-container padding="1,0,2,0"}}
+    {{icon-action labelText="Close Notifications" class='notification-panel-close' fontType="clear" clickAction=(action 'triggerTogglePanel') iconLeft=false }}
+  {{/component-container}}
+  {{#if hasActiveNotifications }}
+    {{#each activeNotifications as |notificationItem| }}
+      {{notification-item notificationItem=notificationItem removeAction=(action 'triggerRemoveNotification') }}
+    {{/each}}
+  {{ else }}
+    {{empty-message message='No notifications at this time'}}
+  {{/if}}
+{{/component-container }}
+
+{{#component-container class='recent-notifications-queue'}}
+  {{#each recentNotifications as |notificationItem| }}
+    {{notification-item notificationItem=notificationItem removeAction=(action 'triggerRemoveNotification')}}
+  {{/each}}
+{{/component-container }}
+
+{{!-- {{#if isViewingMostRecentNotifications }}
+
+{{/if}} --}}

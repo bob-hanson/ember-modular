@@ -1,0 +1,47 @@
+.hyspa-form {
+  .hyspa-form-tabs {
+    // min-width: 288px;
+    .hyspa-form-tab {
+      color: $black;
+      cursor: pointer;
+      opacity: 0.7;
+      &.listed-navigation-item:not(.is-active) {
+        border-right: 2px solid transparent;
+      }
+      .hyspa-form-tab-invalid {
+        color: $primary-error;
+      }
+    }
+  }
+  .hyspa-form-tabs-panel {
+    .form-view {
+      min-width: 778px;
+    }
+  }
+  .hyspa-form-part {
+    &.is-tab:not(.is-active) {
+      display: none;
+    }
+  }
+  .inner-column {
+    border-right: 1px solid $primary-border-color;
+  }
+
+  .form-part-pagination-link {
+    cursor: pointer;
+    color: $link-color;
+    display: flex;
+    &.in-header {
+      padding-top: 12px;
+    }
+    &:hover {
+      color: $link-hover;
+    }
+  }
+
+  .basic-button.wizard-button {
+    margin-left: 0;
+  }
+
+
+}

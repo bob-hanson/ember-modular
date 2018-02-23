@@ -1,0 +1,13 @@
+.provider-search.tabs-container {
+  padding: 0px;
+  .tabs-list {
+    .tab-button {
+      padding: 8px 16px 8px 16px;
+    };
+  };
+  .tab-panel:not(:empty) {
+    padding-top: 16px;
+  }
+  .timeframe { margin-left: 48px; padding-bottom: 0px;}
+  .provider-actions .primary-button { float: right; }
+};

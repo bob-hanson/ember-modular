@@ -1,0 +1,12 @@
+{{#if currentApp.isNotInFullScreenView }}
+  {{#component-column columnType='navigation'}}
+    {{#section-header headerType='column' headerText='Clients' padding='2,2,0,2'}}
+    {{#icon-nav }}
+      {{#icon-menu fontType='add' fontSize='medium'}}
+        {{icon-link fontType='add' linkPath='organization.clients.new-client' linkText='New Client'}}
+      {{/icon-menu}}
+    {{/icon-nav }}
+    {{/section-header}}
+    {{listed-organization-clients currentClients=currentClients }}
+  {{/component-column}}
+{{/if}}

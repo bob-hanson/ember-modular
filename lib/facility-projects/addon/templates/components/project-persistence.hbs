@@ -1,0 +1,7 @@
+{{#if isEditView }}
+  {{section-header headerType='page' headerText=editFormHeader titleFont=true }}
+  {{project-form formProperties=formProperties isEditForm=true }}
+{{else}}
+  {{section-header headerType='page' headerText="Create New Audit Project" titleFont=true }}
+  {{project-form }}
+{{/if}}

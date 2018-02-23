@@ -1,0 +1,11 @@
+{{#component-container}}
+  {{hyspa-checkbox-component boundModel=currentDocumentationElements.noIssues optionName="No Issues" clickAction=(action 'triggerClearElements') }}
+  {{hyspa-checkbox-group boundCollection=currentDocumentationElements.elements checkboxOptions=currentDocumentationElements.elementOptions isDisabled=currentDocumentationElements.noIssues }}
+  {{hyspa-textarea-component boundModel=currentDocumentationElements.other labelText='Other' isDisabled=currentDocumentationElements.noIssues }}
+  {{#if hasCustomFields }}
+    {{#component-container}}
+      {{hyspa-form-elements-builder fieldDefinitions=customFieldDefinitions boundFieldValues=customFieldValues formName="documentationElementsCustomFields"  }}
+    {{/component-container}}
+  {{/if}}
+  {{section-bottom-bar clearAllAction=(action 'triggerClearForm') resetAllAction=(action 'triggerResetForm') nextPath=auditCodesRoute nextPathText=documentationServicesNextText class="bump-down-2" }}
+{{/component-container}}

@@ -1,0 +1,10 @@
+{
+  "name": "hyspa-file-uploader",
+  "keywords": [
+    "ember-addon"
+  ],
+  "dependencies": {
+    "ember-cli-htmlbars": "*",
+    "ember-cli-babel": "*"
+  }
+}

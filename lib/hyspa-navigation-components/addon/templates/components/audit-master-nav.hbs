@@ -1,0 +1,12 @@
+{{#if currentApp.shouldDisplayNav }}
+  <div id="secondary-nav-wrap">
+    {{#secondary-nav}}
+      {{#link-to-external 'user-projects' }}My Work Queue{{/link-to-external}}
+      {{#link-to-external 'audit-projects' }}Manage Projects{{/link-to-external}}
+      {{external-link linkPath="/" linkText="Audit Work Queue" }}
+      {{external-link linkPath="/" linkText="Pending Assignments" }}
+      {{external-link linkPath="/" linkText="Missing Data" }}
+      {{external-link linkPath="/" linkText="Pending Reports" }}
+    {{/secondary-nav}}
+  </div>
+{{/if}}

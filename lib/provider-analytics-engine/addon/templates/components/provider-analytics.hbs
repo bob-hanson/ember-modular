@@ -1,0 +1,27 @@
+<div id='app' class='app analytics'>
+  {{#master-header}}
+    <nav class='master-nav'>
+      <ul>
+        {{master-navigation-item linkPath='providers' linkText='Pattern Analytics' }}
+        {{master-navigation-item linkPath='procedure-dashboard' linkText='Procedure Dashboard' }}
+      </ul>
+    </nav>
+  {{/master-header}}
+  <div id='app-content' class='app-content column-100'>
+    <div id="secondary-nav-wrap">
+      {{#secondary-nav class='audit-secondary-background'}}
+        {{!-- {{#staples-button }}
+          {{icon-link fontType='language' linkPath='new-organization' linkText='New Organization' }}
+        {{/staples-button }} --}}
+      {{/secondary-nav}}
+    </div>
+    {{#master-content}}
+      <div class="content-wrapper column-100">
+        {{outlet}}
+      </div>
+    {{/master-content}}
+  </div>
+  {{#if currentApp.shouldDisplayNav }}
+    {{master-footer }}
+  {{/if}}
+</div>

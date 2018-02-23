@@ -1,0 +1,112 @@
+// .date-picker .calendar-icon-wrap.icon-wrap {
+//   padding: 7px 5px 4px 9px;
+//   position: absolute;
+//   right: 1px;
+//   top: 21px;
+// }
+// .app .date-picker i.material-icons.calendar {
+//   color: $input-icon;
+//   font-size: 20px;
+//   cursor: pointer;
+//   z-index: 10;
+// }
+// .date-picker.input-component input { width: 100%; padding: 8px 46px 8px 8px;}
+
+
+// Datepicker vars
+$cell-width: 40px;
+$cell-width-with-padding: $cell-width + 2px;
+
+
+.hyspa-date-picker {
+  .ember-basic-dropdown-content-wormhole-origin {
+    float: initial;
+    .ember-basic-dropdown-content {
+      position: absolute;
+    }
+  }
+
+  &.has-bound-model {
+    .date-picker {
+      .date-display {
+        .date-display-year, .date-display-date {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+.date-picker {
+  @include ember-power-calendar(
+      $cell-size: $cell-width,
+      $day-weekday-text-color: #9DA4AD,
+      $day-selected-text-color: #fff,
+      $day-current-month-color: trasnparent,
+      $day-selected-color: transparent,
+      $primary-color: #000,
+      $row-width: $cell-width-with-padding * 7 - 2px + 16);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26), 0 2px 10px 0 rgba(0,0,0,0.16);
+
+  .ember-power-calendar-nav, .ember-power-calendar-days {
+    padding: 16px;
+  }
+
+  .date-display {
+    padding: 16px;
+    .date-display-year {
+      color: rgba(255, 255, 255, .7);
+      font-size: 14px;
+      visibility: hidden;
+    }
+    .date-display-date {
+      color: #fff;
+      font-size: 24px;
+      visibility: hidden;
+    }
+  }
+  .ember-power-calendar-day:hover {
+    border-radius: 50%;
+  }
+  .ember-power-calendar-day--selected {
+    border-radius: 50%;
+  }
+  .ember-power-calendar-day--focused {
+    box-shadow: none;
+  }
+}
+
+.admin {
+  .date-picker {
+    .ember-power-calendar-day--selected, .ember-power-calendar-day--selected:hover {
+      background-color: $platform-primary;
+    }
+  }
+}
+.compliance {
+  .date-picker {
+    .ember-power-calendar-day--selected, .ember-power-calendar-day--selected:hover {
+      background-color: $compliance-primary;
+    }
+  }
+}
+.audits {
+  .date-picker {
+    .ember-power-calendar-day--selected, .ember-power-calendar-day--selected:hover {
+      background-color: $audit-primary;
+    }
+  }
+}
+.analytics {
+  .date-picker {
+    .ember-power-calendar-day--selected, .ember-power-calendar-day--selected:hover {
+      background-color: $analytics-primary;
+    }
+  }
+}
+.training {
+  .date-picker {
+    .ember-power-calendar-day--selected, .ember-power-calendar-day--selected:hover {
+      background-color: $training-primary;
+    }
+  }
+}

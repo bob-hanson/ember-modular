@@ -1,0 +1,5 @@
+{{#if isAudit }}
+  {{hyspa-light-table tableDefinition=auditProjectsTableDefinition gridCollection=gridCollection }}
+{{else}}
+  {{hyspa-light-table tableDefinition=qaProjectsTableDefinition gridCollection=gridCollection }}
+{{/if}}

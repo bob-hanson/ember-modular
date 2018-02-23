@@ -1,0 +1,26 @@
+{{#light-table table height='56vh' tableActions=(hash
+  triggerStatusClicked=(action 'triggerStatusClicked')
+  ) as |t|}}
+
+  {{t.head
+    fixed=true
+    iconSortable='sort-icon'
+    iconAscending='sort-icon sort-ascending'
+    iconDescending='sort-icon sort-descending' }}
+
+  {{#t.body as |body|}}
+
+    {{#if isLoading }}
+      {{#body.loader}}
+        {{loading-element }}
+      {{/body.loader}}
+    {{/if}}
+
+    {{#if currentTable.isEmpty }}
+      {{#body.no-data}}
+        {{empty-message message=emptyMessage }}
+      {{/body.no-data}}
+    {{/if}}
+  {{/t.body}}
+
+{{/light-table}}

@@ -1,0 +1,28 @@
+{{#component-container }}
+  {{#if isSkin }}
+
+    {{hyspa-checkbox-group boundCollection=bodyArea.selectedExamElements checkboxOptions=bodyArea.examElements selectAction=(action 'triggerExamElementSelect') }}
+    <p class="type-small">Inspection and/or palpation of skin and subcutaneous tissue (e.g. rashes, lesions, ulcers, susceptibility to and presence of photo damage) in <b>eight of the following ten areas</b>:</p>
+    {{#component-container padding="0,0,0,1" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedAreaElements checkboxOptions=bodyArea.areaElements selectAction=(action 'triggerExamElementSelect') }}
+    {{/component-container }}
+    <p class="type-small"><b>NOTE: For the comprehensive level, teh examination of all four anatomic areas must be performed and documented. For the three lower levels of examination, each body area is counted separately, e.g. inspection and/or palpation of the skin and subcutaneous tissue of two extremities constitute two elements.</b></p>
+    {{#component-container padding="0,0,0,1" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedEccrineElements checkboxOptions=bodyArea.eccrineElements selectAction=(action 'triggerExamElementSelect') }}
+    {{/component-container }}
+
+  {{else if isMusculoskeletal }}
+
+    <p class="type-small">Inspection and/or palpation of skin and subcutaneous tissue (e.g. rashes, lesions, ulcers) in <b>four of the following six areas</b>:</p>
+    {{#component-container padding="0,0,0,1" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedExamElements checkboxOptions=bodyArea.examElements selectAction=(action 'triggerExamElementSelect') }}
+    {{/component-container }}
+    <p class="type-small"><b>NOTE: For the comprehensive level, the examination of all four anatomic areas must be performed and documented. For the three lower levels of examination, each body area is counted separately, e.g. inspection and/or palpation of the skin and subcutaneous tissue of two extremities constitute two elements.</b></p>
+
+  {{else}}
+
+    {{hyspa-checkbox-group boundCollection=bodyArea.selectedExamElements checkboxOptions=bodyArea.examElements selectAction=(action 'triggerExamElementSelect') }}
+
+  {{/if}}
+
+{{/component-container}}

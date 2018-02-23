@@ -1,0 +1,258 @@
+{{#component-container}}
+
+  {{#component-container class="form-row" }}
+    {{hyspa-checkbox-component optionName="MDM Required" boundModel=currentMdm.isMdmRequired }}
+  {{/component-container}}
+
+  {{section-header headerType='sub-section' headerText="Number of Diagnoses or Management Options" }}
+  {{#component-container padding="2,0,2,0" }}
+    <p class="section-instruction">Identify each problem or treatment option mentioned in the record. Enter the number in each of the categories in Column B in the table below. (There are maximum number in two categories)</p>
+    {{#table-layout class="banded-odd column-100" }}
+
+      {{#table-layout-row class="table-layout-header" }}
+        {{#table-layout-cell padding="1,0,1,1" }}
+          {{label-component labelText="Problem" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell}}
+          {{label-component labelText="Number" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="bump-right" }}
+          {{label-component labelText="Result" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+      {{#table-layout-row }}
+        {{#table-layout-cell class="valign-middle table-layout-row-header" padding="1,0,1,2" }}
+          Self-limited or minor (stable, improved, or worsening)
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="valign-middle" }}
+          {{hyspa-button-group boundModel=currentMdm.diagnosesOptions.selfLimitedMinorRating radioOptions=currentMdm.diagnosesOptions.selfLimitedMinorRatings }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="valign-middle align-center grid-border grid-border-left" }}
+          {{currentMdm.diagnosesOptions.selfLimitedMinorRating}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+      {{#table-layout-row }}
+        {{#table-layout-cell class="valign-middle table-layout-row-header" padding="1,0,1,2" }}
+          Est. problem (to examiner); stable; improved
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="valign-middle" }}
+          {{hyspa-button-group boundModel=currentMdm.diagnosesOptions.estProblemImprovedRating radioOptions=currentMdm.diagnosesOptions.estProblemImprovedRatings }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="valign-middle align-center grid-border grid-border-left" }}
+          {{currentMdm.diagnosesOptions.estProblemImprovedRating}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+      {{#table-layout-row }}
+        {{#table-layout-cell class="valign-middle table-layout-row-header" padding="1,0,1,2" }}
+          Est. problem (to examiner); worsening; not improving
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="valign-middle" }}
+          {{hyspa-button-group boundModel=currentMdm.diagnosesOptions.trackedEstProblemWorseningRating untrackedBoundModel=currentMdm.diagnosesOptions.estProblemWorseningRating radioOptions=currentMdm.diagnosesOptions.estProblemWorseningRatings }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="valign-middle align-center grid-border grid-border-left" }}
+          {{currentMdm.diagnosesOptions.estProblemWorseningRating}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+      {{#table-layout-row }}
+        {{#table-layout-cell class="valign-middle table-layout-row-header" padding="1,0,1,2" }}
+          New problem (to examiner); no additional workup planned
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="valign-middle" }}
+          {{hyspa-button-group boundModel=currentMdm.diagnosesOptions.newProblemNoWorkupPlannedRating radioOptions=currentMdm.diagnosesOptions.newProblemNoWorkupPlannedRatings }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="valign-middle align-center grid-border grid-border-left" }}
+          {{currentMdm.diagnosesOptions.newProblemNoWorkupPlannedRating}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+      {{#table-layout-row }}
+        {{#table-layout-cell class="valign-middle table-layout-row-header" padding="1,0,1,2" }}
+          New problem (to examiner); additional workup planned
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="valign-middle" }}
+          {{hyspa-button-group boundModel=currentMdm.diagnosesOptions.trackedNewProblemWorkupPlannedRating untrackedBoundModel=currentMdm.diagnosesOptions.newProblemWorkupPlannedRating radioOptions=currentMdm.diagnosesOptions.newProblemWorkupPlannedRatings }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="valign-middle align-center grid-border grid-border-left" }}
+          {{currentMdm.diagnosesOptions.newProblemWorkupPlannedRating}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+      {{#table-layout-row class="table-layout-footer" }}
+        {{#table-layout-cell padding="2,0,2,0" }}
+
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="align-right valign-middle" padding="2,0,2,0" }}
+          {{label-component labelText="Total" class="table-layout-header-label" }}
+        {{/table-layout-cell}}
+        {{#table-layout-cell class="align-center valign-middle grid-border grid-border-left grid-border-transparent" padding="2,0,2,0" }}
+          {{chip-component chipValue=currentMdm.diagnosesOptions.numberDiagnosesManagementOptions class="table-chip" }}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+    {{/table-layout}}
+
+  {{/component-container}}
+
+  {{section-header headerType='sub-section' headerText="Amount and/or Complexity of Data Reviewed/Ordered" }}
+  {{#component-container padding="2,0,2,0" }}
+    <p class="section-instruction">For each cateogry of reviewed/ordered data identified, select the check box in the first column.</p>
+
+      {{#table-layout class="banded-odd column-100" }}
+
+        {{#table-layout-row class="table-layout-header" }}
+          {{#table-layout-cell padding="1,0,1,1" }}
+            {{label-component labelText="Reviewed Data" class="table-layout-header-label" }}
+          {{/table-layout-cell}}
+          {{#table-layout-cell class="bump-right" }}
+            {{label-component labelText="Points" class="table-layout-header-label" }}
+          {{/table-layout-cell}}
+        {{/table-layout-row}}
+
+        {{#table-layout-row }}
+          {{#table-layout-cell class="valign-middle table-layout-row-header" padding="1,0,1,2" }}
+            {{hyspa-checkbox-component boundModel=currentMdm.dataReviewed.reviewClinicalTests optionName="Review and/or order of clinical lab tests" }}
+          {{/table-layout-cell}}
+          {{#table-layout-cell class="valign-middle align-center grid-border grid-border-left" padding="1,1,1,1" }}
+            {{currentMdm.dataReviewed.reviewClinicalTestsFactor}}
+          {{/table-layout-cell}}
+        {{/table-layout-row}}
+
+        {{#table-layout-row }}
+          {{#table-layout-cell class="valign-middle table-layout-row-header" padding="1,0,1,2" }}
+            {{hyspa-checkbox-component boundModel=currentMdm.dataReviewed.reviewRadiologyTests optionName="Review and/or order of tests in the radiology section of CPT" }}
+          {{/table-layout-cell}}
+          {{#table-layout-cell class="valign-middle align-center grid-border grid-border-left" padding="1,1,1,1" }}
+            {{currentMdm.dataReviewed.reviewRadiologyTestsFactor}}
+          {{/table-layout-cell}}
+        {{/table-layout-row}}
+
+        {{#table-layout-row }}
+          {{#table-layout-cell class="valign-middle table-layout-row-header" padding="1,0,1,2" }}
+            {{hyspa-checkbox-component boundModel=currentMdm.dataReviewed.reviewMedicineTests optionName="Review and/or order of medicine section of CPT" }}
+          {{/table-layout-cell}}
+          {{#table-layout-cell class="valign-middle align-center grid-border grid-border-left" padding="1,1,1,1" }}
+            {{currentMdm.dataReviewed.reviewMedicineTestsFactor}}
+          {{/table-layout-cell}}
+        {{/table-layout-row}}
+
+        {{#table-layout-row }}
+          {{#table-layout-cell class="valign-middle table-layout-row-header" padding="1,0,1,2" }}
+            {{hyspa-checkbox-component boundModel=currentMdm.dataReviewed.physicianDiscussion optionName="Discussion of test results with performing physician" }}
+          {{/table-layout-cell}}
+          {{#table-layout-cell class="valign-middle align-center grid-border grid-border-left" padding="1,1,1,1" }}
+            {{currentMdm.dataReviewed.physicianDiscussionFactor}}
+          {{/table-layout-cell}}
+        {{/table-layout-row}}
+
+        {{#table-layout-row }}
+          {{#table-layout-cell class="valign-middle table-layout-row-header" padding="1,0,1,2" }}
+            {{hyspa-checkbox-component boundModel=currentMdm.dataReviewed.obtainOldRecords optionName="Decision to obtain old records and/or obtain history from someone other than patient" }}
+          {{/table-layout-cell}}
+          {{#table-layout-cell class="valign-middle align-center grid-border grid-border-left" padding="1,1,1,1" }}
+            {{currentMdm.dataReviewed.obtainOldRecordsFactor}}
+          {{/table-layout-cell}}
+        {{/table-layout-row}}
+
+        {{#table-layout-row }}
+          {{#table-layout-cell class="valign-middle table-layout-row-header" padding="1,0,1,2" }}
+            {{hyspa-checkbox-component boundModel=currentMdm.dataReviewed.reviewOldRecords optionName="Review and summarization of old records and/or obtaining history from someone other than patient and/or discussion of case with another health care provider" }}
+          {{/table-layout-cell}}
+          {{#table-layout-cell class="valign-middle align-center grid-border grid-border-left" padding="1,1,1,1" }}
+            {{currentMdm.dataReviewed.reviewOldRecordsFactor}}
+          {{/table-layout-cell}}
+        {{/table-layout-row}}
+
+        {{#table-layout-row }}
+          {{#table-layout-cell class="valign-middle table-layout-row-header" padding="1,0,1,2" }}
+            {{hyspa-checkbox-component boundModel=currentMdm.dataReviewed.independentVisualization optionName="Independent visualization of image, tracing or specimen itself (not siply review of report)" }}
+          {{/table-layout-cell}}
+          {{#table-layout-cell class="valign-middle align-center grid-border grid-border-left" padding="1,1,1,1" }}
+            {{currentMdm.dataReviewed.independentVisualizationFactor}}
+          {{/table-layout-cell}}
+        {{/table-layout-row}}
+
+        {{#table-layout-row class="table-layout-footer" }}
+          {{#table-layout-cell class="align-right valign-middle" padding="2,0,2,0" }}
+            {{label-component labelText="Total" class="table-layout-header-label" }}
+          {{/table-layout-cell}}
+          {{#table-layout-cell class="align-center valign-middle" padding="2,0,2,0" }}
+            {{chip-component chipValue=currentMdm.dataReviewed.complexityTotal class="table-chip" }}
+          {{/table-layout-cell}}
+        {{/table-layout-row}}
+
+      {{/table-layout}}
+  {{/component-container}}
+
+
+  {{section-header headerType='sub-section' headerText="Risk of Complication and/or Morbidity or Mortality" }}
+  {{#component-container padding='2,0,0,0' }}
+    <p class="section-instruction">Use the risk table below as a guide to assign risk factors. It is understood that the table below does not contain all specific instances of medical care; the table is intended to be used as a guide. Select the appropriate factor(s) in each category. The overall measure of risk is the highest level selected.</p>
+    {{hyspa-button-group boundModel=currentMdm.risk.selectedRiskQuickClick radioOptions=currentMdm.risk.riskQuickClicks }}
+
+    {{#if hasRiskLevel }}
+      {{#table-layout class="column-100"}}
+        {{#table-layout-row class="table-layout-footer" }}
+          {{#table-layout-cell class="align-right valign-middle column-10" padding="2,0,2,0" }}
+            Risk
+          {{/table-layout-cell}}
+          {{#table-layout-cell class="valign-middle" padding="2,0,2,0" }}
+            {{chip-component chipValue=currentMdm.risk.selectedRisk class="table-chip" }}
+          {{/table-layout-cell}}
+        {{/table-layout-row}}
+      {{/table-layout}}
+    {{/if}}
+
+    {{#if currentMdm.risk.isDetails }}
+      {{#content-panel}}
+
+        {{section-header headerType='sub-section' headerText="" }}
+
+        {{#tabs-container vertical=true tabHeader="Category" contentHeader="Risk Factor" }}
+          {{#tabs-list}}
+           {{#tab-button}}
+             Presenting Problem(s)
+           {{/tab-button}}
+           {{#tab-button}}
+             Diangostic Procedure(s) Ordered
+           {{/tab-button}}
+           {{#tab-button}}
+             Management Options Selected
+           {{/tab-button}}
+          {{/tabs-list}}
+
+          {{#tab-panel}}
+            {{#component-container}}
+              {{risk-level-details riskCategory=currentMdm.risk.riskPresentingProblems }}
+            {{/component-container}}
+          {{/tab-panel}}
+
+          {{#tab-panel}}
+            {{#component-container}}
+              {{risk-level-details riskCategory=currentMdm.risk.riskDiagnosticProceduresOrdered }}
+            {{/component-container}}
+          {{/tab-panel}}
+
+          {{#tab-panel}}
+            {{#component-container}}
+              {{risk-level-details riskCategory=currentMdm.risk.riskManagementOptionsSelected }}
+            {{/component-container}}
+          {{/tab-panel}}
+
+        {{/tabs-container }}
+      {{/content-panel}}
+    {{/if}}
+  {{/component-container}}
+
+  {{#if hasCustomFields}}
+    {{#component-container}}
+      {{hyspa-form-elements-builder fieldDefinitions=customFieldDefinitions boundFieldValues=customFieldValues formName="medicalDecisionMakingCustomFields" }}
+    {{/component-container}}
+  {{/if}}
+
+  {{section-bottom-bar clearAllAction=(action 'triggerClearForm') resetAllAction=(action 'triggerResetForm') nextPath=timeBasedCodingRoute nextPathText="Next: Time-Based Coding" }}
+
+{{/component-container}}

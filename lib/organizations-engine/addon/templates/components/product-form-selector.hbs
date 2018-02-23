@@ -1,0 +1,10 @@
+{{section-header headerType='sub-section' headerText='Modules'}}
+{{#form-group isValid=isValid validationMessage=validationMessage padding="2,0,0,0" }}
+  {{!-- {{required-tip message=moduleTip}} --}}
+  {{#each availableProducts as |availableProduct|}}
+    {{hyspa-checkbox-component percentageWidth=33
+                         optionName=availableProduct.name
+                         clickAction=this.attrs.clickAction
+                         boundModel=availableProduct }}
+  {{/each}}
+{{/form-group}}

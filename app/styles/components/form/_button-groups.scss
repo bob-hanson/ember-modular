@@ -1,0 +1,25 @@
+.radio-button-group.button-group {
+  .radio-buttons {
+    padding: 0;
+    border: 1px solid $medium-border-color;
+    border-radius: 3px;
+    .radio-button {
+      cursor: default;
+      border-right: 1px solid $medium-border-color;
+      // padding-top: calc(2px + #{$base-gutter});
+      // padding-bottom: calc(2px + #{$base-gutter});
+      &:last-of-type {
+        border-right: none;
+      }
+      &.is-selected {
+        color: $white;
+      }
+    }
+  }
+  &.is-not-form-input {
+    .radio-button {
+      padding-top: calc(2px + #{$base-gutter});
+      padding-bottom: calc(2px + #{$base-gutter});
+    }
+  }
+}

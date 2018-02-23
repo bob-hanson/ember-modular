@@ -1,0 +1,23 @@
+{{listed-navigation-item displayValue='Patient Data' linkPath=patientDataRoute }}
+{{listed-navigation-item displayValue='History' linkPath=auditHistoryRoute }}
+{{#listed-navigation-item displayValue='Examination' linkPath=examNavigationPath activePath=auditExaminationRoute }}
+  <span class="peek">{{formObject.examination.examCalculation}}</span>
+  {{#component-container tagName="ul" class="sub-column-nav"}}
+    {{#listed-navigation-item displayValue="1995 PE" linkPath=exam95 clickHandler=(action 'triggerExamSelect' 'pe95')}}
+      {{icon-font fontType="done" class="primary-color" }}
+      <span class="peek">{{formObject.examination.pe95.examCalculation}}</span>
+    {{/listed-navigation-item}}
+    {{#listed-navigation-item displayValue="1997 PE" linkPath=exam97 clickHandler=(action 'triggerExamSelect' 'pe97') }}
+      {{icon-font fontType="done" class="primary-color" }}
+      <span class="peek">{{formObject.examination.pe97.examCalculation}}</span>
+    {{/listed-navigation-item}}
+  {{/component-container}}
+{{/listed-navigation-item}}
+{{#listed-navigation-item displayValue='Medical Decision Making' linkPath=medicalDecisionRoute }}
+  <span class="peek">{{formObject.medicalDecisionMaking.mdmCalculation}}</span>
+{{/listed-navigation-item}}
+{{listed-navigation-item displayValue='Time-Based Coding' linkPath=timeBasedCodingRoute }}
+{{listed-navigation-item displayValue='Critical Care Services' linkPath=criticalCareRoute }}
+{{listed-navigation-item displayValue='Procedures' linkPath=proceduresRoute }}
+{{listed-navigation-item displayValue='Documentation Elements' linkPath=documentationServicesRoute }}
+{{listed-navigation-item displayValue='ICD/EM/CPT/HCPCS Codes' linkPath=auditCodesRoute }}

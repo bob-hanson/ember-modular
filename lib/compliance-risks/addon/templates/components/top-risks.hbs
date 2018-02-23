@@ -1,0 +1,12 @@
+{{section-header headerType='section' headerText='My Highest Risks' }}
+
+{{#component-container class='input-with-menu' padding='0,0,2,0'}}
+  {{filter-bar filterValue=filterValue triggerFilter=(action 'triggerFilterCollection') placeholderText='Filter by risk type, location, sub-domain, person responsible, or status' }}
+  {{icon-link fontType='add' linkPath=newRiskPath tagName="div" fontSize="medium" padding="1,0,0,1" }}
+{{/component-container}}
+
+{{#component-container class='top-risks-table' }}
+  {{hyspa-light-table tableDefinition=tableDefinition gridCollection=filteredCollection emptyMessage="No Risks Found" }}
+{{/component-container}}
+
+{{yield}}

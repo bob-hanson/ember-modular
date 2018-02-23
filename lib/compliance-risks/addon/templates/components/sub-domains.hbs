@@ -1,0 +1,22 @@
+{{#if isViewingRiskSubDomains }}
+  {{#component-column }}
+    {{#if hasResults }}
+      {{#component-container class='column-nav-arrow' padding="1,1,0,1" }}
+        {{icon-link linkPath="domains" fontType="arrow_back" }}
+      {{/component-container}}
+      {{hyspa-chart chartSeries=chartSeries chartOptions=chartOptions padding='0,0,2,0' }}
+      {{#component-container class='chart-link-title' padding="1,1,0,1" }}
+        {{#link-to 'domains.domain.sub-domains.domain-risks'}}
+          Sub Domains
+        {{/link-to}}
+      {{/component-container}}
+      {{#component-container class='listed-items' }}
+        {{#each currentCollection as |currentItem|}}
+          {{listed-navigation-item linkTextMap='name' linkPathMap='detailsPath' currentItem=currentItem isInternalNavOnly=true activePath=currentItem.activePath }}
+        {{/each}}
+      {{/component-container}}
+    {{ else }}
+      {{empty-message message=emptyCollectionMessage }}
+    {{/if}}
+  {{/component-column}}
+{{/if}}

@@ -1,0 +1,11 @@
+  {{#section-header headerType='page' headerText=currentCategory.categoryName isFixed=true titleFont=true }}
+    {{#icon-nav}}
+      {{#icon-menu fontType='more_vert' }}
+        {{icon-link fontType='mode_edit' linkText='Edit Category' linkObject=currentCategory linkPath=currentCategory.facilityAdminFindingsRecommendationCategoryEditPath }}
+        {{icon-action fontType='clear' labelText='Delete Category' clickAction=(action 'triggerDelete') }}
+      {{/icon-menu}}
+    {{/icon-nav}}
+  {{/section-header}}
+{{#component-container isLoaded=currentCategory.isFullyLoaded }}
+  {{data-point label='Name' value=currentCategory.categoryName padding='2,0,0,0'}}
+{{/component-container}}

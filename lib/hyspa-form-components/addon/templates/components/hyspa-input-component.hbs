@@ -1,0 +1,14 @@
+<div class="column-100">
+  {{#if hasLabel }}
+    {{label-component labelText=labelText isRequired=isRequired isFocused=isFocused launchHelp=launchHelp }}
+  {{/if}}
+
+  {{#if isTextArea }}
+    {{textarea value=boundModel class='column-100' disabled=isDisabled }}
+  {{ else }}
+    {{input value=boundModel type=type class='column-100' disabled=isDisabled }}
+  {{/if}}
+  {{!-- {{#if isInvalid }}
+    {{input-validation validationMessage=validationMessage }}
+  {{/if}} --}}
+</div>

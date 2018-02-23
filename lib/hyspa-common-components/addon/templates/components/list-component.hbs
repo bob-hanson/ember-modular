@@ -1,0 +1,3 @@
+{{#sortable-objects sortableObjectList=currentSortableList sortEndAction=sortEndAction enableSort=true useSwap=true tagName=listWrapperElement }}
+    {{yield (hash draggableObject=(component 'hyspa-draggable-object') currentSortableList=currentSortableList) }}
+{{/sortable-objects}}

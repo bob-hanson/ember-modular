@@ -1,0 +1,12 @@
+<div class="card-color">
+    {{!-- {{icon-font fontType="more_vert"}} --}}
+    {{user-avatar avatarUser=currentUser }}
+</div>
+<ul class='user-card-details'>
+    <li class='user-name'>{{currentUser.fullName}}</li>
+    <li class='user-phone'>{{currentUser.phone}}</li>
+    <li class='user-email'>
+      <a href="mailto:#{{currentUser.email}}">{{currentUser.email}}</a>
+    </li>
+</ul>
+<hr>

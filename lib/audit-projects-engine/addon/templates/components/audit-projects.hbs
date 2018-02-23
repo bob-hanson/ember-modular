@@ -1,0 +1,14 @@
+{{#master-content}}
+  <div class="content-wrapper column-100">
+    {{#if currentApp.isNotInFullScreenView }}
+      {{#component-column columnType='navigation' percentageWidth=20 }}
+      <ul class='listed-items column-100'>
+        {{#each currentNavigation as |currentNav| }}
+          {{listed-navigation-item linkPath=currentNav.linkPath displayValue=currentNav.displayValue defaultFullWidth=100 defaultTruncatedWidth=100 isExternal=currentNav.isExternal clickHandler=currentNav.clickHandler currentItem=currentNav.currentItem }}
+        {{/each}}
+      </ul>
+      {{/component-column}}
+    {{/if}}
+    {{ outlet }}
+  </div>
+{{/master-content}}

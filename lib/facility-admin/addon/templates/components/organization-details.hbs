@@ -1,0 +1,14 @@
+{{#component-container percentageWidth=100}}
+  {{#section-header headerType='page' headerText=currentOrganization.organizationName isFixed=true titleFont=true }}
+    {{#icon-nav}}
+      {{#icon-menu fontType='more_vert' }}
+        {{icon-link fontType='mode_edit' linkText='Edit Organization' linkObject=currentOrganization linkPath=currentOrganization.facilityAdminOrganizationEditLinkPath }}
+        {{icon-action fontType='clear' labelText='Delete Organization' clickAction=(action 'triggerDelete') actionObject=currentOrganization }}
+      {{/icon-menu}}
+    {{/icon-nav}}
+  {{/section-header}}
+{{#component-container isLoaded=currentOrganization.isFullyLoaded }}
+  {{data-point label='Organization ID' value=currentOrganization.organizationIdentifier padding='2,0,0,0'}}
+  {{data-point label='Notes' value=currentOrganization.organizationNotes padding='2,0,0,0'}}
+{{/component-container}}
+{{/component-container}}

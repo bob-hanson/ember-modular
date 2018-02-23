@@ -1,0 +1,29 @@
+{
+  "name": "provider-analytics-engine",
+  "keywords": [
+    "ember-addon",
+    "ember-engine"
+  ],
+  "dependencies": {
+    "ember-cli-htmlbars": "*",
+    "ember-cli-babel": "*",
+    "ember-route-action-helper": "*",
+    "ember-macaroni": "*",
+    "ember-light-table": "*",
+    "ember-responsive": "*",
+    "ember-power-calendar": "*",
+    "ember-basic-dropdown": "*",
+    "ember-highcharts": "*",
+    "highcharts": "*"
+  },
+  "ember-addon": {
+    "paths": [
+      "../hyspa-base-components",
+      "../hyspa-common-components",
+      "../hyspa-form-components",
+      "../hyspa-navigation-components",
+      "../hyspa-user-components",
+      "../hyspa-file-uploader"
+    ]
+  }
+}

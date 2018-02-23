@@ -1,0 +1,6 @@
+{{#component-container class='input-with-menu' padding='0,0,2,0'}}
+  {{filter-bar filterValue=filterValue triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter' }}
+{{/component-container}}
+{{#component-container padding="2,2,0,2" }}
+  {{hyspa-light-table tableDefinition=tableDefinition gridCollection=filteredCollection }}
+{{/component-container}}

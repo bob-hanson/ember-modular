@@ -1,0 +1,16 @@
+{{#hyspa-form formFor="facility_key_finding_templates" isLoading=isLoading isValid=isProjectFormValid formSubmitAction=(action 'triggerFormSubmit') formCancelAction=(action 'triggerFormCancel') as |f| }}
+  {{section-header headerType='page' headerText=formHeaderText isFixed=true titleFont=true }}
+  {{#component-container class='form-row'}}
+    {{f.singleSelect labelText='Category' selectOptions=categoryOptions boundModel=keyFindingCategoryId isRequired=true name='key_finding_category_id' }}
+  {{/component-container }}
+  {{#component-container class='form-row'}}
+    {{f.singleSelect labelText='Subcategory' selectOptions=subcategoryOptions boundModel=keyFindingSubCategoryId name='key_finding_sub_category_id'}}
+  {{/component-container }}
+  {{#component-container class="form-row" }}
+    {{f.textarea boundModel=shortDescription labelText="Short Description" name="short_description" isRequired=true }}
+  {{/component-container}}
+  {{#component-container class="form-row" }} 
+    {{f.textarea boundModel=longDescription labelText="Long Description" name="long_description" isRequired=true }} 
+  {{/component-container}}
+  {{f.formActions primaryButtonText=primaryButtonText }}
+{{/hyspa-form}}

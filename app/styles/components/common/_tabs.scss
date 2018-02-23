@@ -1,0 +1,85 @@
+.tabs-container {
+  .tabs-list {
+    background-color: $secondary-color;
+    .tab-button {
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+      font-size: 14px;
+      cursor: pointer;
+      padding: 8px 16px 8px 16px;
+      overflow: hidden;
+      &:not(.is-active) {
+        opacity: 0.7;
+        border-color: transparent;
+      }
+    }
+    &.tabs-top-spacer {
+      padding-top: 8px;
+    }
+  }
+  .tab-panel {
+    display: none;
+    .data-point {
+      padding: 8px 0px;
+    }
+  }
+  .tab-panel:not(:empty) {
+    display: block;
+    // padding: 0 0 16px 16px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    &.no-padding {
+      padding: 0px 0px 0px;
+    }
+    &.top-padding {
+      padding-top: 16px;
+    }
+  }
+
+  &.vertical-layout {
+    .tabs-list {
+      background-color: $white;
+      border-right: solid 1px $grid-border-color;
+      width: 24%;
+      // height: 100vh;
+      .tab-button {
+        border-bottom-width: 0;
+        border-right-width: 2px;
+        border-right-style: solid;
+        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        &.is-active {
+          background-color: $active-item-background;
+          font-weight: 600;
+        }
+      }
+    }
+    .tab-panel {
+      width: 76%;
+      border-left: solid 1px $grid-border-color;
+      margin-left: -1px;
+    }
+    .tab-header {
+      width: 24%;
+      border-right: 1px solid $grid-border-color;
+    }
+    .content-header {
+      width: 76%;
+      padding-left: 16px;
+    }
+    .content-header, .tab-header {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid $grid-border-color;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+
+  &.has-tab-header {
+    .tabs-list {
+      padding-top: 8px;
+    }
+  }
+}

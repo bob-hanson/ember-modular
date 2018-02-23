@@ -1,0 +1,19 @@
+<div id='app' class='app audits facility'>
+  {{#if currentApp.shouldDisplayNav }}
+    {{#master-header}}
+      {{#master-nav as |masterNav| }}
+        {{masterNav.navigationItem linkPath='facility.facility-encounters' linkText='Audit' }}
+        {{!-- {{masterNav.navigationItem linkPath='facility.facility-records' linkText='Records' }} --}}
+        {{masterNav.navigationItem linkPath='facility.facility-reporting' linkText='Reporting' }}
+        {{masterNav.navigationItem linkPath='facility.facility-admin' linkText='Admin' }}
+      {{/master-nav}}
+    {{/master-header}}
+  {{/if}}
+  <div id='app-content' class='app-content column-100 {{if currentApp.isToggleNavView "is-toggle-view" }} '>
+    {{ outlet }}
+  </div>
+  {{#if currentApp.shouldDisplayNav }}
+    {{master-footer }}
+  {{/if}}
+
+</div>

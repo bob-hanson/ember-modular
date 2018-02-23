@@ -1,0 +1,5 @@
+{{#if facilityAudit.isViewingFullResourcesList }}
+  {{pending-resources-table currentCollection=currentResources}}
+{{ else }}
+  {{component-column-with-list currentCollection=currentResources  emptyCollectionMessage="There are no resources matching your search or filtering criteria" }}
+{{/if}}

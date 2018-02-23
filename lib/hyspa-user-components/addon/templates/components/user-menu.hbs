@@ -1,0 +1,14 @@
+<span class='user-name'>{{ currentApp.currentUserMenuTitle }}</span>
+{{user-avatar avatarUser=sessionUser}}
+{{icon-font class='user-menu-toggle select-toggle' fontType='arrow_drop_down' fontSize='small'}}
+{{#if isViewingBubbleMenu }}
+  {{#bubble-menu}}
+    <li class='column-100' {{action 'triggerNotificationPanel' }}><span class='column-100 span-link primary-background-color-hover' href="#">{{icon-font fontType='notifications'}}Notifications</span></li>
+    {{!-- <li class='column-100'><a class='column-100' href="#">{{icon-font fontType='email'}}Messages</a></li>
+    <li class='column-100'><hr class='column-100'/></li>
+    <li class='column-100'><a class='column-100' href="#">{{icon-font fontType='help'}}Contact Support</a></li>
+    <li class='column-100'><a class='column-100' href="#">{{icon-font fontType='settings'}}User Settings</a></li> --}}
+    <li class='column-100'><a class='column-100 primary-background-color-hover' href="{{ logoutUrl }}">{{icon-font fontType='exit_to_app'}}Logout</a></li>
+  {{/bubble-menu}}
+{{/if}}
+

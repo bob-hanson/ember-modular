@@ -1,0 +1,8 @@
+  {{#component-container class='facilities-filter input-with-menu' padding='0,0,2,0'}}
+    {{filter-bar triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter'}}
+    {{#icon-menu fontType='more_vert' fontSize='medium' padding='1,0,0,1'}}
+      {{icon-link fontType='add' linkPath='audit-settings.findings-recommendations.templates.new-template' linkText='Add Template' }}
+      {{!-- {{icon-link fontType='backup' linkPath='audit-settings.checklists.categories.bulk-upload' linkText='Bulk Upload'}} --}}
+    {{/icon-menu}}
+  {{/component-container}}  
+  {{hyspa-light-table tableDefinition=tableDefinition gridCollection=filteredCollection emptyMessage="No templates to show." }}

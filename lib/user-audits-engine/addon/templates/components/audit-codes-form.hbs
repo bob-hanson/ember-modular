@@ -1,0 +1,43 @@
+{{#component-container}}
+  {{#content-panel }}
+    {{section-header headerType='sub-section' headerText="Diagnosis Codes" }}
+  {{/content-panel}}
+
+  {{#form-component-repeater currentList=dxCodes sortEndAction=(action 'sortEndAction') addAction=(action 'triggerAddDiagnosisCode') tagName="table" as |listComponent| }}
+    <tr>
+      <th class="drag-handle-cell"></th>
+      <th>Reported</th>
+      <th>Audited</th>
+      <th></th>
+    </tr>
+    {{#each listComponent.currentList as |dxCode| }}
+      {{#listComponent.sortableRepeatedComponent content=dxCode isSortable=true currentRepeatedItem=dxCode removeAction=(action 'triggerRemoveDiagnosisCode') hasRemovalButton=false tagName="tr" }}
+        <td class="drag-handle-cell">{{drag-handle }}</td>
+        <td>{{hyspa-input-component inputValue=dxCode.reported }}</td>
+        <td>{{hyspa-input-component inputValue=dxCode.audited }}</td>
+        <td>{{repeated-item-removal-link removeItemAction=(action 'triggerRemoveDiagnosisCode') removedObject=dxCode }}</td>
+      {{/listComponent.sortableRepeatedComponent}}
+    {{/each}}
+
+  {{/form-component-repeater}}
+
+  {{section-header headerType="sub-section" headerText="Sortable List" }}
+
+  {{#form-component-repeater currentList=sortableList enableSort=true useSwap=true as |mySortableList| }}
+    {{#each mySortableList.currentList as |dxCode| }}
+      {{#mySortableList.sortableComponent content=dxCode isSortable=true tagName="li" }}
+        {{dxCode.reported}}
+      {{/mySortableList.sortableComponent}}
+    {{/each}}
+  {{/form-component-repeater}}
+
+  {{!-- {{#list-component currentSortableList=sortableList sortEndAction=(action 'sortEndAction') as |mySortableList| }}
+    {{#each mySortableList.currentSortableList as |dxCode| }}
+      {{#mySortableList.draggableObject content=dxCode isSortable=true tagName="li" }}
+        {{dxCode.reported}}
+      {{/mySortableList.draggableObject}}
+    {{/each}}
+  {{/list-component}} --}}
+
+
+{{/component-container}}

@@ -1,0 +1,7 @@
+{{section-header headerType='page' headerText=formTitle isFixed=true}}
+{{client-form isCreateView=attrs.isCreateView
+              formProperties=formProperties
+              formSubmit=(action 'triggerFormSubmitWithId')
+              primaryButtonText=primaryButtonText
+              formCancel=this.attrs.formCancel
+}}

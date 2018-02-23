@@ -1,0 +1,29 @@
+.master-nav {
+  a {
+    color: $white;
+    opacity: 0.7;
+    font-size:16px;
+    font-weight: 600;
+    padding-top: 21px;
+    i.material-icons.md-24 { display: none; }
+    &:hover {
+      opacity: 1;
+    }
+  }
+  a.is-active {
+    opacity: 1;
+    i.material-icons.md-24 {
+      display: block;
+      position: absolute;
+      bottom: -55px;
+      color: $secondary-color;
+      font-size: 77px;
+      left: 50%;
+      margin-left: -40px;
+      &.active-master-nav-icon-shadow {
+        bottom: -53px;
+        color: $primary-border-color;
+      }
+    }
+  }
+}

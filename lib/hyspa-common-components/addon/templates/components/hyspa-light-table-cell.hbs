@@ -1,0 +1,24 @@
+{{#if isLink}}
+  {{#link-to linkPath row.content.id title=displayValue }}{{displayValue}}{{/link-to}}
+{{/if}}
+
+{{#if isDateTime }}
+  {{ formattedDate }}
+{{/if}}
+
+{{#if isStatusIndicator }}
+  {{status-icon fontSize="small" statusIcon=statusIcon status=status padding=statusIconPadding }}
+  {{#if showStatusText }}
+    {{ displayValue }}
+  {{/if}}
+{{/if}}
+
+{{#if isActionIcon }}
+  {{icon-font fontType=fontType fontSize='small' clickAction=(action 'triggerActionIconAction') }}
+{{/if}}
+
+{{#if isRowSelector }}
+  {{#component-container padding="0,0,0,1" class="hyspa-light-table-row-selector" }}
+    {{hyspa-checkbox-component boundModel=row.selected }}
+  {{/component-container}}
+{{/if}}

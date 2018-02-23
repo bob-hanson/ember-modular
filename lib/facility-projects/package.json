@@ -1,0 +1,26 @@
+{
+  "name": "facility-projects",
+  "keywords": [
+    "ember-addon",
+    "ember-engine"
+  ],
+  "dependencies": {
+    "ember-cli-htmlbars": "*",
+    "ember-cli-babel": "*",
+    "ember-route-action-helper": "*",
+    "ember-macaroni": "*",
+    "ember-light-table": "*",
+    "ember-responsive": "*"
+  },
+  "ember-addon": {
+    "paths": [
+      "../hyspa-base-components",
+      "../hyspa-common-components",
+      "../hyspa-form-components",
+      "../hyspa-navigation-components",
+      "../audit-common-components",
+      "../facility-audit-common",
+      "../hyspa-file-uploader"
+    ]
+  }
+}

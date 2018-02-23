@@ -1,0 +1,17 @@
+{{#if currentApp.isNotInFullScreenView }}
+  {{#component-column columnType='navigation' }}
+    {{#section-header headerType='column' headerText='Organizations' padding='2,2,0,2'}}
+      {{#icon-nav }}
+        {{#if isSuperOrganizationUser }}
+          {{#icon-menu fontType='add' fontSize='medium'}}
+            {{#if hasOrganizations }}
+              {{icon-link fontType='add' linkPath='organization.organization-users.add-organization-user' linkObject=linkOrganization linkText='Organization User' }}
+            {{/if}}
+            {{icon-link fontType='language' linkPath='new-organization' linkText='New Organization'}}
+          {{/icon-menu}}
+        {{/if }}
+      {{/icon-nav }}
+    {{/section-header}}
+    {{listed-organizations currentOrganizations=currentOrganizations }}
+  {{/component-column}}
+{{/if}}

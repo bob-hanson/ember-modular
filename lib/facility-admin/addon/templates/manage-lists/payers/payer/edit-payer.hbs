@@ -1,0 +1,6 @@
+{{#content-view percentageWidth=60 }}
+  {{payer-form formModel=currentPayer
+              formSubmit=(route-action 'triggerFormSubmit')
+              formCancel=(route-action 'triggerFormCancel')
+  }}
+{{/content-view }}

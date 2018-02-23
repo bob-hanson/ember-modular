@@ -1,0 +1,23 @@
+{{yield}}<div class="column-100">
+  {{#if hasLabel }}
+    {{label-component labelText=labelText isRequired=isRequired isFocused=isFocused launchHelp=launchHelp }}
+  {{/if}}
+  <div class="column-100">
+    {{input value=boundModel class='column-100'}}
+    {{#if showFilteredResults }}
+      <div class='select-options type-ahead'>
+        <ul class="scrollable-view column-100">
+          {{#if isFiltering }}
+            <li class="option">Filtering...</li>
+          {{else}}
+            {{#each visibleOptions as |option| }}
+            <li id='{{if option.optionName option.optionName }}' class='option {{if option.isHovering "is-hovering"}}' {{action 'triggerOptionSelected' option}}>{{option.optionName}}</li>
+            {{else}}
+            <li class='option'>No results found</li>
+            {{/each}}
+          {{/if}}
+        </ul>
+      </div>
+    {{/if}}
+  </div>
+</div>

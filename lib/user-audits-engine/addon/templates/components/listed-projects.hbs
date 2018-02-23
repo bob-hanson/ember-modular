@@ -1,0 +1,16 @@
+{{#if userAuditState.isViewingProvidersFull }}
+  {{listed-projects-table currentProjects=currentProjects }}
+{{ else }}
+  {{#column-filter}}
+    {{filter-bar triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter'}}
+  {{/column-filter}}
+  {{#if hasProjects }}
+    <ul class='listed-items column-100'>
+      {{#each filteredProjects as |currentProject|}}
+        {{listed-provider currentProject=currentProject }}
+      {{/each}}
+    </ul>
+  {{ else }}
+    {{empty-message message=emptyCollectionMessage }}
+  {{/if}}
+{{/if}}

@@ -1,0 +1,9 @@
+{{#if hasBlock }}
+  {{yield}}
+{{else}}
+  {{#if isButtonGroupOption }}
+    {{radioButtonLabel}}
+  {{ else }}
+    <label>{{icon-font fontType=selectedState }}<span>{{radioButtonLabel}}</span></label>
+  {{/if}}
+{{/if}}

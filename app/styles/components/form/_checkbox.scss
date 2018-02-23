@@ -1,0 +1,51 @@
+.checkbox-component {
+  cursor: pointer;
+  overflow: hidden;
+  label {
+    min-height: 16px;
+    padding-left: 30px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    // color:$light-type-color;
+  }
+  i {
+    position: absolute;
+    top: -2px;
+    left: 0px;
+    // color: $checkbox-radio-color;
+  }
+
+  span {
+    color: $radio-checkbox-label-color;
+  }
+
+  &:not(.is-selected) {
+    i {
+      color: $checkbox-radio-color;
+    }
+  }
+
+  &.is-disabled {
+    opacity: 1;
+  }
+
+  &.has-sublabel {
+    label {
+      padding-bottom: 4px;
+    }
+    p.subtext {
+      padding-left: 30px;
+      padding-bottom: 10px;
+    }
+  }
+  &.disabled {
+    label, .subtext {
+      cursor: default;
+      opacity: .3;
+    }
+  }
+}
+.is-invalid .checkbox-component label,
+.is-invalid .checkbox-component span,
+.is-invalid .checkbox-component i { color:$error-red; }

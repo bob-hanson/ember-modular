@@ -1,0 +1,14 @@
+{{#component-container percentageWidth=100}}
+  {{#section-header headerType='page' headerText=currentFacility.facilityName isFixed=true titleFont=true }}
+    {{#icon-nav}}
+      {{icon-link fontType='add_box' linkObject=currentFacility linkPath=currentFacility.facilityAdminFacilityDetailsPath activePath=currentFacility.facilityDetailsActivePath }}
+      {{icon-link fontType='person' linkObject=currentFacility linkPath=currentFacility.facilityAdminFacilityProvidersPath activePath=currentFacility.facilityProvidersActivePath }}
+      {{icon-link fontType='check_box' linkObject=currentFacility linkPath=currentFacility.facilityAdminFacilityCodersPath activePath=currentFacility.facilityCodersActivePath }}
+      {{#icon-menu fontType='more_vert' }}
+        {{icon-link fontType='mode_edit' linkText='Edit Facility' linkObject=currentFacility linkPath=currentFacility.facilityAdminFacilityEditLinkPath }}
+        {{icon-action fontType='clear' labelText='Delete Facility' clickAction=(action 'triggerDelete') actionObject=currentFacility }}
+      {{/icon-menu}}
+    {{/icon-nav}}
+  {{/section-header}}
+  {{yield}}
+{{/component-container}}

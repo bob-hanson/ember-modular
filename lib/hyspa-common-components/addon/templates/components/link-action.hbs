@@ -1,0 +1,10 @@
+{{#if hasBlock }}
+  {{yield}}
+{{ else }}
+  <span class="link-action-inner-wrapper">
+    {{#if displayAsIconLink }}
+      {{icon-font fontType=fontType fontSize=fontSize }}
+    {{/if}}
+    <span>{{ linkText }}</span>
+  </span>
+{{/if}}

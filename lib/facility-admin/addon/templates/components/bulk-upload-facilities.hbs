@@ -1,0 +1,8 @@
+{{section-header headerType='page' headerText="Upload Facilities" isFixed=true titleFont=true }}
+{{!-- {{#component-container }}
+  {{file-uploader percentageWidth=100 validFileExtensions=validFileExtensions onFilesAdded=(action 'triggerFilesDropped') }}
+  {{#component-container class="form-row" }}
+    {{basic-button class="primary-background-color primary-button" buttonText="Upload File" percentageWidth=25 isEnabled=hasFiles clickAction=(action 'triggerUpload') }}
+  {{/component-container}}
+{{/component-container}} --}}
+{{hyspa-basic-record-importer uploaderFor="facilities" afterUploadAction=(route-action 'triggerUploadRecords') }}

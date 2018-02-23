@@ -1,0 +1,114 @@
+{{#component-container }}
+
+{{#table-layout }}
+  {{#table-layout-row }}
+    {{#table-layout-cell class="valign-middle align-right text-bold examination-label-column" }}
+      Exam Audit Type
+    {{/table-layout-cell}}
+    {{#table-layout-cell }}
+      {{hyspa-button-group boundModel=pe97.selectedExamAuditType radioOptions=pe97.examAuditTypeOptions selectAction=(action 'triggerCalculateExam') }}
+    {{/table-layout-cell}}
+  {{/table-layout-row}}
+
+  {{#if pe97.selectedAuditType.hasSpecialties }}
+    {{#table-layout-row }}
+      {{#table-layout-cell class="valign-top align-right text-bold examination-label-column" }}
+        Select One
+      {{/table-layout-cell}}
+      {{#table-layout-cell }}
+        {{hyspa-radio-button-group boundModel=pe97.selectedAuditType.selectedExamSpecialty radioOptions=pe97.selectedAuditType.specialtyOptions columns=2 selectAction=(action 'triggerCalculateExam') }}
+      {{/table-layout-cell}}
+    {{/table-layout-row}}
+  {{/if}}
+
+  {{#if shouldShowExamElements }}
+    {{#table-layout-row }}
+      {{#table-layout-cell class="table-layout-cell valign-middle align-right text-bold examination-label-column" }}
+        Exam Element
+      {{/table-layout-cell}}
+      {{#table-layout-cell}}
+        {{#if isMultiSystemAudit }}
+          {{hyspa-button-group boundModel=pe97.selectedAuditType.selectedExamElement radioOptions=pe97.selectedAuditType.examElementOptions selectAction=(action 'triggerCalculateExam') }}
+        {{else}}
+
+          {{#hyspa-button-group boundModel=pe97.selectedAuditType.selectedSpecialty.selectedExamElement radioOptions=pe97.selectedAuditType.selectedSpecialty.examElementOptions selectAction=(action 'triggerCalculateExam') as |buttonGroup| }}
+            {{#each pe97.selectedAuditType.selectedSpecialty.examElementOptions as |examElementOption| }}
+              {{#buttonGroup.radioButton radioOption=examElementOption }}
+                {{#if examElementOption.allInShaded }}
+                  <div class="exam-shaded-button">
+                    <div>All in </div>{{icon-font fontType='lens' class="exam-shaded-indicator" }} <div>+ 1 in each of</div>{{icon-font fontType='panorama_fish_eye' class="exam-shaded-indicator" }}
+                  </div>
+                {{else}}
+                  {{ examElementOption.optionName }}
+                {{/if}}
+              {{/buttonGroup.radioButton}}
+            {{/each}}
+          {{/hyspa-button-group}}
+
+        {{/if}}
+      {{/table-layout-cell}}
+    {{/table-layout-row}}
+  {{/if}}
+
+{{/table-layout}}
+
+{{#if showDetailsSection }}
+
+  {{#component-container padding="2,0,0,0" }}
+  {{section-header headerType='sub-section' headerText="General Specialty Specific Examination" }}
+
+    {{#if isMultiSystemAudit }}
+
+      {{#tabs-container vertical=true tabHeader="System / Body Area" contentHeader="Elements of Exam" }}
+        {{#tabs-list}}
+          {{#each pe97.selectedAuditType.bodyAreas as |bodyArea| }}
+            {{#tab-button tabText=bodyArea.tabText }}
+              {{ bodyArea.tabText }} <span class="peek">{{ bodyArea.elementsCount }}</span>
+            {{/tab-button}}
+          {{/each}}
+        {{/tabs-list}}
+
+        {{#each pe97.selectedAuditType.bodyAreas as |bodyArea| }}
+          {{#tab-panel}}
+            {{component bodyArea.componentName bodyArea=bodyArea }}
+          {{/tab-panel}}
+        {{/each}}
+
+      {{/tabs-container }}
+
+    {{else}}
+
+      {{#tabs-container vertical=true tabHeader="System / Body Area" contentHeader="Elements of Exam" tabsCollection=pe97.selectedAuditType.selectedSpecialty.bodyAreas }}
+        {{#tabs-list}}
+          {{#each pe97.selectedAuditType.selectedSpecialty.bodyAreas as |bodyArea| }}
+            {{#tab-button tabText=bodyArea.tabText class="exam-body-tab" }}
+              {{#if bodyArea.isShaded }}
+                {{icon-font fontType='lens' class="exam-shaded-indicator" }}
+              {{else}}
+                {{icon-font fontType='panorama_fish_eye' class="exam-shaded-indicator" }}
+              {{/if}}
+              <span class="exam-body-tab-text">{{ bodyArea.tabText }}</span>
+              <span class="peek">{{ bodyArea.elementsCount }}</span>
+            {{/tab-button}}
+          {{/each}}
+        {{/tabs-list}}
+
+        {{#each pe97.selectedAuditType.selectedSpecialty.bodyAreas as |bodyArea| }}
+          {{#tab-panel}}
+            {{component bodyArea.componentName bodyArea=bodyArea }}
+          {{/tab-panel}}
+        {{/each}}
+
+      {{/tabs-container }}
+
+    {{/if}}
+
+  {{/component-container}}
+
+{{/if}}
+
+{{#component-container padding="2,0,0,0" }}
+  {{hyspa-form-elements-builder fieldDefinitions=customFieldDefinitions boundFieldValues=customFieldValues }}
+{{/component-container}}
+
+{{/component-container}}

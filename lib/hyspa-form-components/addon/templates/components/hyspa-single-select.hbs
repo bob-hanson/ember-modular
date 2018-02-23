@@ -1,0 +1,20 @@
+<div class="column-100">
+  {{#if hasLabel }}
+    {{label-component labelText=labelText isRequired=isRequired isFocused=isFocused launchHelp=launchHelp }}
+  {{/if}}
+  <div class="column-100">
+    {{input value=displayValue placeholder=placeholderText class='column-100'}}
+    {{icon-font class='select-toggle' fontType='arrow_drop_down' clickAction=(action 'triggerToggleClick') }}
+    {{#if isFocused }}
+      <div class='select-options type-ahead'>
+        <ul class="scrollable-view column-100">
+          {{#each visibleOptions as |option| }}
+            <li id='{{if option.optionName option.optionName }}' class='option {{if option.isActive "is-active primary-background-color primary-border-color"}} {{if option.isHovering "is-hovering"}}' {{action 'triggerOptionSelected' option}}>{{option.optionName}}</li>
+          {{else}}
+            <li class='option'>No results found</li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+  </div>
+</div>

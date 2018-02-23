@@ -1,0 +1,24 @@
+.component-section { h2 { padding-top: 16px; } }
+
+.filters { position: absolute; right: 0;top: 0;bottom: 0;border-left: 1px solid $light-border-color; }
+.filters h2 {background: #323232;color: #fff;padding: 15px;margin: 0px;}
+.filter-content { padding: 16px;}
+
+.full-screen-view { top: -64px; }
+
+/// columns
+// .content-view { padding: 16px; }
+
+.content-view .inner-column { border: none; };
+.content-view .column-header { padding: 0 0 16px 0; }
+
+.component-header { padding-bottom: 8px; }
+.component-header .link-action {float: right;width: auto;font-size: 12px;}
+.component-header-text {font-size: 16px; color: $black; font-family: $type-font-primary; padding-right: 16px; }
+.column-header-text,
+.content-header-text {font-size: 18px;color: $black; font-family: $headline-font-family; font-weight: 300;}
+.inner-column {border-right: 1px solid $primary-border-color;}
+
+.listed-items {padding: 0px; margin: 0px; overflow-y: auto; overflow-x: hidden;}
+
+.section-spacer-bottom { border-bottom: 1px solid $light-border-color; }

@@ -1,0 +1,13 @@
+{{#component-container class='facility-provider-locations-filter input-with-menu' padding='0,0,2,0'}}
+  {{filter-bar triggerFilter=(action 'triggerFilterCollection') placeholderText='Quick Filter'}}
+  {{#icon-menu fontType='more_vert' fontSize='medium' padding='1,0,0,1'}}
+    {{icon-link fontType='add' linkPath='manage-lists.providers.new-provider' linkText='Add Provider' }}
+    {{icon-link fontType='backup' linkPath='manage-lists.providers.new-provider' linkText='Bulk Upload'}}
+  {{/icon-menu}}
+{{/component-container}}
+
+{{#component-container}}
+  {{hyspa-light-table tableDefinition=tableDefinition gridCollection=filteredCollection tableHeight='70vh'}}
+{{/component-container}}
+
+{{ outlet }}

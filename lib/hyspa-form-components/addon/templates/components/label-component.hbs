@@ -1,0 +1,9 @@
+<span>
+  {{ labelText }}
+</span>
+{{#if isRequired }}
+  <span class="required">*</span>
+{{/if}}
+{{#if hasHelpLauncher }}
+  {{help-launcher-icon helpKey=launchHelp class="help-icon" }}
+{{/if}}

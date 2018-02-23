@@ -1,0 +1,8 @@
+{{#component-container}}
+  {{hyspa-checkbox-component optionName="Vitals" boundModel=bodyArea.isVitals clickAction=(action 'triggerExamElementSelect') }}
+  <p class="type-small">Measurement of <b><em>any three</em></b> of the following seven vital signs:</p>
+  {{#component-container padding="0,0,0,2" }}
+    {{hyspa-checkbox-group boundCollection=bodyArea.selectedVitals checkboxOptions=bodyArea.vitalsOptions selectAction=(action 'triggerExamElementSelect') }}
+  {{/component-container}}
+  {{hyspa-checkbox-group boundCollection=bodyArea.selectedExamElements checkboxOptions=bodyArea.examElements selectAction=(action 'triggerExamElementSelect') }}
+{{/component-container}}

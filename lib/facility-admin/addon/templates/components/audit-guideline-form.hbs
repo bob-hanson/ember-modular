@@ -1,0 +1,316 @@
+{{#hyspa-form formFor="facility_facilities" isLoading=isLoading isValid=isProjectFormValid wizard=true showTabs=true parentWidth=80 formSubmitAction=(action 'triggerFormSubmit') formCancelAction=(action 'triggerFormCancel') as |f| }}
+  
+  {{#f.formPart tabText="Scope of Audit" showHeader=true as |scopePart| }}
+    {{scopePart.input labelText='Guideline Name' isRequired=true boundModel=guidelineName name="guideline_name" }}
+
+    {{#component-container class='form-row'}}
+      {{scopePart.switch switchLabel='Use as Default Guideline' boundModel=isDefaultGuideline name="is_default_guideline" labelLeft=false percentageWidth=30 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{scopePart.buttonGroup labelText='Facility' boundModel=facilityType name="facility_type" radioOptions=facilityOptions percentageWidth=30 isRequired=true }}
+    {{/component-container }}
+
+    {{scopePart.textarea labelText='Audit Type Notes (1/1000)' boundModel=auditTypeNotes name="audit_type_notes" }}
+
+    {{#component-container class='form-row'}}
+      {{scopePart.singleSelect labelText='Frequency' isRequired=true selectOptions=frequencyOptions boundModel=frequency name="frequency" percentageWidth=32 }}
+      {{#if showFrequencyOther }}
+        {{scopePart.input labelText='Frequency Other' isRequired=true boundModel=frequencyOther name="frequency_other" percentageWidth=32 }}
+      {{/if}}
+      {{scopePart.singleSelect labelText='Turn Around Time' selectOptions=turnAroundTimeOptions boundModel=turnAroundTime name="turnaround_time" percentageWidth=32 }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{scopePart.buttonGroup labelText='Prespective/Retrospective' boundModel=prespectiveOrRetrospective name="perspective_or_retrospective" radioOptions=prespectiveOrRetrospectiveOptions percentageWidth=32  }}
+      {{scopePart.input labelText='Pass Rate Threshold' boundModel=passRateThreshold name="pass_rate_threshold" percentageWidth=50 }}
+      {{#scopePart.inputBuilder labelText='PR Threshold %' percentageWidth=15 boundModel=passRateThresholdPercentage name="pass_rate_threshold_percentage" as |passRateRef| }}
+        {{passRateRef.numericInput}}
+        {{passRateRef.inputCounter}}
+      {{/scopePart.inputBuilder}}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{#scopePart.inputBuilder labelText='# of Providers' percentageWidth=32 boundModel=numberOfProviders name="number_of_providers" as |numProvidersRef| }}
+        {{numProvidersRef.numericInput}}
+        {{numProvidersRef.inputCounter}}
+      {{/scopePart.inputBuilder}}
+      {{#scopePart.inputBuilder labelText='DOS / Provider' percentageWidth=32 boundModel=dosPerProvider name="dos_per_provider" as |dosOrProvidersRef| }}
+        {{dosOrProvidersRef.numericInput}}
+        {{dosOrProvidersRef.inputCounter}}
+      {{/scopePart.inputBuilder}}
+      {{scopePart.datePicker labelText='Received Records By' boundModel=receivedRecordsDate percentageWidth=32}}
+    {{/component-container }}
+
+    {{#component-container class="form-row" }}
+      {{scopePart.singleSelect labelText='Method of Record Transfer' isRequired=true selectOptions=methodOfTransferOptions boundModel=methodOfTransfer name="method_of_transfer" percentageWidth=50 }}
+      {{#if showMethodOfTransferOther }}
+        {{scopePart.input labelText="Method of Transfer Other" isRequired=true boundModel=methodOfTransferOther name="method_of_transfer_other" percentageWidth=50 }}
+      {{/if}}
+    {{/component-container}}
+
+    {{#component-container class='form-row' padding="0,0,2,0" }}
+      {{scopePart.singleSelect labelText='QA Review Instructions' selectOptions=qaReviewInstructionsOptions boundModel=qaReviewInstructions name="qa_review_instructions" percentageWidth=32 }}
+      {{#if showQaReviewInstructionsOther }}
+        {{scopePart.input labelText="QA Review Instructions Other" boundModel=qaReviewInstructionsOther name="qa_review_instructions_other" percentageWidth=32 }}
+      {{/if}}
+      {{scopePart.singleSelect labelText='DOS Identification' selectOptions=dosIdentificationOptions boundModel=dosIdentification name="dos_identification" launchHelp="fac-admin-04" percentageWidth=32 }}
+    {{/component-container }}
+
+    {{scopePart.textarea labelText='DOS Identification Notes (1/1000)' boundModel=dosIdentificationNote name="dos_identification_note" }}
+
+    {{scopePart.textarea labelText='Process Instructions(1/1000)' boundModel=processInstructions name="process_instructions" }}
+
+    {{scopePart.textarea labelText='Additional Instructions(1/1000)' boundModel=additionalInstructions name="additional_instructions" }}
+
+  {{/f.formPart}}
+
+
+  {{#f.formPart tabText="Assign Report Parameters" nestedFormFor="facility_audit_report_parameters" showHeader=true as |paramsPart| }}
+    {{paramsPart.textarea labelText='Report Instructions(1/1000)' name="report_instructions" boundModel=reportInstructions }}
+
+    {{#component-container class='form-row'}}
+      {{paramsPart.switch switchLabel='Mark as Attorney Client Privilege' name="attorney_client_priveledge" boundModel=isAttorneyClientPrivilege labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{paramsPart.switch switchLabel='Include Signature Page' name="signature_page" boundModel=includeSignaturePage labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{paramsPart.switch switchLabel='Mark as Draft Copy' name="is_draft_copy" boundModel=isDraftCopy labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{paramsPart.switch switchLabel='Include DRG Section' name="include_drg_section" boundModel=includeDRGSection labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{paramsPart.switch switchLabel='Include DRG Description' name="include_drg_description" boundModel=includeDRGDescription labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{paramsPart.switch switchLabel='Include DRG Reimbursement Amount' name="include_drg_reimbursement_amount" boundModel=includeDRGReimbursementAmount labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{paramsPart.switch switchLabel='Include ICD-10 CM Section' name="include_icd10_cm_section" boundModel=includeICD10CMSection labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{paramsPart.switch switchLabel='Include ICD-10 CM Description' name="include_icd10_cm_description" boundModel=includeICD10CMDescription labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{paramsPart.switch switchLabel='Include ICD-10 PCS Section' name="include_icd10_pcs_section" boundModel=includeICD10PCSSection labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{paramsPart.switch switchLabel='Include ICD-10 PCS Description' name="include_icd10_pcs_description" boundModel=includeICD10PCSDescription labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{paramsPart.switch switchLabel='Include ICD-10 CPT/HPCS Section' name="include_icd10_cpts_hpcs_section" boundModel=includeICD10CPTHPCSSection labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{paramsPart.switch switchLabel='Include ICD-10 CPT/HPCS Description' name="include_icd10_cpts_hpcs_description" boundModel=includeICD10CPTPCSDescription labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{paramsPart.switch switchLabel='Include Key Findings Section' name="include_key_findings_section" boundModel=includeKeyFindingsSection labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{paramsPart.switch switchLabel='Key Findings and Recommendations Page Break' name="is_key_findings_page_break" boundModel=wantsKeyFindingsAndRecommendationsPageBreak labelLeft=false padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{paramsPart.switch switchLabel='Include Diagnosis to Procedure Mapping' name="include_dx_to_procedure_mapping" boundModel=includeDiagnosisToProcedureMapping labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{paramsPart.switch switchLabel='Include Payer' name="include_payer" boundModel=includePayer labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row' padding="0,0,2,0"}}
+      {{paramsPart.switch switchLabel='Include Revenue Code' name="include_revenue_code" boundModel=includeRevenueCode labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+  {{/f.formPart}}
+
+
+  {{#f.formPart tabText="Scoring Method" nestedFormFor="facility_audit_scoring_method" showHeader=true as |scoringPart| }}
+
+    {{#component-container class='form-row' padding="2,0,0,0" }}
+      {{scoringPart.switch switchLabel='Calculate present on admission accuracy' name="calculate_present_on_admission_accuracy" boundModel=isAdmissionAccuracy labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{scoringPart.switch switchLabel='Calculate total accuracy' name="calculate_total_accuracy" boundModel=isTotalAccuracy labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{section-header headerType='sub-section' headerText="DRG Calculations" titleFont=true }}
+    {{#table-layout class="banded-odd column-100 outer-border" }}
+      {{#table-layout-row}}
+        {{#table-layout-cell padding="1,3,1,3" class="grid-border grid-border-bottom grid-border-left valign-middle cell-header" percentageWidth=50 }}
+          MS-DRG
+        {{/table-layout-cell}}
+        {{#table-layout-cell padding="1,0,1,3"}}
+          {{#component-container class="form-row" }}
+            {{#scoringPart.inputBuilder labelText="Correct" name="msdrg_correct" boundModel=msDRGCorrect percentageWidth=24 as |msDrgCorrectInput| }}
+              {{msDrgCorrectInput.numericInput}}
+              {{msDrgCorrectInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+            {{#scoringPart.inputBuilder labelText="Incorrect" name="msdrg_incorrect" boundModel=msDRGIncorrect percentageWidth=20 as |msDrgIncorrectInput| }}
+              {{msDrgIncorrectInput.numericInput}}
+              {{msDrgIncorrectInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+          {{/component-container}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+      {{#table-layout-row}}
+        {{#table-layout-cell padding="1,3,1,3" class="grid-border grid-border-bottom grid-border-left valign-middle cell-header" percentageWidth=50 }}
+          APR-DRG
+        {{/table-layout-cell}}
+        {{#table-layout-cell padding="1,0,1,3"}}
+          {{#component-container class="form-row" }}
+            {{#scoringPart.inputBuilder labelText="Correct" name="aprdrg_correct" boundModel=aprDRGCorrect percentageWidth=24 as |aprDrgCorrectInput| }}
+              {{aprDrgCorrectInput.numericInput}}
+              {{aprDrgCorrectInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+            {{#scoringPart.inputBuilder labelText="Incorrect" name="aprdrg_incorrect" boundModel=aprDRGIncorrect percentageWidth=20 as |aprDrgIncorrectInput| }}
+              {{aprDrgIncorrectInput.numericInput}}
+              {{aprDrgIncorrectInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+          {{/component-container}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+      {{#table-layout-row}}
+        {{#table-layout-cell padding="1,3,1,3" class="grid-border grid-border-bottom grid-border-left valign-middle cell-header" percentageWidth=50 }}
+          AP-DRG
+        {{/table-layout-cell}}
+        {{#table-layout-cell padding="1,0,1,3"}}
+          {{#component-container class="form-row" }}
+            {{#scoringPart.inputBuilder labelText="Correct" name="apdrg_correct" boundModel=apDRGCorrect percentageWidth=24 as |apDrgCorrectInput| }}
+              {{apDrgCorrectInput.numericInput}}
+              {{apDrgCorrectInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+            {{#scoringPart.inputBuilder labelText="Incorrect" name="apdrg_incorrect" boundModel=apDRGIncorrect percentageWidth=20 as |apDrgIncorrectInput| }}
+              {{apDrgIncorrectInput.numericInput}}
+              {{apDrgIncorrectInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+          {{/component-container}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+    {{/table-layout}}
+
+    {{#component-container class='form-row' padding="2,0,0,0"}}
+      {{switch-component switchLabel='Include MS-DRG in Audit Box' name="include_msdrg_auditB_box" boundModel=includeMSDRG labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row'}}
+      {{switch-component switchLabel='Include APR-DRG in Audit Box' name="include_aprdrg_audit_box" boundModel=includeAPRDRG labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container }}
+
+    {{#component-container class='form-row' padding="0,0,2,0" }}
+      {{switch-component switchLabel='Include AP-DRG in Audit Box' name="include_apdrg_audit_box" boundModel=includeAPDRG labelLeft=false percentageWidth=40 padding='0,0,0,1' }}
+    {{/component-container}}
+
+    {{section-header headerType='sub-section' headerText="Diagnosis Calculations" titleFont=true }}
+    {{#table-layout class="banded-odd column-100 outer-border" padding="0,0,2,0" }}
+      {{#table-layout-row}}
+        {{#table-layout-cell padding="1,3,1,3" class="grid-border grid-border-bottom grid-border-left valign-middle cell-header" percentageWidth=50 }}
+          Primary Diagnosis
+        {{/table-layout-cell}}
+        {{#table-layout-cell padding="1,0,1,3"}}
+          {{#component-container class="form-row" }}
+            {{#scoringPart.inputBuilder labelText="Correct" name="primary_diagnosis_correct" boundModel=primaryDiagnosisCorrect percentageWidth=24 as |primaryDiagnosisCorrectInput| }}
+              {{primaryDiagnosisCorrectInput.numericInput}}
+              {{primaryDiagnosisCorrectInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+            {{#scoringPart.inputBuilder labelText="Incorrect" name="primary_diagnosis_incorrrect" boundModel=primaryDiagnosisIncorrect percentageWidth=20 as |primaryDiagnosisIncorrectInput| }}
+              {{primaryDiagnosisIncorrectInput.numericInput }}
+              {{primaryDiagnosisIncorrectInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+            {{#scoringPart.inputBuilder labelText="Additional" name="primary_diagnosis_additional" boundModel=primaryDiagnosisAdditional percentageWidth=20 as |primaryDiagnosisAdditionalInput| }}
+              {{primaryDiagnosisAdditionalInput.numericInput}}
+              {{primaryDiagnosisAdditionalInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+          {{/component-container}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+      {{#table-layout-row}}
+        {{#table-layout-cell padding="1,3,1,3" class="grid-border grid-border-bottom grid-border-left valign-middle cell-header" percentageWidth=50 }}
+          Secondary Diagnosis
+        {{/table-layout-cell}}
+        {{#table-layout-cell padding="1,0,1,3"}}
+          {{#component-container class="form-row" }}
+            {{#scoringPart.inputBuilder labelText="Correct" boundModel=secondaryDiagnosisCorrect name="secondary_diagnosis_correct" percentageWidth=24 as |secondaryDiagnosisCorrectInput| }}
+              {{secondaryDiagnosisCorrectInput.numericInput}}
+              {{secondaryDiagnosisCorrectInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+            {{#scoringPart.inputBuilder labelText="Incorrect" boundModel=secondaryDiagnosisIncorrect name="secondary_diagnosis_incorrect" percentageWidth=20 as |secondaryDiagnosisIncorrectInput| }}
+              {{secondaryDiagnosisIncorrectInput.numericInput}}
+              {{secondaryDiagnosisIncorrectInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+            {{#scoringPart.inputBuilder labelText="Additional" boundModel=secondaryDiagnosisAdditional name="secondary_diagnosis_additional" percentageWidth=20 as |secondaryDiagnosisAdditionalInput| }}
+              {{secondaryDiagnosisAdditionalInput.numericInput}}
+              {{secondaryDiagnosisAdditionalInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+          {{/component-container}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+    {{/table-layout}}
+
+    {{section-header headerType='sub-section' headerText="Procedures Calculations" titleFont=true }}
+    {{#table-layout class="banded-odd column-100 outer-border" padding="0,0,2,0" }}
+      {{#table-layout-row}}
+        {{#table-layout-cell padding="1,3,1,3" class="grid-border grid-border-bottom grid-border-left valign-middle cell-header" percentageWidth=50 }}
+          ICD-10 PCS
+        {{/table-layout-cell}}
+        {{#table-layout-cell padding="1,0,1,3"}}
+          {{#component-container class="form-row" }}
+            {{#scoringPart.inputBuilder labelText="Correct" boundModel=icd10PCSCorrect name="icd10pcs_correct" percentageWidth=24 as |icd10PCSCorrectInput| }}
+              {{icd10PCSCorrectInput.numericInput}}
+              {{icd10PCSCorrectInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+            {{#scoringPart.inputBuilder labelText="Incorrect" boundModel=icd10PCSIncorrect name="icd10pcs_incorrect" percentageWidth=20 as |icd10PCSIncorrectInput| }}
+              {{icd10PCSIncorrectInput.numericInput}}
+              {{icd10PCSIncorrectInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+            {{#scoringPart.inputBuilder labelText="Additional" boundModel=icd10PCSAdditional name="icd10pcs_additional" percentageWidth=20 as |icd10PCSAdditionalInput| }}
+              {{icd10PCSAdditionalInput.numericInput}}
+              {{icd10PCSAdditionalInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+          {{/component-container}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+
+      {{#table-layout-row}}
+        {{#table-layout-cell padding="1,3,1,3" class="grid-border grid-border-bottom grid-border-left valign-middle cell-header" percentageWidth=50 }}
+          CPT/HCPCS
+        {{/table-layout-cell}}
+        {{#table-layout-cell padding="1,0,1,3"}}
+          {{#component-container class="form-row" }}
+            {{#scoringPart.inputBuilder labelText="Correct" name="cpt_hcpcs_correct" boundModel=cptHCPCSCorrect percentageWidth=24 as |cptHCPCSCorrectInput| }}
+              {{cptHCPCSCorrectInput.numericInput}}
+              {{cptHCPCSCorrectInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+            {{#scoringPart.inputBuilder labelText="Incorrect" boundModel=cptHCPCSIncorrect name="cpt_hcpcs_incorrect" percentageWidth=20 as |cptHCPCSIncorrectInput| }}
+              {{cptHCPCSIncorrectInput.numericInput}}
+              {{cptHCPCSIncorrectInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+            {{#scoringPart.inputBuilder labelText="Additional" boundModel=cptHCPCSAdditional name="cpt_hcpcs_additional" percentageWidth=20 as |cptHCPCSAdditionalInput| }}
+              {{cptHCPCSAdditionalInput.numericInput}}
+              {{cptHCPCSAdditionalInput.inputCounter}}
+            {{/scoringPart.inputBuilder}}
+          {{/component-container}}
+        {{/table-layout-cell}}
+      {{/table-layout-row}}
+    {{/table-layout}}
+  {{/f.formPart}}
+
+{{/hyspa-form}}

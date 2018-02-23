@@ -1,0 +1,55 @@
+{{#component-container }}
+
+  {{#component-container class="form-row" }}
+    {{hyspa-checkbox-component optionName="History unobtainable" boundModel=currentHistory.isHistoryUnobtainable }}
+  {{/component-container}}
+
+  {{section-header headerType='sub-section' headerText="Chief Complaint"}}
+
+  {{#component-container class="form-row" padding="1,0,0,0" }}
+    {{hyspa-radio-button-group boundModel=currentHistory.chiefComplaintDocumented radioOptions=currentHistory.chiefComplaintOptions }}
+  {{/component-container}}
+
+  {{#component-container class="form-row" }}
+    {{hyspa-textarea-component labelText='Additional Information ABout the Chief Complaint' boundModel=currentHistory.additionalInfo }}
+  {{/component-container}}
+
+  {{section-header headerType='sub-section' headerText="History of Present Illness (HPI)" }}
+
+  {{#component-container class="form-row" padding="1,0,0,0"  }}
+    {{hyspa-button-group boundModel=currentHistory.selectedQuickClickHPI radioOptions=currentHistory.quickClickHPIOptions }}
+    {{#if currentHistory.hpiIsDetails }}
+      {{hyspa-checkbox-group boundCollection=currentHistory.historyPresentIllnesses checkboxOptions=currentHistory.historyPresentIllnessesOptions checkboxWidth=25 }}
+      {{hyspa-radio-button-group boundModel=currentHistory.hpiStatus radioOptions=currentHistory.hpiStatusOptions }}
+    {{/if}}
+  {{/component-container}}
+
+  {{section-header headerType='sub-section' headerText="Review of System (ROS)" }}
+
+  {{#component-container padding="1,0,0,0" }}
+    {{hyspa-button-group boundModel=currentHistory.selectedQuickClickROS radioOptions=currentHistory.quickClickROSOptions }}
+    {{#if currentHistory.rosIsDetails }}
+      {{hyspa-checkbox-group boundCollection=currentHistory.reviewOfSystems checkboxOptions=currentHistory.reviewOfSystemsOptions checkboxWidth=25 }}
+    {{/if}}
+  {{/component-container}}
+
+  {{section-header headerType='sub-section' headerText="Past Medical, Family, Social History (PFSH)" }}
+
+  {{#component-container padding="1,0,0,0" }}
+    {{hyspa-button-group boundModel=currentHistory.selectedQuickClickPFSH radioOptions=currentHistory.quickClickPFSHOptions }}
+    {{#if currentHistory.pfshIsDetails }}
+      {{hyspa-checkbox-group labelText="Past Medical" boundCollection=currentHistory.pastMedicalConditions checkboxOptions=currentHistory.pastMedicalConditionsOptions checkboxWidth=25 }}
+      {{hyspa-checkbox-group labelText="Family" boundCollection=currentHistory.familyConditions checkboxOptions=currentHistory.familyConditionsOptions  checkboxWidth=100 }}
+      {{hyspa-checkbox-group labelText="Social" boundCollection=currentHistory.socialConditions checkboxOptions=currentHistory.socialConditionsOptions checkboxWidth=32 }}
+    {{/if}}
+  {{/component-container}}
+
+  {{#if hasCustomFields}}
+    {{#component-container}}
+      {{hyspa-form-elements-builder fieldDefinitions=customFieldDefinitions boundFieldValues=customFieldValues formName="auditHistoryCustomFields" }}
+    {{/component-container}}
+  {{/if}}
+
+  {{section-bottom-bar clearAllAction=(action 'triggerClearForm') resetAllAction=(action 'triggerResetForm') nextPath=auditExaminationRoute nextPathText="Next: Examination" class="bump-down-2" }}
+
+{{/component-container}}

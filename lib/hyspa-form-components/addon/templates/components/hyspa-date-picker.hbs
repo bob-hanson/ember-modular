@@ -1,0 +1,39 @@
+<div class="column-100">
+
+  {{#basic-dropdown disabled=isDisabled renderInPlace=true calculatePosition=calculateCalendarPosition horizontalPosition=horizontalPosition as |dropdown|}}
+
+    {{#dropdown.trigger }}
+      {{#hyspa-input-builder labelText=labelText padding="0,0,0,0" isRequired=isRequired boundModel=boundModel as |dateInput| }}
+        {{dateInput.numericInput allowedChars=dateInputAllowedChars isValid=isValid boundModel=inputBoundModel keyUpAction=(action 'triggerInputBoundModelChange') }}
+        {{#dateInput.addon class="addon-clickable"}}
+          {{icon-font class='calendar' fontType='date_range' fontSize="small" }}
+        {{/dateInput.addon}}
+      {{/hyspa-input-builder}}
+    {{/dropdown.trigger}}
+
+  {{#dropdown.content class="datepicker-demo-dropdown"}}
+    {{#power-calendar
+      class="date-picker"
+      center=center
+      selected=boundModel
+      onSelect=(action 'triggerSetCalendarDate' value="moment")
+      onCenterChange=(action (mut center) value="date") as |calendar| }}
+      {{#if showBanner }}
+        <div class="secondary-background-color column-100 date-display">
+          <div class="date-display-year column-100">{{moment-format boundModel 'YYYY'}}</div>
+          <div class="date-display-date column-100">{{moment-format boundModel 'ddd, MMM D'}}</div>
+          {{formattedBoundModel}}
+        </div>
+      {{/if}}
+      <nav class="ember-power-calendar-nav column-100">
+        <button type="button" class="ember-power-calendar-nav-control" onclick={{action calendar.actions.moveCenter -1 'month'}}>‹</button>
+        <div class="ember-power-calendar-nav-title">
+          {{moment-format calendar.center 'MMMM YYYY'}}
+        </div>
+        <button class="ember-power-calendar-nav-control" onclick={{action calendar.actions.moveCenter 1 'month'}}>›</button>
+      </nav>
+      {{calendar.days weekdayFormat="min" }}
+    {{/power-calendar}}
+  {{/dropdown.content}}
+{{/basic-dropdown}}
+</div>

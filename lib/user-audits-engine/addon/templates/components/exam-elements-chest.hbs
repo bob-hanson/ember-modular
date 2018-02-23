@@ -1,0 +1,11 @@
+{{#component-container}}
+  {{#if isMultiSystem }}
+    {{hyspa-checkbox-group boundCollection=bodyArea.selectedExamElements checkboxOptions=bodyArea.examElements selectAction=(action 'triggerExamElementSelect') }}
+  {{/if}}
+  {{#if isGenitourinaryM }}
+    <p>[see Genitourinary (female)]</p>
+  {{/if}}
+  {{#if isGenitourinaryF }}
+    <p>[see Genitourinary (female)]</p>
+  {{/if}}
+{{/component-container}}

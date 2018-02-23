@@ -1,0 +1,36 @@
+{{#component-container }}
+
+  {{#if isMultiSystem }}
+    {{section-header headerType='sub-section' headerText="Male"}}
+    {{hyspa-checkbox-group boundCollection=bodyArea.selectedMaleExamElements checkboxOptions=bodyArea.maleExamElements isDisabled=maleElementsDisabled selectAction=(action 'triggerExamElementSelect') }}
+    {{section-header headerType='sub-section' headerText="Female"}}
+    <p class="type-small"><b>Pelvic examination</b> (with or without specimen collection for smears and cultures), including:</p>
+    {{#component-container padding="0,0,0,1" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedFemaleExamElements checkboxOptions=bodyArea.femaleExamElements isDisabled=femaleElementsDisabled selectAction=(action 'triggerExamElementSelect') }}
+    {{/component-container}}
+  {{/if}}
+
+  {{#if isGenitourinaryM }}
+    {{hyspa-checkbox-group boundCollection=bodyArea.selectedExamElements checkboxOptions=bodyArea.examElements selectAction=(action 'triggerExamElementSelect')  }}
+    <p class="type-small"><b>Examination (with or without specimen collection for smears and cultures) of genitalia, including:</b></p>
+    {{#component-container padding="0,0,0,1" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedMaleExamElements checkboxOptions=bodyArea.maleExamElements selectAction=(action 'triggerExamElementSelect')  }}
+    {{/component-container}}
+    <p class="type-small"><b>Digital rectal examination, including:</b></p>
+    {{#component-container padding="0,0,0,1" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedRectalExamElements checkboxOptions=bodyArea.rectalExamElements selectAction=(action 'triggerExamElementSelect')  }}
+    {{/component-container}}
+  {{/if}}
+
+  {{#if isGenitourinaryF }}
+    <p class="type-small">Includes <b>at least seven of the following eleven</b> elements identified by bullets:</p>
+    {{#component-container padding="0,0,0,1" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedExamElements checkboxOptions=bodyArea.examElements selectAction=(action 'triggerExamElementSelect')  }}
+    {{/component-container}}
+    <p class="type-small"><b>Pelvic examination (with or without specimen collection for smears and cultures), including:</b></p>
+    {{#component-container padding="0,0,0,1" }}
+      {{hyspa-checkbox-group boundCollection=bodyArea.selectedFemaleExamElements checkboxOptions=bodyArea.femaleExamElements selectAction=(action 'triggerExamElementSelect')  }}
+    {{/component-container}}
+  {{/if}}
+
+{{/component-container}}

@@ -1,0 +1,40 @@
+{{#component-container percentageWidth=100}}
+  {{#component-container percentageWidth=75}}
+    {{#if isAddingSingleUser }}
+        {{!-- {{#if isCreateForm }}
+          {{link-action linkText='(Bulk Upload)' clickAction=(action 'triggerSingleBulkSwap')}}
+        {{/if}} --}}
+        {{#component-container class="form-row"}}
+          {{hyspa-input-component labelText='First Name' isRequired=true boundModel=firstName isTouched=firstNameIsTouched isValid=firstNameIsValid validationMessage=firstNameValidation percentageWidth=50 }}
+          {{hyspa-input-component labelText='Last Name' isRequired=true boundModel=lastName isTouched=lastNameIsTouched isValid=lastNameIsValid validationMessage=lastNameValidation percentageWidth=50 }}
+        {{/component-container}}
+
+        {{#component-container class="form-row"}}
+          {{hyspa-input-component labelText='Email Address' isRequired=true boundModel=userEmail isTouched=userEmailIsTouched isValid=userEmailIsValid validationMessage=emailValidation percentageWidth=50 }}
+          {{hyspa-multi-select labelText='Organization(s)'
+                               boundCollection=selectedOrganizationIds
+                               selectOptions=organizationSelectOptions
+                               isRequired=true
+                               isTouched=organizationIsTouched
+                               isValid=organizationIsValid
+                               validationMessage="Organization Required"
+                               percentageWidth=50
+                               inputValid=true}}
+        {{/component-container}}
+
+      {{ else }}
+        {{!-- {{#component-header headerText='Bulk User Upload' percentageWidth=100}}
+          {{link-action linkText='(Single User)' clickAction=(action 'triggerSingleBulkSwap')}}
+        {{/component-header}}
+        {{#component-container percentageWidth=100 }}
+          {{file-uploader label="Browse for a File" selectedFiles=bulkUploadFiles validFileExtensions=validFileExtensions validFileTypeDisplay=validFileTypeDisplay }}
+        {{/component-container }} --}}
+      {{/if}}
+  {{/component-container}}
+
+  {{#component-container percentageWidth=25}}
+
+  {{/component-container}}
+
+  {{form-actions primaryButtonText=primaryButtonText primaryAction=(action 'triggerFormSubmit') cancelAction=this.attrs.formCancel bubbleTipAction=(action 'triggerShowInvalidFields') bubbleTipMessage=bubbleTipMessage bubbleTipActionText='Show Me' showBubbleTip=true primaryIsEnabled=allRequiredFieldsAreMet }}
+{{/component-container}}

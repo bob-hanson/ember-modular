@@ -1,0 +1,7 @@
+{{#if hasContacts }}
+  {{#each contactsCollection as |contact| }}
+    {{#component-container percentageWidth=50 class='form-detail-section' }}
+      {{definition-list listObject=contact }}
+    {{/component-container}}
+  {{/each}}
+{{/if}}

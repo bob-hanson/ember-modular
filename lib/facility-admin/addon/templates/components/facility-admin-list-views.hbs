@@ -1,0 +1,10 @@
+{{#if isViewingNestedViews }}
+  {{#component-column-with-list currentCollection=currentCollection linkPathMap=detailsPath }}
+    {{#icon-menu fontType='more_vert' fontSize='medium' padding='1,0,0,1'}}
+      {{icon-link fontType='add' linkPath=newPath linkText=newText }}
+      {{icon-link fontType='backup' linkPath=bulkPath linkText='Bulk Upload'}}
+    {{/icon-menu}}
+  {{/component-column-with-list}}
+{{ else }}
+  {{component tablePath currentCollection=currentCollection }}
+{{/if}}

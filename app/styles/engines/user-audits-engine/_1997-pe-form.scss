@@ -1,0 +1,35 @@
+.exam-shaded-button {
+  height: 19px;
+  div {
+    display: inline-block;
+    float: initial;
+    vertical-align: middle;
+    margin-top: -5px;
+  }
+  .icon {
+    position: relative;
+    font-size: 14px;
+    vertical-align: middle;
+    margin: -2px 4px 0 4px;
+  }
+}
+
+.radio-button:not(.is-selected) i.exam-shaded-indicator {
+  color: #999999;
+}
+
+i.exam-shaded-indicator {
+  color: #999999;
+}
+
+.exam-body-tab {
+  .exam-shaded-indicator {
+    float: left;
+  }
+  .exam-body-tab-text {
+    padding-left: 4px;
+    width: 90px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}

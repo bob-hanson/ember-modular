@@ -1,0 +1,16 @@
+{{#if isPageHeader }}
+  <h1>{{ headerText }}</h1>
+{{/if}}
+{{#if isSectionHeader }}
+  <h2>{{ headerText }}</h2>
+{{/if}}
+{{#if isSubSectionHeader }}
+  <h3>{{ headerText }}</h3>
+{{/if}}
+{{#if isColumnHeader }}
+  <h2>{{ headerText }}</h2>
+{{/if}}
+{{#if isFormColumnHeader }}
+  <h3>{{ headerText }}</h3>
+{{/if}}
+{{yield}}

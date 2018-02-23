@@ -1,0 +1,7 @@
+{{#if hasBlock }}
+  {{ yield }}
+{{else}}
+  {{#each-in fieldsGraph as |fieldKey fieldDefinition| }}
+    {{component fieldDefinition.componentName boundModel=fieldDefinition.value labelText=fieldDefinition.label onBoundModelChange=(action 'triggerBoundModelChange' fieldDefinition) }}
+  {{/each-in}}
+{{/if}}

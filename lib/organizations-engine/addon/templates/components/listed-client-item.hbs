@@ -1,0 +1,28 @@
+{{#data-point class='listed-item-value' percentageWidth=displayNameWidth}}
+  {{#link-to 'organization.clients.client.client-details' currentClient.clientSlug title=currentClient.name}}
+    {{currentClient.name}}
+  {{/link-to}}
+{{/data-point}}
+<div class='item-toolbar'>
+  {{#listed-navigation-dynamic-icons}}
+    {{#if currentClient.databaseCreated }}
+      {{!-- {{#link-to 'organization.clients.client.users' currentClient.clientSlug }}
+        {{icon-font fontType='people' fontSize='small' isActive=userIconIsActive}}
+      {{/link-to}} --}}
+    {{/if}}
+    {{#link-to 'organization.clients.client.client-details' currentClient.clientSlug }}
+      {{icon-font fontType='info_outline' fontSize='small' isActive=detailsIconIsActive }}
+    {{/link-to}}
+  {{/listed-navigation-dynamic-icons}}
+  {{#if currentClient.databaseCreated }}
+    {{#icon-menu fontType='more_vert' fontSize='small'}}
+      {{icon-link fontType='mode_edit' linkPath='organization.clients.client.edit-client' linkObject=currentClient.clientSlug linkText='Edit'}}
+    {{/icon-menu}}
+  {{ else }}
+    {{icon-font class=notificationStatus fontType=notificationStatus fontSize='small' iconTitle=notificationMessage }}
+  {{/if}}
+</div>
+
+{{!-- {{#if isActive }}
+  <div class="selected-element"></div>
+{{/if}} --}}

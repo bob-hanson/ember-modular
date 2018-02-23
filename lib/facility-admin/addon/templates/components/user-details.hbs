@@ -1,0 +1,29 @@
+{{#section-header headerType='page' headerText=currentUser.fullName isFixed=true titleFont=true }}
+  {{#icon-nav}}
+    {{#icon-menu fontType='more_vert' }}
+      {{icon-link fontType='mode_edit' class='kebob' linkText='Edit User' linkObject=currentUser linkPath=currentUser.facilityAdminUserEditLinkPath }}
+      {{icon-action fontType='clear' labelText='Delete User' clickAction=(action 'triggerDelete') actionObject=currentUser }}
+      {{icon-link fontType='undo' linkText='Reset Password' linkObject=currentUser linkPath=currentUser.facilityAdminResetUserLinkPath }}
+    {{/icon-menu}}
+  {{/icon-nav}}
+{{/section-header}}
+{{!-- {{yield}} --}}
+{{#component-container isLoaded=currentUser.isLoaded }}
+  {{data-point label='Title' value=currentUser.positionTitle padding='2,0,0,0'}}
+  {{data-point label='Email' value=currentUser.email padding='2,0,0,0'}}
+  {{data-point label='Number' value=currentUser.phoneNumber padding='2,0,0,0'}}
+  {{data-point label='Notes' value=currentUser.notes padding='2,0,0,0'}}
+{{/component-container}}
+{{content-separator }}
+{{#component-container isLoaded=currentUser.isLoaded }}
+  {{section-header headerType='section' headerText='User Settings' padding='0,0,1,0' isFixed=true titleFont=true }}
+  {{data-point valueIcon='check' value='Super User' padding='2,0,0,0'}}
+  {{data-point valueIcon='check' value='Admin' padding='2,0,0,0'}}
+  {{data-point valueIcon='check' value='QA' padding='2,0,0,0'}}
+{{/component-container}}
+{{content-separator }}
+{{#component-container isLoaded=currentUser.isLoaded }}
+  {{section-header headerType='section' headerText='Alert Settings' padding='0,0,1,0' isFixed=true titleFont=true }}
+  {{data-point valueIcon='check' value='Additional' padding='2,0,0,0'}} {{data-point valueIcon='check' value='Admin' padding='2,0,0,0'}}
+  {{data-point valueIcon='close' value='Correct' padding='2,0,0,0'}}
+{{/component-container}}

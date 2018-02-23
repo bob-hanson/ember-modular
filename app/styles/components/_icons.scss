@@ -1,0 +1,13 @@
+.listed-navigation-item .listed-navigation-dynamic-icons {display: none;}
+.listed-navigation-item.is-active .listed-navigation-dynamic-icons,
+.listed-navigation-item:hover .listed-navigation-dynamic-icons {display: block;}
+.listed-navigation-item .listed-navigation-dynamic-icons i {margin-left:8px;}
+
+i.icon {
+  &.icon-grey {
+    color: $icon-grey;
+  }
+}
+.ember-application .material-icons.md-24.menu-toggle {
+  width: 14px;
+}

@@ -1,0 +1,18 @@
+{{basic-button buttonText='Cancel' clickAction=this.attrs.cancelAction percentageWidth='auto'}}
+<div class="primary-action-wrap">
+  {{basic-button class='primary-button primary-background-color primary-border-color'
+                buttonText=primaryButtonText
+                clickAction=this.attrs.primaryAction
+                mouseEnterAction=(action 'triggerPrimaryMouseMove')
+                isEnabled=primaryIsEnabled }}
+  {{#if hasSecondaryButton}}
+    {{basic-button buttonText=secondaryButtonText
+                  clickAction=this.attrs.secondaryAction}}
+  {{/if}}
+  {{#if primaryIsDisabledAndHoveredAndWantsBubbleTip }}
+    {{#bubble-tip arrowPosition='bottom' mouseLeaveAction=(action 'triggerPrimaryMouseMove')}}
+      <p>{{ bubbleTipMessage }}</p>
+      {{basic-button class='bubble-tip-button' buttonText=bubbleTipActionText clickAction=this.attrs.bubbleTipAction }}
+    {{/bubble-tip}}
+  {{/if}}
+</div>

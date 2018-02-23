@@ -1,0 +1,45 @@
+{{section-header headerType='page' headerText="Import Claims and Assign Audit"}}
+{{#component-container}}
+
+  {{section-header headerText="Setup"}}
+  {{#component-container class="form-row"}}
+    {{hyspa-single-select selectOptions=posSelectOptions onSelection=(action 'triggerPosSelected') labelText='Audit Project' isRequired=true inputValue=selectedOrganization percentageWidth=50 isTouched=organizationIsTouched isValid=organizationIsValid }}
+    {{hyspa-single-select selectOptions=posSelectOptions onSelection=(action 'triggerPosSelected') labelText='Audit Type' isRequired=true inputValue=selectedOrganization percentageWidth=50 isTouched=organizationIsTouched isValid=organizationIsValid }}
+  {{/component-container}}
+
+  {{#component-container class="form-row" }}
+    {{hyspa-single-select selectOptions=posSelectOptions onSelection=(action 'triggerPosSelected') labelText='Auditor' isRequired=true inputValue=selectedOrganization percentageWidth=50 isTouched=organizationIsTouched isValid=organizationIsValid }}
+    {{hyspa-single-select selectOptions=posSelectOptions onSelection=(action 'triggerPosSelected') labelText='QA Reviewer' isRequired=true inputValue=selectedOrganization percentageWidth=50 isTouched=organizationIsTouched isValid=organizationIsValid }}
+  {{/component-container}}
+
+  {{section-header headerText="Data"}}
+  {{#component-container class="form-row"}}
+    {{hyspa-single-select selectOptions=posSelectOptions onSelection=(action 'triggerPosSelected') labelText='Practice' isRequired=false inputValue=selectedOrganization percentageWidth=50 isTouched=organizationIsTouched isValid=organizationIsValid }}
+  {{/component-container}}
+  {{#component-container  class="form-row"}}
+    {{hyspa-single-select selectOptions=posSelectOptions onSelection=(action 'triggerPosSelected') labelText='Providers' isRequired=false inputValue=selectedOrganization percentageWidth=50 isTouched=organizationIsTouched isValid=organizationIsValid }}
+    {{hyspa-single-select selectOptions=posSelectOptions onSelection=(action 'triggerPosSelected') labelText='Specialities' isRequired=false inputValue=selectedOrganization percentageWidth=50 isTouched=organizationIsTouched isValid=organizationIsValid }}
+  {{/component-container}}
+  {{#component-container  class="form-row"}}
+    {{hyspa-single-select selectOptions=posSelectOptions onSelection=(action 'triggerPosSelected') labelText='Payers' isRequired=false inputValue=selectedOrganization percentageWidth=100 isTouched=organizationIsTouched isValid=organizationIsValid }}
+  {{/component-container}}
+  {{#component-container  class="form-row"}}
+    {{hyspa-single-select selectOptions=posSelectOptions onSelection=(action 'triggerPosSelected') labelText='DX Selection Type' isRequired=false inputValue=selectedOrganization percentageWidth=50 isTouched=organizationIsTouched isValid=organizationIsValid }}
+    {{hyspa-single-select selectOptions=posSelectOptions onSelection=(action 'triggerPosSelected') labelText='DX Codes' isRequired=false inputValue=selectedOrganization percentageWidth=50 isTouched=organizationIsTouched isValid=organizationIsValid }}
+  {{/component-container}}
+  {{#component-container  class="form-row"}}
+    {{hyspa-single-select selectOptions=posSelectOptions onSelection=(action 'triggerPosSelected') labelText='CPT Selection Type' isRequired=false inputValue=selectedOrganization percentageWidth=50 isTouched=organizationIsTouched isValid=organizationIsValid }}
+    {{hyspa-single-select selectOptions=posSelectOptions onSelection=(action 'triggerPosSelected') labelText='CPT Codes' isRequired=false inputValue=selectedOrganization percentageWidth=50 isTouched=organizationIsTouched isValid=organizationIsValid }}
+  {{/component-container}}
+  {{#component-container  class="form-row"}}
+    {{hyspa-single-select selectOptions=posSelectOptions onSelection=(action 'triggerPosSelected') labelText='Modifiers' isRequired=false inputValue=selectedOrganization isTouched=organizationIsTouched isValid=organizationIsValid }}
+  {{/component-container}}
+
+  {{#component-container class="form-row"}}
+    {{hyspa-input-component labelText='Number of Random Records Per Provider' isRequired=true inputValue=name isTouched=nameIsTouched isValid=nameIsValid validationMessage=nameValidation percentageWidth=50 }}
+    {{hyspa-input-component labelText='Possible Records to Audit' inputValue=name isTouched=nameIsTouched isValid=nameIsValid validationMessage=nameValidation percentageWidth=50 }}
+  {{/component-container}}
+
+  {{form-actions primaryButtonText=primaryButtonText secondaryButtonText=secondaryButtonText primaryAction=this.attrs.formSubmitAction secondaryAction=this.attrs.formPreviewAction cancelAction=this.attrs.formCancelAction primaryIsEnabled=allRequiredFieldsAreMet }}
+
+{{/component-container}}

@@ -1,0 +1,13 @@
+{{#content-view percentageWidth=60 }}
+  {{section-header headerType='page' headerText="Edit Organization User" isFixed=true}}
+  {{persist-user currentScope='organization'
+                 currentPath='edit'
+                 formTitle="Edit Organization User"
+                 currentOrganizations=currentOrganizations
+                 selectedOrganizationIds=selectedOrganizationIds
+                 currentOrganization=currentOrganization
+                 organizationUser=organizationUser
+                 organizationSelectOptions=organizationSelectOptions
+                 formSubmit=(route-action 'triggerFormSubmit')
+                 formCancel=(route-action 'triggerFormCancel') }}
+{{/content-view }}

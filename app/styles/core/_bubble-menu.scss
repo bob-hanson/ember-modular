@@ -1,0 +1,75 @@
+.bubble-menu {
+  margin:0px;
+  padding: 0px;
+  width:250px;
+  border: 1px solid;
+  border-radius: 4px;
+  z-index: 20;
+  hr {
+    opacity: 0.5;
+  }
+  .bubble-content {
+    margin:0px;
+    padding: 0px;
+    text-align: center;
+    background: $white;
+    p {
+      text-align: left;
+    }
+    li {
+      list-style-type: none;
+      a, span {
+        display: block;
+        color:$white;
+        background-color: $primary-color;
+        font-size: 1.1em;
+        padding: 10px 10px 10px 44px;
+        width: 100%;
+        i {
+          position: absolute;
+          margin: 0px;
+          padding: 0px;
+          top: 8px;
+          left: 13px;
+        }
+        &:hover, &.is-active {
+          color: $white;
+          i {
+            color: $white;
+          }
+        }
+      }
+    }
+    .basic-button {
+      margin: 0 auto;
+    }
+  }
+}
+
+.bubble-menu i.background-arrow.md-48,
+.bubble-menu i.primary-arrow.md-48 {position: absolute; left: 96px; font-size: 60px;}
+.bubble-menu i.primary-arrow.md-48 {color: $white;}
+
+// .bubble-content li {list-style-type: none;}
+// .bubble-content li a {display: block; color:$white; background-color: $primary-color; font-size: 1.1em; padding: 10px 10px 10px 44px; width: 100%;}
+
+.bubble-menu.top .background-arrow {top:-44px;}
+.bubble-menu.top .primary-arrow {top:-43px;}
+.bubble-menu.bottom .background-arrow {bottom:-36px;}
+.bubble-menu.bottom .primary-arrow {bottom:-35px;}
+
+
+.bubble-tip {margin:0px; padding: 0px;}
+
+.bubble-tip {width:250px; border: 1px solid $accent-color;border-radius: 4px; z-index: 20;}
+.bubble-tip i.background-arrow.md-48,
+.bubble-tip i.primary-arrow.md-48 {position: absolute; left: 96px; font-size: 60px;}
+.bubble-tip i.background-arrow.md-48 {color: $accent-color;}
+.bubble-tip i.primary-arrow.md-48 {color: $white;}
+
+.bubble-tip.top .background-arrow {top:-44px;}
+.bubble-tip.top .primary-arrow {top:-43px;}
+.bubble-tip.bottom .background-arrow {bottom:-36px;}
+.bubble-tip.bottom .primary-arrow {bottom:-35px;}
+
+.bubble-tip .bubble-content .bubble-tip-button {margin: 0 auto; float: none;}
