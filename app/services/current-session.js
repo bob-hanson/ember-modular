@@ -34,9 +34,9 @@ export default Service.extend({
       case 'development':
         return 'http://localhost:4200/';
       case 'qa':
-        return 'https://d1wummw2ezb4w5.cloudfront.net/hyspa-development/';
+        return "***";
       case 'production':
-        return 'https://d1wummw2ezb4w5.cloudfront.net/hyspa-production/';
+        return "***";
       default:
         return '/';
     }
@@ -44,7 +44,7 @@ export default Service.extend({
 
   auditManagerBaseUrl: computed('', function() {
     if (get(this, 'isDevelopment')) {
-      return 'https://demoe.auditmanager.healthicity.com'
+      return "***";
     } else {
       return window.location.origin;
     }
